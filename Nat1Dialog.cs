@@ -13,31 +13,60 @@ namespace MyDick
 {
     public partial class Nat1Dialog : Form
     {
-        // Create the soundplayer object
-        private SoundPlayer player = new SoundPlayer();
-
         public Nat1Dialog()
         {
             InitializeComponent();
             PlayAudio();
         }
 
+        /// <summary>
+        /// The click event which will close the dialog box 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseButton_Click(object sender, EventArgs e)
         {
+            // Close the application
             this.Close();
         }
 
+        /// <summary>
+        /// A method which will pick a random number and then use that number to pick what audio to play
+        /// </summary>
         private void PlayAudio()
         {
-            //string u
-            // Determine which file needs is going to be played
+            // Url to give the sound location
+            System.IO.Stream url;
 
+            // Creates a random instance
+            Random rnd = new Random();
 
-            // Find the audio file
-            // player.SoundLocation = 
-            // Play the audio file
-            // Wait for it to finish 
-            // Close the music player 
+            // Generates a number 
+            int tempNum = rnd.Next(1, 3);
+
+            // Pick a random sound effect 
+            switch (tempNum)
+            {
+                case 1:
+                    url = Properties.Resources.Nat1Dialog_DonnyFuck;
+                    break;
+                case 2:
+                    url = Properties.Resources.Nat1Dialog_MikeNolan;
+                    break;
+                default:
+                    url = null;
+                    break;
+            }
+
+            // If it is empty then just quit out
+            if (url == null)
+                return;
+
+            // Create the soundplayer object
+            SoundPlayer player = new SoundPlayer(url);
+
+            // Play the audio
+            player.Play();
         }
     }
 }

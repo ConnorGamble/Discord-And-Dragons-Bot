@@ -39,27 +39,27 @@
             // GetFukedText
             // 
             this.GetFukedText.AutoSize = true;
-            this.GetFukedText.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetFukedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetFukedText.Location = new System.Drawing.Point(87, 9);
             this.GetFukedText.Name = "GetFukedText";
-            this.GetFukedText.Size = new System.Drawing.Size(151, 33);
+            this.GetFukedText.Size = new System.Drawing.Size(160, 31);
             this.GetFukedText.TabIndex = 0;
             this.GetFukedText.Text = "GET FUKD.";
             // 
             // DrinkBleachText
             // 
             this.DrinkBleachText.AutoSize = true;
-            this.DrinkBleachText.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DrinkBleachText.Location = new System.Drawing.Point(57, 42);
+            this.DrinkBleachText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DrinkBleachText.Location = new System.Drawing.Point(59, 42);
             this.DrinkBleachText.Name = "DrinkBleachText";
-            this.DrinkBleachText.Size = new System.Drawing.Size(208, 33);
+            this.DrinkBleachText.Size = new System.Drawing.Size(216, 31);
             this.DrinkBleachText.TabIndex = 1;
             this.DrinkBleachText.Text = "DRINK BLEACH";
             // 
             // DrinkBleachGif
             // 
             this.DrinkBleachGif.Image = global::MyDick.Properties.Resources.tenor;
-            this.DrinkBleachGif.Location = new System.Drawing.Point(63, 78);
+            this.DrinkBleachGif.Location = new System.Drawing.Point(67, 78);
             this.DrinkBleachGif.Name = "DrinkBleachGif";
             this.DrinkBleachGif.Size = new System.Drawing.Size(200, 175);
             this.DrinkBleachGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -68,7 +68,7 @@
             // 
             // CloseButton
             // 
-            this.CloseButton.Location = new System.Drawing.Point(77, 259);
+            this.CloseButton.Location = new System.Drawing.Point(80, 259);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(175, 33);
             this.CloseButton.TabIndex = 3;

@@ -81,6 +81,51 @@ namespace MyDick.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Nat1Dialog_DonnyFuck {
+            get {
+                return ResourceManager.GetStream("Nat1Dialog_DonnyFuck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Nat1Dialog_MikeNolan {
+            get {
+                return ResourceManager.GetStream("Nat1Dialog_MikeNolan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Nat20Dialog_GroupFuckYeah {
+            get {
+                return ResourceManager.GetStream("Nat20Dialog_GroupFuckYeah", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Nat20Dialog_LezFuckingSick {
+            get {
+                return ResourceManager.GetStream("Nat20Dialog_LezFuckingSick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream OpeningAudio_Sassy {
+            get {
+                return ResourceManager.GetStream("OpeningAudio_Sassy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap tenor {

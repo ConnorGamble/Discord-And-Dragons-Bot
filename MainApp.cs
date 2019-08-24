@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Discord.WebSocket;
+using MyDick.Discord;
+using MyDick.DnD;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace MyDick
@@ -21,6 +19,8 @@ namespace MyDick
         // A temp string to store the old name of the active button.
         public string inactiveButtonName = "";
 
+        public Connection DiscordConnection;
+
         #endregion
 
         /// <summary>
@@ -30,6 +30,7 @@ namespace MyDick
         {
             InitializeComponent();
             dieButtons = GetDiceButtons();
+            DiscordConnection = new Connection();
         }
 
         #region Events
@@ -139,191 +140,191 @@ namespace MyDick
 
         private void StrSavButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(StrModTextBox, StrResult, result, modifier, true);
+            ApplyModifier(StrModTextBox, StrResult, result, modifier);
         }
 
         private void DexSavButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(DexModTextBox, DexResult, result, modifier, true);
+            ApplyModifier(DexModTextBox, DexResult, result, modifier);
         }
 
         private void ConSavButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(ConModTextBox, ConResult, result, modifier, true);
+            ApplyModifier(ConModTextBox, ConResult, result, modifier);
         }
 
         private void IntSavButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(IntModTextBox, IntResult, result, modifier, true);
+            ApplyModifier(IntModTextBox, IntResult, result, modifier);
         }
 
         private void WisSavButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(WisModTextBox, WisResult, result, modifier, true);
+            ApplyModifier(WisModTextBox, WisResult, result, modifier);
         }
 
         private void CharSavButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(CharModTextBox, CharResult, result, modifier, true);
+            ApplyModifier(CharModTextBox, CharResult, result, modifier);
         }
 
         private void AcrobaticCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(AcrobaticsModTextBox, AcrobaticsResultBox, result, modifier, true);
+            ApplyModifier(AcrobaticsModTextBox, AcrobaticsResultBox, result, modifier);
         }
 
         private void AnimalHandlingCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(AnimalHandlingModTextBox, AnimalHandlingResultBox, result, modifier, true);
+            ApplyModifier(AnimalHandlingModTextBox, AnimalHandlingResultBox, result, modifier);
         }
 
         private void ArcanaCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(ArcanaModTextBox, ArcanaResultBox, result, modifier, true);
+            ApplyModifier(ArcanaModTextBox, ArcanaResultBox, result, modifier);
         }
 
         private void AthleticsCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(AthleticsModTextBox, AthleticsResultBox, result, modifier, true);
+            ApplyModifier(AthleticsModTextBox, AthleticsResultBox, result, modifier);
         }
 
         private void DeceptionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(DeceptionModTextBox, DeceptionResultBox, result, modifier, true);
+            ApplyModifier(DeceptionModTextBox, DeceptionResultBox, result, modifier);
         }
 
         private void HistoryCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(HistoryModTextBox, HistoryResultBox, result, modifier, true);
+            ApplyModifier(HistoryModTextBox, HistoryResultBox, result, modifier);
         }
 
         private void InsightCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(InsightModTextBox, InsightResultBox, result, modifier, true);
+            ApplyModifier(InsightModTextBox, InsightResultBox, result, modifier);
         }
 
         private void IntimidationCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(IntimidationModTextBox, IntimidationResultBox, result, modifier, true);
+            ApplyModifier(IntimidationModTextBox, IntimidationResultBox, result, modifier);
         }
 
         private void InvestigationCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(InvestigationModTextBox, InvestigationResultBox, result, modifier, true);
+            ApplyModifier(InvestigationModTextBox, InvestigationResultBox, result, modifier);
         }
 
         private void MedicineCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(MedicineModTextBox, MedicineResultBox, result, modifier, true);
+            ApplyModifier(MedicineModTextBox, MedicineResultBox, result, modifier);
         }
 
         private void NatureCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(NatureModTextBox, NatureResultBox, result, modifier, true);
+            ApplyModifier(NatureModTextBox, NatureResultBox, result, modifier);
         }
 
         private void PerceptionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(PerceptionModTextBox, PerceptionResultBox, result, modifier, true);
+            ApplyModifier(PerceptionModTextBox, PerceptionResultBox, result, modifier);
         }
 
         private void PerformanceCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(PerformanceModTextBox, PerformanceResultBox, result, modifier, true);
+            ApplyModifier(PerformanceModTextBox, PerformanceResultBox, result, modifier);
         }
 
         private void PersuasionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(PersuasionModTextBox, PersuasionResultBox, result, modifier, true);
+            ApplyModifier(PersuasionModTextBox, PersuasionResultBox, result, modifier);
         }
 
         private void ReligionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(ReligionModTextBox, ReligionResultBox, result, modifier, true);
+            ApplyModifier(ReligionModTextBox, ReligionResultBox, result, modifier);
         }
 
         private void SleightOfHandCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(SleightOfHandModTextBox, SleightOfHandResultBox, result, modifier, true);
+            ApplyModifier(SleightOfHandModTextBox, SleightOfHandResultBox, result, modifier);
         }
 
         private void StealthCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(StealthModTextBox, StealthResultBox, result, modifier, true);
+            ApplyModifier(StealthModTextBox, StealthResultBox, result, modifier);
         }
 
         private void SurvivalCheckButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(SurvivalModTextBox, SurvivalResultBox, result, modifier, true);
+            ApplyModifier(SurvivalModTextBox, SurvivalResultBox, result, modifier);
         }
 
         private void Weapon1AttackButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(Weapon1AttackModBox, Weapon1AttackResultBox, result, modifier, true);
+            ApplyModifier(Weapon1AttackModBox, Weapon1AttackResultBox, result, modifier);
         }
 
         private void Weapon2AttackButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(Weapon2AttackModBox, Weapon2AttackResultBox, result, modifier, true);
+            ApplyModifier(Weapon2AttackModBox, Weapon2AttackResultBox, result, modifier);
         }
 
         private void Weapon3AttackButton_Click(object sender, EventArgs e)
         {
-            int result = RollDice(1, 21);
+            int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(Weapon3AttackModBox, Weapon3AttackResultBox, result, modifier, true);
+            ApplyModifier(Weapon3AttackModBox, Weapon3AttackResultBox, result, modifier);
         }
 
         private void Weapon1DamageButton_Click(object sender, EventArgs e)
@@ -362,31 +363,31 @@ namespace MyDick
             {
                 //D4
                 case 0:
-                    ResultBox.Text = RollDice(1, 5).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 5).ToString();
                     break;
                 //D6
                 case 1:
-                    ResultBox.Text = RollDice(1, 7).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 7).ToString();
                     break;
                 //D8
                 case 2:
-                    ResultBox.Text = RollDice(1, 9).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 9).ToString();
                     break;
                 //D10
                 case 3:
-                    ResultBox.Text = RollDice(1, 11).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 11).ToString();
                     break;
                 //D12
                 case 4:
-                    ResultBox.Text = RollDice(1, 13).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 13).ToString();
                     break;
                 case 5:
                     //D20
-                    ResultBox.Text = RollDice(1, 21).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 21).ToString();
                     break;
                 //D100
                 case 6:
-                    ResultBox.Text = RollDice(1, 100).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(1, 100).ToString();
                     break;
                 //No dice 
                 case -1:
@@ -398,26 +399,6 @@ namespace MyDick
                     break;
 
             }
-        }
-
-        /// <summary>
-        /// Function which picks the random number of the parameters which it has passed.
-        /// </summary>
-        /// <param name="minValue"></param> The minimum someone can roll 
-        /// <param name="maxValue"></param> The maximum someone can roll -1
-        /// <returns></returns> An int of a dice roll
-        private int RollDice(int minValue, int maxValue)
-        {
-            // Make the random class
-            Random rnd = new Random();
-
-            // Pick the number
-            int rolled = rnd.Next(minValue, maxValue);
-
-
-
-            // Return that number
-            return rolled;
         }
 
         /// <summary>
@@ -501,7 +482,7 @@ namespace MyDick
         /// <param name="clickedButton"></param> The button which has just been clicked
         private void ChangeDieColourToGold(Button clickedButton)
         {
-            clickedButton.BackColor = Color.DarkGoldenrod;
+            clickedButton.BackColor = System.Drawing.Color.DarkGoldenrod;
         }
 
         /// <summary>
@@ -510,7 +491,7 @@ namespace MyDick
         /// <param name="activeButton"></param> The currently active button
         private void ChangeDieColourFromGold(Button activeButton)
         {
-            activeButton.BackColor = Color.Gainsboro;
+            activeButton.BackColor = System.Drawing.Color.Gainsboro;
         }
 
         /// <summary>
@@ -521,9 +502,10 @@ namespace MyDick
         /// <param name="diceRoll"></param> The result of the dice roll 
         /// <param name="modifier"></param> A temp modifier.
         /// <param name="needsDialogs"></param> Bool to indicate if the result of this roll can be a natural failure/success.
-        private void ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, int modifier, bool needsDialogs)
+        private void ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, int modifier, bool needsDialogs = true)
         {
-            resultBox.BackColor = Color.WhiteSmoke;
+            // Change the colour back to white
+            resultBox.BackColor = System.Drawing.Color.WhiteSmoke;
 
             // If we can use the modifier then continue on. 
             if (int.TryParse(modTextBox.Text, out modifier))
@@ -538,18 +520,25 @@ namespace MyDick
                     if (diceRoll == 1)
                     {
                         // Open the nat 1 dialog and change the colour of the box to red
-                        resultBox.BackColor = Color.Red;
+                        resultBox.BackColor = System.Drawing.Color.Red;
                         Nat1Dialog dialog = new Nat1Dialog();
                         dialog.Show();
                     }
                     else if (diceRoll == 20)
                     {
                         // Open the nat 20 dialog and change the colour of the box to green
-                        resultBox.BackColor = Color.Green;
+                        resultBox.BackColor = System.Drawing.Color.Green;
                         Nat20Dialog dialog = new Nat20Dialog();
                         dialog.Show();
                     }
                 }
+
+                //var commandContext = new SocketUserMessage()
+                //{
+                //    Content = "New socket message"
+                //}
+
+                //DiscordConnection.Commands.HandleCommand(DiscordConnection.Commands._clientChannel, )
 
             }
             else
@@ -569,22 +558,22 @@ namespace MyDick
             switch (weaponAttackDie.SelectedIndex)
             {
                 case 0:
-                    result = RollDice(1, 5);
+                    result = DnD.Helpers.RollDice(1, 5);
                     break;
                 case 1:
-                    result = RollDice(1, 7);
+                    result = DnD.Helpers.RollDice(1, 7);
                     break;
                 case 2:
-                    result = RollDice(1, 9);
+                    result = DnD.Helpers.RollDice(1, 9);
                     break;
                 case 3:
-                    result = RollDice(1, 11);
+                    result = DnD.Helpers.RollDice(1, 11);
                     break;
                 case 4:
-                    result = RollDice(1, 13);
+                    result = DnD.Helpers.RollDice(1, 13);
                     break;
                 case 5:
-                    result = RollDice(1, 21);
+                    result = DnD.Helpers.RollDice(1, 21);
                     break;
                 case -1:
                     MessageBox.Show("You need to select a dice. Are you a retard or did you just forget?");

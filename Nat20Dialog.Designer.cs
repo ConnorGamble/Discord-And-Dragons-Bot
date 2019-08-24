@@ -39,20 +39,20 @@
             // YouRektText
             // 
             this.YouRektText.AutoSize = true;
-            this.YouRektText.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YouRektText.Location = new System.Drawing.Point(87, 9);
+            this.YouRektText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YouRektText.Location = new System.Drawing.Point(107, 9);
             this.YouRektText.Name = "YouRektText";
-            this.YouRektText.Size = new System.Drawing.Size(146, 33);
+            this.YouRektText.Size = new System.Drawing.Size(115, 31);
             this.YouRektText.TabIndex = 0;
             this.YouRektText.Text = "You rekt";
             // 
             // DrinkBleachText
             // 
             this.DrinkBleachText.AutoSize = true;
-            this.DrinkBleachText.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DrinkBleachText.Location = new System.Drawing.Point(39, 42);
+            this.DrinkBleachText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DrinkBleachText.Location = new System.Drawing.Point(63, 42);
             this.DrinkBleachText.Name = "DrinkBleachText";
-            this.DrinkBleachText.Size = new System.Drawing.Size(246, 33);
+            this.DrinkBleachText.Size = new System.Drawing.Size(202, 31);
             this.DrinkBleachText.TabIndex = 1;
             this.DrinkBleachText.Text = "Fucken \'ell cunt";
             // 
@@ -69,7 +69,7 @@
             // DrinkBleachGif
             // 
             this.DrinkBleachGif.Image = global::MyDick.Properties.Resources.ClarenceFuckYeah;
-            this.DrinkBleachGif.Location = new System.Drawing.Point(17, 78);
+            this.DrinkBleachGif.Location = new System.Drawing.Point(16, 78);
             this.DrinkBleachGif.Name = "DrinkBleachGif";
             this.DrinkBleachGif.Size = new System.Drawing.Size(297, 175);
             this.DrinkBleachGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

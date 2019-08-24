@@ -12,7 +12,6 @@ G:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.exe
 G:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.pdb
 G:\My Projects\MyDick\MyDick\obj\Debug\MyDick.csprojResolveAssemblyReference.cache
 G:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Nat1Dialog.resources
-E:\My Projects\MyDick\MyDick\obj\Debug\MyDick.csprojResolveAssemblyReference.cache
 E:\My Projects\MyDick\MyDick\obj\Debug\MyDick.MainApp.resources
 E:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Nat1Dialog.resources
 E:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Properties.Resources.resources
@@ -27,3 +26,82 @@ E:\My Projects\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.pdb
 E:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.exe.manifest
 E:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.application
 E:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Nat20Dialog.resources
+D:\My Projects\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.exe.config
+D:\My Projects\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.exe.manifest
+D:\My Projects\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.application
+D:\My Projects\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.exe
+D:\My Projects\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.pdb
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.MainApp.resources
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Nat20Dialog.resources
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Nat1Dialog.resources
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.Properties.Resources.resources
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.csproj.GenerateResource.Cache
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.csproj.CoreCompileInputs.cache
+D:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.exe.manifest
+D:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.application
+D:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.exe
+D:\My Projects\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.pdb
+D:\My Projects\MyDick\MyDick\obj\Debug\MyDick.csprojResolveAssemblyReference.cache
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Commands.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Core.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Rest.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Rpc.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Webhook.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.WebSocket.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Newtonsoft.Json.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\System.Collections.Immutable.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\System.Interactive.Async.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Commands.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Core.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Rest.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Rpc.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.Webhook.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Discord.Net.WebSocket.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\Newtonsoft.Json.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\System.Collections.Immutable.xml
+D:\My Projects\MyDick\MyDick\bin\Debug\System.Interactive.Async.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.exe.config
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.exe.manifest
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.application
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.exe
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Dungeons&Dickheads.pdb
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Commands.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Core.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Rest.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Rpc.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Webhook.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.WebSocket.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Newtonsoft.Json.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\System.Collections.Immutable.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\System.Interactive.Async.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Commands.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Core.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Rest.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Rpc.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.Webhook.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Discord.Net.WebSocket.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\Newtonsoft.Json.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\System.Collections.Immutable.xml
+C:\Users\conno\Desktop\MyDick\MyDick\bin\Debug\System.Interactive.Async.xml
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.csprojAssemblyReference.cache
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.MainApp.resources
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.Nat20Dialog.resources
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.Nat1Dialog.resources
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.Properties.Resources.resources
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.csproj.GenerateResource.cache
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.csproj.CoreCompileInputs.cache
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.exe.manifest
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.application
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\MyDick.csproj.CopyComplete
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.exe
+C:\Users\conno\Desktop\MyDick\MyDick\obj\Debug\Dungeons&Dickheads.pdb

@@ -162,7 +162,7 @@
             this.RollButton.Name = "RollButton";
             this.RollButton.Size = new System.Drawing.Size(81, 37);
             this.RollButton.TabIndex = 0;
-            this.RollButton.Text = "Roll that shit!";
+            this.RollButton.Text = "Roll!";
             this.RollButton.UseVisualStyleBackColor = true;
             this.RollButton.Click += new System.EventHandler(this.RollDice);
             // 
@@ -284,7 +284,7 @@
             this.StrModTextBox.Location = new System.Drawing.Point(152, 20);
             this.StrModTextBox.Name = "StrModTextBox";
             this.StrModTextBox.Size = new System.Drawing.Size(40, 20);
-            this.StrModTextBox.TabIndex = 13;
+            this.StrModTextBox.TabIndex = 1;
             this.StrModTextBox.Tag = "modBox";
             this.StrModTextBox.Text = "0";
             // 
@@ -322,7 +322,7 @@
             this.DexModTextBox.Location = new System.Drawing.Point(152, 48);
             this.DexModTextBox.Name = "DexModTextBox";
             this.DexModTextBox.Size = new System.Drawing.Size(40, 20);
-            this.DexModTextBox.TabIndex = 17;
+            this.DexModTextBox.TabIndex = 2;
             this.DexModTextBox.Tag = "modBox";
             this.DexModTextBox.Text = "0";
             // 
@@ -351,7 +351,7 @@
             this.ConModTextBox.Location = new System.Drawing.Point(152, 76);
             this.ConModTextBox.Name = "ConModTextBox";
             this.ConModTextBox.Size = new System.Drawing.Size(40, 20);
-            this.ConModTextBox.TabIndex = 20;
+            this.ConModTextBox.TabIndex = 3;
             this.ConModTextBox.Tag = "modBox";
             this.ConModTextBox.Text = "0";
             // 
@@ -380,7 +380,7 @@
             this.IntModTextBox.Location = new System.Drawing.Point(152, 105);
             this.IntModTextBox.Name = "IntModTextBox";
             this.IntModTextBox.Size = new System.Drawing.Size(40, 20);
-            this.IntModTextBox.TabIndex = 23;
+            this.IntModTextBox.TabIndex = 4;
             this.IntModTextBox.Tag = "modBox";
             this.IntModTextBox.Text = "0";
             // 
@@ -409,7 +409,7 @@
             this.WisModTextBox.Location = new System.Drawing.Point(152, 132);
             this.WisModTextBox.Name = "WisModTextBox";
             this.WisModTextBox.Size = new System.Drawing.Size(40, 20);
-            this.WisModTextBox.TabIndex = 26;
+            this.WisModTextBox.TabIndex = 5;
             this.WisModTextBox.Tag = "modBox";
             this.WisModTextBox.Text = "0";
             // 
@@ -438,7 +438,7 @@
             this.CharModTextBox.Location = new System.Drawing.Point(152, 160);
             this.CharModTextBox.Name = "CharModTextBox";
             this.CharModTextBox.Size = new System.Drawing.Size(40, 20);
-            this.CharModTextBox.TabIndex = 29;
+            this.CharModTextBox.TabIndex = 6;
             this.CharModTextBox.Tag = "modBox";
             this.CharModTextBox.Text = "0";
             // 
@@ -615,7 +615,7 @@
             this.SurvivalModTextBox.Multiline = true;
             this.SurvivalModTextBox.Name = "SurvivalModTextBox";
             this.SurvivalModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.SurvivalModTextBox.TabIndex = 79;
+            this.SurvivalModTextBox.TabIndex = 24;
             this.SurvivalModTextBox.Tag = "modBox";
             this.SurvivalModTextBox.Text = "0";
             // 
@@ -625,7 +625,7 @@
             this.StealthModTextBox.Multiline = true;
             this.StealthModTextBox.Name = "StealthModTextBox";
             this.StealthModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.StealthModTextBox.TabIndex = 78;
+            this.StealthModTextBox.TabIndex = 23;
             this.StealthModTextBox.Tag = "modBox";
             this.StealthModTextBox.Text = "0";
             // 
@@ -635,7 +635,7 @@
             this.SleightOfHandModTextBox.Multiline = true;
             this.SleightOfHandModTextBox.Name = "SleightOfHandModTextBox";
             this.SleightOfHandModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.SleightOfHandModTextBox.TabIndex = 77;
+            this.SleightOfHandModTextBox.TabIndex = 22;
             this.SleightOfHandModTextBox.Tag = "modBox";
             this.SleightOfHandModTextBox.Text = "0";
             // 
@@ -645,7 +645,7 @@
             this.ReligionModTextBox.Multiline = true;
             this.ReligionModTextBox.Name = "ReligionModTextBox";
             this.ReligionModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.ReligionModTextBox.TabIndex = 76;
+            this.ReligionModTextBox.TabIndex = 21;
             this.ReligionModTextBox.Tag = "modBox";
             this.ReligionModTextBox.Text = "0";
             // 
@@ -655,7 +655,7 @@
             this.PersuasionModTextBox.Multiline = true;
             this.PersuasionModTextBox.Name = "PersuasionModTextBox";
             this.PersuasionModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.PersuasionModTextBox.TabIndex = 75;
+            this.PersuasionModTextBox.TabIndex = 20;
             this.PersuasionModTextBox.Tag = "modBox";
             this.PersuasionModTextBox.Text = "0";
             // 
@@ -685,7 +685,7 @@
             this.PerformanceModTextBox.Multiline = true;
             this.PerformanceModTextBox.Name = "PerformanceModTextBox";
             this.PerformanceModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.PerformanceModTextBox.TabIndex = 72;
+            this.PerformanceModTextBox.TabIndex = 19;
             this.PerformanceModTextBox.Tag = "modBox";
             this.PerformanceModTextBox.Text = "0";
             // 
@@ -789,7 +789,7 @@
             this.PerceptionModTextBox.Multiline = true;
             this.PerceptionModTextBox.Name = "PerceptionModTextBox";
             this.PerceptionModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.PerceptionModTextBox.TabIndex = 61;
+            this.PerceptionModTextBox.TabIndex = 18;
             this.PerceptionModTextBox.Tag = "modBox";
             this.PerceptionModTextBox.Text = "0";
             // 
@@ -799,7 +799,7 @@
             this.NatureModTextBox.Multiline = true;
             this.NatureModTextBox.Name = "NatureModTextBox";
             this.NatureModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.NatureModTextBox.TabIndex = 60;
+            this.NatureModTextBox.TabIndex = 17;
             this.NatureModTextBox.Tag = "modBox";
             this.NatureModTextBox.Text = "0";
             // 
@@ -809,7 +809,7 @@
             this.MedicineModTextBox.Multiline = true;
             this.MedicineModTextBox.Name = "MedicineModTextBox";
             this.MedicineModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.MedicineModTextBox.TabIndex = 59;
+            this.MedicineModTextBox.TabIndex = 16;
             this.MedicineModTextBox.Tag = "modBox";
             this.MedicineModTextBox.Text = "0";
             // 
@@ -819,7 +819,7 @@
             this.InvestigationModTextBox.Multiline = true;
             this.InvestigationModTextBox.Name = "InvestigationModTextBox";
             this.InvestigationModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.InvestigationModTextBox.TabIndex = 58;
+            this.InvestigationModTextBox.TabIndex = 15;
             this.InvestigationModTextBox.Tag = "modBox";
             this.InvestigationModTextBox.Text = "0";
             // 
@@ -829,7 +829,7 @@
             this.IntimidationModTextBox.Multiline = true;
             this.IntimidationModTextBox.Name = "IntimidationModTextBox";
             this.IntimidationModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.IntimidationModTextBox.TabIndex = 57;
+            this.IntimidationModTextBox.TabIndex = 14;
             this.IntimidationModTextBox.Tag = "modBox";
             this.IntimidationModTextBox.Text = "0";
             // 
@@ -859,7 +859,7 @@
             this.InsightModTextBox.Multiline = true;
             this.InsightModTextBox.Name = "InsightModTextBox";
             this.InsightModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.InsightModTextBox.TabIndex = 54;
+            this.InsightModTextBox.TabIndex = 13;
             this.InsightModTextBox.Tag = "modBox";
             this.InsightModTextBox.Text = "0";
             // 
@@ -972,7 +972,7 @@
             this.HistoryModTextBox.Multiline = true;
             this.HistoryModTextBox.Name = "HistoryModTextBox";
             this.HistoryModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.HistoryModTextBox.TabIndex = 42;
+            this.HistoryModTextBox.TabIndex = 12;
             this.HistoryModTextBox.Tag = "modBox";
             this.HistoryModTextBox.Text = "0";
             // 
@@ -982,7 +982,7 @@
             this.DeceptionModTextBox.Multiline = true;
             this.DeceptionModTextBox.Name = "DeceptionModTextBox";
             this.DeceptionModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.DeceptionModTextBox.TabIndex = 41;
+            this.DeceptionModTextBox.TabIndex = 11;
             this.DeceptionModTextBox.Tag = "modBox";
             this.DeceptionModTextBox.Text = "0";
             // 
@@ -992,7 +992,7 @@
             this.AthleticsModTextBox.Multiline = true;
             this.AthleticsModTextBox.Name = "AthleticsModTextBox";
             this.AthleticsModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.AthleticsModTextBox.TabIndex = 40;
+            this.AthleticsModTextBox.TabIndex = 10;
             this.AthleticsModTextBox.Tag = "modBox";
             this.AthleticsModTextBox.Text = "0";
             // 
@@ -1002,7 +1002,7 @@
             this.ArcanaModTextBox.Multiline = true;
             this.ArcanaModTextBox.Name = "ArcanaModTextBox";
             this.ArcanaModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.ArcanaModTextBox.TabIndex = 39;
+            this.ArcanaModTextBox.TabIndex = 9;
             this.ArcanaModTextBox.Tag = "modBox";
             this.ArcanaModTextBox.Text = "0";
             // 
@@ -1012,7 +1012,7 @@
             this.AnimalHandlingModTextBox.Multiline = true;
             this.AnimalHandlingModTextBox.Name = "AnimalHandlingModTextBox";
             this.AnimalHandlingModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.AnimalHandlingModTextBox.TabIndex = 38;
+            this.AnimalHandlingModTextBox.TabIndex = 8;
             this.AnimalHandlingModTextBox.Tag = "modBox";
             this.AnimalHandlingModTextBox.Text = "0";
             // 
@@ -1042,7 +1042,7 @@
             this.AcrobaticsModTextBox.Multiline = true;
             this.AcrobaticsModTextBox.Name = "AcrobaticsModTextBox";
             this.AcrobaticsModTextBox.Size = new System.Drawing.Size(39, 20);
-            this.AcrobaticsModTextBox.TabIndex = 35;
+            this.AcrobaticsModTextBox.TabIndex = 7;
             this.AcrobaticsModTextBox.Tag = "modBox";
             this.AcrobaticsModTextBox.Text = "0";
             // 
@@ -1233,7 +1233,7 @@
             this.Weapon3DamageModBox.Multiline = true;
             this.Weapon3DamageModBox.Name = "Weapon3DamageModBox";
             this.Weapon3DamageModBox.Size = new System.Drawing.Size(39, 20);
-            this.Weapon3DamageModBox.TabIndex = 106;
+            this.Weapon3DamageModBox.TabIndex = 33;
             this.Weapon3DamageModBox.Tag = "modBox";
             this.Weapon3DamageModBox.Text = "0";
             // 
@@ -1262,7 +1262,7 @@
             this.Weapon2DamageModBox.Multiline = true;
             this.Weapon2DamageModBox.Name = "Weapon2DamageModBox";
             this.Weapon2DamageModBox.Size = new System.Drawing.Size(39, 20);
-            this.Weapon2DamageModBox.TabIndex = 103;
+            this.Weapon2DamageModBox.TabIndex = 30;
             this.Weapon2DamageModBox.Tag = "modBox";
             this.Weapon2DamageModBox.Text = "0";
             // 
@@ -1291,7 +1291,7 @@
             this.Weapon1DamageModBox.Multiline = true;
             this.Weapon1DamageModBox.Name = "Weapon1DamageModBox";
             this.Weapon1DamageModBox.Size = new System.Drawing.Size(39, 20);
-            this.Weapon1DamageModBox.TabIndex = 100;
+            this.Weapon1DamageModBox.TabIndex = 27;
             this.Weapon1DamageModBox.Tag = "modBox";
             this.Weapon1DamageModBox.Text = "0";
             // 
@@ -1320,7 +1320,7 @@
             this.Weapon3AttackModBox.Multiline = true;
             this.Weapon3AttackModBox.Name = "Weapon3AttackModBox";
             this.Weapon3AttackModBox.Size = new System.Drawing.Size(39, 20);
-            this.Weapon3AttackModBox.TabIndex = 96;
+            this.Weapon3AttackModBox.TabIndex = 32;
             this.Weapon3AttackModBox.Tag = "modBox";
             this.Weapon3AttackModBox.Text = "0";
             // 
@@ -1329,7 +1329,7 @@
             this.WeaponThreeTextBox.Location = new System.Drawing.Point(6, 88);
             this.WeaponThreeTextBox.Name = "WeaponThreeTextBox";
             this.WeaponThreeTextBox.Size = new System.Drawing.Size(135, 20);
-            this.WeaponThreeTextBox.TabIndex = 98;
+            this.WeaponThreeTextBox.TabIndex = 31;
             // 
             // Weapon3AttackResultBox
             // 
@@ -1356,7 +1356,7 @@
             this.Weapon2AttackModBox.Multiline = true;
             this.Weapon2AttackModBox.Name = "Weapon2AttackModBox";
             this.Weapon2AttackModBox.Size = new System.Drawing.Size(39, 20);
-            this.Weapon2AttackModBox.TabIndex = 92;
+            this.Weapon2AttackModBox.TabIndex = 29;
             this.Weapon2AttackModBox.Tag = "modBox";
             this.Weapon2AttackModBox.Text = "0";
             // 
@@ -1365,7 +1365,7 @@
             this.WeaponTwoTextBox.Location = new System.Drawing.Point(6, 60);
             this.WeaponTwoTextBox.Name = "WeaponTwoTextBox";
             this.WeaponTwoTextBox.Size = new System.Drawing.Size(135, 20);
-            this.WeaponTwoTextBox.TabIndex = 94;
+            this.WeaponTwoTextBox.TabIndex = 28;
             // 
             // Weapon2AttackResultBox
             // 
@@ -1410,7 +1410,7 @@
             this.Weapon1AttackModBox.Multiline = true;
             this.Weapon1AttackModBox.Name = "Weapon1AttackModBox";
             this.Weapon1AttackModBox.Size = new System.Drawing.Size(39, 20);
-            this.Weapon1AttackModBox.TabIndex = 87;
+            this.Weapon1AttackModBox.TabIndex = 26;
             this.Weapon1AttackModBox.Tag = "modBox";
             this.Weapon1AttackModBox.Text = "0";
             // 
@@ -1428,7 +1428,7 @@
             this.WeaponOneTextBox.Location = new System.Drawing.Point(6, 32);
             this.WeaponOneTextBox.Name = "WeaponOneTextBox";
             this.WeaponOneTextBox.Size = new System.Drawing.Size(135, 20);
-            this.WeaponOneTextBox.TabIndex = 89;
+            this.WeaponOneTextBox.TabIndex = 25;
             // 
             // Weapon1AttackResultBox
             // 
