@@ -80,3 +80,11 @@ obj/Debug/
 bin/
 
 obj/
+
+bin/Debug
+
+bin/Release
+
+obj/Release
+
+obj/Debug

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -116,6 +116,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiscordMessageObject.cs" />
     <Compile Include="Discord\Commands.cs" />
     <Compile Include="Discord\Connection.cs" />
     <Compile Include="Discord\Helpers.cs" />
@@ -188,18 +189,36 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dnd_banner.jpg" />
+    <None Include="Resources\dnd_banner.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Penis.ico" />
-    <None Include="Resources\ClarenceFuckYeah.gif" />
-    <None Include="Resources\Nat1Dialog-DonnyFuck.wav" />
-    <None Include="Resources\Nat1Dialog-MikeNolan.wav" />
-    <None Include="Resources\Nat20Dialog-GroupFuckYeah.wav" />
-    <None Include="Resources\Nat20Dialog-LezFuckingSick.wav" />
-    <None Include="Resources\OpeningAudio-Sassy.wav" />
+    <Content Include="Penis.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ClarenceFuckYeah.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Nat1Dialog-DonnyFuck.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Nat1Dialog-MikeNolan.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Nat20Dialog-GroupFuckYeah.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Nat20Dialog-LezFuckingSick.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\OpeningAudio-Sassy.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="PM\PLANS.txt" />
-    <Content Include="Resources\tenor.gif" />
+    <Content Include="Resources\tenor.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

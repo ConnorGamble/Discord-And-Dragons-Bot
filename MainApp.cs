@@ -1,8 +1,10 @@
-﻿using Discord.WebSocket;
 using MyDick.Discord;
-using MyDick.DnD;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyDick
@@ -21,6 +23,9 @@ namespace MyDick
 
         public Connection DiscordConnection;
 
+        // Http client to create content
+        public HttpClient _Client;
+
         #endregion
 
         /// <summary>
@@ -31,6 +36,7 @@ namespace MyDick
             InitializeComponent();
             dieButtons = GetDiceButtons();
             DiscordConnection = new Connection();
+            _Client = new HttpClient();
         }
 
         #region Events
@@ -502,7 +508,7 @@ namespace MyDick
         /// <param name="diceRoll"></param> The result of the dice roll 
         /// <param name="modifier"></param> A temp modifier.
         /// <param name="needsDialogs"></param> Bool to indicate if the result of this roll can be a natural failure/success.
-        private void ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, int modifier, bool needsDialogs = true)
+        private async void ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, int modifier, bool needsDialogs = true)
         {
             // Change the colour back to white
             resultBox.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -533,12 +539,16 @@ namespace MyDick
                     }
                 }
 
-                //var commandContext = new SocketUserMessage()
-                //{
-                //    Content = "New socket message"
-                //}
+                var payload = new DiscordMessageObject
+                {
+                    Content = $"Rolled a {diceRoll} with modifier of {modifier} for a total of {res}"
+                };
 
-                //DiscordConnection.Commands.HandleCommand(DiscordConnection.Commands._clientChannel, )
+                var webhookUrl = "https://discordapp.com/api/webhooks/614870234654048289/HUUAliWpSPnse8LU8oIpQflHhYDb9GIA1VC08z2aiXp64tjLl52J9MibwzfG71D1iiZ9";
+
+                var stringPayload = JsonConvert.SerializeObject(payload);
+                var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+                await Task.Run(async () => await _Client.PostAsync(webhookUrl, httpContent));
 
             }
             else
