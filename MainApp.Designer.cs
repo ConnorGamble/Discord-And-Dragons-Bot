@@ -158,17 +158,21 @@
             // 
             // RollButton
             // 
+            this.RollButton.BackColor = System.Drawing.Color.DimGray;
+            this.RollButton.ForeColor = System.Drawing.Color.White;
             this.RollButton.Location = new System.Drawing.Point(18, 192);
             this.RollButton.Name = "RollButton";
             this.RollButton.Size = new System.Drawing.Size(81, 37);
             this.RollButton.TabIndex = 0;
             this.RollButton.Text = "Roll!";
-            this.RollButton.UseVisualStyleBackColor = true;
+            this.RollButton.UseVisualStyleBackColor = false;
             this.RollButton.Click += new System.EventHandler(this.RollDice);
             // 
             // ResultBox
             // 
+            this.ResultBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.ResultBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultBox.ForeColor = System.Drawing.Color.White;
             this.ResultBox.Location = new System.Drawing.Point(105, 192);
             this.ResultBox.Multiline = true;
             this.ResultBox.Name = "ResultBox";
@@ -180,8 +184,8 @@
             // 
             // D4Button
             // 
-            this.D4Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D4Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D4Button.BackColor = System.Drawing.Color.DimGray;
+            this.D4Button.ForeColor = System.Drawing.Color.White;
             this.D4Button.Location = new System.Drawing.Point(18, 21);
             this.D4Button.Name = "D4Button";
             this.D4Button.Size = new System.Drawing.Size(76, 37);
@@ -193,8 +197,8 @@
             // 
             // D6Button
             // 
-            this.D6Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D6Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D6Button.BackColor = System.Drawing.Color.DimGray;
+            this.D6Button.ForeColor = System.Drawing.Color.White;
             this.D6Button.Location = new System.Drawing.Point(18, 64);
             this.D6Button.Name = "D6Button";
             this.D6Button.Size = new System.Drawing.Size(76, 37);
@@ -206,8 +210,8 @@
             // 
             // D8Button
             // 
-            this.D8Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D8Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D8Button.BackColor = System.Drawing.Color.DimGray;
+            this.D8Button.ForeColor = System.Drawing.Color.White;
             this.D8Button.Location = new System.Drawing.Point(100, 21);
             this.D8Button.Name = "D8Button";
             this.D8Button.Size = new System.Drawing.Size(76, 37);
@@ -219,8 +223,8 @@
             // 
             // D10Button
             // 
-            this.D10Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D10Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D10Button.BackColor = System.Drawing.Color.DimGray;
+            this.D10Button.ForeColor = System.Drawing.Color.White;
             this.D10Button.Location = new System.Drawing.Point(100, 64);
             this.D10Button.Name = "D10Button";
             this.D10Button.Size = new System.Drawing.Size(76, 37);
@@ -232,8 +236,8 @@
             // 
             // D12Button
             // 
-            this.D12Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D12Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D12Button.BackColor = System.Drawing.Color.DimGray;
+            this.D12Button.ForeColor = System.Drawing.Color.White;
             this.D12Button.Location = new System.Drawing.Point(18, 107);
             this.D12Button.Name = "D12Button";
             this.D12Button.Size = new System.Drawing.Size(76, 37);
@@ -245,8 +249,8 @@
             // 
             // D20Button
             // 
-            this.D20Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D20Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D20Button.BackColor = System.Drawing.Color.DimGray;
+            this.D20Button.ForeColor = System.Drawing.Color.White;
             this.D20Button.Location = new System.Drawing.Point(100, 107);
             this.D20Button.Name = "D20Button";
             this.D20Button.Size = new System.Drawing.Size(76, 37);
@@ -258,8 +262,8 @@
             // 
             // D100Button
             // 
-            this.D100Button.BackColor = System.Drawing.Color.Gainsboro;
-            this.D100Button.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.D100Button.BackColor = System.Drawing.Color.DimGray;
+            this.D100Button.ForeColor = System.Drawing.Color.White;
             this.D100Button.Location = new System.Drawing.Point(18, 149);
             this.D100Button.Name = "D100Button";
             this.D100Button.Size = new System.Drawing.Size(158, 37);
@@ -271,16 +275,20 @@
             // 
             // StrSavButton
             // 
+            this.StrSavButton.BackColor = System.Drawing.Color.DimGray;
+            this.StrSavButton.ForeColor = System.Drawing.Color.White;
             this.StrSavButton.Location = new System.Drawing.Point(6, 19);
             this.StrSavButton.Name = "StrSavButton";
             this.StrSavButton.Size = new System.Drawing.Size(141, 22);
             this.StrSavButton.TabIndex = 12;
             this.StrSavButton.Text = "Strength";
-            this.StrSavButton.UseVisualStyleBackColor = true;
+            this.StrSavButton.UseVisualStyleBackColor = false;
             this.StrSavButton.Click += new System.EventHandler(this.StrSavButton_Click);
             // 
             // StrModTextBox
             // 
+            this.StrModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.StrModTextBox.ForeColor = System.Drawing.Color.White;
             this.StrModTextBox.Location = new System.Drawing.Point(152, 20);
             this.StrModTextBox.Name = "StrModTextBox";
             this.StrModTextBox.Size = new System.Drawing.Size(40, 20);
@@ -290,6 +298,8 @@
             // 
             // StrResult
             // 
+            this.StrResult.BackColor = System.Drawing.Color.DimGray;
+            this.StrResult.ForeColor = System.Drawing.Color.White;
             this.StrResult.Location = new System.Drawing.Point(198, 19);
             this.StrResult.Multiline = true;
             this.StrResult.Name = "StrResult";
@@ -309,6 +319,8 @@
             // 
             // DexResult
             // 
+            this.DexResult.BackColor = System.Drawing.Color.DimGray;
+            this.DexResult.ForeColor = System.Drawing.Color.White;
             this.DexResult.Location = new System.Drawing.Point(198, 47);
             this.DexResult.Multiline = true;
             this.DexResult.Name = "DexResult";
@@ -319,6 +331,8 @@
             // 
             // DexModTextBox
             // 
+            this.DexModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.DexModTextBox.ForeColor = System.Drawing.Color.White;
             this.DexModTextBox.Location = new System.Drawing.Point(152, 48);
             this.DexModTextBox.Name = "DexModTextBox";
             this.DexModTextBox.Size = new System.Drawing.Size(40, 20);
@@ -328,16 +342,20 @@
             // 
             // DexSavButton
             // 
+            this.DexSavButton.BackColor = System.Drawing.Color.DimGray;
+            this.DexSavButton.ForeColor = System.Drawing.Color.White;
             this.DexSavButton.Location = new System.Drawing.Point(6, 47);
             this.DexSavButton.Name = "DexSavButton";
             this.DexSavButton.Size = new System.Drawing.Size(141, 22);
             this.DexSavButton.TabIndex = 16;
             this.DexSavButton.Text = "Dexterity";
-            this.DexSavButton.UseVisualStyleBackColor = true;
+            this.DexSavButton.UseVisualStyleBackColor = false;
             this.DexSavButton.Click += new System.EventHandler(this.DexSavButton_Click);
             // 
             // ConResult
             // 
+            this.ConResult.BackColor = System.Drawing.Color.DimGray;
+            this.ConResult.ForeColor = System.Drawing.Color.White;
             this.ConResult.Location = new System.Drawing.Point(198, 75);
             this.ConResult.Multiline = true;
             this.ConResult.Name = "ConResult";
@@ -348,6 +366,8 @@
             // 
             // ConModTextBox
             // 
+            this.ConModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ConModTextBox.ForeColor = System.Drawing.Color.White;
             this.ConModTextBox.Location = new System.Drawing.Point(152, 76);
             this.ConModTextBox.Name = "ConModTextBox";
             this.ConModTextBox.Size = new System.Drawing.Size(40, 20);
@@ -357,16 +377,20 @@
             // 
             // ConSavButton
             // 
+            this.ConSavButton.BackColor = System.Drawing.Color.DimGray;
+            this.ConSavButton.ForeColor = System.Drawing.Color.White;
             this.ConSavButton.Location = new System.Drawing.Point(6, 75);
             this.ConSavButton.Name = "ConSavButton";
             this.ConSavButton.Size = new System.Drawing.Size(141, 22);
             this.ConSavButton.TabIndex = 19;
             this.ConSavButton.Text = "Constitution";
-            this.ConSavButton.UseVisualStyleBackColor = true;
+            this.ConSavButton.UseVisualStyleBackColor = false;
             this.ConSavButton.Click += new System.EventHandler(this.ConSavButton_Click);
             // 
             // IntResult
             // 
+            this.IntResult.BackColor = System.Drawing.Color.DimGray;
+            this.IntResult.ForeColor = System.Drawing.Color.White;
             this.IntResult.Location = new System.Drawing.Point(198, 103);
             this.IntResult.Multiline = true;
             this.IntResult.Name = "IntResult";
@@ -377,6 +401,8 @@
             // 
             // IntModTextBox
             // 
+            this.IntModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.IntModTextBox.ForeColor = System.Drawing.Color.White;
             this.IntModTextBox.Location = new System.Drawing.Point(152, 105);
             this.IntModTextBox.Name = "IntModTextBox";
             this.IntModTextBox.Size = new System.Drawing.Size(40, 20);
@@ -386,16 +412,20 @@
             // 
             // IntSavButton
             // 
+            this.IntSavButton.BackColor = System.Drawing.Color.DimGray;
+            this.IntSavButton.ForeColor = System.Drawing.Color.White;
             this.IntSavButton.Location = new System.Drawing.Point(6, 103);
             this.IntSavButton.Name = "IntSavButton";
             this.IntSavButton.Size = new System.Drawing.Size(141, 22);
             this.IntSavButton.TabIndex = 22;
             this.IntSavButton.Text = "Intelligence";
-            this.IntSavButton.UseVisualStyleBackColor = true;
+            this.IntSavButton.UseVisualStyleBackColor = false;
             this.IntSavButton.Click += new System.EventHandler(this.IntSavButton_Click);
             // 
             // WisResult
             // 
+            this.WisResult.BackColor = System.Drawing.Color.DimGray;
+            this.WisResult.ForeColor = System.Drawing.Color.White;
             this.WisResult.Location = new System.Drawing.Point(198, 131);
             this.WisResult.Multiline = true;
             this.WisResult.Name = "WisResult";
@@ -406,6 +436,8 @@
             // 
             // WisModTextBox
             // 
+            this.WisModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.WisModTextBox.ForeColor = System.Drawing.Color.White;
             this.WisModTextBox.Location = new System.Drawing.Point(152, 132);
             this.WisModTextBox.Name = "WisModTextBox";
             this.WisModTextBox.Size = new System.Drawing.Size(40, 20);
@@ -415,16 +447,20 @@
             // 
             // WisSavButton
             // 
+            this.WisSavButton.BackColor = System.Drawing.Color.DimGray;
+            this.WisSavButton.ForeColor = System.Drawing.Color.White;
             this.WisSavButton.Location = new System.Drawing.Point(6, 131);
             this.WisSavButton.Name = "WisSavButton";
             this.WisSavButton.Size = new System.Drawing.Size(141, 22);
             this.WisSavButton.TabIndex = 25;
             this.WisSavButton.Text = "Wisdom";
-            this.WisSavButton.UseVisualStyleBackColor = true;
+            this.WisSavButton.UseVisualStyleBackColor = false;
             this.WisSavButton.Click += new System.EventHandler(this.WisSavButton_Click);
             // 
             // CharResult
             // 
+            this.CharResult.BackColor = System.Drawing.Color.DimGray;
+            this.CharResult.ForeColor = System.Drawing.Color.White;
             this.CharResult.Location = new System.Drawing.Point(198, 159);
             this.CharResult.Multiline = true;
             this.CharResult.Name = "CharResult";
@@ -435,6 +471,8 @@
             // 
             // CharModTextBox
             // 
+            this.CharModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CharModTextBox.ForeColor = System.Drawing.Color.White;
             this.CharModTextBox.Location = new System.Drawing.Point(152, 160);
             this.CharModTextBox.Name = "CharModTextBox";
             this.CharModTextBox.Size = new System.Drawing.Size(40, 20);
@@ -444,12 +482,14 @@
             // 
             // CharSavButton
             // 
+            this.CharSavButton.BackColor = System.Drawing.Color.DimGray;
+            this.CharSavButton.ForeColor = System.Drawing.Color.White;
             this.CharSavButton.Location = new System.Drawing.Point(6, 159);
             this.CharSavButton.Name = "CharSavButton";
             this.CharSavButton.Size = new System.Drawing.Size(141, 22);
             this.CharSavButton.TabIndex = 28;
             this.CharSavButton.Text = "Charisma";
-            this.CharSavButton.UseVisualStyleBackColor = true;
+            this.CharSavButton.UseVisualStyleBackColor = false;
             this.CharSavButton.Click += new System.EventHandler(this.CharSavButton_Click);
             // 
             // SavingThrowsGroup
@@ -474,6 +514,7 @@
             this.SavingThrowsGroup.Controls.Add(this.IntSavButton);
             this.SavingThrowsGroup.Controls.Add(this.ConModTextBox);
             this.SavingThrowsGroup.Controls.Add(this.ConResult);
+            this.SavingThrowsGroup.ForeColor = System.Drawing.Color.White;
             this.SavingThrowsGroup.Location = new System.Drawing.Point(4, 2);
             this.SavingThrowsGroup.Name = "SavingThrowsGroup";
             this.SavingThrowsGroup.Size = new System.Drawing.Size(250, 189);
@@ -548,6 +589,7 @@
             this.AttackGroup.Controls.Add(this.AcrobaticCheckButton);
             this.AttackGroup.Controls.Add(this.AnimalHandlingCheckButton);
             this.AttackGroup.Controls.Add(this.ArcanaCheckButton);
+            this.AttackGroup.ForeColor = System.Drawing.Color.White;
             this.AttackGroup.Location = new System.Drawing.Point(260, 2);
             this.AttackGroup.Name = "AttackGroup";
             this.AttackGroup.Size = new System.Drawing.Size(592, 189);
@@ -557,6 +599,8 @@
             // 
             // SurvivalResultBox
             // 
+            this.SurvivalResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.SurvivalResultBox.ForeColor = System.Drawing.Color.White;
             this.SurvivalResultBox.Location = new System.Drawing.Point(539, 157);
             this.SurvivalResultBox.Multiline = true;
             this.SurvivalResultBox.Name = "SurvivalResultBox";
@@ -566,6 +610,8 @@
             // 
             // StealthResultBox
             // 
+            this.StealthResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.StealthResultBox.ForeColor = System.Drawing.Color.White;
             this.StealthResultBox.Location = new System.Drawing.Point(539, 129);
             this.StealthResultBox.Multiline = true;
             this.StealthResultBox.Name = "StealthResultBox";
@@ -575,6 +621,8 @@
             // 
             // SleightOfHandResultBox
             // 
+            this.SleightOfHandResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.SleightOfHandResultBox.ForeColor = System.Drawing.Color.White;
             this.SleightOfHandResultBox.Location = new System.Drawing.Point(539, 102);
             this.SleightOfHandResultBox.Multiline = true;
             this.SleightOfHandResultBox.Name = "SleightOfHandResultBox";
@@ -584,6 +632,8 @@
             // 
             // ReligionResultBox
             // 
+            this.ReligionResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.ReligionResultBox.ForeColor = System.Drawing.Color.White;
             this.ReligionResultBox.Location = new System.Drawing.Point(539, 75);
             this.ReligionResultBox.Multiline = true;
             this.ReligionResultBox.Name = "ReligionResultBox";
@@ -593,6 +643,8 @@
             // 
             // PersuasionResultBox
             // 
+            this.PersuasionResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.PersuasionResultBox.ForeColor = System.Drawing.Color.White;
             this.PersuasionResultBox.Location = new System.Drawing.Point(539, 47);
             this.PersuasionResultBox.Multiline = true;
             this.PersuasionResultBox.Name = "PersuasionResultBox";
@@ -602,6 +654,8 @@
             // 
             // PerformanceResultBox
             // 
+            this.PerformanceResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.PerformanceResultBox.ForeColor = System.Drawing.Color.White;
             this.PerformanceResultBox.Location = new System.Drawing.Point(539, 20);
             this.PerformanceResultBox.Multiline = true;
             this.PerformanceResultBox.Name = "PerformanceResultBox";
@@ -611,6 +665,8 @@
             // 
             // SurvivalModTextBox
             // 
+            this.SurvivalModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SurvivalModTextBox.ForeColor = System.Drawing.Color.White;
             this.SurvivalModTextBox.Location = new System.Drawing.Point(494, 157);
             this.SurvivalModTextBox.Multiline = true;
             this.SurvivalModTextBox.Name = "SurvivalModTextBox";
@@ -621,6 +677,8 @@
             // 
             // StealthModTextBox
             // 
+            this.StealthModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.StealthModTextBox.ForeColor = System.Drawing.Color.White;
             this.StealthModTextBox.Location = new System.Drawing.Point(494, 129);
             this.StealthModTextBox.Multiline = true;
             this.StealthModTextBox.Name = "StealthModTextBox";
@@ -631,6 +689,8 @@
             // 
             // SleightOfHandModTextBox
             // 
+            this.SleightOfHandModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SleightOfHandModTextBox.ForeColor = System.Drawing.Color.White;
             this.SleightOfHandModTextBox.Location = new System.Drawing.Point(494, 102);
             this.SleightOfHandModTextBox.Multiline = true;
             this.SleightOfHandModTextBox.Name = "SleightOfHandModTextBox";
@@ -641,6 +701,8 @@
             // 
             // ReligionModTextBox
             // 
+            this.ReligionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ReligionModTextBox.ForeColor = System.Drawing.Color.White;
             this.ReligionModTextBox.Location = new System.Drawing.Point(494, 75);
             this.ReligionModTextBox.Multiline = true;
             this.ReligionModTextBox.Name = "ReligionModTextBox";
@@ -651,6 +713,8 @@
             // 
             // PersuasionModTextBox
             // 
+            this.PersuasionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.PersuasionModTextBox.ForeColor = System.Drawing.Color.White;
             this.PersuasionModTextBox.Location = new System.Drawing.Point(494, 47);
             this.PersuasionModTextBox.Multiline = true;
             this.PersuasionModTextBox.Name = "PersuasionModTextBox";
@@ -661,26 +725,32 @@
             // 
             // SurvivalCheckButton
             // 
+            this.SurvivalCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.SurvivalCheckButton.ForeColor = System.Drawing.Color.White;
             this.SurvivalCheckButton.Location = new System.Drawing.Point(390, 155);
             this.SurvivalCheckButton.Name = "SurvivalCheckButton";
             this.SurvivalCheckButton.Size = new System.Drawing.Size(96, 24);
             this.SurvivalCheckButton.TabIndex = 74;
             this.SurvivalCheckButton.Text = "Survival";
-            this.SurvivalCheckButton.UseVisualStyleBackColor = true;
+            this.SurvivalCheckButton.UseVisualStyleBackColor = false;
             this.SurvivalCheckButton.Click += new System.EventHandler(this.SurvivalCheckButton_Click);
             // 
             // StealthCheckButton
             // 
+            this.StealthCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.StealthCheckButton.ForeColor = System.Drawing.Color.White;
             this.StealthCheckButton.Location = new System.Drawing.Point(390, 128);
             this.StealthCheckButton.Name = "StealthCheckButton";
             this.StealthCheckButton.Size = new System.Drawing.Size(96, 24);
             this.StealthCheckButton.TabIndex = 73;
             this.StealthCheckButton.Text = "Stealth";
-            this.StealthCheckButton.UseVisualStyleBackColor = true;
+            this.StealthCheckButton.UseVisualStyleBackColor = false;
             this.StealthCheckButton.Click += new System.EventHandler(this.StealthCheckButton_Click);
             // 
             // PerformanceModTextBox
             // 
+            this.PerformanceModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.PerformanceModTextBox.ForeColor = System.Drawing.Color.White;
             this.PerformanceModTextBox.Location = new System.Drawing.Point(494, 20);
             this.PerformanceModTextBox.Multiline = true;
             this.PerformanceModTextBox.Name = "PerformanceModTextBox";
@@ -691,46 +761,56 @@
             // 
             // SleightOfHandCheckButton
             // 
+            this.SleightOfHandCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.SleightOfHandCheckButton.ForeColor = System.Drawing.Color.White;
             this.SleightOfHandCheckButton.Location = new System.Drawing.Point(390, 101);
             this.SleightOfHandCheckButton.Name = "SleightOfHandCheckButton";
             this.SleightOfHandCheckButton.Size = new System.Drawing.Size(96, 23);
             this.SleightOfHandCheckButton.TabIndex = 71;
             this.SleightOfHandCheckButton.Text = "Sleight of Hand";
-            this.SleightOfHandCheckButton.UseVisualStyleBackColor = true;
+            this.SleightOfHandCheckButton.UseVisualStyleBackColor = false;
             this.SleightOfHandCheckButton.Click += new System.EventHandler(this.SleightOfHandCheckButton_Click);
             // 
             // PerformanceCheckButton
             // 
+            this.PerformanceCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.PerformanceCheckButton.ForeColor = System.Drawing.Color.White;
             this.PerformanceCheckButton.Location = new System.Drawing.Point(390, 19);
             this.PerformanceCheckButton.Name = "PerformanceCheckButton";
             this.PerformanceCheckButton.Size = new System.Drawing.Size(96, 22);
             this.PerformanceCheckButton.TabIndex = 68;
             this.PerformanceCheckButton.Text = "Performance";
-            this.PerformanceCheckButton.UseVisualStyleBackColor = true;
+            this.PerformanceCheckButton.UseVisualStyleBackColor = false;
             this.PerformanceCheckButton.Click += new System.EventHandler(this.PerformanceCheckButton_Click);
             // 
             // PersuasionCheckButton
             // 
+            this.PersuasionCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.PersuasionCheckButton.ForeColor = System.Drawing.Color.White;
             this.PersuasionCheckButton.Location = new System.Drawing.Point(390, 45);
             this.PersuasionCheckButton.Name = "PersuasionCheckButton";
             this.PersuasionCheckButton.Size = new System.Drawing.Size(96, 23);
             this.PersuasionCheckButton.TabIndex = 69;
             this.PersuasionCheckButton.Text = "Persuasion";
-            this.PersuasionCheckButton.UseVisualStyleBackColor = true;
+            this.PersuasionCheckButton.UseVisualStyleBackColor = false;
             this.PersuasionCheckButton.Click += new System.EventHandler(this.PersuasionCheckButton_Click);
             // 
             // ReligionCheckButton
             // 
+            this.ReligionCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.ReligionCheckButton.ForeColor = System.Drawing.Color.White;
             this.ReligionCheckButton.Location = new System.Drawing.Point(390, 74);
             this.ReligionCheckButton.Name = "ReligionCheckButton";
             this.ReligionCheckButton.Size = new System.Drawing.Size(96, 22);
             this.ReligionCheckButton.TabIndex = 70;
             this.ReligionCheckButton.Text = "Religion";
-            this.ReligionCheckButton.UseVisualStyleBackColor = true;
+            this.ReligionCheckButton.UseVisualStyleBackColor = false;
             this.ReligionCheckButton.Click += new System.EventHandler(this.ReligionCheckButton_Click);
             // 
             // PerceptionResultBox
             // 
+            this.PerceptionResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.PerceptionResultBox.ForeColor = System.Drawing.Color.White;
             this.PerceptionResultBox.Location = new System.Drawing.Point(345, 157);
             this.PerceptionResultBox.Multiline = true;
             this.PerceptionResultBox.Name = "PerceptionResultBox";
@@ -740,6 +820,8 @@
             // 
             // NatureResultBox
             // 
+            this.NatureResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.NatureResultBox.ForeColor = System.Drawing.Color.White;
             this.NatureResultBox.Location = new System.Drawing.Point(345, 129);
             this.NatureResultBox.Multiline = true;
             this.NatureResultBox.Name = "NatureResultBox";
@@ -749,6 +831,8 @@
             // 
             // MedicineResultBox
             // 
+            this.MedicineResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.MedicineResultBox.ForeColor = System.Drawing.Color.White;
             this.MedicineResultBox.Location = new System.Drawing.Point(345, 102);
             this.MedicineResultBox.Multiline = true;
             this.MedicineResultBox.Name = "MedicineResultBox";
@@ -758,6 +842,8 @@
             // 
             // InvestigationResultBox
             // 
+            this.InvestigationResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.InvestigationResultBox.ForeColor = System.Drawing.Color.White;
             this.InvestigationResultBox.Location = new System.Drawing.Point(345, 75);
             this.InvestigationResultBox.Multiline = true;
             this.InvestigationResultBox.Name = "InvestigationResultBox";
@@ -767,6 +853,8 @@
             // 
             // IntimidationResultBox
             // 
+            this.IntimidationResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.IntimidationResultBox.ForeColor = System.Drawing.Color.White;
             this.IntimidationResultBox.Location = new System.Drawing.Point(345, 47);
             this.IntimidationResultBox.Multiline = true;
             this.IntimidationResultBox.Name = "IntimidationResultBox";
@@ -776,6 +864,8 @@
             // 
             // InsightResultBox
             // 
+            this.InsightResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.InsightResultBox.ForeColor = System.Drawing.Color.White;
             this.InsightResultBox.Location = new System.Drawing.Point(345, 20);
             this.InsightResultBox.Multiline = true;
             this.InsightResultBox.Name = "InsightResultBox";
@@ -785,6 +875,8 @@
             // 
             // PerceptionModTextBox
             // 
+            this.PerceptionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.PerceptionModTextBox.ForeColor = System.Drawing.Color.White;
             this.PerceptionModTextBox.Location = new System.Drawing.Point(300, 157);
             this.PerceptionModTextBox.Multiline = true;
             this.PerceptionModTextBox.Name = "PerceptionModTextBox";
@@ -795,6 +887,8 @@
             // 
             // NatureModTextBox
             // 
+            this.NatureModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.NatureModTextBox.ForeColor = System.Drawing.Color.White;
             this.NatureModTextBox.Location = new System.Drawing.Point(300, 129);
             this.NatureModTextBox.Multiline = true;
             this.NatureModTextBox.Name = "NatureModTextBox";
@@ -805,6 +899,8 @@
             // 
             // MedicineModTextBox
             // 
+            this.MedicineModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.MedicineModTextBox.ForeColor = System.Drawing.Color.White;
             this.MedicineModTextBox.Location = new System.Drawing.Point(300, 102);
             this.MedicineModTextBox.Multiline = true;
             this.MedicineModTextBox.Name = "MedicineModTextBox";
@@ -815,6 +911,8 @@
             // 
             // InvestigationModTextBox
             // 
+            this.InvestigationModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.InvestigationModTextBox.ForeColor = System.Drawing.Color.White;
             this.InvestigationModTextBox.Location = new System.Drawing.Point(300, 75);
             this.InvestigationModTextBox.Multiline = true;
             this.InvestigationModTextBox.Name = "InvestigationModTextBox";
@@ -825,6 +923,8 @@
             // 
             // IntimidationModTextBox
             // 
+            this.IntimidationModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.IntimidationModTextBox.ForeColor = System.Drawing.Color.White;
             this.IntimidationModTextBox.Location = new System.Drawing.Point(300, 47);
             this.IntimidationModTextBox.Multiline = true;
             this.IntimidationModTextBox.Name = "IntimidationModTextBox";
@@ -835,26 +935,32 @@
             // 
             // PerceptionCheckButton
             // 
+            this.PerceptionCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.PerceptionCheckButton.ForeColor = System.Drawing.Color.White;
             this.PerceptionCheckButton.Location = new System.Drawing.Point(196, 155);
             this.PerceptionCheckButton.Name = "PerceptionCheckButton";
             this.PerceptionCheckButton.Size = new System.Drawing.Size(96, 24);
             this.PerceptionCheckButton.TabIndex = 56;
             this.PerceptionCheckButton.Text = "Perception";
-            this.PerceptionCheckButton.UseVisualStyleBackColor = true;
+            this.PerceptionCheckButton.UseVisualStyleBackColor = false;
             this.PerceptionCheckButton.Click += new System.EventHandler(this.PerceptionCheckButton_Click);
             // 
             // NatureCheckButton
             // 
+            this.NatureCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.NatureCheckButton.ForeColor = System.Drawing.Color.White;
             this.NatureCheckButton.Location = new System.Drawing.Point(196, 128);
             this.NatureCheckButton.Name = "NatureCheckButton";
             this.NatureCheckButton.Size = new System.Drawing.Size(96, 24);
             this.NatureCheckButton.TabIndex = 55;
             this.NatureCheckButton.Text = "Nature";
-            this.NatureCheckButton.UseVisualStyleBackColor = true;
+            this.NatureCheckButton.UseVisualStyleBackColor = false;
             this.NatureCheckButton.Click += new System.EventHandler(this.NatureCheckButton_Click);
             // 
             // InsightModTextBox
             // 
+            this.InsightModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.InsightModTextBox.ForeColor = System.Drawing.Color.White;
             this.InsightModTextBox.Location = new System.Drawing.Point(300, 20);
             this.InsightModTextBox.Multiline = true;
             this.InsightModTextBox.Name = "InsightModTextBox";
@@ -865,42 +971,50 @@
             // 
             // MedicineCheckButton
             // 
+            this.MedicineCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.MedicineCheckButton.ForeColor = System.Drawing.Color.White;
             this.MedicineCheckButton.Location = new System.Drawing.Point(196, 101);
             this.MedicineCheckButton.Name = "MedicineCheckButton";
             this.MedicineCheckButton.Size = new System.Drawing.Size(96, 23);
             this.MedicineCheckButton.TabIndex = 53;
             this.MedicineCheckButton.Text = "Medicine";
-            this.MedicineCheckButton.UseVisualStyleBackColor = true;
+            this.MedicineCheckButton.UseVisualStyleBackColor = false;
             this.MedicineCheckButton.Click += new System.EventHandler(this.MedicineCheckButton_Click);
             // 
             // InsightCheckButton
             // 
+            this.InsightCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.InsightCheckButton.ForeColor = System.Drawing.Color.White;
             this.InsightCheckButton.Location = new System.Drawing.Point(196, 19);
             this.InsightCheckButton.Name = "InsightCheckButton";
             this.InsightCheckButton.Size = new System.Drawing.Size(96, 22);
             this.InsightCheckButton.TabIndex = 50;
             this.InsightCheckButton.Text = "Insight";
-            this.InsightCheckButton.UseVisualStyleBackColor = true;
+            this.InsightCheckButton.UseVisualStyleBackColor = false;
             this.InsightCheckButton.Click += new System.EventHandler(this.InsightCheckButton_Click);
             // 
             // IntimidationCheckButton
             // 
+            this.IntimidationCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.IntimidationCheckButton.ForeColor = System.Drawing.Color.White;
             this.IntimidationCheckButton.Location = new System.Drawing.Point(196, 45);
             this.IntimidationCheckButton.Name = "IntimidationCheckButton";
             this.IntimidationCheckButton.Size = new System.Drawing.Size(96, 23);
             this.IntimidationCheckButton.TabIndex = 51;
             this.IntimidationCheckButton.Text = "Intimidation";
-            this.IntimidationCheckButton.UseVisualStyleBackColor = true;
+            this.IntimidationCheckButton.UseVisualStyleBackColor = false;
             this.IntimidationCheckButton.Click += new System.EventHandler(this.IntimidationCheckButton_Click);
             // 
             // InvestigationCheckButton
             // 
+            this.InvestigationCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.InvestigationCheckButton.ForeColor = System.Drawing.Color.White;
             this.InvestigationCheckButton.Location = new System.Drawing.Point(196, 74);
             this.InvestigationCheckButton.Name = "InvestigationCheckButton";
             this.InvestigationCheckButton.Size = new System.Drawing.Size(96, 22);
             this.InvestigationCheckButton.TabIndex = 52;
             this.InvestigationCheckButton.Text = "Investigation";
-            this.InvestigationCheckButton.UseVisualStyleBackColor = true;
+            this.InvestigationCheckButton.UseVisualStyleBackColor = false;
             this.InvestigationCheckButton.Click += new System.EventHandler(this.InvestigationCheckButton_Click);
             // 
             // ResultSkillCheckLabel
@@ -914,6 +1028,8 @@
             // 
             // HistoryResultBox
             // 
+            this.HistoryResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.HistoryResultBox.ForeColor = System.Drawing.Color.White;
             this.HistoryResultBox.Location = new System.Drawing.Point(151, 158);
             this.HistoryResultBox.Multiline = true;
             this.HistoryResultBox.Name = "HistoryResultBox";
@@ -923,6 +1039,8 @@
             // 
             // DeceptionResultBox
             // 
+            this.DeceptionResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.DeceptionResultBox.ForeColor = System.Drawing.Color.White;
             this.DeceptionResultBox.Location = new System.Drawing.Point(151, 130);
             this.DeceptionResultBox.Multiline = true;
             this.DeceptionResultBox.Name = "DeceptionResultBox";
@@ -932,6 +1050,8 @@
             // 
             // AthleticsResultBox
             // 
+            this.AthleticsResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.AthleticsResultBox.ForeColor = System.Drawing.Color.White;
             this.AthleticsResultBox.Location = new System.Drawing.Point(151, 103);
             this.AthleticsResultBox.Multiline = true;
             this.AthleticsResultBox.Name = "AthleticsResultBox";
@@ -941,6 +1061,8 @@
             // 
             // ArcanaResultBox
             // 
+            this.ArcanaResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.ArcanaResultBox.ForeColor = System.Drawing.Color.White;
             this.ArcanaResultBox.Location = new System.Drawing.Point(151, 76);
             this.ArcanaResultBox.Multiline = true;
             this.ArcanaResultBox.Name = "ArcanaResultBox";
@@ -950,6 +1072,8 @@
             // 
             // AnimalHandlingResultBox
             // 
+            this.AnimalHandlingResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.AnimalHandlingResultBox.ForeColor = System.Drawing.Color.White;
             this.AnimalHandlingResultBox.Location = new System.Drawing.Point(151, 48);
             this.AnimalHandlingResultBox.Multiline = true;
             this.AnimalHandlingResultBox.Name = "AnimalHandlingResultBox";
@@ -959,6 +1083,8 @@
             // 
             // AcrobaticsResultBox
             // 
+            this.AcrobaticsResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.AcrobaticsResultBox.ForeColor = System.Drawing.Color.White;
             this.AcrobaticsResultBox.Location = new System.Drawing.Point(151, 21);
             this.AcrobaticsResultBox.Multiline = true;
             this.AcrobaticsResultBox.Name = "AcrobaticsResultBox";
@@ -968,6 +1094,8 @@
             // 
             // HistoryModTextBox
             // 
+            this.HistoryModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.HistoryModTextBox.ForeColor = System.Drawing.Color.White;
             this.HistoryModTextBox.Location = new System.Drawing.Point(106, 158);
             this.HistoryModTextBox.Multiline = true;
             this.HistoryModTextBox.Name = "HistoryModTextBox";
@@ -978,6 +1106,8 @@
             // 
             // DeceptionModTextBox
             // 
+            this.DeceptionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.DeceptionModTextBox.ForeColor = System.Drawing.Color.White;
             this.DeceptionModTextBox.Location = new System.Drawing.Point(106, 130);
             this.DeceptionModTextBox.Multiline = true;
             this.DeceptionModTextBox.Name = "DeceptionModTextBox";
@@ -988,6 +1118,8 @@
             // 
             // AthleticsModTextBox
             // 
+            this.AthleticsModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.AthleticsModTextBox.ForeColor = System.Drawing.Color.White;
             this.AthleticsModTextBox.Location = new System.Drawing.Point(106, 103);
             this.AthleticsModTextBox.Multiline = true;
             this.AthleticsModTextBox.Name = "AthleticsModTextBox";
@@ -998,6 +1130,8 @@
             // 
             // ArcanaModTextBox
             // 
+            this.ArcanaModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ArcanaModTextBox.ForeColor = System.Drawing.Color.White;
             this.ArcanaModTextBox.Location = new System.Drawing.Point(106, 76);
             this.ArcanaModTextBox.Multiline = true;
             this.ArcanaModTextBox.Name = "ArcanaModTextBox";
@@ -1008,6 +1142,8 @@
             // 
             // AnimalHandlingModTextBox
             // 
+            this.AnimalHandlingModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.AnimalHandlingModTextBox.ForeColor = System.Drawing.Color.White;
             this.AnimalHandlingModTextBox.Location = new System.Drawing.Point(106, 48);
             this.AnimalHandlingModTextBox.Multiline = true;
             this.AnimalHandlingModTextBox.Name = "AnimalHandlingModTextBox";
@@ -1018,26 +1154,32 @@
             // 
             // HistoryCheckButton
             // 
+            this.HistoryCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.HistoryCheckButton.ForeColor = System.Drawing.Color.White;
             this.HistoryCheckButton.Location = new System.Drawing.Point(2, 156);
             this.HistoryCheckButton.Name = "HistoryCheckButton";
             this.HistoryCheckButton.Size = new System.Drawing.Size(96, 24);
             this.HistoryCheckButton.TabIndex = 37;
             this.HistoryCheckButton.Text = "History";
-            this.HistoryCheckButton.UseVisualStyleBackColor = true;
+            this.HistoryCheckButton.UseVisualStyleBackColor = false;
             this.HistoryCheckButton.Click += new System.EventHandler(this.HistoryCheckButton_Click);
             // 
             // DeceptionCheckButton
             // 
+            this.DeceptionCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.DeceptionCheckButton.ForeColor = System.Drawing.Color.White;
             this.DeceptionCheckButton.Location = new System.Drawing.Point(2, 129);
             this.DeceptionCheckButton.Name = "DeceptionCheckButton";
             this.DeceptionCheckButton.Size = new System.Drawing.Size(96, 24);
             this.DeceptionCheckButton.TabIndex = 36;
             this.DeceptionCheckButton.Text = "Deception";
-            this.DeceptionCheckButton.UseVisualStyleBackColor = true;
+            this.DeceptionCheckButton.UseVisualStyleBackColor = false;
             this.DeceptionCheckButton.Click += new System.EventHandler(this.DeceptionCheckButton_Click);
             // 
             // AcrobaticsModTextBox
             // 
+            this.AcrobaticsModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.AcrobaticsModTextBox.ForeColor = System.Drawing.Color.White;
             this.AcrobaticsModTextBox.Location = new System.Drawing.Point(106, 21);
             this.AcrobaticsModTextBox.Multiline = true;
             this.AcrobaticsModTextBox.Name = "AcrobaticsModTextBox";
@@ -1057,42 +1199,50 @@
             // 
             // AthleticsCheckButton
             // 
+            this.AthleticsCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.AthleticsCheckButton.ForeColor = System.Drawing.Color.White;
             this.AthleticsCheckButton.Location = new System.Drawing.Point(2, 102);
             this.AthleticsCheckButton.Name = "AthleticsCheckButton";
             this.AthleticsCheckButton.Size = new System.Drawing.Size(96, 23);
             this.AthleticsCheckButton.TabIndex = 34;
             this.AthleticsCheckButton.Text = "Athletics";
-            this.AthleticsCheckButton.UseVisualStyleBackColor = true;
+            this.AthleticsCheckButton.UseVisualStyleBackColor = false;
             this.AthleticsCheckButton.Click += new System.EventHandler(this.AthleticsCheckButton_Click);
             // 
             // AcrobaticCheckButton
             // 
+            this.AcrobaticCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.AcrobaticCheckButton.ForeColor = System.Drawing.Color.White;
             this.AcrobaticCheckButton.Location = new System.Drawing.Point(2, 20);
             this.AcrobaticCheckButton.Name = "AcrobaticCheckButton";
             this.AcrobaticCheckButton.Size = new System.Drawing.Size(96, 22);
             this.AcrobaticCheckButton.TabIndex = 31;
             this.AcrobaticCheckButton.Text = "Acrobatics";
-            this.AcrobaticCheckButton.UseVisualStyleBackColor = true;
+            this.AcrobaticCheckButton.UseVisualStyleBackColor = false;
             this.AcrobaticCheckButton.Click += new System.EventHandler(this.AcrobaticCheckButton_Click);
             // 
             // AnimalHandlingCheckButton
             // 
+            this.AnimalHandlingCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.AnimalHandlingCheckButton.ForeColor = System.Drawing.Color.White;
             this.AnimalHandlingCheckButton.Location = new System.Drawing.Point(2, 46);
             this.AnimalHandlingCheckButton.Name = "AnimalHandlingCheckButton";
             this.AnimalHandlingCheckButton.Size = new System.Drawing.Size(96, 23);
             this.AnimalHandlingCheckButton.TabIndex = 32;
             this.AnimalHandlingCheckButton.Text = "Animal Handling";
-            this.AnimalHandlingCheckButton.UseVisualStyleBackColor = true;
+            this.AnimalHandlingCheckButton.UseVisualStyleBackColor = false;
             this.AnimalHandlingCheckButton.Click += new System.EventHandler(this.AnimalHandlingCheckButton_Click);
             // 
             // ArcanaCheckButton
             // 
+            this.ArcanaCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.ArcanaCheckButton.ForeColor = System.Drawing.Color.White;
             this.ArcanaCheckButton.Location = new System.Drawing.Point(2, 75);
             this.ArcanaCheckButton.Name = "ArcanaCheckButton";
             this.ArcanaCheckButton.Size = new System.Drawing.Size(96, 22);
             this.ArcanaCheckButton.TabIndex = 33;
             this.ArcanaCheckButton.Text = "Arcana";
-            this.ArcanaCheckButton.UseVisualStyleBackColor = true;
+            this.ArcanaCheckButton.UseVisualStyleBackColor = false;
             this.ArcanaCheckButton.Click += new System.EventHandler(this.ArcanaCheckButton_Click);
             // 
             // CombatGroupBox
@@ -1128,6 +1278,7 @@
             this.CombatGroupBox.Controls.Add(this.label3);
             this.CombatGroupBox.Controls.Add(this.WeaponOneTextBox);
             this.CombatGroupBox.Controls.Add(this.Weapon1AttackResultBox);
+            this.CombatGroupBox.ForeColor = System.Drawing.Color.White;
             this.CombatGroupBox.Location = new System.Drawing.Point(10, 198);
             this.CombatGroupBox.Name = "CombatGroupBox";
             this.CombatGroupBox.Size = new System.Drawing.Size(634, 235);
@@ -1219,16 +1370,20 @@
             // 
             // Weapon3DamageButton
             // 
+            this.Weapon3DamageButton.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon3DamageButton.ForeColor = System.Drawing.Color.White;
             this.Weapon3DamageButton.Location = new System.Drawing.Point(436, 85);
             this.Weapon3DamageButton.Name = "Weapon3DamageButton";
             this.Weapon3DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3DamageButton.TabIndex = 105;
             this.Weapon3DamageButton.Text = "Roll";
-            this.Weapon3DamageButton.UseVisualStyleBackColor = true;
+            this.Weapon3DamageButton.UseVisualStyleBackColor = false;
             this.Weapon3DamageButton.Click += new System.EventHandler(this.Weapon3DamageButton_Click);
             // 
             // Weapon3DamageModBox
             // 
+            this.Weapon3DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon3DamageModBox.ForeColor = System.Drawing.Color.White;
             this.Weapon3DamageModBox.Location = new System.Drawing.Point(540, 86);
             this.Weapon3DamageModBox.Multiline = true;
             this.Weapon3DamageModBox.Name = "Weapon3DamageModBox";
@@ -1239,6 +1394,8 @@
             // 
             // Weapon3DamageResultBox
             // 
+            this.Weapon3DamageResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon3DamageResultBox.ForeColor = System.Drawing.Color.White;
             this.Weapon3DamageResultBox.Location = new System.Drawing.Point(585, 86);
             this.Weapon3DamageResultBox.Multiline = true;
             this.Weapon3DamageResultBox.Name = "Weapon3DamageResultBox";
@@ -1248,16 +1405,20 @@
             // 
             // Weapon2DamageButton
             // 
+            this.Weapon2DamageButton.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon2DamageButton.ForeColor = System.Drawing.Color.White;
             this.Weapon2DamageButton.Location = new System.Drawing.Point(436, 58);
             this.Weapon2DamageButton.Name = "Weapon2DamageButton";
             this.Weapon2DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2DamageButton.TabIndex = 102;
             this.Weapon2DamageButton.Text = "Roll";
-            this.Weapon2DamageButton.UseVisualStyleBackColor = true;
+            this.Weapon2DamageButton.UseVisualStyleBackColor = false;
             this.Weapon2DamageButton.Click += new System.EventHandler(this.Weapon2DamageButton_Click);
             // 
             // Weapon2DamageModBox
             // 
+            this.Weapon2DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon2DamageModBox.ForeColor = System.Drawing.Color.White;
             this.Weapon2DamageModBox.Location = new System.Drawing.Point(540, 59);
             this.Weapon2DamageModBox.Multiline = true;
             this.Weapon2DamageModBox.Name = "Weapon2DamageModBox";
@@ -1268,6 +1429,8 @@
             // 
             // Weapon2DamageResultBox
             // 
+            this.Weapon2DamageResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon2DamageResultBox.ForeColor = System.Drawing.Color.White;
             this.Weapon2DamageResultBox.Location = new System.Drawing.Point(585, 59);
             this.Weapon2DamageResultBox.Multiline = true;
             this.Weapon2DamageResultBox.Name = "Weapon2DamageResultBox";
@@ -1277,16 +1440,20 @@
             // 
             // Weapon1DamageButton
             // 
+            this.Weapon1DamageButton.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon1DamageButton.ForeColor = System.Drawing.Color.White;
             this.Weapon1DamageButton.Location = new System.Drawing.Point(436, 29);
             this.Weapon1DamageButton.Name = "Weapon1DamageButton";
             this.Weapon1DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1DamageButton.TabIndex = 99;
             this.Weapon1DamageButton.Text = "Roll";
-            this.Weapon1DamageButton.UseVisualStyleBackColor = true;
+            this.Weapon1DamageButton.UseVisualStyleBackColor = false;
             this.Weapon1DamageButton.Click += new System.EventHandler(this.Weapon1DamageButton_Click);
             // 
             // Weapon1DamageModBox
             // 
+            this.Weapon1DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon1DamageModBox.ForeColor = System.Drawing.Color.White;
             this.Weapon1DamageModBox.Location = new System.Drawing.Point(540, 30);
             this.Weapon1DamageModBox.Multiline = true;
             this.Weapon1DamageModBox.Name = "Weapon1DamageModBox";
@@ -1297,6 +1464,8 @@
             // 
             // Weapon1DamageResultBox
             // 
+            this.Weapon1DamageResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon1DamageResultBox.ForeColor = System.Drawing.Color.White;
             this.Weapon1DamageResultBox.Location = new System.Drawing.Point(585, 30);
             this.Weapon1DamageResultBox.Multiline = true;
             this.Weapon1DamageResultBox.Name = "Weapon1DamageResultBox";
@@ -1306,16 +1475,20 @@
             // 
             // Weapon3AttackButton
             // 
+            this.Weapon3AttackButton.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon3AttackButton.ForeColor = System.Drawing.Color.White;
             this.Weapon3AttackButton.Location = new System.Drawing.Point(148, 86);
             this.Weapon3AttackButton.Name = "Weapon3AttackButton";
             this.Weapon3AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3AttackButton.TabIndex = 95;
             this.Weapon3AttackButton.Text = "Roll";
-            this.Weapon3AttackButton.UseVisualStyleBackColor = true;
+            this.Weapon3AttackButton.UseVisualStyleBackColor = false;
             this.Weapon3AttackButton.Click += new System.EventHandler(this.Weapon3AttackButton_Click);
             // 
             // Weapon3AttackModBox
             // 
+            this.Weapon3AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon3AttackModBox.ForeColor = System.Drawing.Color.White;
             this.Weapon3AttackModBox.Location = new System.Drawing.Point(252, 87);
             this.Weapon3AttackModBox.Multiline = true;
             this.Weapon3AttackModBox.Name = "Weapon3AttackModBox";
@@ -1326,6 +1499,8 @@
             // 
             // WeaponThreeTextBox
             // 
+            this.WeaponThreeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.WeaponThreeTextBox.ForeColor = System.Drawing.Color.White;
             this.WeaponThreeTextBox.Location = new System.Drawing.Point(6, 88);
             this.WeaponThreeTextBox.Name = "WeaponThreeTextBox";
             this.WeaponThreeTextBox.Size = new System.Drawing.Size(135, 20);
@@ -1333,6 +1508,8 @@
             // 
             // Weapon3AttackResultBox
             // 
+            this.Weapon3AttackResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon3AttackResultBox.ForeColor = System.Drawing.Color.White;
             this.Weapon3AttackResultBox.Location = new System.Drawing.Point(297, 87);
             this.Weapon3AttackResultBox.Multiline = true;
             this.Weapon3AttackResultBox.Name = "Weapon3AttackResultBox";
@@ -1342,16 +1519,20 @@
             // 
             // Weapon2AttackButton
             // 
+            this.Weapon2AttackButton.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon2AttackButton.ForeColor = System.Drawing.Color.White;
             this.Weapon2AttackButton.Location = new System.Drawing.Point(148, 58);
             this.Weapon2AttackButton.Name = "Weapon2AttackButton";
             this.Weapon2AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2AttackButton.TabIndex = 91;
             this.Weapon2AttackButton.Text = "Roll";
-            this.Weapon2AttackButton.UseVisualStyleBackColor = true;
+            this.Weapon2AttackButton.UseVisualStyleBackColor = false;
             this.Weapon2AttackButton.Click += new System.EventHandler(this.Weapon2AttackButton_Click);
             // 
             // Weapon2AttackModBox
             // 
+            this.Weapon2AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon2AttackModBox.ForeColor = System.Drawing.Color.White;
             this.Weapon2AttackModBox.Location = new System.Drawing.Point(252, 59);
             this.Weapon2AttackModBox.Multiline = true;
             this.Weapon2AttackModBox.Name = "Weapon2AttackModBox";
@@ -1362,6 +1543,8 @@
             // 
             // WeaponTwoTextBox
             // 
+            this.WeaponTwoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.WeaponTwoTextBox.ForeColor = System.Drawing.Color.White;
             this.WeaponTwoTextBox.Location = new System.Drawing.Point(6, 60);
             this.WeaponTwoTextBox.Name = "WeaponTwoTextBox";
             this.WeaponTwoTextBox.Size = new System.Drawing.Size(135, 20);
@@ -1369,6 +1552,8 @@
             // 
             // Weapon2AttackResultBox
             // 
+            this.Weapon2AttackResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon2AttackResultBox.ForeColor = System.Drawing.Color.White;
             this.Weapon2AttackResultBox.Location = new System.Drawing.Point(297, 59);
             this.Weapon2AttackResultBox.Multiline = true;
             this.Weapon2AttackResultBox.Name = "Weapon2AttackResultBox";
@@ -1378,12 +1563,14 @@
             // 
             // Weapon1AttackButton
             // 
+            this.Weapon1AttackButton.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon1AttackButton.ForeColor = System.Drawing.Color.White;
             this.Weapon1AttackButton.Location = new System.Drawing.Point(148, 30);
             this.Weapon1AttackButton.Name = "Weapon1AttackButton";
             this.Weapon1AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1AttackButton.TabIndex = 86;
             this.Weapon1AttackButton.Text = "Roll";
-            this.Weapon1AttackButton.UseVisualStyleBackColor = true;
+            this.Weapon1AttackButton.UseVisualStyleBackColor = false;
             this.Weapon1AttackButton.Click += new System.EventHandler(this.Weapon1AttackButton_Click);
             // 
             // AttackLabel
@@ -1406,6 +1593,8 @@
             // 
             // Weapon1AttackModBox
             // 
+            this.Weapon1AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon1AttackModBox.ForeColor = System.Drawing.Color.White;
             this.Weapon1AttackModBox.Location = new System.Drawing.Point(252, 31);
             this.Weapon1AttackModBox.Multiline = true;
             this.Weapon1AttackModBox.Name = "Weapon1AttackModBox";
@@ -1425,6 +1614,8 @@
             // 
             // WeaponOneTextBox
             // 
+            this.WeaponOneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.WeaponOneTextBox.ForeColor = System.Drawing.Color.White;
             this.WeaponOneTextBox.Location = new System.Drawing.Point(6, 32);
             this.WeaponOneTextBox.Name = "WeaponOneTextBox";
             this.WeaponOneTextBox.Size = new System.Drawing.Size(135, 20);
@@ -1432,6 +1623,8 @@
             // 
             // Weapon1AttackResultBox
             // 
+            this.Weapon1AttackResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.Weapon1AttackResultBox.ForeColor = System.Drawing.Color.White;
             this.Weapon1AttackResultBox.Location = new System.Drawing.Point(297, 31);
             this.Weapon1AttackResultBox.Multiline = true;
             this.Weapon1AttackResultBox.Name = "Weapon1AttackResultBox";
@@ -1450,6 +1643,7 @@
             this.GeneralDiceBox.Controls.Add(this.D8Button);
             this.GeneralDiceBox.Controls.Add(this.D12Button);
             this.GeneralDiceBox.Controls.Add(this.D10Button);
+            this.GeneralDiceBox.ForeColor = System.Drawing.Color.White;
             this.GeneralDiceBox.Location = new System.Drawing.Point(649, 198);
             this.GeneralDiceBox.Name = "GeneralDiceBox";
             this.GeneralDiceBox.Size = new System.Drawing.Size(203, 235);
@@ -1461,7 +1655,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(861, 445);
             this.Controls.Add(this.GeneralDiceBox);
             this.Controls.Add(this.CombatGroupBox);

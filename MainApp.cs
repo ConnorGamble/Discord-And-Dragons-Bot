@@ -21,10 +21,10 @@ namespace MyDick
         // A temp string to store the old name of the active button.
         public string inactiveButtonName = "";
 
-        public Connection DiscordConnection;
+        //public Connection DiscordConnection;
 
         // Http client to create content
-        public HttpClient _Client;
+        public HttpClient _HttpClient;
 
         #endregion
 
@@ -35,8 +35,8 @@ namespace MyDick
         {
             InitializeComponent();
             dieButtons = GetDiceButtons();
-            DiscordConnection = new Connection();
-            _Client = new HttpClient();
+            //DiscordConnection = new Connection();
+            _HttpClient = new HttpClient();
         }
 
         #region Events
@@ -148,207 +148,207 @@ namespace MyDick
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(StrModTextBox, StrResult, result, modifier);
+            ApplyModifier(StrModTextBox, StrResult, result, modifier, RollType.SavingThrow);
         }
 
         private void DexSavButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(DexModTextBox, DexResult, result, modifier);
+            ApplyModifier(DexModTextBox, DexResult, result, modifier, RollType.SavingThrow);
         }
 
         private void ConSavButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(ConModTextBox, ConResult, result, modifier);
+            ApplyModifier(ConModTextBox, ConResult, result, modifier, RollType.SavingThrow);
         }
 
         private void IntSavButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(IntModTextBox, IntResult, result, modifier);
+            ApplyModifier(IntModTextBox, IntResult, result, modifier, RollType.SavingThrow);
         }
 
         private void WisSavButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(WisModTextBox, WisResult, result, modifier);
+            ApplyModifier(WisModTextBox, WisResult, result, modifier, RollType.SavingThrow);
         }
 
         private void CharSavButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(CharModTextBox, CharResult, result, modifier);
+            ApplyModifier(CharModTextBox, CharResult, result, modifier, RollType.SavingThrow);
         }
 
         private void AcrobaticCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(AcrobaticsModTextBox, AcrobaticsResultBox, result, modifier);
+            ApplyModifier(AcrobaticsModTextBox, AcrobaticsResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void AnimalHandlingCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(AnimalHandlingModTextBox, AnimalHandlingResultBox, result, modifier);
+            ApplyModifier(AnimalHandlingModTextBox, AnimalHandlingResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void ArcanaCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(ArcanaModTextBox, ArcanaResultBox, result, modifier);
+            ApplyModifier(ArcanaModTextBox, ArcanaResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void AthleticsCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(AthleticsModTextBox, AthleticsResultBox, result, modifier);
+            ApplyModifier(AthleticsModTextBox, AthleticsResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void DeceptionCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(DeceptionModTextBox, DeceptionResultBox, result, modifier);
+            ApplyModifier(DeceptionModTextBox, DeceptionResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void HistoryCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(HistoryModTextBox, HistoryResultBox, result, modifier);
+            ApplyModifier(HistoryModTextBox, HistoryResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void InsightCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(InsightModTextBox, InsightResultBox, result, modifier);
+            ApplyModifier(InsightModTextBox, InsightResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void IntimidationCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(IntimidationModTextBox, IntimidationResultBox, result, modifier);
+            ApplyModifier(IntimidationModTextBox, IntimidationResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void InvestigationCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(InvestigationModTextBox, InvestigationResultBox, result, modifier);
+            ApplyModifier(InvestigationModTextBox, InvestigationResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void MedicineCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(MedicineModTextBox, MedicineResultBox, result, modifier);
+            ApplyModifier(MedicineModTextBox, MedicineResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void NatureCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(NatureModTextBox, NatureResultBox, result, modifier);
+            ApplyModifier(NatureModTextBox, NatureResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void PerceptionCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(PerceptionModTextBox, PerceptionResultBox, result, modifier);
+            ApplyModifier(PerceptionModTextBox, PerceptionResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void PerformanceCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(PerformanceModTextBox, PerformanceResultBox, result, modifier);
+            ApplyModifier(PerformanceModTextBox, PerformanceResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void PersuasionCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(PersuasionModTextBox, PersuasionResultBox, result, modifier);
+            ApplyModifier(PersuasionModTextBox, PersuasionResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void ReligionCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(ReligionModTextBox, ReligionResultBox, result, modifier);
+            ApplyModifier(ReligionModTextBox, ReligionResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void SleightOfHandCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(SleightOfHandModTextBox, SleightOfHandResultBox, result, modifier);
+            ApplyModifier(SleightOfHandModTextBox, SleightOfHandResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void StealthCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(StealthModTextBox, StealthResultBox, result, modifier);
+            ApplyModifier(StealthModTextBox, StealthResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void SurvivalCheckButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(SurvivalModTextBox, SurvivalResultBox, result, modifier);
+            ApplyModifier(SurvivalModTextBox, SurvivalResultBox, result, modifier, RollType.SkillCheck);
         }
 
         private void Weapon1AttackButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(Weapon1AttackModBox, Weapon1AttackResultBox, result, modifier);
+            ApplyModifier(Weapon1AttackModBox, Weapon1AttackResultBox, result, modifier, RollType.Attack);
         }
 
         private void Weapon2AttackButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(Weapon2AttackModBox, Weapon2AttackResultBox, result, modifier);
+            ApplyModifier(Weapon2AttackModBox, Weapon2AttackResultBox, result, modifier, RollType.Attack);
         }
 
         private void Weapon3AttackButton_Click(object sender, EventArgs e)
         {
             int result = DnD.Helpers.RollDice(1, 21);
             int modifier = 0;
-            ApplyModifier(Weapon3AttackModBox, Weapon3AttackResultBox, result, modifier);
+            ApplyModifier(Weapon3AttackModBox, Weapon3AttackResultBox, result, modifier, RollType.Attack);
         }
 
         private void Weapon1DamageButton_Click(object sender, EventArgs e)
         {
             int damageRoll = GetSelectedDice(Weapon1AtkDieBox);
-            ApplyModifier(Weapon1DamageModBox, Weapon1DamageResultBox, damageRoll, 0, false);
+            ApplyModifier(Weapon1DamageModBox, Weapon1DamageResultBox, damageRoll, 0, RollType.Damage, false);
         }
 
         private void Weapon2DamageButton_Click(object sender, EventArgs e)
         {
             int damageRoll = GetSelectedDice(Weapon2AtkDieBox);
-            ApplyModifier(Weapon2DamageModBox, Weapon2DamageResultBox, damageRoll, 0, false);
+            ApplyModifier(Weapon2DamageModBox, Weapon2DamageResultBox, damageRoll, 0, RollType.Damage, false);
         }
 
         private void Weapon3DamageButton_Click(object sender, EventArgs e)
         {
             int damageRoll = GetSelectedDice(Weapon3AtkDieBox);
-            ApplyModifier(Weapon3DamageModBox, Weapon3DamageResultBox, damageRoll, 0, false);
+            ApplyModifier(Weapon3DamageModBox, Weapon3DamageResultBox, damageRoll, 0, RollType.Damage, false);
         }
 
         #endregion
@@ -365,46 +365,57 @@ namespace MyDick
             // Check where the button is in the list
             dieButtons = GetDiceButtons();
 
+            var content = "";
+
             switch (currentActiveDieButton)
             {
                 //D4
                 case 0:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 5).ToString();
+                    content = $"Rolled a D4 and got a result of {ResultBox.Text}";
                     break;
                 //D6
                 case 1:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 7).ToString();
+                    content = $"Rolled a D6 and got a result of {ResultBox.Text}";
                     break;
                 //D8
                 case 2:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 9).ToString();
+                    content = $"Rolled a D8 and got a result of {ResultBox.Text}";
                     break;
                 //D10
                 case 3:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 11).ToString();
+                    content = $"Rolled a D10 and got a result of {ResultBox.Text}";
                     break;
                 //D12
                 case 4:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 13).ToString();
+                    content = $"Rolled a D12 and got a result of {ResultBox.Text}";
                     break;
                 case 5:
                     //D20
                     ResultBox.Text = DnD.Helpers.RollDice(1, 21).ToString();
+                    content = $"Rolled a D20 and got a result of {ResultBox.Text}";
                     break;
                 //D100
                 case 6:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 100).ToString();
+                    content = $"Rolled a D100 and got a result of {ResultBox.Text}";
                     break;
                 //No dice 
                 case -1:
                     MessageBox.Show("You need to select a dice to roll you fuckhead.", "Twat alert!");
+                    content = "Some dickhead tried to roll without selecting a dice. Own up and be bullied you sket.";
                     break;
                 //In case of breakages
                 default:
                     MessageBox.Show("Something fucked up. I have no idea what. Have you tried turning it on and off again?");
-                    break;
-
+                    return;
             }
+
+            Helpers.SendToDiscord(_HttpClient, content);
         }
 
         /// <summary>
@@ -497,7 +508,7 @@ namespace MyDick
         /// <param name="activeButton"></param> The currently active button
         private void ChangeDieColourFromGold(Button activeButton)
         {
-            activeButton.BackColor = System.Drawing.Color.Gainsboro;
+            activeButton.BackColor = System.Drawing.Color.DimGray;
         }
 
         /// <summary>
@@ -508,16 +519,16 @@ namespace MyDick
         /// <param name="diceRoll"></param> The result of the dice roll 
         /// <param name="modifier"></param> A temp modifier.
         /// <param name="needsDialogs"></param> Bool to indicate if the result of this roll can be a natural failure/success.
-        private async void ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, int modifier, bool needsDialogs = true)
+        private async void ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, int modifier, RollType rollType, bool needsDialogs = true)
         {
             // Change the colour back to white
-            resultBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            resultBox.BackColor = System.Drawing.Color.DimGray;
 
             // If we can use the modifier then continue on. 
             if (int.TryParse(modTextBox.Text, out modifier))
             {
-                int res = diceRoll + modifier;
-                resultBox.Text = (res).ToString();
+                int result = diceRoll + modifier;
+                resultBox.Text = (result).ToString();
 
                 // If we need dialogs for this roll... 
                 if (needsDialogs)
@@ -539,17 +550,8 @@ namespace MyDick
                     }
                 }
 
-                var payload = new DiscordMessageObject
-                {
-                    Content = $"Rolled a {diceRoll} with modifier of {modifier} for a total of {res}"
-                };
-
-                var webhookUrl = "https://discordapp.com/api/webhooks/614870234654048289/HUUAliWpSPnse8LU8oIpQflHhYDb9GIA1VC08z2aiXp64tjLl52J9MibwzfG71D1iiZ9";
-
-                var stringPayload = JsonConvert.SerializeObject(payload);
-                var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-                await Task.Run(async () => await _Client.PostAsync(webhookUrl, httpContent));
-
+                var discordContent = Helpers.DetermineContentToSendToDiscord(diceRoll, modifier, result, rollType);
+                Helpers.SendToDiscord(_HttpClient, discordContent);
             }
             else
             {
