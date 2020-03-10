@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MyDick.Discord
 {
@@ -33,5 +37,63 @@ namespace MyDick.Discord
             else
                 return false;
         }
+
+        public static string DetermineContentToSendToDiscord(int diceRoll, int modifier, int result, RollType rollType)
+        {
+            var content = $"Rolled a {diceRoll} with modifier of {modifier} for a total of {result}";
+
+            switch (rollType)
+            {
+                case RollType.Unknown:
+                    break;
+                case RollType.SavingThrow:
+                    content = $"Saving Throw: Rolled a {diceRoll} with a modifier of {modifier} for a total of {result}";
+                    break;
+                case RollType.SkillCheck:
+                    content = $"Skill check: Rolled a {diceRoll} with a modifier of {modifier} for a total of {result}";
+                    break;
+                case RollType.Attack:
+                    content = $"Attack roll: Rolled a {diceRoll} with a modifier of {modifier} for a total of {result}";
+                    break;
+                case RollType.Damage:
+                    content = $"Damage roll: Rolled a {diceRoll} with a modifier of {modifier} for a total of {result}";
+                    break;
+                default:
+                    break;
+            }
+
+            return content;
+        }
+
+        public async static void SendToDiscord(HttpClient client, string content)
+        {
+            var payload = new DiscordMessageObject
+            {
+                Content = content
+            };
+
+            var webhookUrl = "https://discordapp.com/api/webhooks/614870234654048289/HUUAliWpSPnse8LU8oIpQflHhYDb9GIA1VC08z2aiXp64tjLl52J9MibwzfG71D1iiZ9";
+
+            var stringPayload = JsonConvert.SerializeObject(payload);
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+
+            try
+            {
+                await Task.Run(async () => await client.PostAsync(webhookUrl, httpContent));
+            }
+            catch
+            {
+                // Swallow errors as you're likely offline
+            }
+        }
+    }
+
+    public enum RollType
+    {
+        Unknown,
+        SavingThrow,
+        SkillCheck,
+        Attack,
+        Damage
     }
 }
