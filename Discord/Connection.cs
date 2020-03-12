@@ -9,7 +9,7 @@ namespace MyDick.Discord
 {
     public class Connection
     {
-        private DiscordSocketClient _Client;
+        public DiscordSocketClient _Client;
         public Commands Commands;
 
         public Connection()

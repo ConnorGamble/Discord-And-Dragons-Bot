@@ -149,11 +149,18 @@
             this.WeaponOneTextBox = new System.Windows.Forms.TextBox();
             this.Weapon1AttackResultBox = new System.Windows.Forms.TextBox();
             this.GeneralDiceBox = new System.Windows.Forms.GroupBox();
+            this.MainForm = new System.Windows.Forms.TabControl();
+            this.RollingTab = new System.Windows.Forms.TabPage();
+            this.CharacterSheetTab = new System.Windows.Forms.TabPage();
+            this.SettingsTab = new System.Windows.Forms.TabPage();
+            this.PrivateRollCheckBox = new System.Windows.Forms.CheckBox();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GeneralDiceBox.SuspendLayout();
+            this.MainForm.SuspendLayout();
+            this.RollingTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollButton
@@ -515,7 +522,7 @@
             this.SavingThrowsGroup.Controls.Add(this.ConModTextBox);
             this.SavingThrowsGroup.Controls.Add(this.ConResult);
             this.SavingThrowsGroup.ForeColor = System.Drawing.Color.White;
-            this.SavingThrowsGroup.Location = new System.Drawing.Point(4, 2);
+            this.SavingThrowsGroup.Location = new System.Drawing.Point(6, 6);
             this.SavingThrowsGroup.Name = "SavingThrowsGroup";
             this.SavingThrowsGroup.Size = new System.Drawing.Size(250, 189);
             this.SavingThrowsGroup.TabIndex = 31;
@@ -590,7 +597,7 @@
             this.AttackGroup.Controls.Add(this.AnimalHandlingCheckButton);
             this.AttackGroup.Controls.Add(this.ArcanaCheckButton);
             this.AttackGroup.ForeColor = System.Drawing.Color.White;
-            this.AttackGroup.Location = new System.Drawing.Point(260, 2);
+            this.AttackGroup.Location = new System.Drawing.Point(262, 6);
             this.AttackGroup.Name = "AttackGroup";
             this.AttackGroup.Size = new System.Drawing.Size(592, 189);
             this.AttackGroup.TabIndex = 32;
@@ -1247,6 +1254,7 @@
             // 
             // CombatGroupBox
             // 
+            this.CombatGroupBox.Controls.Add(this.PrivateRollCheckBox);
             this.CombatGroupBox.Controls.Add(this.pictureBox1);
             this.CombatGroupBox.Controls.Add(this.label5);
             this.CombatGroupBox.Controls.Add(this.label6);
@@ -1279,9 +1287,9 @@
             this.CombatGroupBox.Controls.Add(this.WeaponOneTextBox);
             this.CombatGroupBox.Controls.Add(this.Weapon1AttackResultBox);
             this.CombatGroupBox.ForeColor = System.Drawing.Color.White;
-            this.CombatGroupBox.Location = new System.Drawing.Point(10, 198);
+            this.CombatGroupBox.Location = new System.Drawing.Point(6, 202);
             this.CombatGroupBox.Name = "CombatGroupBox";
-            this.CombatGroupBox.Size = new System.Drawing.Size(634, 235);
+            this.CombatGroupBox.Size = new System.Drawing.Size(640, 235);
             this.CombatGroupBox.TabIndex = 33;
             this.CombatGroupBox.TabStop = false;
             this.CombatGroupBox.Text = "Combat";
@@ -1291,7 +1299,7 @@
             this.pictureBox1.Image = global::MyDick.Properties.Resources.dnd_banner;
             this.pictureBox1.Location = new System.Drawing.Point(13, 124);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(615, 89);
+            this.pictureBox1.Size = new System.Drawing.Size(535, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 114;
             this.pictureBox1.TabStop = false;
@@ -1644,23 +1652,75 @@
             this.GeneralDiceBox.Controls.Add(this.D12Button);
             this.GeneralDiceBox.Controls.Add(this.D10Button);
             this.GeneralDiceBox.ForeColor = System.Drawing.Color.White;
-            this.GeneralDiceBox.Location = new System.Drawing.Point(649, 198);
+            this.GeneralDiceBox.Location = new System.Drawing.Point(651, 202);
             this.GeneralDiceBox.Name = "GeneralDiceBox";
             this.GeneralDiceBox.Size = new System.Drawing.Size(203, 235);
             this.GeneralDiceBox.TabIndex = 34;
             this.GeneralDiceBox.TabStop = false;
             this.GeneralDiceBox.Text = "Dice";
             // 
+            // MainForm
+            // 
+            this.MainForm.Controls.Add(this.RollingTab);
+            this.MainForm.Controls.Add(this.CharacterSheetTab);
+            this.MainForm.Controls.Add(this.SettingsTab);
+            this.MainForm.Location = new System.Drawing.Point(0, -1);
+            this.MainForm.Name = "MainForm";
+            this.MainForm.SelectedIndex = 0;
+            this.MainForm.Size = new System.Drawing.Size(865, 466);
+            this.MainForm.TabIndex = 35;
+            // 
+            // RollingTab
+            // 
+            this.RollingTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.RollingTab.Controls.Add(this.SavingThrowsGroup);
+            this.RollingTab.Controls.Add(this.GeneralDiceBox);
+            this.RollingTab.Controls.Add(this.AttackGroup);
+            this.RollingTab.Controls.Add(this.CombatGroupBox);
+            this.RollingTab.Location = new System.Drawing.Point(4, 22);
+            this.RollingTab.Name = "RollingTab";
+            this.RollingTab.Padding = new System.Windows.Forms.Padding(3);
+            this.RollingTab.Size = new System.Drawing.Size(857, 440);
+            this.RollingTab.TabIndex = 0;
+            this.RollingTab.Text = "Rolls";
+            // 
+            // CharacterSheetTab
+            // 
+            this.CharacterSheetTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CharacterSheetTab.Location = new System.Drawing.Point(4, 22);
+            this.CharacterSheetTab.Name = "CharacterSheetTab";
+            this.CharacterSheetTab.Padding = new System.Windows.Forms.Padding(3);
+            this.CharacterSheetTab.Size = new System.Drawing.Size(857, 440);
+            this.CharacterSheetTab.TabIndex = 1;
+            this.CharacterSheetTab.Text = "Character sheet";
+            // 
+            // SettingsTab
+            // 
+            this.SettingsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SettingsTab.Location = new System.Drawing.Point(4, 22);
+            this.SettingsTab.Name = "SettingsTab";
+            this.SettingsTab.Size = new System.Drawing.Size(857, 440);
+            this.SettingsTab.TabIndex = 2;
+            this.SettingsTab.Text = "Settings";
+            // 
+            // PrivateRollCheckBox
+            // 
+            this.PrivateRollCheckBox.AutoSize = true;
+            this.PrivateRollCheckBox.Location = new System.Drawing.Point(553, 160);
+            this.PrivateRollCheckBox.Name = "PrivateRollCheckBox";
+            this.PrivateRollCheckBox.Size = new System.Drawing.Size(86, 17);
+            this.PrivateRollCheckBox.TabIndex = 115;
+            this.PrivateRollCheckBox.Text = "Private Roll?";
+            this.PrivateRollCheckBox.UseVisualStyleBackColor = true;
+            this.PrivateRollCheckBox.CheckedChanged += new System.EventHandler(this.PrivateRoll_CheckedChanged);
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(861, 445);
-            this.Controls.Add(this.GeneralDiceBox);
-            this.Controls.Add(this.CombatGroupBox);
-            this.Controls.Add(this.AttackGroup);
-            this.Controls.Add(this.SavingThrowsGroup);
+            this.ClientSize = new System.Drawing.Size(860, 459);
+            this.Controls.Add(this.MainForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1677,6 +1737,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GeneralDiceBox.ResumeLayout(false);
             this.GeneralDiceBox.PerformLayout();
+            this.MainForm.ResumeLayout(false);
+            this.RollingTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1803,6 +1865,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabControl MainForm;
+        private System.Windows.Forms.TabPage RollingTab;
+        private System.Windows.Forms.TabPage CharacterSheetTab;
+        private System.Windows.Forms.TabPage SettingsTab;
+        private System.Windows.Forms.CheckBox PrivateRollCheckBox;
     }
 }
 
