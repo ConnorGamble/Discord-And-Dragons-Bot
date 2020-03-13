@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Net.Http;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using Newtonsoft.Json;
 
 namespace MyDick.Discord
 {
@@ -11,10 +14,12 @@ namespace MyDick.Discord
     {
         public DiscordSocketClient _Client;
         public Commands Commands;
+        public HttpClient httpClient;
 
         public Connection()
         {
             MainAsync();
+            httpClient = new HttpClient();
         }
 
         private async Task MainAsync()
@@ -76,6 +81,46 @@ namespace MyDick.Discord
                 var Context = new SocketCommandContext(_Client, message);
                 Commands.HandleCommand(Context, message, isEmote);
             }
+        }
+
+        public void SendToCorrectTextChat(DiscordMessageRequest request)
+        {
+            if (request.IsPrivateRoll)
+                SendMessageToDM(request.Content);
+            else
+                SendToDiscord(request.Content);
+        }
+
+        public async void SendToDiscord(string content)
+        {
+            var payload = new DiscordMessageObject
+            {
+                Content = content
+            };
+
+            var webhookUrl = "https://discordapp.com/api/webhooks/614870234654048289/HUUAliWpSPnse8LU8oIpQflHhYDb9GIA1VC08z2aiXp64tjLl52J9MibwzfG71D1iiZ9";
+
+            var stringPayload = JsonConvert.SerializeObject(payload);
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+
+            try
+            {
+                await Task.Run(async () => await httpClient.PostAsync(webhookUrl, httpContent));
+            }
+            catch
+            {
+                // Swallow errors as you're likely offline
+            }
+        }
+
+        public async void SendMessageToDM(string discordContent)
+        {
+            await Task.Run(() =>
+            {
+                var user = _Client.GetUser(ulong.Parse("143372520731443200"));
+                var channels = user.GetOrCreateDMChannelAsync().Result;
+                _ = channels.SendMessageAsync(discordContent);
+            });
         }
     }
 }

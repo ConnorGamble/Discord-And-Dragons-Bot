@@ -1,9 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Discord.WebSocket;
+﻿using System;
 
 namespace MyDick.Discord
 {
@@ -81,46 +76,6 @@ namespace MyDick.Discord
                 default:
                     return skillType.ToString();
             }
-        }
-
-        public static void SendToCorrectTextChat(DiscordMessageRequest request)
-        {
-            if (request.IsPrivateRoll)
-                SendMessageToDM(request.DiscordClient, request.Content);
-            else
-                SendToDiscord(request.HttpClient, request.Content);
-        }
-
-        public async static void SendToDiscord(HttpClient client, string content)
-        {
-            var payload = new DiscordMessageObject
-            {
-                Content = content
-            };
-
-            var webhookUrl = "https://discordapp.com/api/webhooks/614870234654048289/HUUAliWpSPnse8LU8oIpQflHhYDb9GIA1VC08z2aiXp64tjLl52J9MibwzfG71D1iiZ9";
-
-            var stringPayload = JsonConvert.SerializeObject(payload);
-            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-
-            try
-            {
-                await Task.Run(async () => await client.PostAsync(webhookUrl, httpContent));
-            }
-            catch
-            {
-                // Swallow errors as you're likely offline
-            }
-        }
-
-        public async static void SendMessageToDM(DiscordSocketClient _Client, string discordContent)
-        {
-            await Task.Run(async () =>
-            {
-                var user = _Client.GetUser(ulong.Parse("143372520731443200"));
-                var channels = user.GetOrCreateDMChannelAsync().Result;
-                channels.SendMessageAsync(discordContent);
-            });
         }
     }
 

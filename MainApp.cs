@@ -153,11 +153,9 @@ namespace MyDick
             discordResult.SkillType = SkillType.Strength;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
@@ -170,11 +168,9 @@ namespace MyDick
             discordResult.SkillType = SkillType.Dexterity;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
@@ -187,11 +183,9 @@ namespace MyDick
             discordResult.SkillType = SkillType.Constitution;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
@@ -204,11 +198,9 @@ namespace MyDick
             discordResult.SkillType = SkillType.Intelligence;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
@@ -221,11 +213,9 @@ namespace MyDick
             discordResult.SkillType = SkillType.Wisdom;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
@@ -238,11 +228,9 @@ namespace MyDick
             discordResult.SkillType = SkillType.Charisma;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
@@ -255,7 +243,11 @@ namespace MyDick
             discordResult.SkillType = SkillType.Acrobatics;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void AnimalHandlingCheckButton_Click(object sender, EventArgs e)
@@ -265,7 +257,12 @@ namespace MyDick
             var discordResult = ApplyModifier(AnimalHandlingModTextBox, AnimalHandlingResultBox, result);
             discordResult.SkillType = SkillType.AnimalHandling;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void ArcanaCheckButton_Click(object sender, EventArgs e)
@@ -275,7 +272,12 @@ namespace MyDick
             var discordResult = ApplyModifier(ArcanaModTextBox, ArcanaResultBox, result);
             discordResult.SkillType = SkillType.Arcana;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void AthleticsCheckButton_Click(object sender, EventArgs e)
@@ -285,7 +287,12 @@ namespace MyDick
             var discordResult = ApplyModifier(AthleticsModTextBox, AthleticsResultBox, result);
             discordResult.SkillType = SkillType.Athletics;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
 
         }
 
@@ -296,7 +303,12 @@ namespace MyDick
             var discordResult = ApplyModifier(DeceptionModTextBox, DeceptionResultBox, result);
             discordResult.SkillType = SkillType.Deception;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void HistoryCheckButton_Click(object sender, EventArgs e)
@@ -306,7 +318,12 @@ namespace MyDick
             var discordResult = ApplyModifier(HistoryModTextBox, HistoryResultBox, result);
             discordResult.SkillType = SkillType.History;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void InsightCheckButton_Click(object sender, EventArgs e)
@@ -316,7 +333,12 @@ namespace MyDick
             var discordResult = ApplyModifier(InsightModTextBox, InsightResultBox, result);
             discordResult.SkillType = SkillType.Insight;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void IntimidationCheckButton_Click(object sender, EventArgs e)
@@ -326,7 +348,12 @@ namespace MyDick
             var discordResult = ApplyModifier(IntimidationModTextBox, IntimidationResultBox, result);
             discordResult.SkillType = SkillType.Intimidation;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void InvestigationCheckButton_Click(object sender, EventArgs e)
@@ -336,7 +363,12 @@ namespace MyDick
             var discordResult = ApplyModifier(InvestigationModTextBox, InvestigationResultBox, result);
             discordResult.SkillType = SkillType.Investigation;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void MedicineCheckButton_Click(object sender, EventArgs e)
@@ -346,7 +378,12 @@ namespace MyDick
             var discordResult = ApplyModifier(MedicineModTextBox, MedicineResultBox, result);
             discordResult.SkillType = SkillType.Medicine;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void NatureCheckButton_Click(object sender, EventArgs e)
@@ -356,7 +393,12 @@ namespace MyDick
             var discordResult = ApplyModifier(NatureModTextBox, NatureResultBox, result);
             discordResult.SkillType = SkillType.Nature;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void PerceptionCheckButton_Click(object sender, EventArgs e)
@@ -366,7 +408,12 @@ namespace MyDick
             var discordResult = ApplyModifier(PerceptionModTextBox, PerceptionResultBox, result);
             discordResult.SkillType = SkillType.Perception;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
 
         }
 
@@ -377,7 +424,12 @@ namespace MyDick
             var discordResult = ApplyModifier(PerformanceModTextBox, PerformanceResultBox, result);
             discordResult.SkillType = SkillType.Performance;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void PersuasionCheckButton_Click(object sender, EventArgs e)
@@ -387,7 +439,12 @@ namespace MyDick
             var discordResult = ApplyModifier(PersuasionModTextBox, PersuasionResultBox, result);
             discordResult.SkillType = SkillType.Persuasion;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
 
         }
 
@@ -398,7 +455,12 @@ namespace MyDick
             var discordResult = ApplyModifier(ReligionModTextBox, ReligionResultBox, result);
             discordResult.SkillType = SkillType.Religion;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void SleightOfHandCheckButton_Click(object sender, EventArgs e)
@@ -408,7 +470,12 @@ namespace MyDick
             var discordResult = ApplyModifier(SleightOfHandModTextBox, SleightOfHandResultBox, result);
             discordResult.SkillType = SkillType.SleightOfHand;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void StealthCheckButton_Click(object sender, EventArgs e)
@@ -418,7 +485,12 @@ namespace MyDick
             var discordResult = ApplyModifier(StealthModTextBox, StealthResultBox, result);
             discordResult.SkillType = SkillType.Stealth;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void SurvivalCheckButton_Click(object sender, EventArgs e)
@@ -428,7 +500,12 @@ namespace MyDick
             var discordResult = ApplyModifier(SurvivalModTextBox, SurvivalResultBox, result);
             discordResult.SkillType = SkillType.Survival;
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void Weapon1AttackButton_Click(object sender, EventArgs e)
@@ -437,7 +514,12 @@ namespace MyDick
 
             var discordResult = ApplyModifier(Weapon1AttackModBox, Weapon1AttackResultBox, result);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Attack);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void Weapon2AttackButton_Click(object sender, EventArgs e)
@@ -446,7 +528,12 @@ namespace MyDick
 
             var discordResult = ApplyModifier(Weapon2AttackModBox, Weapon2AttackResultBox, result);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Attack);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void Weapon3AttackButton_Click(object sender, EventArgs e)
@@ -454,7 +541,12 @@ namespace MyDick
             int result = DnD.Helpers.RollDice(1, 21);
             var discordResult = ApplyModifier(Weapon3AttackModBox, Weapon3AttackResultBox, result);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Attack);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
 
         }
 
@@ -464,7 +556,12 @@ namespace MyDick
 
             var discordResult = ApplyModifier(Weapon1DamageModBox, Weapon1DamageResultBox, damageRoll);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void Weapon2DamageButton_Click(object sender, EventArgs e)
@@ -473,7 +570,12 @@ namespace MyDick
 
             var discordResult = ApplyModifier(Weapon2DamageModBox, Weapon2DamageModBox, damageRoll);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void Weapon3DamageButton_Click(object sender, EventArgs e)
@@ -482,7 +584,12 @@ namespace MyDick
 
             var discordResult = ApplyModifier(Weapon3DamageModBox, Weapon3DamageResultBox, damageRoll);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest { Content = discordContent, DiscordClient = DiscordConnection._Client, HttpClient = _HttpClient, IsPrivateRoll = IsPrivateRoll });
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
         }
 
         private void PrivateRoll_CheckedChanged(object sender, EventArgs e)
@@ -557,11 +664,9 @@ namespace MyDick
                     return;
             }
 
-            Helpers.SendToCorrectTextChat(new DiscordMessageRequest
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = content,
-                DiscordClient = DiscordConnection._Client,
-                HttpClient = _HttpClient,
                 IsPrivateRoll = IsPrivateRoll
             });
         }
