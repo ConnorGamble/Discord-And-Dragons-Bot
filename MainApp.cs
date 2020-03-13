@@ -22,9 +22,6 @@ namespace MyDick
         // Access to the Discord bot, used to send DM's
         public Connection DiscordConnection;
 
-        // Http client to create content in channels
-        public HttpClient _HttpClient;
-
         public bool IsPrivateRoll;
 
         #endregion
@@ -37,7 +34,6 @@ namespace MyDick
             InitializeComponent();
             dieButtons = GetDiceButtons();
             DiscordConnection = new Connection();
-            _HttpClient = new HttpClient();
         }
 
         #region Events

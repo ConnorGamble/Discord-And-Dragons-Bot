@@ -18,8 +18,8 @@ namespace MyDick.Discord
 
         public Connection()
         {
-            MainAsync();
             httpClient = new HttpClient();
+            MainAsync();
         }
 
         private async Task MainAsync()
@@ -110,6 +110,7 @@ namespace MyDick.Discord
             catch
             {
                 // Swallow errors as you're likely offline
+                // Should probably tell you that 
             }
         }
 
