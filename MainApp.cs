@@ -856,6 +856,7 @@ namespace MyDick
                     result = DnD.Helpers.RollDice(1, 21);
                     break;
                 case -1:
+                    // Need to return on these or something so that we aren't sending a janky request to Discord
                     MessageBox.Show("You need to select a dice. Are you a retard or did you just forget?");
                     break;
                 default:
@@ -986,5 +987,36 @@ namespace MyDick
         #endregion
 
         #endregion
+
+        private void HPIncreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(true);
+        }
+
+        private void HPDecreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(false);
+        }
+
+        private void HandleHealthChange(bool increase)
+        {
+            var newHp = 0;
+            try
+            {
+                newHp = int.Parse(HPTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("No letters allowed as health. Maybe use a number like literally any other person playing this game?");
+                return;
+            }
+
+            if (increase)
+                newHp++;
+            else
+                newHp--;
+
+            HPTextBox.Text = newHp.ToString();
+        }
     }
 }

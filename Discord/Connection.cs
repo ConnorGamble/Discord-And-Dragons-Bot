@@ -18,8 +18,8 @@ namespace MyDick.Discord
 
         public Connection()
         {
-            MainAsync();
             httpClient = new HttpClient();
+            MainAsync();
         }
 
         private async Task MainAsync()
