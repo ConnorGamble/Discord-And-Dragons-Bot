@@ -549,6 +549,8 @@ namespace MyDick
         private void Weapon1DamageButton_Click(object sender, EventArgs e)
         {
             int damageRoll = GetSelectedDice(Weapon1AtkDieBox);
+            if (damageRoll == 0)
+                return;
 
             var discordResult = ApplyModifier(Weapon1DamageModBox, Weapon1DamageResultBox, damageRoll);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
@@ -563,6 +565,8 @@ namespace MyDick
         private void Weapon2DamageButton_Click(object sender, EventArgs e)
         {
             int damageRoll = GetSelectedDice(Weapon2AtkDieBox);
+            if (damageRoll == 0)
+                return;
 
             var discordResult = ApplyModifier(Weapon2DamageModBox, Weapon2DamageModBox, damageRoll);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
@@ -577,6 +581,8 @@ namespace MyDick
         private void Weapon3DamageButton_Click(object sender, EventArgs e)
         {
             int damageRoll = GetSelectedDice(Weapon3AtkDieBox);
+            if (damageRoll == 0)
+                return;
 
             var discordResult = ApplyModifier(Weapon3DamageModBox, Weapon3DamageResultBox, damageRoll);
             var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
@@ -617,48 +623,50 @@ namespace MyDick
                 //D4
                 case 0:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 5).ToString();
-                    content = $"Rolled a D4 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D4 and got a result of {ResultBox.Text}";
                     break;
                 //D6
                 case 1:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 7).ToString();
-                    content = $"Rolled a D6 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D6 and got a result of {ResultBox.Text}";
                     break;
                 //D8
                 case 2:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 9).ToString();
-                    content = $"Rolled a D8 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D8 and got a result of {ResultBox.Text}";
                     break;
                 //D10
                 case 3:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 11).ToString();
-                    content = $"Rolled a D10 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D10 and got a result of {ResultBox.Text}";
                     break;
                 //D12
                 case 4:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 13).ToString();
-                    content = $"Rolled a D12 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D12 and got a result of {ResultBox.Text}";
                     break;
                 case 5:
                     //D20
                     ResultBox.Text = DnD.Helpers.RollDice(1, 21).ToString();
-                    content = $"Rolled a D20 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D20 and got a result of {ResultBox.Text}";
                     break;
                 //D100
                 case 6:
                     ResultBox.Text = DnD.Helpers.RollDice(1, 100).ToString();
-                    content = $"Rolled a D100 and got a result of {ResultBox.Text}";
+                    content = $"{CharacterNameTextBox.Text} rolled a D100 and got a result of {ResultBox.Text}";
                     break;
                 //No dice 
                 case -1:
                     MessageBox.Show("You need to select a dice to roll you fuckhead.", "Twat alert!");
-                    content = "Some dickhead tried to roll without selecting a dice. Own up and be bullied you sket.";
                     break;
                 //In case of breakages
                 default:
                     MessageBox.Show("Something fucked up. I have no idea what. Have you tried turning it on and off again?");
                     return;
             }
+
+            if(String.IsNullOrEmpty(content))
+                return;
 
             DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
@@ -810,7 +818,8 @@ namespace MyDick
                 {
                     DiceRoll = diceRoll,
                     Modifier = modifier,
-                    Result = result
+                    Result = result,
+                    CharacterName = CharacterNameTextBox.Text
                 };
             }
             else
@@ -920,6 +929,23 @@ namespace MyDick
             Properties.Settings.Default.Weapon2DamageDie = Weapon2AtkDieBox.SelectedIndex;
             Properties.Settings.Default.Weapon3DamageDie = Weapon3AtkDieBox.SelectedIndex;
 
+            // Character information
+            Properties.Settings.Default.CharacterName = CharacterNameTextBox.Text;
+            Properties.Settings.Default.Class = ClassTextBox.Text;
+            Properties.Settings.Default.Background = BackgroundTextBox.Text;
+            Properties.Settings.Default.Race = RaceTextBox.Text;
+            Properties.Settings.Default.Alignment = AlignmentDropDown.SelectedIndex;
+            Properties.Settings.Default.ExperiencePoints = RaceTextBox.Text;
+            Properties.Settings.Default.Level = LevelCounterBox.Value;
+
+            // Personality
+            Properties.Settings.Default.PersonalityTraits = PersonalityTraitsTextBox.Text;
+            Properties.Settings.Default.Ideals = IdealsTextBox.Text;
+            Properties.Settings.Default.Bonds = BondsCheckBox.Text;
+            Properties.Settings.Default.Flaws = FlawsTextBox.Text;
+
+            Properties.Settings.Default.HP = HPTextBox.Text;
+
             Properties.Settings.Default.Save();
         }
 
@@ -977,6 +1003,23 @@ namespace MyDick
             Weapon1DamageModBox.Text = Properties.Settings.Default.Weapon1DamageMod;
             Weapon2DamageModBox.Text = Properties.Settings.Default.Weapon2DamageMod;
             Weapon3DamageModBox.Text = Properties.Settings.Default.Weapon3DamageMod;
+
+            // Character information
+            CharacterNameTextBox.Text = Properties.Settings.Default.CharacterName;
+            ClassTextBox.Text = Properties.Settings.Default.Class;
+            BackgroundTextBox.Text = Properties.Settings.Default.Background;
+            RaceTextBox.Text = Properties.Settings.Default.Race;
+            AlignmentDropDown.SelectedIndex = Properties.Settings.Default.Alignment;
+            RaceTextBox.Text = Properties.Settings.Default.ExperiencePoints;
+            LevelCounterBox.Value = Properties.Settings.Default.Level;
+
+            // Personality
+            PersonalityTraitsTextBox.Text = Properties.Settings.Default.PersonalityTraits;
+            IdealsTextBox.Text = Properties.Settings.Default.Ideals;
+            BondsCheckBox.Text = Properties.Settings.Default.Bonds;
+            FlawsTextBox.Text = Properties.Settings.Default.Flaws;
+
+            HPTextBox.Text = Properties.Settings.Default.HP;
 
         }
 

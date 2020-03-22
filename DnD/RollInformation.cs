@@ -9,6 +9,7 @@ namespace MyDick
         public int Result { get; set; }
         public RollType RollType { get; set; }
         public SkillType SkillType { get; set; }
+        public string CharacterName { get; set; }
         public bool HasError { get; set; } = false;
     }
 }

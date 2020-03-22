@@ -154,23 +154,26 @@
             this.RollingTab = new System.Windows.Forms.TabPage();
             this.CharacterSheetTab = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.HPIncreaseButton = new System.Windows.Forms.Button();
+            this.HPDecreaseButton = new System.Windows.Forms.Button();
+            this.HPTextBox = new System.Windows.Forms.TextBox();
             this.Characteristics = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.FlawsTextBox = new System.Windows.Forms.TextBox();
+            this.BondsCheckBox = new System.Windows.Forms.TextBox();
+            this.IdealsTextBox = new System.Windows.Forms.TextBox();
+            this.PersonalityTraitsTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.XPTextBox = new System.Windows.Forms.TextBox();
+            this.RaceTextBox = new System.Windows.Forms.TextBox();
+            this.BackgroundTextBox = new System.Windows.Forms.TextBox();
+            this.ClassTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CharacterNameTextBox = new System.Windows.Forms.TextBox();
+            this.AlignmentDropDown = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -178,9 +181,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SettingsTab = new System.Windows.Forms.TabPage();
-            this.HPTextBox = new System.Windows.Forms.TextBox();
-            this.HPDecreaseButton = new System.Windows.Forms.Button();
-            this.HPIncreaseButton = new System.Windows.Forms.Button();
+            this.LevelCounterBox = new System.Windows.Forms.NumericUpDown();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -192,6 +193,7 @@
             this.groupBox2.SuspendLayout();
             this.Characteristics.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LevelCounterBox)).BeginInit();
             this.SuspendLayout();
             // 
             // RollButton
@@ -1329,11 +1331,11 @@
             // PrivateRollCheckBox
             // 
             this.PrivateRollCheckBox.AutoSize = true;
-            this.PrivateRollCheckBox.Location = new System.Drawing.Point(553, 160);
+            this.PrivateRollCheckBox.Location = new System.Drawing.Point(551, 160);
             this.PrivateRollCheckBox.Name = "PrivateRollCheckBox";
-            this.PrivateRollCheckBox.Size = new System.Drawing.Size(86, 17);
+            this.PrivateRollCheckBox.Size = new System.Drawing.Size(87, 17);
             this.PrivateRollCheckBox.TabIndex = 115;
-            this.PrivateRollCheckBox.Text = "Private Roll?";
+            this.PrivateRollCheckBox.Text = "DM only roll?";
             this.PrivateRollCheckBox.UseVisualStyleBackColor = true;
             this.PrivateRollCheckBox.CheckedChanged += new System.EventHandler(this.PrivateRoll_CheckedChanged);
             // 
@@ -1376,6 +1378,7 @@
             // 
             // Weapon3AtkDieBox
             // 
+            this.Weapon3AtkDieBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Weapon3AtkDieBox.FormattingEnabled = true;
             this.Weapon3AtkDieBox.Items.AddRange(new object[] {
             "D4",
@@ -1391,6 +1394,7 @@
             // 
             // Weapon2AtkDieBox
             // 
+            this.Weapon2AtkDieBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Weapon2AtkDieBox.FormattingEnabled = true;
             this.Weapon2AtkDieBox.Items.AddRange(new object[] {
             "D4",
@@ -1406,6 +1410,7 @@
             // 
             // Weapon1AtkDieBox
             // 
+            this.Weapon1AtkDieBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Weapon1AtkDieBox.FormattingEnabled = true;
             this.Weapon1AtkDieBox.Items.AddRange(new object[] {
             "D4",
@@ -1753,6 +1758,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "HP";
             // 
+            // HPIncreaseButton
+            // 
+            this.HPIncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPIncreaseButton.ForeColor = System.Drawing.Color.Black;
+            this.HPIncreaseButton.Location = new System.Drawing.Point(160, 50);
+            this.HPIncreaseButton.Name = "HPIncreaseButton";
+            this.HPIncreaseButton.Size = new System.Drawing.Size(20, 23);
+            this.HPIncreaseButton.TabIndex = 2;
+            this.HPIncreaseButton.Text = "+";
+            this.HPIncreaseButton.UseVisualStyleBackColor = true;
+            this.HPIncreaseButton.Click += new System.EventHandler(this.HPIncreaseButton_Click);
+            // 
+            // HPDecreaseButton
+            // 
+            this.HPDecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPDecreaseButton.ForeColor = System.Drawing.Color.Black;
+            this.HPDecreaseButton.Location = new System.Drawing.Point(9, 50);
+            this.HPDecreaseButton.Name = "HPDecreaseButton";
+            this.HPDecreaseButton.Size = new System.Drawing.Size(20, 23);
+            this.HPDecreaseButton.TabIndex = 1;
+            this.HPDecreaseButton.Text = "-";
+            this.HPDecreaseButton.UseVisualStyleBackColor = true;
+            this.HPDecreaseButton.Click += new System.EventHandler(this.HPDecreaseButton_Click);
+            // 
+            // HPTextBox
+            // 
+            this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
+            this.HPTextBox.Multiline = true;
+            this.HPTextBox.Name = "HPTextBox";
+            this.HPTextBox.Size = new System.Drawing.Size(121, 73);
+            this.HPTextBox.TabIndex = 0;
+            this.HPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Characteristics
             // 
             this.Characteristics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -1760,10 +1799,10 @@
             this.Characteristics.Controls.Add(this.label15);
             this.Characteristics.Controls.Add(this.label14);
             this.Characteristics.Controls.Add(this.label13);
-            this.Characteristics.Controls.Add(this.textBox9);
-            this.Characteristics.Controls.Add(this.textBox8);
-            this.Characteristics.Controls.Add(this.textBox7);
-            this.Characteristics.Controls.Add(this.textBox6);
+            this.Characteristics.Controls.Add(this.FlawsTextBox);
+            this.Characteristics.Controls.Add(this.BondsCheckBox);
+            this.Characteristics.Controls.Add(this.IdealsTextBox);
+            this.Characteristics.Controls.Add(this.PersonalityTraitsTextBox);
             this.Characteristics.ForeColor = System.Drawing.Color.White;
             this.Characteristics.Location = new System.Drawing.Point(8, 74);
             this.Characteristics.Name = "Characteristics";
@@ -1808,55 +1847,56 @@
             this.label13.TabIndex = 23;
             this.label13.Text = "Personality Traits";
             // 
-            // textBox9
+            // FlawsTextBox
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox9.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox9.Location = new System.Drawing.Point(573, 32);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(182, 71);
-            this.textBox9.TabIndex = 26;
+            this.FlawsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.FlawsTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.FlawsTextBox.Location = new System.Drawing.Point(573, 32);
+            this.FlawsTextBox.Multiline = true;
+            this.FlawsTextBox.Name = "FlawsTextBox";
+            this.FlawsTextBox.Size = new System.Drawing.Size(182, 71);
+            this.FlawsTextBox.TabIndex = 26;
             // 
-            // textBox8
+            // BondsCheckBox
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox8.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox8.Location = new System.Drawing.Point(385, 32);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(182, 71);
-            this.textBox8.TabIndex = 25;
+            this.BondsCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.BondsCheckBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.BondsCheckBox.Location = new System.Drawing.Point(385, 32);
+            this.BondsCheckBox.Multiline = true;
+            this.BondsCheckBox.Name = "BondsCheckBox";
+            this.BondsCheckBox.Size = new System.Drawing.Size(182, 71);
+            this.BondsCheckBox.TabIndex = 25;
             // 
-            // textBox7
+            // IdealsTextBox
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox7.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(197, 32);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(182, 71);
-            this.textBox7.TabIndex = 24;
+            this.IdealsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.IdealsTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.IdealsTextBox.Location = new System.Drawing.Point(197, 32);
+            this.IdealsTextBox.Multiline = true;
+            this.IdealsTextBox.Name = "IdealsTextBox";
+            this.IdealsTextBox.Size = new System.Drawing.Size(182, 71);
+            this.IdealsTextBox.TabIndex = 24;
             // 
-            // textBox6
+            // PersonalityTraitsTextBox
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox6.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox6.Location = new System.Drawing.Point(9, 32);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(182, 71);
-            this.textBox6.TabIndex = 23;
+            this.PersonalityTraitsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.PersonalityTraitsTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.PersonalityTraitsTextBox.Location = new System.Drawing.Point(9, 32);
+            this.PersonalityTraitsTextBox.Multiline = true;
+            this.PersonalityTraitsTextBox.Name = "PersonalityTraitsTextBox";
+            this.PersonalityTraitsTextBox.Size = new System.Drawing.Size(182, 71);
+            this.PersonalityTraitsTextBox.TabIndex = 23;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.LevelCounterBox);
+            this.groupBox1.Controls.Add(this.XPTextBox);
+            this.groupBox1.Controls.Add(this.RaceTextBox);
+            this.groupBox1.Controls.Add(this.BackgroundTextBox);
+            this.groupBox1.Controls.Add(this.ClassTextBox);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.CharacterNameTextBox);
+            this.groupBox1.Controls.Add(this.AlignmentDropDown);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
@@ -1871,41 +1911,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Character";
             // 
-            // textBox5
+            // XPTextBox
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox5.Location = new System.Drawing.Point(636, 32);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(119, 20);
-            this.textBox5.TabIndex = 22;
+            this.XPTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.XPTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.XPTextBox.Location = new System.Drawing.Point(636, 32);
+            this.XPTextBox.Name = "XPTextBox";
+            this.XPTextBox.Size = new System.Drawing.Size(119, 20);
+            this.XPTextBox.TabIndex = 22;
             // 
-            // textBox4
+            // RaceTextBox
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox4.Location = new System.Drawing.Point(384, 31);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(119, 20);
-            this.textBox4.TabIndex = 21;
+            this.RaceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.RaceTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.RaceTextBox.Location = new System.Drawing.Point(384, 31);
+            this.RaceTextBox.Name = "RaceTextBox";
+            this.RaceTextBox.Size = new System.Drawing.Size(119, 20);
+            this.RaceTextBox.TabIndex = 21;
             // 
-            // textBox3
+            // BackgroundTextBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(259, 31);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(119, 20);
-            this.textBox3.TabIndex = 20;
+            this.BackgroundTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.BackgroundTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.BackgroundTextBox.Location = new System.Drawing.Point(259, 31);
+            this.BackgroundTextBox.Name = "BackgroundTextBox";
+            this.BackgroundTextBox.Size = new System.Drawing.Size(119, 20);
+            this.BackgroundTextBox.TabIndex = 20;
             // 
-            // textBox2
+            // ClassTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(134, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(119, 20);
-            this.textBox2.TabIndex = 19;
+            this.ClassTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ClassTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.ClassTextBox.Location = new System.Drawing.Point(134, 32);
+            this.ClassTextBox.Name = "ClassTextBox";
+            this.ClassTextBox.Size = new System.Drawing.Size(119, 20);
+            this.ClassTextBox.TabIndex = 19;
             // 
             // label12
             // 
@@ -1916,21 +1956,21 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Class";
             // 
-            // textBox1
+            // CharacterNameTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(9, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 20);
-            this.textBox1.TabIndex = 13;
+            this.CharacterNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CharacterNameTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.CharacterNameTextBox.Location = new System.Drawing.Point(9, 32);
+            this.CharacterNameTextBox.Name = "CharacterNameTextBox";
+            this.CharacterNameTextBox.Size = new System.Drawing.Size(119, 20);
+            this.CharacterNameTextBox.TabIndex = 13;
             // 
-            // comboBox1
+            // AlignmentDropDown
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.AlignmentDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.AlignmentDropDown.ForeColor = System.Drawing.SystemColors.Window;
+            this.AlignmentDropDown.FormattingEnabled = true;
+            this.AlignmentDropDown.Items.AddRange(new object[] {
             "Lawful Good",
             "Lawful Neutral",
             "Lawful Evil",
@@ -1940,10 +1980,10 @@
             "Chaotic Good",
             "Chaotic Neutral",
             "Chaotic Evil"});
-            this.comboBox1.Location = new System.Drawing.Point(509, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
+            this.AlignmentDropDown.Location = new System.Drawing.Point(509, 31);
+            this.AlignmentDropDown.Name = "AlignmentDropDown";
+            this.AlignmentDropDown.Size = new System.Drawing.Size(121, 21);
+            this.AlignmentDropDown.TabIndex = 12;
             // 
             // label11
             // 
@@ -1984,7 +2024,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(708, 15);
+            this.label7.Location = new System.Drawing.Point(762, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 2;
@@ -2008,39 +2048,12 @@
             this.SettingsTab.TabIndex = 2;
             this.SettingsTab.Text = "Settings";
             // 
-            // HPTextBox
+            // LevelCounterBox
             // 
-            this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
-            this.HPTextBox.Multiline = true;
-            this.HPTextBox.Name = "HPTextBox";
-            this.HPTextBox.Size = new System.Drawing.Size(121, 73);
-            this.HPTextBox.TabIndex = 0;
-            this.HPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // HPDecreaseButton
-            // 
-            this.HPDecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPDecreaseButton.ForeColor = System.Drawing.Color.Black;
-            this.HPDecreaseButton.Location = new System.Drawing.Point(9, 50);
-            this.HPDecreaseButton.Name = "HPDecreaseButton";
-            this.HPDecreaseButton.Size = new System.Drawing.Size(20, 23);
-            this.HPDecreaseButton.TabIndex = 1;
-            this.HPDecreaseButton.Text = "-";
-            this.HPDecreaseButton.UseVisualStyleBackColor = true;
-            this.HPDecreaseButton.Click += new System.EventHandler(this.HPDecreaseButton_Click);
-            // 
-            // HPIncreaseButton
-            // 
-            this.HPIncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPIncreaseButton.ForeColor = System.Drawing.Color.Black;
-            this.HPIncreaseButton.Location = new System.Drawing.Point(160, 50);
-            this.HPIncreaseButton.Name = "HPIncreaseButton";
-            this.HPIncreaseButton.Size = new System.Drawing.Size(20, 23);
-            this.HPIncreaseButton.TabIndex = 2;
-            this.HPIncreaseButton.Text = "+";
-            this.HPIncreaseButton.UseVisualStyleBackColor = true;
-            this.HPIncreaseButton.Click += new System.EventHandler(this.HPIncreaseButton_Click);
+            this.LevelCounterBox.Location = new System.Drawing.Point(761, 31);
+            this.LevelCounterBox.Name = "LevelCounterBox";
+            this.LevelCounterBox.Size = new System.Drawing.Size(69, 20);
+            this.LevelCounterBox.TabIndex = 23;
             // 
             // MainApp
             // 
@@ -2074,6 +2087,7 @@
             this.Characteristics.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LevelCounterBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2206,8 +2220,8 @@
         private System.Windows.Forms.TabPage SettingsTab;
         private System.Windows.Forms.CheckBox PrivateRollCheckBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox CharacterNameTextBox;
+        private System.Windows.Forms.ComboBox AlignmentDropDown;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -2219,19 +2233,20 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox FlawsTextBox;
+        private System.Windows.Forms.TextBox BondsCheckBox;
+        private System.Windows.Forms.TextBox IdealsTextBox;
+        private System.Windows.Forms.TextBox PersonalityTraitsTextBox;
+        private System.Windows.Forms.TextBox XPTextBox;
+        private System.Windows.Forms.TextBox RaceTextBox;
+        private System.Windows.Forms.TextBox BackgroundTextBox;
+        private System.Windows.Forms.TextBox ClassTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox HPTextBox;
         private System.Windows.Forms.Button HPIncreaseButton;
         private System.Windows.Forms.Button HPDecreaseButton;
+        private System.Windows.Forms.NumericUpDown LevelCounterBox;
     }
 }
 
