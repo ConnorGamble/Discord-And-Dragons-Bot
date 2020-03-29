@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDick.Discord;
+using System;
 
 namespace MyDick.DnD
 {
@@ -20,6 +21,38 @@ namespace MyDick.DnD
 
             // Return that number
             return rolled;
+        }
+
+        public static int RollDice(DiceType diceType)
+        {
+            var result = 0;
+            switch (diceType)
+            {
+                case DiceType.D4:
+                    result = RollDice(1, 5);
+                    break;
+                case DiceType.D6:
+                    result = RollDice(1, 7);
+                    break;
+                case DiceType.D8:
+                    result = RollDice(1, 9);
+                    break;
+                case DiceType.D10:
+                    result = RollDice(1, 11);
+                    break;
+                case DiceType.D12:
+                    result = RollDice(1, 13);
+                    break;
+                case DiceType.D20:
+                    result = RollDice(1, 21);
+                    break;
+                case DiceType.D100:
+                    result = RollDice(1, 101);
+                    break;
+                default:
+                    break;
+            }
+            return result;
         }
     }
 }

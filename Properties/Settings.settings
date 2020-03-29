@@ -102,13 +102,13 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Weapon1Name" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">Sword</Value>
     </Setting>
     <Setting Name="Weapon2Name" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">Shortbow</Value>
     </Setting>
     <Setting Name="Weapon3Name" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">Dagger</Value>
     </Setting>
     <Setting Name="CharacterName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -144,7 +144,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="HP" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

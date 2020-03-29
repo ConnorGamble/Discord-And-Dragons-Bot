@@ -34,48 +34,39 @@ namespace MyDick.Discord
                 return false;
         }
 
-        public static string DetermineContentToSendToDiscord(RollInformation rollInfo, RollType rollType)
+        public static string DetermineContentToSendToDiscord(RollInformation rollInfo)
         {
             // saving throw, skill check attack, damage
             // Name rolled for a {RollType} on {SkillType}. Rolled a roll with a modifier for a total
             // Name rolled an attack. Rolled a roll with a modifier for a total
             var content = $"Rolled a {rollInfo.DiceRoll} with modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
-            var skill = MapToReadableString(rollInfo.SkillType);
+            var skill = rollInfo.SkillAsReadableString();
+            var diceType = rollInfo.DiceTypeAsReadableString();
+            var characterName = rollInfo.CharacterName;
+            var weaponName = rollInfo.WeaponName;
 
-            switch (rollType)
+            switch (rollInfo.RollType)
             {
                 case RollType.Unknown:
                     break;
                 case RollType.SavingThrow:
-                    content = $"Rolled for a Saving Throw ({skill}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    // name attempts a strength saving throw (D20) 
+                    content = $"{characterName} attempts a {skill} saving throw ({diceType}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
                     break;
                 case RollType.SkillCheck:
-                    content = $"Rolled for a Skill check ({skill}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    content = $"{characterName} performs a {skill} skill check ({diceType}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
                     break;
                 case RollType.Attack:
-                    content = $"Attack roll: Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    content = $"{characterName} performs an attack with their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
                     break;
                 case RollType.Damage:
-                    content = $"Damage roll: Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    content = $"{characterName} rolls for damage using their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
                     break;
                 default:
                     break;
             }
 
             return content;
-        }
-
-        private static string MapToReadableString(SkillType skillType)
-        {
-            switch (skillType)
-            {
-                case SkillType.AnimalHandling:
-                    return "Animal Handling";
-                case SkillType.SleightOfHand:
-                    return "Sleight of Hand";
-                default:
-                    return skillType.ToString();
-            }
         }
     }
 
@@ -90,6 +81,7 @@ namespace MyDick.Discord
 
     public enum SkillType
     {
+        Unknown,
         Strength,
         Dexterity,
         Constitution,
@@ -114,5 +106,17 @@ namespace MyDick.Discord
         SleightOfHand,
         Stealth,
         Survival
+    }
+
+    public enum DiceType
+    {
+        Unknown, 
+        D4, 
+        D6, 
+        D8, 
+        D10,
+        D12,
+        D20, 
+        D100
     }
 }

@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Net.Http;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Discord;
@@ -28,6 +27,7 @@ namespace MyDick.Discord
             _Client = new DiscordSocketClient(new DiscordSocketConfig()
             {
                 LogLevel = LogSeverity.Debug,
+                AlwaysDownloadUsers = true
             });
 
             // Declare a new instance of the command handler
@@ -46,7 +46,7 @@ namespace MyDick.Discord
             _Client.Log += Client_Log;
 
             // Tell the bot to login to Discord
-            await _Client.LoginAsync(TokenType.Bot, "NDEyMjEyNjAwNTUwNDU3MzU0.XV8O_A.OsNXPA-T7zJpBPALThAJMRyFOBo");
+            await _Client.LoginAsync(TokenType.Bot, "NDEyMjEyNjAwNTUwNDU3MzU0.XoCJLg.ZQdZnbkc7Lk31jAWSnJ9LnuCoFw");
 
             // Start the bot up
             await _Client.StartAsync();
@@ -81,6 +81,12 @@ namespace MyDick.Discord
                 var Context = new SocketCommandContext(_Client, message);
                 Commands.HandleCommand(Context, message, isEmote);
             }
+        }
+
+        public async void LogoutBot()
+        {
+            await _Client.LogoutAsync();
+            await _Client.StopAsync();
         }
 
         public void SendToCorrectTextChat(DiscordMessageRequest request)

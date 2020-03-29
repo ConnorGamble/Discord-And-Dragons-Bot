@@ -167,6 +167,7 @@
             this.IdealsTextBox = new System.Windows.Forms.TextBox();
             this.PersonalityTraitsTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LevelCounterBox = new System.Windows.Forms.NumericUpDown();
             this.XPTextBox = new System.Windows.Forms.TextBox();
             this.RaceTextBox = new System.Windows.Forms.TextBox();
             this.BackgroundTextBox = new System.Windows.Forms.TextBox();
@@ -181,7 +182,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SettingsTab = new System.Windows.Forms.TabPage();
-            this.LevelCounterBox = new System.Windows.Forms.NumericUpDown();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -334,7 +334,7 @@
             this.StrModTextBox.Name = "StrModTextBox";
             this.StrModTextBox.Size = new System.Drawing.Size(40, 20);
             this.StrModTextBox.TabIndex = 1;
-            this.StrModTextBox.Tag = "modBox";
+            this.StrModTextBox.Tag = "StrengthModBox";
             this.StrModTextBox.Text = "0";
             // 
             // StrResult
@@ -347,6 +347,7 @@
             this.StrResult.ReadOnly = true;
             this.StrResult.Size = new System.Drawing.Size(40, 21);
             this.StrResult.TabIndex = 14;
+            this.StrResult.Tag = "StrengthResultBox";
             this.StrResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ModifierLabel
@@ -368,6 +369,7 @@
             this.DexResult.ReadOnly = true;
             this.DexResult.Size = new System.Drawing.Size(40, 21);
             this.DexResult.TabIndex = 18;
+            this.DexResult.Tag = "DexterityResultBox";
             this.DexResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DexModTextBox
@@ -378,7 +380,7 @@
             this.DexModTextBox.Name = "DexModTextBox";
             this.DexModTextBox.Size = new System.Drawing.Size(40, 20);
             this.DexModTextBox.TabIndex = 2;
-            this.DexModTextBox.Tag = "modBox";
+            this.DexModTextBox.Tag = "DexterityModBox";
             this.DexModTextBox.Text = "0";
             // 
             // DexSavButton
@@ -389,6 +391,7 @@
             this.DexSavButton.Name = "DexSavButton";
             this.DexSavButton.Size = new System.Drawing.Size(141, 22);
             this.DexSavButton.TabIndex = 16;
+            this.DexSavButton.Tag = "Dexterity, SavingThrow";
             this.DexSavButton.Text = "Dexterity";
             this.DexSavButton.UseVisualStyleBackColor = false;
             this.DexSavButton.Click += new System.EventHandler(this.DexSavButton_Click);
@@ -403,6 +406,7 @@
             this.ConResult.ReadOnly = true;
             this.ConResult.Size = new System.Drawing.Size(40, 21);
             this.ConResult.TabIndex = 21;
+            this.ConResult.Tag = "ConstitutionResultBox";
             this.ConResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ConModTextBox
@@ -413,7 +417,7 @@
             this.ConModTextBox.Name = "ConModTextBox";
             this.ConModTextBox.Size = new System.Drawing.Size(40, 20);
             this.ConModTextBox.TabIndex = 3;
-            this.ConModTextBox.Tag = "modBox";
+            this.ConModTextBox.Tag = "ConstitutionModBox";
             this.ConModTextBox.Text = "0";
             // 
             // ConSavButton
@@ -424,6 +428,7 @@
             this.ConSavButton.Name = "ConSavButton";
             this.ConSavButton.Size = new System.Drawing.Size(141, 22);
             this.ConSavButton.TabIndex = 19;
+            this.ConSavButton.Tag = "Constitution, SavingThrow";
             this.ConSavButton.Text = "Constitution";
             this.ConSavButton.UseVisualStyleBackColor = false;
             this.ConSavButton.Click += new System.EventHandler(this.ConSavButton_Click);
@@ -438,6 +443,7 @@
             this.IntResult.ReadOnly = true;
             this.IntResult.Size = new System.Drawing.Size(40, 21);
             this.IntResult.TabIndex = 24;
+            this.IntResult.Tag = "IntelligenceResultBox";
             this.IntResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // IntModTextBox
@@ -448,7 +454,7 @@
             this.IntModTextBox.Name = "IntModTextBox";
             this.IntModTextBox.Size = new System.Drawing.Size(40, 20);
             this.IntModTextBox.TabIndex = 4;
-            this.IntModTextBox.Tag = "modBox";
+            this.IntModTextBox.Tag = "IntelligenceModBox";
             this.IntModTextBox.Text = "0";
             // 
             // IntSavButton
@@ -459,6 +465,7 @@
             this.IntSavButton.Name = "IntSavButton";
             this.IntSavButton.Size = new System.Drawing.Size(141, 22);
             this.IntSavButton.TabIndex = 22;
+            this.IntSavButton.Tag = "Intelligence, SavingThrow";
             this.IntSavButton.Text = "Intelligence";
             this.IntSavButton.UseVisualStyleBackColor = false;
             this.IntSavButton.Click += new System.EventHandler(this.IntSavButton_Click);
@@ -473,6 +480,7 @@
             this.WisResult.ReadOnly = true;
             this.WisResult.Size = new System.Drawing.Size(40, 21);
             this.WisResult.TabIndex = 27;
+            this.WisResult.Tag = "WisdomResultBox";
             this.WisResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // WisModTextBox
@@ -483,7 +491,7 @@
             this.WisModTextBox.Name = "WisModTextBox";
             this.WisModTextBox.Size = new System.Drawing.Size(40, 20);
             this.WisModTextBox.TabIndex = 5;
-            this.WisModTextBox.Tag = "modBox";
+            this.WisModTextBox.Tag = "WisdomModBox";
             this.WisModTextBox.Text = "0";
             // 
             // WisSavButton
@@ -494,6 +502,7 @@
             this.WisSavButton.Name = "WisSavButton";
             this.WisSavButton.Size = new System.Drawing.Size(141, 22);
             this.WisSavButton.TabIndex = 25;
+            this.WisSavButton.Tag = "Wisdom, SavingThrow";
             this.WisSavButton.Text = "Wisdom";
             this.WisSavButton.UseVisualStyleBackColor = false;
             this.WisSavButton.Click += new System.EventHandler(this.WisSavButton_Click);
@@ -508,6 +517,7 @@
             this.CharResult.ReadOnly = true;
             this.CharResult.Size = new System.Drawing.Size(40, 21);
             this.CharResult.TabIndex = 30;
+            this.CharResult.Tag = "CharismaResultBox";
             this.CharResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CharModTextBox
@@ -518,7 +528,7 @@
             this.CharModTextBox.Name = "CharModTextBox";
             this.CharModTextBox.Size = new System.Drawing.Size(40, 20);
             this.CharModTextBox.TabIndex = 6;
-            this.CharModTextBox.Tag = "modBox";
+            this.CharModTextBox.Tag = "CharismaModBox";
             this.CharModTextBox.Text = "0";
             // 
             // CharSavButton
@@ -529,6 +539,7 @@
             this.CharSavButton.Name = "CharSavButton";
             this.CharSavButton.Size = new System.Drawing.Size(141, 22);
             this.CharSavButton.TabIndex = 28;
+            this.CharSavButton.Tag = "Charisma, SavingThrow";
             this.CharSavButton.Text = "Charisma";
             this.CharSavButton.UseVisualStyleBackColor = false;
             this.CharSavButton.Click += new System.EventHandler(this.CharSavButton_Click);
@@ -648,6 +659,7 @@
             this.SurvivalResultBox.ReadOnly = true;
             this.SurvivalResultBox.Size = new System.Drawing.Size(39, 20);
             this.SurvivalResultBox.TabIndex = 85;
+            this.SurvivalResultBox.Tag = "SurvivalResultBox";
             // 
             // StealthResultBox
             // 
@@ -659,6 +671,7 @@
             this.StealthResultBox.ReadOnly = true;
             this.StealthResultBox.Size = new System.Drawing.Size(39, 20);
             this.StealthResultBox.TabIndex = 84;
+            this.StealthResultBox.Tag = "StealthResultBox";
             // 
             // SleightOfHandResultBox
             // 
@@ -670,6 +683,7 @@
             this.SleightOfHandResultBox.ReadOnly = true;
             this.SleightOfHandResultBox.Size = new System.Drawing.Size(39, 20);
             this.SleightOfHandResultBox.TabIndex = 83;
+            this.SleightOfHandResultBox.Tag = "SleightOfHandResultBox";
             // 
             // ReligionResultBox
             // 
@@ -681,6 +695,7 @@
             this.ReligionResultBox.ReadOnly = true;
             this.ReligionResultBox.Size = new System.Drawing.Size(39, 20);
             this.ReligionResultBox.TabIndex = 82;
+            this.ReligionResultBox.Tag = "ReligionResultBox";
             // 
             // PersuasionResultBox
             // 
@@ -692,6 +707,7 @@
             this.PersuasionResultBox.ReadOnly = true;
             this.PersuasionResultBox.Size = new System.Drawing.Size(39, 20);
             this.PersuasionResultBox.TabIndex = 81;
+            this.PersuasionResultBox.Tag = "PersuasionResultBox";
             // 
             // PerformanceResultBox
             // 
@@ -703,6 +719,7 @@
             this.PerformanceResultBox.ReadOnly = true;
             this.PerformanceResultBox.Size = new System.Drawing.Size(39, 20);
             this.PerformanceResultBox.TabIndex = 80;
+            this.PerformanceResultBox.Tag = "PerformanceResultBox";
             // 
             // SurvivalModTextBox
             // 
@@ -713,7 +730,7 @@
             this.SurvivalModTextBox.Name = "SurvivalModTextBox";
             this.SurvivalModTextBox.Size = new System.Drawing.Size(39, 20);
             this.SurvivalModTextBox.TabIndex = 24;
-            this.SurvivalModTextBox.Tag = "modBox";
+            this.SurvivalModTextBox.Tag = "SurvivalModBox";
             this.SurvivalModTextBox.Text = "0";
             // 
             // StealthModTextBox
@@ -725,7 +742,7 @@
             this.StealthModTextBox.Name = "StealthModTextBox";
             this.StealthModTextBox.Size = new System.Drawing.Size(39, 20);
             this.StealthModTextBox.TabIndex = 23;
-            this.StealthModTextBox.Tag = "modBox";
+            this.StealthModTextBox.Tag = "StealthModBox";
             this.StealthModTextBox.Text = "0";
             // 
             // SleightOfHandModTextBox
@@ -737,7 +754,7 @@
             this.SleightOfHandModTextBox.Name = "SleightOfHandModTextBox";
             this.SleightOfHandModTextBox.Size = new System.Drawing.Size(39, 20);
             this.SleightOfHandModTextBox.TabIndex = 22;
-            this.SleightOfHandModTextBox.Tag = "modBox";
+            this.SleightOfHandModTextBox.Tag = "SleightOfHandModBox";
             this.SleightOfHandModTextBox.Text = "0";
             // 
             // ReligionModTextBox
@@ -749,7 +766,7 @@
             this.ReligionModTextBox.Name = "ReligionModTextBox";
             this.ReligionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.ReligionModTextBox.TabIndex = 21;
-            this.ReligionModTextBox.Tag = "modBox";
+            this.ReligionModTextBox.Tag = "ReligionModBox";
             this.ReligionModTextBox.Text = "0";
             // 
             // PersuasionModTextBox
@@ -761,7 +778,7 @@
             this.PersuasionModTextBox.Name = "PersuasionModTextBox";
             this.PersuasionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.PersuasionModTextBox.TabIndex = 20;
-            this.PersuasionModTextBox.Tag = "modBox";
+            this.PersuasionModTextBox.Tag = "PersuasionModBox";
             this.PersuasionModTextBox.Text = "0";
             // 
             // SurvivalCheckButton
@@ -772,6 +789,7 @@
             this.SurvivalCheckButton.Name = "SurvivalCheckButton";
             this.SurvivalCheckButton.Size = new System.Drawing.Size(96, 24);
             this.SurvivalCheckButton.TabIndex = 74;
+            this.SurvivalCheckButton.Tag = "Survival, SkillCheck";
             this.SurvivalCheckButton.Text = "Survival";
             this.SurvivalCheckButton.UseVisualStyleBackColor = false;
             this.SurvivalCheckButton.Click += new System.EventHandler(this.SurvivalCheckButton_Click);
@@ -784,6 +802,7 @@
             this.StealthCheckButton.Name = "StealthCheckButton";
             this.StealthCheckButton.Size = new System.Drawing.Size(96, 24);
             this.StealthCheckButton.TabIndex = 73;
+            this.StealthCheckButton.Tag = "Stealth, SkillCheck";
             this.StealthCheckButton.Text = "Stealth";
             this.StealthCheckButton.UseVisualStyleBackColor = false;
             this.StealthCheckButton.Click += new System.EventHandler(this.StealthCheckButton_Click);
@@ -797,7 +816,7 @@
             this.PerformanceModTextBox.Name = "PerformanceModTextBox";
             this.PerformanceModTextBox.Size = new System.Drawing.Size(39, 20);
             this.PerformanceModTextBox.TabIndex = 19;
-            this.PerformanceModTextBox.Tag = "modBox";
+            this.PerformanceModTextBox.Tag = "PerformanceModBox";
             this.PerformanceModTextBox.Text = "0";
             // 
             // SleightOfHandCheckButton
@@ -808,6 +827,7 @@
             this.SleightOfHandCheckButton.Name = "SleightOfHandCheckButton";
             this.SleightOfHandCheckButton.Size = new System.Drawing.Size(96, 23);
             this.SleightOfHandCheckButton.TabIndex = 71;
+            this.SleightOfHandCheckButton.Tag = "SleightOfHand, SkillCheck";
             this.SleightOfHandCheckButton.Text = "Sleight of Hand";
             this.SleightOfHandCheckButton.UseVisualStyleBackColor = false;
             this.SleightOfHandCheckButton.Click += new System.EventHandler(this.SleightOfHandCheckButton_Click);
@@ -820,6 +840,7 @@
             this.PerformanceCheckButton.Name = "PerformanceCheckButton";
             this.PerformanceCheckButton.Size = new System.Drawing.Size(96, 22);
             this.PerformanceCheckButton.TabIndex = 68;
+            this.PerformanceCheckButton.Tag = "Performance, SkillCheck";
             this.PerformanceCheckButton.Text = "Performance";
             this.PerformanceCheckButton.UseVisualStyleBackColor = false;
             this.PerformanceCheckButton.Click += new System.EventHandler(this.PerformanceCheckButton_Click);
@@ -832,6 +853,7 @@
             this.PersuasionCheckButton.Name = "PersuasionCheckButton";
             this.PersuasionCheckButton.Size = new System.Drawing.Size(96, 23);
             this.PersuasionCheckButton.TabIndex = 69;
+            this.PersuasionCheckButton.Tag = "Persuasion, SkillCheck";
             this.PersuasionCheckButton.Text = "Persuasion";
             this.PersuasionCheckButton.UseVisualStyleBackColor = false;
             this.PersuasionCheckButton.Click += new System.EventHandler(this.PersuasionCheckButton_Click);
@@ -844,6 +866,7 @@
             this.ReligionCheckButton.Name = "ReligionCheckButton";
             this.ReligionCheckButton.Size = new System.Drawing.Size(96, 22);
             this.ReligionCheckButton.TabIndex = 70;
+            this.ReligionCheckButton.Tag = "Religion, SkillCheck";
             this.ReligionCheckButton.Text = "Religion";
             this.ReligionCheckButton.UseVisualStyleBackColor = false;
             this.ReligionCheckButton.Click += new System.EventHandler(this.ReligionCheckButton_Click);
@@ -858,6 +881,7 @@
             this.PerceptionResultBox.ReadOnly = true;
             this.PerceptionResultBox.Size = new System.Drawing.Size(39, 20);
             this.PerceptionResultBox.TabIndex = 67;
+            this.PerceptionResultBox.Tag = "PerceptionResultBox";
             // 
             // NatureResultBox
             // 
@@ -869,6 +893,7 @@
             this.NatureResultBox.ReadOnly = true;
             this.NatureResultBox.Size = new System.Drawing.Size(39, 20);
             this.NatureResultBox.TabIndex = 66;
+            this.NatureResultBox.Tag = "NatureResultBox";
             // 
             // MedicineResultBox
             // 
@@ -880,6 +905,7 @@
             this.MedicineResultBox.ReadOnly = true;
             this.MedicineResultBox.Size = new System.Drawing.Size(39, 20);
             this.MedicineResultBox.TabIndex = 65;
+            this.MedicineResultBox.Tag = "MedicineResultBox";
             // 
             // InvestigationResultBox
             // 
@@ -891,6 +917,7 @@
             this.InvestigationResultBox.ReadOnly = true;
             this.InvestigationResultBox.Size = new System.Drawing.Size(39, 20);
             this.InvestigationResultBox.TabIndex = 64;
+            this.InvestigationResultBox.Tag = "InvestigationResultBox";
             // 
             // IntimidationResultBox
             // 
@@ -902,6 +929,7 @@
             this.IntimidationResultBox.ReadOnly = true;
             this.IntimidationResultBox.Size = new System.Drawing.Size(39, 20);
             this.IntimidationResultBox.TabIndex = 63;
+            this.IntimidationResultBox.Tag = "IntimidationResultBox";
             // 
             // InsightResultBox
             // 
@@ -913,6 +941,7 @@
             this.InsightResultBox.ReadOnly = true;
             this.InsightResultBox.Size = new System.Drawing.Size(39, 20);
             this.InsightResultBox.TabIndex = 62;
+            this.InsightResultBox.Tag = "InsightResultBox";
             // 
             // PerceptionModTextBox
             // 
@@ -923,7 +952,7 @@
             this.PerceptionModTextBox.Name = "PerceptionModTextBox";
             this.PerceptionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.PerceptionModTextBox.TabIndex = 18;
-            this.PerceptionModTextBox.Tag = "modBox";
+            this.PerceptionModTextBox.Tag = "PerceptionModBox";
             this.PerceptionModTextBox.Text = "0";
             // 
             // NatureModTextBox
@@ -935,7 +964,7 @@
             this.NatureModTextBox.Name = "NatureModTextBox";
             this.NatureModTextBox.Size = new System.Drawing.Size(39, 20);
             this.NatureModTextBox.TabIndex = 17;
-            this.NatureModTextBox.Tag = "modBox";
+            this.NatureModTextBox.Tag = "NatureModBox";
             this.NatureModTextBox.Text = "0";
             // 
             // MedicineModTextBox
@@ -947,7 +976,7 @@
             this.MedicineModTextBox.Name = "MedicineModTextBox";
             this.MedicineModTextBox.Size = new System.Drawing.Size(39, 20);
             this.MedicineModTextBox.TabIndex = 16;
-            this.MedicineModTextBox.Tag = "modBox";
+            this.MedicineModTextBox.Tag = "MedicineModBox";
             this.MedicineModTextBox.Text = "0";
             // 
             // InvestigationModTextBox
@@ -959,7 +988,7 @@
             this.InvestigationModTextBox.Name = "InvestigationModTextBox";
             this.InvestigationModTextBox.Size = new System.Drawing.Size(39, 20);
             this.InvestigationModTextBox.TabIndex = 15;
-            this.InvestigationModTextBox.Tag = "modBox";
+            this.InvestigationModTextBox.Tag = "InvestigationModBox";
             this.InvestigationModTextBox.Text = "0";
             // 
             // IntimidationModTextBox
@@ -971,7 +1000,7 @@
             this.IntimidationModTextBox.Name = "IntimidationModTextBox";
             this.IntimidationModTextBox.Size = new System.Drawing.Size(39, 20);
             this.IntimidationModTextBox.TabIndex = 14;
-            this.IntimidationModTextBox.Tag = "modBox";
+            this.IntimidationModTextBox.Tag = "IntimidationModBox";
             this.IntimidationModTextBox.Text = "0";
             // 
             // PerceptionCheckButton
@@ -982,6 +1011,7 @@
             this.PerceptionCheckButton.Name = "PerceptionCheckButton";
             this.PerceptionCheckButton.Size = new System.Drawing.Size(96, 24);
             this.PerceptionCheckButton.TabIndex = 56;
+            this.PerceptionCheckButton.Tag = "Perception, SkillCheck";
             this.PerceptionCheckButton.Text = "Perception";
             this.PerceptionCheckButton.UseVisualStyleBackColor = false;
             this.PerceptionCheckButton.Click += new System.EventHandler(this.PerceptionCheckButton_Click);
@@ -994,6 +1024,7 @@
             this.NatureCheckButton.Name = "NatureCheckButton";
             this.NatureCheckButton.Size = new System.Drawing.Size(96, 24);
             this.NatureCheckButton.TabIndex = 55;
+            this.NatureCheckButton.Tag = "Nature, SkillCheck";
             this.NatureCheckButton.Text = "Nature";
             this.NatureCheckButton.UseVisualStyleBackColor = false;
             this.NatureCheckButton.Click += new System.EventHandler(this.NatureCheckButton_Click);
@@ -1007,7 +1038,7 @@
             this.InsightModTextBox.Name = "InsightModTextBox";
             this.InsightModTextBox.Size = new System.Drawing.Size(39, 20);
             this.InsightModTextBox.TabIndex = 13;
-            this.InsightModTextBox.Tag = "modBox";
+            this.InsightModTextBox.Tag = "InsightModBox";
             this.InsightModTextBox.Text = "0";
             // 
             // MedicineCheckButton
@@ -1018,6 +1049,7 @@
             this.MedicineCheckButton.Name = "MedicineCheckButton";
             this.MedicineCheckButton.Size = new System.Drawing.Size(96, 23);
             this.MedicineCheckButton.TabIndex = 53;
+            this.MedicineCheckButton.Tag = "Medicine, SkillCheck";
             this.MedicineCheckButton.Text = "Medicine";
             this.MedicineCheckButton.UseVisualStyleBackColor = false;
             this.MedicineCheckButton.Click += new System.EventHandler(this.MedicineCheckButton_Click);
@@ -1030,6 +1062,7 @@
             this.InsightCheckButton.Name = "InsightCheckButton";
             this.InsightCheckButton.Size = new System.Drawing.Size(96, 22);
             this.InsightCheckButton.TabIndex = 50;
+            this.InsightCheckButton.Tag = "Insight, SkillCheck";
             this.InsightCheckButton.Text = "Insight";
             this.InsightCheckButton.UseVisualStyleBackColor = false;
             this.InsightCheckButton.Click += new System.EventHandler(this.InsightCheckButton_Click);
@@ -1042,6 +1075,7 @@
             this.IntimidationCheckButton.Name = "IntimidationCheckButton";
             this.IntimidationCheckButton.Size = new System.Drawing.Size(96, 23);
             this.IntimidationCheckButton.TabIndex = 51;
+            this.IntimidationCheckButton.Tag = "Intimidation, SkillCheck";
             this.IntimidationCheckButton.Text = "Intimidation";
             this.IntimidationCheckButton.UseVisualStyleBackColor = false;
             this.IntimidationCheckButton.Click += new System.EventHandler(this.IntimidationCheckButton_Click);
@@ -1054,6 +1088,7 @@
             this.InvestigationCheckButton.Name = "InvestigationCheckButton";
             this.InvestigationCheckButton.Size = new System.Drawing.Size(96, 22);
             this.InvestigationCheckButton.TabIndex = 52;
+            this.InvestigationCheckButton.Tag = "Investigation, SkillCheck";
             this.InvestigationCheckButton.Text = "Investigation";
             this.InvestigationCheckButton.UseVisualStyleBackColor = false;
             this.InvestigationCheckButton.Click += new System.EventHandler(this.InvestigationCheckButton_Click);
@@ -1077,6 +1112,7 @@
             this.HistoryResultBox.ReadOnly = true;
             this.HistoryResultBox.Size = new System.Drawing.Size(39, 20);
             this.HistoryResultBox.TabIndex = 48;
+            this.HistoryResultBox.Tag = "HistoryResultBox";
             // 
             // DeceptionResultBox
             // 
@@ -1088,6 +1124,7 @@
             this.DeceptionResultBox.ReadOnly = true;
             this.DeceptionResultBox.Size = new System.Drawing.Size(39, 20);
             this.DeceptionResultBox.TabIndex = 47;
+            this.DeceptionResultBox.Tag = "DeceptionResultBox";
             // 
             // AthleticsResultBox
             // 
@@ -1099,6 +1136,7 @@
             this.AthleticsResultBox.ReadOnly = true;
             this.AthleticsResultBox.Size = new System.Drawing.Size(39, 20);
             this.AthleticsResultBox.TabIndex = 46;
+            this.AthleticsResultBox.Tag = "AthleticsResultBox";
             // 
             // ArcanaResultBox
             // 
@@ -1110,6 +1148,7 @@
             this.ArcanaResultBox.ReadOnly = true;
             this.ArcanaResultBox.Size = new System.Drawing.Size(39, 20);
             this.ArcanaResultBox.TabIndex = 45;
+            this.ArcanaResultBox.Tag = "ArcanaResultBox";
             // 
             // AnimalHandlingResultBox
             // 
@@ -1121,6 +1160,7 @@
             this.AnimalHandlingResultBox.ReadOnly = true;
             this.AnimalHandlingResultBox.Size = new System.Drawing.Size(39, 20);
             this.AnimalHandlingResultBox.TabIndex = 44;
+            this.AnimalHandlingResultBox.Tag = "AnimalHandlingResultBox";
             // 
             // AcrobaticsResultBox
             // 
@@ -1132,6 +1172,7 @@
             this.AcrobaticsResultBox.ReadOnly = true;
             this.AcrobaticsResultBox.Size = new System.Drawing.Size(39, 20);
             this.AcrobaticsResultBox.TabIndex = 43;
+            this.AcrobaticsResultBox.Tag = "AcrobaticsResultBox";
             // 
             // HistoryModTextBox
             // 
@@ -1142,7 +1183,7 @@
             this.HistoryModTextBox.Name = "HistoryModTextBox";
             this.HistoryModTextBox.Size = new System.Drawing.Size(39, 20);
             this.HistoryModTextBox.TabIndex = 12;
-            this.HistoryModTextBox.Tag = "modBox";
+            this.HistoryModTextBox.Tag = "HistoryModBox";
             this.HistoryModTextBox.Text = "0";
             // 
             // DeceptionModTextBox
@@ -1154,7 +1195,7 @@
             this.DeceptionModTextBox.Name = "DeceptionModTextBox";
             this.DeceptionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.DeceptionModTextBox.TabIndex = 11;
-            this.DeceptionModTextBox.Tag = "modBox";
+            this.DeceptionModTextBox.Tag = "DeceptionModBox";
             this.DeceptionModTextBox.Text = "0";
             // 
             // AthleticsModTextBox
@@ -1166,7 +1207,7 @@
             this.AthleticsModTextBox.Name = "AthleticsModTextBox";
             this.AthleticsModTextBox.Size = new System.Drawing.Size(39, 20);
             this.AthleticsModTextBox.TabIndex = 10;
-            this.AthleticsModTextBox.Tag = "modBox";
+            this.AthleticsModTextBox.Tag = "AthleticsModBox";
             this.AthleticsModTextBox.Text = "0";
             // 
             // ArcanaModTextBox
@@ -1178,7 +1219,7 @@
             this.ArcanaModTextBox.Name = "ArcanaModTextBox";
             this.ArcanaModTextBox.Size = new System.Drawing.Size(39, 20);
             this.ArcanaModTextBox.TabIndex = 9;
-            this.ArcanaModTextBox.Tag = "modBox";
+            this.ArcanaModTextBox.Tag = "ArcanaModBox";
             this.ArcanaModTextBox.Text = "0";
             // 
             // AnimalHandlingModTextBox
@@ -1190,7 +1231,7 @@
             this.AnimalHandlingModTextBox.Name = "AnimalHandlingModTextBox";
             this.AnimalHandlingModTextBox.Size = new System.Drawing.Size(39, 20);
             this.AnimalHandlingModTextBox.TabIndex = 8;
-            this.AnimalHandlingModTextBox.Tag = "modBox";
+            this.AnimalHandlingModTextBox.Tag = "AnimalHandlingModBox";
             this.AnimalHandlingModTextBox.Text = "0";
             // 
             // HistoryCheckButton
@@ -1201,6 +1242,7 @@
             this.HistoryCheckButton.Name = "HistoryCheckButton";
             this.HistoryCheckButton.Size = new System.Drawing.Size(96, 24);
             this.HistoryCheckButton.TabIndex = 37;
+            this.HistoryCheckButton.Tag = "History, SkillCheck";
             this.HistoryCheckButton.Text = "History";
             this.HistoryCheckButton.UseVisualStyleBackColor = false;
             this.HistoryCheckButton.Click += new System.EventHandler(this.HistoryCheckButton_Click);
@@ -1213,6 +1255,7 @@
             this.DeceptionCheckButton.Name = "DeceptionCheckButton";
             this.DeceptionCheckButton.Size = new System.Drawing.Size(96, 24);
             this.DeceptionCheckButton.TabIndex = 36;
+            this.DeceptionCheckButton.Tag = "Deception, SkillCheck";
             this.DeceptionCheckButton.Text = "Deception";
             this.DeceptionCheckButton.UseVisualStyleBackColor = false;
             this.DeceptionCheckButton.Click += new System.EventHandler(this.DeceptionCheckButton_Click);
@@ -1226,7 +1269,7 @@
             this.AcrobaticsModTextBox.Name = "AcrobaticsModTextBox";
             this.AcrobaticsModTextBox.Size = new System.Drawing.Size(39, 20);
             this.AcrobaticsModTextBox.TabIndex = 7;
-            this.AcrobaticsModTextBox.Tag = "modBox";
+            this.AcrobaticsModTextBox.Tag = "AcrobaticsModBox";
             this.AcrobaticsModTextBox.Text = "0";
             // 
             // label1
@@ -1246,6 +1289,7 @@
             this.AthleticsCheckButton.Name = "AthleticsCheckButton";
             this.AthleticsCheckButton.Size = new System.Drawing.Size(96, 23);
             this.AthleticsCheckButton.TabIndex = 34;
+            this.AthleticsCheckButton.Tag = "Athletics, SkillCheck";
             this.AthleticsCheckButton.Text = "Athletics";
             this.AthleticsCheckButton.UseVisualStyleBackColor = false;
             this.AthleticsCheckButton.Click += new System.EventHandler(this.AthleticsCheckButton_Click);
@@ -1258,6 +1302,7 @@
             this.AcrobaticCheckButton.Name = "AcrobaticCheckButton";
             this.AcrobaticCheckButton.Size = new System.Drawing.Size(96, 22);
             this.AcrobaticCheckButton.TabIndex = 31;
+            this.AcrobaticCheckButton.Tag = "Acrobatics, SkillCheck";
             this.AcrobaticCheckButton.Text = "Acrobatics";
             this.AcrobaticCheckButton.UseVisualStyleBackColor = false;
             this.AcrobaticCheckButton.Click += new System.EventHandler(this.AcrobaticCheckButton_Click);
@@ -1270,6 +1315,7 @@
             this.AnimalHandlingCheckButton.Name = "AnimalHandlingCheckButton";
             this.AnimalHandlingCheckButton.Size = new System.Drawing.Size(96, 23);
             this.AnimalHandlingCheckButton.TabIndex = 32;
+            this.AnimalHandlingCheckButton.Tag = "AnimalHandling, SkillCheck";
             this.AnimalHandlingCheckButton.Text = "Animal Handling";
             this.AnimalHandlingCheckButton.UseVisualStyleBackColor = false;
             this.AnimalHandlingCheckButton.Click += new System.EventHandler(this.AnimalHandlingCheckButton_Click);
@@ -1282,6 +1328,7 @@
             this.ArcanaCheckButton.Name = "ArcanaCheckButton";
             this.ArcanaCheckButton.Size = new System.Drawing.Size(96, 22);
             this.ArcanaCheckButton.TabIndex = 33;
+            this.ArcanaCheckButton.Tag = "Arcana, SkillCheck";
             this.ArcanaCheckButton.Text = "Arcana";
             this.ArcanaCheckButton.UseVisualStyleBackColor = false;
             this.ArcanaCheckButton.Click += new System.EventHandler(this.ArcanaCheckButton_Click);
@@ -1361,7 +1408,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(538, -1);
+            this.label6.Location = new System.Drawing.Point(537, -1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 112;
@@ -1432,6 +1479,7 @@
             this.Weapon3DamageButton.Name = "Weapon3DamageButton";
             this.Weapon3DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3DamageButton.TabIndex = 105;
+            this.Weapon3DamageButton.Tag = "Weapon3, Damage";
             this.Weapon3DamageButton.Text = "Roll";
             this.Weapon3DamageButton.UseVisualStyleBackColor = false;
             this.Weapon3DamageButton.Click += new System.EventHandler(this.Weapon3DamageButton_Click);
@@ -1445,7 +1493,7 @@
             this.Weapon3DamageModBox.Name = "Weapon3DamageModBox";
             this.Weapon3DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3DamageModBox.TabIndex = 33;
-            this.Weapon3DamageModBox.Tag = "modBox";
+            this.Weapon3DamageModBox.Tag = "Weapon3DamageModBox";
             this.Weapon3DamageModBox.Text = "0";
             // 
             // Weapon3DamageResultBox
@@ -1458,6 +1506,7 @@
             this.Weapon3DamageResultBox.ReadOnly = true;
             this.Weapon3DamageResultBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3DamageResultBox.TabIndex = 107;
+            this.Weapon3DamageResultBox.Tag = "Weapon3DamageResultBox";
             // 
             // Weapon2DamageButton
             // 
@@ -1467,6 +1516,7 @@
             this.Weapon2DamageButton.Name = "Weapon2DamageButton";
             this.Weapon2DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2DamageButton.TabIndex = 102;
+            this.Weapon2DamageButton.Tag = "Weapon2, Damage";
             this.Weapon2DamageButton.Text = "Roll";
             this.Weapon2DamageButton.UseVisualStyleBackColor = false;
             this.Weapon2DamageButton.Click += new System.EventHandler(this.Weapon2DamageButton_Click);
@@ -1480,7 +1530,7 @@
             this.Weapon2DamageModBox.Name = "Weapon2DamageModBox";
             this.Weapon2DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2DamageModBox.TabIndex = 30;
-            this.Weapon2DamageModBox.Tag = "modBox";
+            this.Weapon2DamageModBox.Tag = "Weapon2DamageModBox";
             this.Weapon2DamageModBox.Text = "0";
             // 
             // Weapon2DamageResultBox
@@ -1493,6 +1543,7 @@
             this.Weapon2DamageResultBox.ReadOnly = true;
             this.Weapon2DamageResultBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2DamageResultBox.TabIndex = 104;
+            this.Weapon2DamageResultBox.Tag = "Weapon2DamageResultBox";
             // 
             // Weapon1DamageButton
             // 
@@ -1502,6 +1553,7 @@
             this.Weapon1DamageButton.Name = "Weapon1DamageButton";
             this.Weapon1DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1DamageButton.TabIndex = 99;
+            this.Weapon1DamageButton.Tag = "Weapon1, Damage";
             this.Weapon1DamageButton.Text = "Roll";
             this.Weapon1DamageButton.UseVisualStyleBackColor = false;
             this.Weapon1DamageButton.Click += new System.EventHandler(this.Weapon1DamageButton_Click);
@@ -1515,7 +1567,7 @@
             this.Weapon1DamageModBox.Name = "Weapon1DamageModBox";
             this.Weapon1DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1DamageModBox.TabIndex = 27;
-            this.Weapon1DamageModBox.Tag = "modBox";
+            this.Weapon1DamageModBox.Tag = "Weapon1DamageModBox";
             this.Weapon1DamageModBox.Text = "0";
             // 
             // Weapon1DamageResultBox
@@ -1528,6 +1580,7 @@
             this.Weapon1DamageResultBox.ReadOnly = true;
             this.Weapon1DamageResultBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1DamageResultBox.TabIndex = 101;
+            this.Weapon1DamageResultBox.Tag = "Weapon1DamageResultBox";
             // 
             // Weapon3AttackButton
             // 
@@ -1537,6 +1590,7 @@
             this.Weapon3AttackButton.Name = "Weapon3AttackButton";
             this.Weapon3AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3AttackButton.TabIndex = 95;
+            this.Weapon3AttackButton.Tag = "Weapon3, Attack";
             this.Weapon3AttackButton.Text = "Roll";
             this.Weapon3AttackButton.UseVisualStyleBackColor = false;
             this.Weapon3AttackButton.Click += new System.EventHandler(this.Weapon3AttackButton_Click);
@@ -1550,7 +1604,7 @@
             this.Weapon3AttackModBox.Name = "Weapon3AttackModBox";
             this.Weapon3AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3AttackModBox.TabIndex = 32;
-            this.Weapon3AttackModBox.Tag = "modBox";
+            this.Weapon3AttackModBox.Tag = "Weapon3AttackModBox";
             this.Weapon3AttackModBox.Text = "0";
             // 
             // WeaponThreeTextBox
@@ -1561,6 +1615,7 @@
             this.WeaponThreeTextBox.Name = "WeaponThreeTextBox";
             this.WeaponThreeTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponThreeTextBox.TabIndex = 31;
+            this.WeaponThreeTextBox.Tag = "Weapon3Name";
             // 
             // Weapon3AttackResultBox
             // 
@@ -1572,6 +1627,7 @@
             this.Weapon3AttackResultBox.ReadOnly = true;
             this.Weapon3AttackResultBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3AttackResultBox.TabIndex = 97;
+            this.Weapon3AttackResultBox.Tag = "Weapon3AttackResultBox";
             // 
             // Weapon2AttackButton
             // 
@@ -1581,6 +1637,7 @@
             this.Weapon2AttackButton.Name = "Weapon2AttackButton";
             this.Weapon2AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2AttackButton.TabIndex = 91;
+            this.Weapon2AttackButton.Tag = "Weapon2, Attack";
             this.Weapon2AttackButton.Text = "Roll";
             this.Weapon2AttackButton.UseVisualStyleBackColor = false;
             this.Weapon2AttackButton.Click += new System.EventHandler(this.Weapon2AttackButton_Click);
@@ -1594,7 +1651,7 @@
             this.Weapon2AttackModBox.Name = "Weapon2AttackModBox";
             this.Weapon2AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2AttackModBox.TabIndex = 29;
-            this.Weapon2AttackModBox.Tag = "modBox";
+            this.Weapon2AttackModBox.Tag = "Weapon2AttackModBox";
             this.Weapon2AttackModBox.Text = "0";
             // 
             // WeaponTwoTextBox
@@ -1605,6 +1662,7 @@
             this.WeaponTwoTextBox.Name = "WeaponTwoTextBox";
             this.WeaponTwoTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponTwoTextBox.TabIndex = 28;
+            this.WeaponTwoTextBox.Tag = "Weapon2Name";
             // 
             // Weapon2AttackResultBox
             // 
@@ -1616,6 +1674,7 @@
             this.Weapon2AttackResultBox.ReadOnly = true;
             this.Weapon2AttackResultBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2AttackResultBox.TabIndex = 93;
+            this.Weapon2AttackResultBox.Tag = "Weapon2AttackResultBox";
             // 
             // Weapon1AttackButton
             // 
@@ -1625,6 +1684,7 @@
             this.Weapon1AttackButton.Name = "Weapon1AttackButton";
             this.Weapon1AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1AttackButton.TabIndex = 86;
+            this.Weapon1AttackButton.Tag = "Weapon1, Attack";
             this.Weapon1AttackButton.Text = "Roll";
             this.Weapon1AttackButton.UseVisualStyleBackColor = false;
             this.Weapon1AttackButton.Click += new System.EventHandler(this.Weapon1AttackButton_Click);
@@ -1656,7 +1716,7 @@
             this.Weapon1AttackModBox.Name = "Weapon1AttackModBox";
             this.Weapon1AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1AttackModBox.TabIndex = 26;
-            this.Weapon1AttackModBox.Tag = "modBox";
+            this.Weapon1AttackModBox.Tag = "Weapon1AttackModBox";
             this.Weapon1AttackModBox.Text = "0";
             // 
             // label3
@@ -1676,6 +1736,7 @@
             this.WeaponOneTextBox.Name = "WeaponOneTextBox";
             this.WeaponOneTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponOneTextBox.TabIndex = 25;
+            this.WeaponOneTextBox.Tag = "Weapon1Name";
             // 
             // Weapon1AttackResultBox
             // 
@@ -1687,6 +1748,7 @@
             this.Weapon1AttackResultBox.ReadOnly = true;
             this.Weapon1AttackResultBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1AttackResultBox.TabIndex = 88;
+            this.Weapon1AttackResultBox.Tag = "Weapon1AttackResultBox";
             // 
             // GeneralDiceBox
             // 
@@ -1911,6 +1973,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Character";
             // 
+            // LevelCounterBox
+            // 
+            this.LevelCounterBox.Location = new System.Drawing.Point(761, 31);
+            this.LevelCounterBox.Name = "LevelCounterBox";
+            this.LevelCounterBox.Size = new System.Drawing.Size(69, 20);
+            this.LevelCounterBox.TabIndex = 23;
+            // 
             // XPTextBox
             // 
             this.XPTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -2047,13 +2116,6 @@
             this.SettingsTab.Size = new System.Drawing.Size(857, 440);
             this.SettingsTab.TabIndex = 2;
             this.SettingsTab.Text = "Settings";
-            // 
-            // LevelCounterBox
-            // 
-            this.LevelCounterBox.Location = new System.Drawing.Point(761, 31);
-            this.LevelCounterBox.Name = "LevelCounterBox";
-            this.LevelCounterBox.Size = new System.Drawing.Size(69, 20);
-            this.LevelCounterBox.TabIndex = 23;
             // 
             // MainApp
             // 

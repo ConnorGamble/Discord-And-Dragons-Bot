@@ -141,457 +141,269 @@ namespace MyDick
             ChangeDieColourToGold(D100Button);
         }
 
+        #region Saving throw events
+
         private void StrSavButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(StrModTextBox, StrResult, result);
-            discordResult.SkillType = SkillType.Strength;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
-        }
-
-        private void DexSavButton_Click(object sender, EventArgs e)
-        {
-            int result = DnD.Helpers.RollDice(1, 21);
-
-            var discordResult = ApplyModifier(DexModTextBox, DexResult, result);
-            discordResult.SkillType = SkillType.Dexterity;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
-        }
-
-        private void ConSavButton_Click(object sender, EventArgs e)
-        {
-            int result = DnD.Helpers.RollDice(1, 21);
-
-            var discordResult = ApplyModifier(ConModTextBox, ConResult, result);
-            discordResult.SkillType = SkillType.Constitution;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
-        }
-
-        private void IntSavButton_Click(object sender, EventArgs e)
-        {
-            int result = DnD.Helpers.RollDice(1, 21);
-
-            var discordResult = ApplyModifier(IntModTextBox, IntResult, result);
-            discordResult.SkillType = SkillType.Intelligence;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
-        }
-
-        private void WisSavButton_Click(object sender, EventArgs e)
-        {
-            int result = DnD.Helpers.RollDice(1, 21);
-
-            var discordResult = ApplyModifier(WisModTextBox, WisResult, result);
-            discordResult.SkillType = SkillType.Wisdom;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void CharSavButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(CharModTextBox, CharResult, result);
-            discordResult.SkillType = SkillType.Charisma;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SavingThrow);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
+
+        private void DexSavButton_Click(object sender, EventArgs e)
+        {
+            var newResult = RollWithModifier(sender);
+
+            // Handle Discord content
+            SendToDiscord(newResult);
+        }
+
+        private void ConSavButton_Click(object sender, EventArgs e)
+        {
+            var newResult = RollWithModifier(sender);
+
+            // Handle Discord content
+            SendToDiscord(newResult);
+        }
+
+        private void IntSavButton_Click(object sender, EventArgs e)
+        {
+            var newResult = RollWithModifier(sender);
+
+            // Handle Discord content
+            SendToDiscord(newResult);
+        }
+
+        private void WisSavButton_Click(object sender, EventArgs e)
+        {
+            var newResult = RollWithModifier(sender);
+
+            // Handle Discord content
+            SendToDiscord(newResult);
+        }
+
+        #endregion
+
+        #region Skill check
 
         private void AcrobaticCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(AcrobaticsModTextBox, AcrobaticsResultBox, result);
-            discordResult.SkillType = SkillType.Acrobatics;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void AnimalHandlingCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(AnimalHandlingModTextBox, AnimalHandlingResultBox, result);
-            discordResult.SkillType = SkillType.AnimalHandling;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void ArcanaCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(ArcanaModTextBox, ArcanaResultBox, result);
-            discordResult.SkillType = SkillType.Arcana;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void AthleticsCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(AthleticsModTextBox, AthleticsResultBox, result);
-            discordResult.SkillType = SkillType.Athletics;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
 
         }
 
         private void DeceptionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(DeceptionModTextBox, DeceptionResultBox, result);
-            discordResult.SkillType = SkillType.Deception;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void HistoryCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(HistoryModTextBox, HistoryResultBox, result);
-            discordResult.SkillType = SkillType.History;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void InsightCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(InsightModTextBox, InsightResultBox, result);
-            discordResult.SkillType = SkillType.Insight;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void IntimidationCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(IntimidationModTextBox, IntimidationResultBox, result);
-            discordResult.SkillType = SkillType.Intimidation;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void InvestigationCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(InvestigationModTextBox, InvestigationResultBox, result);
-            discordResult.SkillType = SkillType.Investigation;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void MedicineCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(MedicineModTextBox, MedicineResultBox, result);
-            discordResult.SkillType = SkillType.Medicine;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void NatureCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(NatureModTextBox, NatureResultBox, result);
-            discordResult.SkillType = SkillType.Nature;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void PerceptionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(PerceptionModTextBox, PerceptionResultBox, result);
-            discordResult.SkillType = SkillType.Perception;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
-
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void PerformanceCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(PerformanceModTextBox, PerformanceResultBox, result);
-            discordResult.SkillType = SkillType.Performance;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void PersuasionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(PersuasionModTextBox, PersuasionResultBox, result);
-            discordResult.SkillType = SkillType.Persuasion;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
 
         }
 
         private void ReligionCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(ReligionModTextBox, ReligionResultBox, result);
-            discordResult.SkillType = SkillType.Religion;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void SleightOfHandCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(SleightOfHandModTextBox, SleightOfHandResultBox, result);
-            discordResult.SkillType = SkillType.SleightOfHand;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void StealthCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(StealthModTextBox, StealthResultBox, result);
-            discordResult.SkillType = SkillType.Stealth;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void SurvivalCheckButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender);
 
-            var discordResult = ApplyModifier(SurvivalModTextBox, SurvivalResultBox, result);
-            discordResult.SkillType = SkillType.Survival;
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.SkillCheck);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
+
+        #endregion
+
+        #region Attacks
 
         private void Weapon1AttackButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender, false);
 
-            var discordResult = ApplyModifier(Weapon1AttackModBox, Weapon1AttackResultBox, result);
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Attack);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void Weapon2AttackButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
+            var newResult = RollWithModifier(sender, false);
 
-            var discordResult = ApplyModifier(Weapon2AttackModBox, Weapon2AttackResultBox, result);
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Attack);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
 
         private void Weapon3AttackButton_Click(object sender, EventArgs e)
         {
-            int result = DnD.Helpers.RollDice(1, 21);
-            var discordResult = ApplyModifier(Weapon3AttackModBox, Weapon3AttackResultBox, result);
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Attack);
+            var newResult = RollWithModifier(sender, false);
 
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
-
+            // Handle Discord content
+            SendToDiscord(newResult);
         }
+
+        #endregion
+
+        #region Damage
 
         private void Weapon1DamageButton_Click(object sender, EventArgs e)
         {
-            int damageRoll = GetSelectedDice(Weapon1AtkDieBox);
-            if (damageRoll == 0)
-                return;
-
-            var discordResult = ApplyModifier(Weapon1DamageModBox, Weapon1DamageResultBox, damageRoll);
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            var selectedDiceType = GetSelectedDice(Weapon1AtkDieBox);
+            var newResult = RollWithModifier(sender, false, selectedDiceType);
+            SendToDiscord(newResult);
         }
 
         private void Weapon2DamageButton_Click(object sender, EventArgs e)
         {
-            int damageRoll = GetSelectedDice(Weapon2AtkDieBox);
-            if (damageRoll == 0)
-                return;
-
-            var discordResult = ApplyModifier(Weapon2DamageModBox, Weapon2DamageModBox, damageRoll);
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
-
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+            var selectedDiceType = GetSelectedDice(Weapon2AtkDieBox);
+            var newResult = RollWithModifier(sender, false, selectedDiceType);
+            SendToDiscord(newResult);
         }
 
         private void Weapon3DamageButton_Click(object sender, EventArgs e)
         {
-            int damageRoll = GetSelectedDice(Weapon3AtkDieBox);
-            if (damageRoll == 0)
-                return;
+            var selectedDiceType = GetSelectedDice(Weapon3AtkDieBox);
+            var newResult = RollWithModifier(sender, false, selectedDiceType);
+            SendToDiscord(newResult);
+        }
 
-            var discordResult = ApplyModifier(Weapon3DamageModBox, Weapon3DamageResultBox, damageRoll);
-            var discordContent = Helpers.DetermineContentToSendToDiscord(discordResult, RollType.Damage);
+        #endregion
 
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
-            {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
-            });
+        private void HPIncreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(true);
+        }
+
+        private void HPDecreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(false);
         }
 
         private void PrivateRoll_CheckedChanged(object sender, EventArgs e)
@@ -622,37 +434,37 @@ namespace MyDick
             {
                 //D4
                 case 0:
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 5).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D4).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D4 and got a result of {ResultBox.Text}";
                     break;
                 //D6
                 case 1:
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 7).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D6).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D6 and got a result of {ResultBox.Text}";
                     break;
                 //D8
                 case 2:
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 9).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D8).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D8 and got a result of {ResultBox.Text}";
                     break;
                 //D10
                 case 3:
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 11).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D10).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D10 and got a result of {ResultBox.Text}";
                     break;
                 //D12
                 case 4:
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 13).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D12).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D12 and got a result of {ResultBox.Text}";
                     break;
                 case 5:
                     //D20
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 21).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D20).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D20 and got a result of {ResultBox.Text}";
                     break;
                 //D100
                 case 6:
-                    ResultBox.Text = DnD.Helpers.RollDice(1, 100).ToString();
+                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D100).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D100 and got a result of {ResultBox.Text}";
                     break;
                 //No dice 
@@ -665,7 +477,7 @@ namespace MyDick
                     return;
             }
 
-            if(String.IsNullOrEmpty(content))
+            if (String.IsNullOrEmpty(content))
                 return;
 
             DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
@@ -768,10 +580,227 @@ namespace MyDick
             activeButton.BackColor = System.Drawing.Color.DimGray;
         }
 
+        /// <summary>
+        /// Handles the health to be incremented or decremented
+        /// </summary>
+        /// <param name="increase"></param>
+        private void HandleHealthChange(bool increase)
+        {
+            var newHp = 0;
+            try
+            {
+                newHp = int.Parse(HPTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("No letters allowed as health. Maybe use a number like literally any other person playing this game?");
+                return;
+            }
 
+            if (increase)
+                newHp++;
+            else
+                newHp--;
 
-        //Why not have apply modifier return an object which contains the three results and then from that object you can use the values to chuck into Discord. This way you strip out all of the roll type because it's only ever being passed down anyway?? 
-        // Bruv are you silly?
+            HPTextBox.Text = newHp.ToString();
+        }
+
+        /// <summary>
+        /// Send the given content to Discord
+        /// </summary>
+        /// <param name="newResult">Information about the new roll result</param>
+        private void SendToDiscord(RollInformation newResult)
+        {
+            if (newResult.HasError)
+                return;
+
+            var discordContent = Helpers.DetermineContentToSendToDiscord(newResult);
+
+            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll
+            });
+        }
+
+        private RollInformation RollWithModifier(object sender, bool isSkill = true, DiceType diceType = DiceType.D20)
+        {
+            var button = sender as Button;
+            var tags = button.Tag?.ToString().Split(',');
+
+            var diceRoll = DnD.Helpers.RollDice(diceType);
+
+            var modifier = 0;
+
+            var skillType = SkillType.Unknown;
+            var weaponTag = tags[0];
+
+            if(isSkill)
+                skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
+            
+
+            var rollType = (RollType)Enum.Parse(typeof(RollType), tags[1]);
+            var modifierBox = GetModifierBoxFromRollType(skillType, rollType, tags[0]);
+
+            if (int.TryParse(modifierBox.Text, out modifier))
+            {
+                var result = diceRoll + modifier;
+                if (isSkill)
+                    GetSkillResultBox(skillType).Text = result.ToString();
+                else
+                    GetAttackResultBox(weaponTag).Text = result.ToString();
+
+                return new RollInformation
+                {
+                    DiceRoll = diceRoll,
+                    Modifier = modifier,
+                    Result = result,
+                    SkillType = skillType,
+                    RollType = rollType,
+                    DiceType = diceType,
+                    CharacterName = CharacterNameTextBox.Text,
+                    WeaponName = GetWeaponName(weaponTag)
+                };
+            }
+            else
+            {
+                MessageBox.Show("Cannot roll using that modifier. Please ensure this is a number.");
+                return new RollInformation
+                {
+                    HasError = true
+                };
+            }
+        }
+
+        private TextBox GetAttackResultBox(string weaponTag)
+        {
+            var modifierTag = $"{weaponTag}AttackResultBox";
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        private TextBox GetModifierBoxFromRollType(SkillType skillType, RollType rollType, string weaponTag)
+        {
+            switch (rollType)
+            {
+                case RollType.SavingThrow:
+                case RollType.SkillCheck:
+                    return GetSkillModifierBox(skillType);
+                case RollType.Damage:
+                case RollType.Attack:
+                    return GetAttackModifierBox(weaponTag, rollType);
+                default:
+                    return null;
+            }
+        }
+
+        private TextBox GetSkillModifierBox(SkillType skillType)
+        {
+            var modifierTag = $"{skillType.ToString()}ModBox";
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        private TextBox GetAttackModifierBox(string weaponTag, RollType rollType)
+        {
+            // Weapon1DamageModBox
+            var modifierTag = $"{weaponTag}AttackModBox";
+
+            if (rollType == RollType.Damage)
+                modifierTag = $"{weaponTag}DamageModBox";
+
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        private TextBox GetSkillResultBox(SkillType skillType)
+        {
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == $"{skillType.ToString()}ResultBox")
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        private string GetWeaponName(string weaponTag)
+        {
+            //Weapon1Name
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == $"{weaponTag}Name")
+                            {
+                                return childControl.Text;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
 
         /// <summary>
         /// A method which converts and then applies the modifier if it can otherwise it just shows a message box saying it cannot do so 
@@ -837,39 +866,30 @@ namespace MyDick
         /// </summary>
         /// <param name="weaponAttackDie"></param> The combo box which has the selected dice
         /// <returns></returns> Returns the dice roll 
-        private int GetSelectedDice(ComboBox weaponAttackDie)
+        private DiceType GetSelectedDice(ComboBox weaponAttackDie)
         {
-            int result = 0;
             switch (weaponAttackDie.SelectedIndex)
             {
                 case 0:
-                    result = DnD.Helpers.RollDice(1, 5);
-                    break;
+                    return DiceType.D4;
                 case 1:
-                    result = DnD.Helpers.RollDice(1, 7);
-                    break;
+                    return DiceType.D6;
                 case 2:
-                    result = DnD.Helpers.RollDice(1, 9);
-                    break;
+                    return DiceType.D8;
                 case 3:
-                    result = DnD.Helpers.RollDice(1, 11);
-                    break;
+                    return DiceType.D10;
                 case 4:
-                    result = DnD.Helpers.RollDice(1, 13);
-                    break;
+                    return DiceType.D12;
                 case 5:
-                    result = DnD.Helpers.RollDice(1, 21);
-                    break;
+                    return DiceType.D20;
                 case -1:
                     // Need to return on these or something so that we aren't sending a janky request to Discord
                     MessageBox.Show("You need to select a dice. Are you a retard or did you just forget?");
-                    break;
+                    return DiceType.Unknown;
                 default:
                     MessageBox.Show("Something went wrong. No idea what. Sucks to be you.");
-                    break;
-
+                    return DiceType.Unknown;
             }
-            return result;
         }
 
         #region Program Maintenence
@@ -947,6 +967,8 @@ namespace MyDick
             Properties.Settings.Default.HP = HPTextBox.Text;
 
             Properties.Settings.Default.Save();
+
+            DiscordConnection.LogoutBot();
         }
 
         /// <summary>
@@ -1020,42 +1042,10 @@ namespace MyDick
             FlawsTextBox.Text = Properties.Settings.Default.Flaws;
 
             HPTextBox.Text = Properties.Settings.Default.HP;
-
         }
 
         #endregion
 
         #endregion
-
-        private void HPIncreaseButton_Click(object sender, EventArgs e)
-        {
-            HandleHealthChange(true);
-        }
-
-        private void HPDecreaseButton_Click(object sender, EventArgs e)
-        {
-            HandleHealthChange(false);
-        }
-
-        private void HandleHealthChange(bool increase)
-        {
-            var newHp = 0;
-            try
-            {
-                newHp = int.Parse(HPTextBox.Text);
-            }
-            catch
-            {
-                MessageBox.Show("No letters allowed as health. Maybe use a number like literally any other person playing this game?");
-                return;
-            }
-
-            if (increase)
-                newHp++;
-            else
-                newHp--;
-
-            HPTextBox.Text = newHp.ToString();
-        }
     }
 }
