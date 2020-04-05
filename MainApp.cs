@@ -1,6 +1,7 @@
 using MyDick.Discord;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -654,6 +655,7 @@ namespace MyDick
                     resultBox = GetAttackResultBox(weaponTag);
 
                 resultBox.Text = result.ToString();
+                resultBox.BackColor = ChangeResultColour(diceRoll);
 
                 return new RollInformation
                 {
@@ -893,6 +895,18 @@ namespace MyDick
                 default:
                     MessageBox.Show("Something went wrong. No idea what. Sucks to be you.");
                     return DiceType.Unknown;
+            }
+        }
+
+        private Color ChangeResultColour(int diceRoll)
+        {
+            switch (diceRoll)
+            {
+                case 1:
+                    return Color.Red;
+                case 20:
+                    return Color.Green;
+                default: return Color.DimGray;
             }
         }
 
