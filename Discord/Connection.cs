@@ -46,7 +46,7 @@ namespace MyDick.Discord
             _Client.Log += Client_Log;
 
             // Tell the bot to login to Discord
-            await _Client.LoginAsync(TokenType.Bot, "NDEyMjEyNjAwNTUwNDU3MzU0.XoC19A.wQ_Ad2BEVK1fmlqRj2G7_ecOxjQ");
+            await _Client.LoginAsync(TokenType.Bot, "NDEyMjEyNjAwNTUwNDU3MzU0.XoC2Zw.PPipZQmGq1YfFiYF-DXIFLGZyCE");
 
             // Start the bot up
             await _Client.StartAsync();

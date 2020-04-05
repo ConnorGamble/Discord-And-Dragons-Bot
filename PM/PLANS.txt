@@ -1,1 +1,4 @@
 ﻿Villain tab for DM's. Makes new pop ups based on that enemy stats which then DM can then use to verify rolls. 
+
+Add back in the red/ green rolls 
+Unique text based on critical success fails

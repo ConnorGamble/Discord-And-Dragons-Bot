@@ -645,10 +645,15 @@ namespace MyDick
             if (int.TryParse(modifierBox.Text, out modifier))
             {
                 var result = diceRoll + modifier;
+
+                var resultBox = new TextBox();
+
                 if (isSkill)
-                    GetSkillResultBox(skillType).Text = result.ToString();
+                    resultBox = GetSkillResultBox(skillType);
                 else
-                    GetAttackResultBox(weaponTag).Text = result.ToString();
+                    resultBox = GetAttackResultBox(weaponTag);
+
+                resultBox.Text = result.ToString();
 
                 return new RollInformation
                 {
@@ -800,7 +805,6 @@ namespace MyDick
             }
             return null;
         }
-
 
         /// <summary>
         /// A method which converts and then applies the modifier if it can otherwise it just shows a message box saying it cannot do so 
