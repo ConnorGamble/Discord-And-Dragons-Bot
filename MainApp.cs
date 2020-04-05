@@ -146,50 +146,32 @@ namespace MyDick
 
         private void StrSavButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void CharSavButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void DexSavButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void ConSavButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void IntSavButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void WisSavButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         #endregion
@@ -198,148 +180,94 @@ namespace MyDick
 
         private void AcrobaticCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void AnimalHandlingCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void ArcanaCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void AthleticsCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
 
         }
 
         private void DeceptionCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void HistoryCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void InsightCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void IntimidationCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void InvestigationCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void MedicineCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void NatureCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void PerceptionCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void PerformanceCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void PersuasionCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
 
         }
 
         private void ReligionCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void SleightOfHandCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void StealthCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         private void SurvivalCheckButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender);
         }
 
         #endregion
@@ -348,26 +276,17 @@ namespace MyDick
 
         private void Weapon1AttackButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender, false);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender, false);
         }
 
         private void Weapon2AttackButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender, false);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender, false);
         }
 
         private void Weapon3AttackButton_Click(object sender, EventArgs e)
         {
-            var newResult = RollWithModifier(sender, false);
-
-            // Handle Discord content
-            SendToDiscord(newResult);
+            RollWithModifier(sender, false);
         }
 
         #endregion
@@ -377,22 +296,19 @@ namespace MyDick
         private void Weapon1DamageButton_Click(object sender, EventArgs e)
         {
             var selectedDiceType = GetSelectedDice(Weapon1AtkDieBox);
-            var newResult = RollWithModifier(sender, false, selectedDiceType);
-            SendToDiscord(newResult);
+            RollWithModifier(sender, false, selectedDiceType);
         }
 
         private void Weapon2DamageButton_Click(object sender, EventArgs e)
         {
             var selectedDiceType = GetSelectedDice(Weapon2AtkDieBox);
-            var newResult = RollWithModifier(sender, false, selectedDiceType);
-            SendToDiscord(newResult);
+            RollWithModifier(sender, false, selectedDiceType);
         }
 
         private void Weapon3DamageButton_Click(object sender, EventArgs e)
         {
             var selectedDiceType = GetSelectedDice(Weapon3AtkDieBox);
-            var newResult = RollWithModifier(sender, false, selectedDiceType);
-            SendToDiscord(newResult);
+            RollWithModifier(sender, false, selectedDiceType);
         }
 
         #endregion
@@ -624,8 +540,9 @@ namespace MyDick
             });
         }
 
-        private RollInformation RollWithModifier(object sender, bool isSkill = true, DiceType diceType = DiceType.D20)
+        private void RollWithModifier(object sender, bool isSkill = true, DiceType diceType = DiceType.D20)
         {
+            var rollInfo = new RollInformation();
             var button = sender as Button;
             var tags = button.Tag?.ToString().Split(',');
 
@@ -656,7 +573,7 @@ namespace MyDick
                 resultBox.Text = result.ToString();
                 resultBox.BackColor = ChangeResultColour(diceRoll);
 
-                return new RollInformation
+                rollInfo = new RollInformation
                 {
                     DiceRoll = diceRoll,
                     Modifier = modifier,
@@ -671,11 +588,15 @@ namespace MyDick
             else
             {
                 MessageBox.Show("Cannot roll using that modifier. Please ensure this is a number.");
-                return new RollInformation
+                rollInfo = new RollInformation
                 {
                     HasError = true
                 };
             }
+
+
+            // Handle Discord content
+            SendToDiscord(rollInfo);
         }
 
         private TextBox GetAttackResultBox(string weaponTag)
