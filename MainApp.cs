@@ -638,7 +638,6 @@ namespace MyDick
 
             if(isSkill)
                 skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
-            
 
             var rollType = (RollType)Enum.Parse(typeof(RollType), tags[1]);
             var modifierBox = GetModifierBoxFromRollType(skillType, rollType, tags[0]);
@@ -806,65 +805,6 @@ namespace MyDick
                 }
             }
             return null;
-        }
-
-        /// <summary>
-        /// A method which converts and then applies the modifier if it can otherwise it just shows a message box saying it cannot do so 
-        /// </summary>
-        /// <param name="modTextBox"></param> The text box which holds the number to modify by
-        /// <param name="resultBox"></param> The result to display the diceroll+modifer
-        /// <param name="diceRoll"></param> The result of the dice roll 
-        /// <param name="modifier"></param> A temp modifier.
-        /// <param name="needsDialogs"></param> Bool to indicate if the result of this roll can be a natural failure/success.
-        private RollInformation ApplyModifier(TextBox modTextBox, TextBox resultBox, int diceRoll, bool needsDialogs = true)
-        {
-            var modifier = 0;
-
-            // Change the colour back to white
-            resultBox.BackColor = System.Drawing.Color.DimGray;
-
-            // If we can use the modifier then continue on. 
-            if (int.TryParse(modTextBox.Text, out modifier))
-            {
-                int result = diceRoll + modifier;
-                resultBox.Text = (result).ToString();
-
-                // If we need dialogs for this roll... 
-                if (needsDialogs)
-                {
-                    // If they we have rolled a nat 1
-                    if (diceRoll == 1)
-                    {
-                        // Open the nat 1 dialog and change the colour of the box to red
-                        resultBox.BackColor = System.Drawing.Color.Red;
-                        Nat1Dialog dialog = new Nat1Dialog();
-                        dialog.Show();
-                    }
-                    else if (diceRoll == 20)
-                    {
-                        // Open the nat 20 dialog and change the colour of the box to green
-                        resultBox.BackColor = System.Drawing.Color.Green;
-                        Nat20Dialog dialog = new Nat20Dialog();
-                        dialog.Show();
-                    }
-                }
-
-                return new RollInformation
-                {
-                    DiceRoll = diceRoll,
-                    Modifier = modifier,
-                    Result = result,
-                    CharacterName = CharacterNameTextBox.Text
-                };
-            }
-            else
-            {
-                MessageBox.Show("Could not roll using that modifier.");
-                return new RollInformation
-                {
-                    HasError = true
-                };
-            }
         }
 
         /// <summary>
