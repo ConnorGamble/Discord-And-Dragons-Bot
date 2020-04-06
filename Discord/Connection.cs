@@ -96,7 +96,17 @@ namespace MyDick.Discord
             if (request.IsPrivateRoll)
                 SendMessageToDM(request.Content);
             else
-                SendToDiscord(request.Content);
+                SendToPublicChannel(request.Content);
+        }
+
+        public async void SendToPublicChannel(string content)
+        {
+            await Task.Run(() =>
+            {
+                var guild = _Client.GetGuild(ulong.Parse("SERVERID"));
+                var channel = guild.GetTextChannel(ulong.Parse("CHANNELID"));
+                channel.SendMessageAsync(content);
+            });
         }
 
         public async void SendToDiscord(string content)
