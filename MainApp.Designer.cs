@@ -154,6 +154,14 @@
             this.RollingTab = new System.Windows.Forms.TabPage();
             this.CharacterSheetTab = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -189,20 +197,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SettingsTab = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.ServerIDTextBox = new System.Windows.Forms.TextBox();
-            this.ChannelIDTextBox = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.DMUserIDTextBox = new System.Windows.Forms.TextBox();
+            this.ChannelDTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.ServerIDTextBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.BotTokenTextBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.DMUserIDTextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -212,6 +215,8 @@
             this.RollingTab.SuspendLayout();
             this.CharacterSheetTab.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Characteristics.SuspendLayout();
@@ -219,8 +224,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LevelCounterBox)).BeginInit();
             this.SettingsTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollButton
@@ -1848,6 +1851,86 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Death Saves";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.checkBox4);
+            this.groupBox7.Controls.Add(this.checkBox5);
+            this.groupBox7.Controls.Add(this.checkBox6);
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
+            this.groupBox7.Location = new System.Drawing.Point(7, 63);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(179, 42);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Failures";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(141, 19);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4.TabIndex = 2;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(82, 19);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(15, 14);
+            this.checkBox5.TabIndex = 1;
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(24, 19);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(15, 14);
+            this.checkBox6.TabIndex = 0;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.checkBox3);
+            this.groupBox6.Controls.Add(this.checkBox2);
+            this.groupBox6.Controls.Add(this.checkBox1);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(7, 17);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(179, 42);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Successes";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(141, 19);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(82, 19);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(24, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // groupBox4
             // 
             this.groupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -2215,156 +2298,110 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.DMUserIDTextBox);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.ChannelDTextBox);
             this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.ChannelIDTextBox);
-            this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.ServerIDTextBox);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.BotTokenTextBox);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(8, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(497, 163);
+            this.groupBox3.Size = new System.Drawing.Size(345, 208);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot settings";
             // 
-            // groupBox6
+            // ChannelDTextBox
             // 
-            this.groupBox6.Controls.Add(this.checkBox3);
-            this.groupBox6.Controls.Add(this.checkBox2);
-            this.groupBox6.Controls.Add(this.checkBox1);
-            this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(7, 17);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(179, 42);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Successes";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(24, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(82, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(141, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.checkBox4);
-            this.groupBox7.Controls.Add(this.checkBox5);
-            this.groupBox7.Controls.Add(this.checkBox6);
-            this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(7, 63);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(179, 42);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Failures";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(141, 19);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(82, 19);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 1;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(24, 19);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(8, 18);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Server ID";
-            // 
-            // ServerIDTextBox
-            // 
-            this.ServerIDTextBox.AcceptsReturn = true;
-            this.ServerIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ServerIDTextBox.ForeColor = System.Drawing.Color.White;
-            this.ServerIDTextBox.Location = new System.Drawing.Point(7, 37);
-            this.ServerIDTextBox.Name = "ServerIDTextBox";
-            this.ServerIDTextBox.Size = new System.Drawing.Size(183, 20);
-            this.ServerIDTextBox.TabIndex = 1;
-            this.ServerIDTextBox.Text = "Eg: 1234567891";
-            // 
-            // ChannelIDTextBox
-            // 
-            this.ChannelIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ChannelIDTextBox.ForeColor = System.Drawing.Color.White;
-            this.ChannelIDTextBox.Location = new System.Drawing.Point(6, 82);
-            this.ChannelIDTextBox.Name = "ChannelIDTextBox";
-            this.ChannelIDTextBox.Size = new System.Drawing.Size(183, 20);
-            this.ChannelIDTextBox.TabIndex = 3;
-            this.ChannelIDTextBox.Text = "Eg: 1234567891";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 63);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 13);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Channel Id";
-            // 
-            // DMUserIDTextBox
-            // 
-            this.DMUserIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.DMUserIDTextBox.ForeColor = System.Drawing.Color.White;
-            this.DMUserIDTextBox.Location = new System.Drawing.Point(6, 130);
-            this.DMUserIDTextBox.Name = "DMUserIDTextBox";
-            this.DMUserIDTextBox.Size = new System.Drawing.Size(183, 20);
-            this.DMUserIDTextBox.TabIndex = 5;
-            this.DMUserIDTextBox.Text = "Eg: 1234567891";
+            this.ChannelDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ChannelDTextBox.ForeColor = System.Drawing.Color.White;
+            this.ChannelDTextBox.Location = new System.Drawing.Point(6, 130);
+            this.ChannelDTextBox.Name = "ChannelDTextBox";
+            this.ChannelDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.ChannelDTextBox.TabIndex = 5;
+            this.ChannelDTextBox.Text = "Eg: 1234567891";
+            this.ChannelDTextBox.TextChanged += new System.EventHandler(this.ChannelIDTextBox_TextChanged);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(7, 111);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(63, 13);
+            this.label21.Size = new System.Drawing.Size(60, 13);
             this.label21.TabIndex = 4;
-            this.label21.Text = "DM User ID";
+            this.label21.Text = "Channel ID";
+            // 
+            // ServerIDTextBox
+            // 
+            this.ServerIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ServerIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.ServerIDTextBox.Location = new System.Drawing.Point(6, 82);
+            this.ServerIDTextBox.Name = "ServerIDTextBox";
+            this.ServerIDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.ServerIDTextBox.TabIndex = 3;
+            this.ServerIDTextBox.Text = "Eg: 1234567891";
+            this.ServerIDTextBox.TextChanged += new System.EventHandler(this.ServerIDTextBox_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 63);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(52, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Server ID";
+            // 
+            // BotTokenTextBox
+            // 
+            this.BotTokenTextBox.AcceptsReturn = true;
+            this.BotTokenTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.BotTokenTextBox.ForeColor = System.Drawing.Color.White;
+            this.BotTokenTextBox.Location = new System.Drawing.Point(7, 37);
+            this.BotTokenTextBox.Name = "BotTokenTextBox";
+            this.BotTokenTextBox.Size = new System.Drawing.Size(183, 20);
+            this.BotTokenTextBox.TabIndex = 1;
+            this.BotTokenTextBox.TextChanged += new System.EventHandler(this.BotTokenTextBox_TextChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(8, 18);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(57, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Bot Token";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(199, 16);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(93, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "What is all of this?";
+            // 
+            // DMUserIDTextBox
+            // 
+            this.DMUserIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.DMUserIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.DMUserIDTextBox.Location = new System.Drawing.Point(6, 177);
+            this.DMUserIDTextBox.Name = "DMUserIDTextBox";
+            this.DMUserIDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.DMUserIDTextBox.TabIndex = 8;
+            this.DMUserIDTextBox.Text = "Eg: 1234567891";
+            this.DMUserIDTextBox.TextChanged += new System.EventHandler(this.DMUserIDTextBox_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 158);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 13);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "DM User ID";
             // 
             // MainApp
             // 
@@ -2393,6 +2430,10 @@
             this.RollingTab.ResumeLayout(false);
             this.CharacterSheetTab.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -2405,10 +2446,6 @@
             this.SettingsTab.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2583,12 +2620,15 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox DMUserIDTextBox;
+        private System.Windows.Forms.TextBox ChannelDTextBox;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox ChannelIDTextBox;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox ServerIDTextBox;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox BotTokenTextBox;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox DMUserIDTextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
     }
 }
 

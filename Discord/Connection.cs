@@ -1,11 +1,9 @@
 using System;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using Newtonsoft.Json;
 
 namespace MyDick.Discord
 {
@@ -94,51 +92,28 @@ namespace MyDick.Discord
         public void SendToCorrectTextChat(DiscordMessageRequest request)
         {
             if (request.IsPrivateRoll)
-                SendMessageToDM(request.Content);
+                SendMessageToDM(request);
             else
-                SendToPublicChannel(request.Content);
+                SendToPublicChannel(request);
         }
 
-        public async void SendToPublicChannel(string content)
+        public async void SendToPublicChannel(DiscordMessageRequest request)
         {
             await Task.Run(() =>
             {
-                var guild = _Client.GetGuild(ulong.Parse("SERVERID"));
-                var channel = guild.GetTextChannel(ulong.Parse("CHANNELID"));
-                channel.SendMessageAsync(content);
+                var guild = _Client.GetGuild(ulong.Parse(request.ServerID));
+                var channel = guild.GetTextChannel(ulong.Parse(request.ChannelID));
+                channel.SendMessageAsync(request.Content);
             });
         }
 
-        public async void SendToDiscord(string content)
-        {
-            var payload = new DiscordMessageObject
-            {
-                Content = content
-            };
-
-            var webhookUrl = "https://discordapp.com/api/webhooks/614870234654048289/HUUAliWpSPnse8LU8oIpQflHhYDb9GIA1VC08z2aiXp64tjLl52J9MibwzfG71D1iiZ9";
-
-            var stringPayload = JsonConvert.SerializeObject(payload);
-            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-
-            try
-            {
-                await Task.Run(async () => await httpClient.PostAsync(webhookUrl, httpContent));
-            }
-            catch
-            {
-                // Swallow errors as you're likely offline
-                // Should probably tell you that 
-            }
-        }
-
-        public async void SendMessageToDM(string discordContent)
+        public async void SendMessageToDM(DiscordMessageRequest request)
         {
             await Task.Run(() =>
             {
-                var user = _Client.GetUser(ulong.Parse("143372520731443200"));
+                var user = _Client.GetUser(ulong.Parse(request.DMUserID));
                 var channels = user.GetOrCreateDMChannelAsync().Result;
-                _ = channels.SendMessageAsync(discordContent);
+                _ = channels.SendMessageAsync(request.Content);
             });
         }
     }

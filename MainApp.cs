@@ -2,8 +2,6 @@ using MyDick.Discord;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyDick
@@ -38,11 +36,6 @@ namespace MyDick
         }
 
         #region Events
-
-        private void DiceName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void D4Button_Click(object sender, EventArgs e)
         {
@@ -400,7 +393,10 @@ namespace MyDick
             DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = content,
-                IsPrivateRoll = IsPrivateRoll
+                IsPrivateRoll = IsPrivateRoll,
+                ChannelID = Properties.Settings.Default.ChannelID,
+                DMUserID = Properties.Settings.Default.DMUserID,
+                ServerID = Properties.Settings.Default.ServerID
             });
         }
 
@@ -536,7 +532,10 @@ namespace MyDick
             DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
             {
                 Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll
+                IsPrivateRoll = IsPrivateRoll,
+                ChannelID = Properties.Settings.Default.ChannelID,
+                ServerID = Properties.Settings.Default.ServerID,
+                DMUserID = Properties.Settings.Default.DMUserID
             });
         }
 
@@ -926,5 +925,26 @@ namespace MyDick
         #endregion
 
         #endregion
+
+        private void BotTokenTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.BotToken = BotTokenTextBox.Text;
+        }
+
+        private void ChannelIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ChannelID = ChannelDTextBox.Text;
+        }
+
+        private void ServerIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ServerID = ServerIDTextBox.Text;
+        }
+
+        private void DMUserIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DMUserID = DMUserIDTextBox.Text;
+
+        }
     }
 }
