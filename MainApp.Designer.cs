@@ -118,7 +118,6 @@
             this.ArcanaCheckButton = new System.Windows.Forms.Button();
             this.CombatGroupBox = new System.Windows.Forms.GroupBox();
             this.PrivateRollCheckBox = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Damage = new System.Windows.Forms.Label();
@@ -153,24 +152,11 @@
             this.MainForm = new System.Windows.Forms.TabControl();
             this.RollingTab = new System.Windows.Forms.TabPage();
             this.CharacterSheetTab = new System.Windows.Forms.TabPage();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.HPIncreaseButton = new System.Windows.Forms.Button();
-            this.HPDecreaseButton = new System.Windows.Forms.Button();
-            this.HPTextBox = new System.Windows.Forms.TextBox();
             this.Characteristics = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -197,33 +183,46 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SettingsTab = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DMUserIDTextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.ChannelDTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.ServerIDTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.DMUserIDTextBox = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.DeathSaveButton = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.SuccessBoxThree = new System.Windows.Forms.CheckBox();
+            this.SuccessBoxTwo = new System.Windows.Forms.CheckBox();
+            this.SuccessBoxOne = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.HPIncreaseButton = new System.Windows.Forms.Button();
+            this.HPDecreaseButton = new System.Windows.Forms.Button();
+            this.HPTextBox = new System.Windows.Forms.TextBox();
+            this.FailureBoxThree = new System.Windows.Forms.CheckBox();
+            this.FailureBoxTwo = new System.Windows.Forms.CheckBox();
+            this.FailureBoxOne = new System.Windows.Forms.CheckBox();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GeneralDiceBox.SuspendLayout();
             this.MainForm.SuspendLayout();
             this.RollingTab.SuspendLayout();
             this.CharacterSheetTab.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.Characteristics.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LevelCounterBox)).BeginInit();
             this.SettingsTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollButton
@@ -1365,8 +1364,9 @@
             // 
             // CombatGroupBox
             // 
+            this.CombatGroupBox.Controls.Add(this.groupBox2);
+            this.CombatGroupBox.Controls.Add(this.groupBox5);
             this.CombatGroupBox.Controls.Add(this.PrivateRollCheckBox);
-            this.CombatGroupBox.Controls.Add(this.pictureBox1);
             this.CombatGroupBox.Controls.Add(this.label5);
             this.CombatGroupBox.Controls.Add(this.label6);
             this.CombatGroupBox.Controls.Add(this.Damage);
@@ -1408,23 +1408,13 @@
             // PrivateRollCheckBox
             // 
             this.PrivateRollCheckBox.AutoSize = true;
-            this.PrivateRollCheckBox.Location = new System.Drawing.Point(551, 160);
+            this.PrivateRollCheckBox.Location = new System.Drawing.Point(547, 168);
             this.PrivateRollCheckBox.Name = "PrivateRollCheckBox";
             this.PrivateRollCheckBox.Size = new System.Drawing.Size(87, 17);
             this.PrivateRollCheckBox.TabIndex = 115;
             this.PrivateRollCheckBox.Text = "DM only roll?";
             this.PrivateRollCheckBox.UseVisualStyleBackColor = true;
             this.PrivateRollCheckBox.CheckedChanged += new System.EventHandler(this.PrivateRoll_CheckedChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MyDick.Properties.Resources.dnd_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 124);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(535, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 114;
-            this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
@@ -1827,9 +1817,7 @@
             // CharacterSheetTab
             // 
             this.CharacterSheetTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.CharacterSheetTab.Controls.Add(this.groupBox5);
             this.CharacterSheetTab.Controls.Add(this.groupBox4);
-            this.CharacterSheetTab.Controls.Add(this.groupBox2);
             this.CharacterSheetTab.Controls.Add(this.Characteristics);
             this.CharacterSheetTab.Controls.Add(this.groupBox1);
             this.CharacterSheetTab.Location = new System.Drawing.Point(4, 22);
@@ -1838,98 +1826,6 @@
             this.CharacterSheetTab.Size = new System.Drawing.Size(857, 440);
             this.CharacterSheetTab.TabIndex = 1;
             this.CharacterSheetTab.Text = "Character sheet";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.groupBox7);
-            this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(206, 315);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(191, 111);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Death Saves";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.checkBox4);
-            this.groupBox7.Controls.Add(this.checkBox5);
-            this.groupBox7.Controls.Add(this.checkBox6);
-            this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(7, 63);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(179, 42);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Failures";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(141, 19);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(82, 19);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 1;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(24, 19);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.checkBox3);
-            this.groupBox6.Controls.Add(this.checkBox2);
-            this.groupBox6.Controls.Add(this.checkBox1);
-            this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(7, 17);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(179, 42);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Successes";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(141, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(82, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(24, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -1983,53 +1879,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(298, 71);
             this.textBox4.TabIndex = 23;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.HPIncreaseButton);
-            this.groupBox2.Controls.Add(this.HPDecreaseButton);
-            this.groupBox2.Controls.Add(this.HPTextBox);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(9, 314);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(191, 111);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "HP";
-            // 
-            // HPIncreaseButton
-            // 
-            this.HPIncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPIncreaseButton.ForeColor = System.Drawing.Color.Black;
-            this.HPIncreaseButton.Location = new System.Drawing.Point(160, 50);
-            this.HPIncreaseButton.Name = "HPIncreaseButton";
-            this.HPIncreaseButton.Size = new System.Drawing.Size(20, 23);
-            this.HPIncreaseButton.TabIndex = 2;
-            this.HPIncreaseButton.Text = "+";
-            this.HPIncreaseButton.UseVisualStyleBackColor = true;
-            this.HPIncreaseButton.Click += new System.EventHandler(this.HPIncreaseButton_Click);
-            // 
-            // HPDecreaseButton
-            // 
-            this.HPDecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPDecreaseButton.ForeColor = System.Drawing.Color.Black;
-            this.HPDecreaseButton.Location = new System.Drawing.Point(9, 50);
-            this.HPDecreaseButton.Name = "HPDecreaseButton";
-            this.HPDecreaseButton.Size = new System.Drawing.Size(20, 23);
-            this.HPDecreaseButton.TabIndex = 1;
-            this.HPDecreaseButton.Text = "-";
-            this.HPDecreaseButton.UseVisualStyleBackColor = true;
-            this.HPDecreaseButton.Click += new System.EventHandler(this.HPDecreaseButton_Click);
-            // 
-            // HPTextBox
-            // 
-            this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
-            this.HPTextBox.Multiline = true;
-            this.HPTextBox.Name = "HPTextBox";
-            this.HPTextBox.Size = new System.Drawing.Size(121, 73);
-            this.HPTextBox.TabIndex = 0;
-            this.HPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Characteristics
             // 
@@ -2314,6 +2163,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot settings";
             // 
+            // DMUserIDTextBox
+            // 
+            this.DMUserIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.DMUserIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.DMUserIDTextBox.Location = new System.Drawing.Point(6, 177);
+            this.DMUserIDTextBox.Name = "DMUserIDTextBox";
+            this.DMUserIDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.DMUserIDTextBox.TabIndex = 8;
+            this.DMUserIDTextBox.Text = "Eg: 1234567891";
+            this.DMUserIDTextBox.TextChanged += new System.EventHandler(this.DMUserIDTextBox_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 158);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 13);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "DM User ID";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(199, 16);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(93, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "What is all of this?";
+            // 
             // ChannelDTextBox
             // 
             this.ChannelDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -2374,34 +2252,155 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
             // 
-            // label22
+            // groupBox5
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(199, 16);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(93, 13);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "What is all of this?";
+            this.groupBox5.Controls.Add(this.DeathSaveButton);
+            this.groupBox5.Controls.Add(this.groupBox7);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(206, 114);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(326, 111);
+            this.groupBox5.TabIndex = 116;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Death Saves";
             // 
-            // DMUserIDTextBox
+            // DeathSaveButton
             // 
-            this.DMUserIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.DMUserIDTextBox.ForeColor = System.Drawing.Color.White;
-            this.DMUserIDTextBox.Location = new System.Drawing.Point(6, 177);
-            this.DMUserIDTextBox.Name = "DMUserIDTextBox";
-            this.DMUserIDTextBox.Size = new System.Drawing.Size(183, 20);
-            this.DMUserIDTextBox.TabIndex = 8;
-            this.DMUserIDTextBox.Text = "Eg: 1234567891";
-            this.DMUserIDTextBox.TextChanged += new System.EventHandler(this.DMUserIDTextBox_TextChanged);
+            this.DeathSaveButton.BackColor = System.Drawing.Color.DimGray;
+            this.DeathSaveButton.ForeColor = System.Drawing.Color.White;
+            this.DeathSaveButton.Location = new System.Drawing.Point(230, 50);
+            this.DeathSaveButton.Name = "DeathSaveButton";
+            this.DeathSaveButton.Size = new System.Drawing.Size(90, 22);
+            this.DeathSaveButton.TabIndex = 29;
+            this.DeathSaveButton.Tag = "DeathSaveRoll";
+            this.DeathSaveButton.Text = "Death Save";
+            this.DeathSaveButton.UseVisualStyleBackColor = false;
             // 
-            // label23
+            // groupBox7
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(7, 158);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(63, 13);
-            this.label23.TabIndex = 7;
-            this.label23.Text = "DM User ID";
+            this.groupBox7.Controls.Add(this.FailureBoxThree);
+            this.groupBox7.Controls.Add(this.FailureBoxTwo);
+            this.groupBox7.Controls.Add(this.FailureBoxOne);
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
+            this.groupBox7.Location = new System.Drawing.Point(7, 63);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(217, 42);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Failures";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.SuccessBoxThree);
+            this.groupBox6.Controls.Add(this.SuccessBoxTwo);
+            this.groupBox6.Controls.Add(this.SuccessBoxOne);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(7, 17);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(217, 42);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Successes";
+            // 
+            // SuccessBoxThree
+            // 
+            this.SuccessBoxThree.AutoSize = true;
+            this.SuccessBoxThree.Location = new System.Drawing.Point(145, 18);
+            this.SuccessBoxThree.Name = "SuccessBoxThree";
+            this.SuccessBoxThree.Size = new System.Drawing.Size(15, 14);
+            this.SuccessBoxThree.TabIndex = 2;
+            this.SuccessBoxThree.UseVisualStyleBackColor = true;
+            // 
+            // SuccessBoxTwo
+            // 
+            this.SuccessBoxTwo.AutoSize = true;
+            this.SuccessBoxTwo.Location = new System.Drawing.Point(99, 18);
+            this.SuccessBoxTwo.Name = "SuccessBoxTwo";
+            this.SuccessBoxTwo.Size = new System.Drawing.Size(15, 14);
+            this.SuccessBoxTwo.TabIndex = 1;
+            this.SuccessBoxTwo.UseVisualStyleBackColor = true;
+            // 
+            // SuccessBoxOne
+            // 
+            this.SuccessBoxOne.AutoSize = true;
+            this.SuccessBoxOne.Location = new System.Drawing.Point(53, 18);
+            this.SuccessBoxOne.Name = "SuccessBoxOne";
+            this.SuccessBoxOne.Size = new System.Drawing.Size(15, 14);
+            this.SuccessBoxOne.TabIndex = 0;
+            this.SuccessBoxOne.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.HPIncreaseButton);
+            this.groupBox2.Controls.Add(this.HPDecreaseButton);
+            this.groupBox2.Controls.Add(this.HPTextBox);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(9, 114);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(191, 111);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "HP";
+            // 
+            // HPIncreaseButton
+            // 
+            this.HPIncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPIncreaseButton.ForeColor = System.Drawing.Color.Black;
+            this.HPIncreaseButton.Location = new System.Drawing.Point(160, 50);
+            this.HPIncreaseButton.Name = "HPIncreaseButton";
+            this.HPIncreaseButton.Size = new System.Drawing.Size(20, 23);
+            this.HPIncreaseButton.TabIndex = 2;
+            this.HPIncreaseButton.Text = "+";
+            this.HPIncreaseButton.UseVisualStyleBackColor = true;
+            // 
+            // HPDecreaseButton
+            // 
+            this.HPDecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPDecreaseButton.ForeColor = System.Drawing.Color.Black;
+            this.HPDecreaseButton.Location = new System.Drawing.Point(9, 50);
+            this.HPDecreaseButton.Name = "HPDecreaseButton";
+            this.HPDecreaseButton.Size = new System.Drawing.Size(20, 23);
+            this.HPDecreaseButton.TabIndex = 1;
+            this.HPDecreaseButton.Text = "-";
+            this.HPDecreaseButton.UseVisualStyleBackColor = true;
+            // 
+            // HPTextBox
+            // 
+            this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
+            this.HPTextBox.Multiline = true;
+            this.HPTextBox.Name = "HPTextBox";
+            this.HPTextBox.Size = new System.Drawing.Size(121, 73);
+            this.HPTextBox.TabIndex = 0;
+            this.HPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FailureBoxThree
+            // 
+            this.FailureBoxThree.AutoSize = true;
+            this.FailureBoxThree.Location = new System.Drawing.Point(145, 15);
+            this.FailureBoxThree.Name = "FailureBoxThree";
+            this.FailureBoxThree.Size = new System.Drawing.Size(15, 14);
+            this.FailureBoxThree.TabIndex = 5;
+            this.FailureBoxThree.UseVisualStyleBackColor = true;
+            // 
+            // FailureBoxTwo
+            // 
+            this.FailureBoxTwo.AutoSize = true;
+            this.FailureBoxTwo.Location = new System.Drawing.Point(99, 15);
+            this.FailureBoxTwo.Name = "FailureBoxTwo";
+            this.FailureBoxTwo.Size = new System.Drawing.Size(15, 14);
+            this.FailureBoxTwo.TabIndex = 4;
+            this.FailureBoxTwo.UseVisualStyleBackColor = true;
+            // 
+            // FailureBoxOne
+            // 
+            this.FailureBoxOne.AutoSize = true;
+            this.FailureBoxOne.Location = new System.Drawing.Point(53, 15);
+            this.FailureBoxOne.Name = "FailureBoxOne";
+            this.FailureBoxOne.Size = new System.Drawing.Size(15, 14);
+            this.FailureBoxOne.TabIndex = 3;
+            this.FailureBoxOne.UseVisualStyleBackColor = true;
             // 
             // MainApp
             // 
@@ -2423,21 +2422,13 @@
             this.AttackGroup.PerformLayout();
             this.CombatGroupBox.ResumeLayout(false);
             this.CombatGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GeneralDiceBox.ResumeLayout(false);
             this.GeneralDiceBox.PerformLayout();
             this.MainForm.ResumeLayout(false);
             this.RollingTab.ResumeLayout(false);
             this.CharacterSheetTab.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.Characteristics.ResumeLayout(false);
             this.Characteristics.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -2446,6 +2437,13 @@
             this.SettingsTab.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2571,7 +2569,6 @@
         private System.Windows.Forms.Label Damage;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl MainForm;
         private System.Windows.Forms.TabPage RollingTab;
         private System.Windows.Forms.TabPage CharacterSheetTab;
@@ -2600,10 +2597,6 @@
         private System.Windows.Forms.TextBox BackgroundTextBox;
         private System.Windows.Forms.TextBox ClassTextBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox HPTextBox;
-        private System.Windows.Forms.Button HPIncreaseButton;
-        private System.Windows.Forms.Button HPDecreaseButton;
         private System.Windows.Forms.NumericUpDown LevelCounterBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -2611,15 +2604,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox ChannelDTextBox;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox ServerIDTextBox;
@@ -2629,6 +2613,20 @@
         private System.Windows.Forms.TextBox DMUserIDTextBox;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button HPIncreaseButton;
+        private System.Windows.Forms.Button HPDecreaseButton;
+        private System.Windows.Forms.TextBox HPTextBox;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button DeathSaveButton;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckBox FailureBoxThree;
+        private System.Windows.Forms.CheckBox FailureBoxTwo;
+        private System.Windows.Forms.CheckBox FailureBoxOne;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox SuccessBoxThree;
+        private System.Windows.Forms.CheckBox SuccessBoxTwo;
+        private System.Windows.Forms.CheckBox SuccessBoxOne;
     }
 }
 

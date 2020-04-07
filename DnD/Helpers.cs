@@ -1,5 +1,6 @@
 ﻿using MyDick.Discord;
 using System;
+using System.Windows.Forms;
 
 namespace MyDick.DnD
 {
@@ -53,6 +54,11 @@ namespace MyDick.DnD
                     break;
             }
             return result;
+        }
+
+        public static void CreateMessageBox(string content)
+        {
+            MessageBox.Show(content);
         }
     }
 }

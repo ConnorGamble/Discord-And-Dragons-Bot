@@ -89,7 +89,7 @@ namespace MyDick.Discord
             await _Client.StopAsync();
         }
 
-        public void SendToCorrectTextChat(DiscordMessageRequest request)
+        public void SendToCorrectTextChat(MessageRequest request)
         {
             if (request.IsPrivateRoll)
                 SendMessageToDM(request);
@@ -97,24 +97,44 @@ namespace MyDick.Discord
                 SendToPublicChannel(request);
         }
 
-        public async void SendToPublicChannel(DiscordMessageRequest request)
+        public async void SendToPublicChannel(MessageRequest request)
         {
             await Task.Run(() =>
             {
-                var guild = _Client.GetGuild(ulong.Parse(request.ServerID));
-                var channel = guild.GetTextChannel(ulong.Parse(request.ChannelID));
+                var guild = _Client.GetGuild(ulong.Parse(request.Ids.ServerID));
+                if (guild == null)
+                {
+                    DnD.Helpers.CreateMessageBox($"Could not find the server with the specified ID. ({request.Ids.ServerID})");
+                    return;
+                }
+
+                var channel = guild.GetTextChannel(ulong.Parse(request.Ids.ChannelID));
+                if (channel == null)
+                {
+                    DnD.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.ChannelID})");
+                    return;
+                }
+
                 channel.SendMessageAsync(request.Content);
             });
         }
 
-        public async void SendMessageToDM(DiscordMessageRequest request)
+        public async void SendMessageToDM(MessageRequest request)
         {
             await Task.Run(() =>
             {
-                var user = _Client.GetUser(ulong.Parse(request.DMUserID));
+                var user = _Client.GetUser(ulong.Parse(request.Ids.DMUserID));
+                if (user == null)
+                {
+                    DnD.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.DMUserID})");
+                    return;
+                }
                 var channels = user.GetOrCreateDMChannelAsync().Result;
                 _ = channels.SendMessageAsync(request.Content);
             });
         }
+
+
+        // Bunch of different methods on here for "get channel, get server, get user etc and return name so that it's verifiable. Add in a message box which says found "X channel or whatever"
     }
 }

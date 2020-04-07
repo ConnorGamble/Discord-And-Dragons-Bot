@@ -390,13 +390,31 @@ namespace MyDick
             if (String.IsNullOrEmpty(content))
                 return;
 
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            var requestChannelIds = new ChannelIds
+            {
+                ChannelID = Properties.Settings.Default.ChannelID,
+                ServerID = Properties.Settings.Default.ServerID,
+                DMUserID = Properties.Settings.Default.DMUserID
+            };
+
+            var idVerification = requestChannelIds.VerifyIds();
+
+            if (!idVerification.Item1)
+            {
+                MessageBox.Show($"Could not convert {idVerification.Item2} correctly. Double check the value which has been input.");
+                return;
+            }
+
+            DiscordConnection.SendToCorrectTextChat(new MessageRequest
             {
                 Content = content,
                 IsPrivateRoll = IsPrivateRoll,
-                ChannelID = Properties.Settings.Default.ChannelID,
-                DMUserID = Properties.Settings.Default.DMUserID,
-                ServerID = Properties.Settings.Default.ServerID
+                Ids = new ChannelIds
+                {
+                    ChannelID = Properties.Settings.Default.ChannelID,
+                    DMUserID = Properties.Settings.Default.DMUserID,
+                    ServerID = Properties.Settings.Default.ServerID
+                }
             });
         }
 
@@ -529,13 +547,26 @@ namespace MyDick
 
             var discordContent = Helpers.DetermineContentToSendToDiscord(newResult);
 
-            DiscordConnection.SendToCorrectTextChat(new DiscordMessageRequest
+            var requestChannelIds = new ChannelIds
             {
-                Content = discordContent,
-                IsPrivateRoll = IsPrivateRoll,
                 ChannelID = Properties.Settings.Default.ChannelID,
                 ServerID = Properties.Settings.Default.ServerID,
                 DMUserID = Properties.Settings.Default.DMUserID
+            };
+
+            var idVerification = requestChannelIds.VerifyIds();
+
+            if(!idVerification.Item1)
+            {
+                MessageBox.Show($"Could not convert {idVerification.Item2} correctly. Double check the value which has been input.");
+                return;
+            }
+
+            DiscordConnection.SendToCorrectTextChat(new MessageRequest
+            {
+                Content = discordContent,
+                IsPrivateRoll = IsPrivateRoll,
+                Ids = requestChannelIds
             });
         }
 
@@ -551,6 +582,11 @@ namespace MyDick
 
             var skillType = SkillType.Unknown;
             var weaponTag = tags[0];
+
+            if(weaponTag == "DeathSaveRoll")
+            {
+                HandleDeathSave(button.Parent);
+            }
 
             if(isSkill)
                 skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
@@ -596,6 +632,12 @@ namespace MyDick
 
             // Handle Discord content
             SendToDiscord(rollInfo);
+        }
+
+        private void HandleDeathSave(Control parent)
+        {
+            DnD.Helpers.RollDice(DiceType.D20);
+
         }
 
         private TextBox GetAttackResultBox(string weaponTag)
@@ -918,6 +960,11 @@ namespace MyDick
             IdealsTextBox.Text = Properties.Settings.Default.Ideals;
             BondsCheckBox.Text = Properties.Settings.Default.Bonds;
             FlawsTextBox.Text = Properties.Settings.Default.Flaws;
+
+            BotTokenTextBox.Text = Properties.Settings.Default.BotToken;
+            ChannelDTextBox.Text = Properties.Settings.Default.ChannelID;
+            ServerIDTextBox.Text = Properties.Settings.Default.ServerID;
+            DMUserIDTextBox.Text = Properties.Settings.Default.DMUserID;
 
             HPTextBox.Text = Properties.Settings.Default.HP;
         }
