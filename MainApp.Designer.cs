@@ -117,6 +117,20 @@
             this.AnimalHandlingCheckButton = new System.Windows.Forms.Button();
             this.ArcanaCheckButton = new System.Windows.Forms.Button();
             this.CombatGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.HPIncreaseButton = new System.Windows.Forms.Button();
+            this.HPDecreaseButton = new System.Windows.Forms.Button();
+            this.HPTextBox = new System.Windows.Forms.TextBox();
+            this.DeathSaveGroupBox = new System.Windows.Forms.GroupBox();
+            this.DeathSaveButton = new System.Windows.Forms.Button();
+            this.DeathSaveFailureContainer = new System.Windows.Forms.GroupBox();
+            this.FailureBoxThree = new System.Windows.Forms.CheckBox();
+            this.FailureBoxTwo = new System.Windows.Forms.CheckBox();
+            this.FailureBoxOne = new System.Windows.Forms.CheckBox();
+            this.DeathSaveSuccessContainer = new System.Windows.Forms.GroupBox();
+            this.SuccessBoxThree = new System.Windows.Forms.CheckBox();
+            this.SuccessBoxTwo = new System.Windows.Forms.CheckBox();
+            this.SuccessBoxOne = new System.Windows.Forms.CheckBox();
             this.PrivateRollCheckBox = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -192,23 +206,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.DeathSaveButton = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.SuccessBoxThree = new System.Windows.Forms.CheckBox();
-            this.SuccessBoxTwo = new System.Windows.Forms.CheckBox();
-            this.SuccessBoxOne = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.HPIncreaseButton = new System.Windows.Forms.Button();
-            this.HPDecreaseButton = new System.Windows.Forms.Button();
-            this.HPTextBox = new System.Windows.Forms.TextBox();
-            this.FailureBoxThree = new System.Windows.Forms.CheckBox();
-            this.FailureBoxTwo = new System.Windows.Forms.CheckBox();
-            this.FailureBoxOne = new System.Windows.Forms.CheckBox();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.DeathSaveGroupBox.SuspendLayout();
+            this.DeathSaveFailureContainer.SuspendLayout();
+            this.DeathSaveSuccessContainer.SuspendLayout();
             this.GeneralDiceBox.SuspendLayout();
             this.MainForm.SuspendLayout();
             this.RollingTab.SuspendLayout();
@@ -219,10 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LevelCounterBox)).BeginInit();
             this.SettingsTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollButton
@@ -1365,7 +1365,7 @@
             // CombatGroupBox
             // 
             this.CombatGroupBox.Controls.Add(this.groupBox2);
-            this.CombatGroupBox.Controls.Add(this.groupBox5);
+            this.CombatGroupBox.Controls.Add(this.DeathSaveGroupBox);
             this.CombatGroupBox.Controls.Add(this.PrivateRollCheckBox);
             this.CombatGroupBox.Controls.Add(this.label5);
             this.CombatGroupBox.Controls.Add(this.label6);
@@ -1404,6 +1404,166 @@
             this.CombatGroupBox.TabIndex = 33;
             this.CombatGroupBox.TabStop = false;
             this.CombatGroupBox.Text = "Combat";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.HPIncreaseButton);
+            this.groupBox2.Controls.Add(this.HPDecreaseButton);
+            this.groupBox2.Controls.Add(this.HPTextBox);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(9, 114);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(191, 111);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "HP";
+            // 
+            // HPIncreaseButton
+            // 
+            this.HPIncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPIncreaseButton.ForeColor = System.Drawing.Color.Black;
+            this.HPIncreaseButton.Location = new System.Drawing.Point(160, 50);
+            this.HPIncreaseButton.Name = "HPIncreaseButton";
+            this.HPIncreaseButton.Size = new System.Drawing.Size(20, 23);
+            this.HPIncreaseButton.TabIndex = 2;
+            this.HPIncreaseButton.Text = "+";
+            this.HPIncreaseButton.UseVisualStyleBackColor = true;
+            this.HPIncreaseButton.Click += new System.EventHandler(this.HPIncreaseButton_Click);
+            // 
+            // HPDecreaseButton
+            // 
+            this.HPDecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPDecreaseButton.ForeColor = System.Drawing.Color.Black;
+            this.HPDecreaseButton.Location = new System.Drawing.Point(9, 50);
+            this.HPDecreaseButton.Name = "HPDecreaseButton";
+            this.HPDecreaseButton.Size = new System.Drawing.Size(20, 23);
+            this.HPDecreaseButton.TabIndex = 1;
+            this.HPDecreaseButton.Text = "-";
+            this.HPDecreaseButton.UseVisualStyleBackColor = true;
+            this.HPDecreaseButton.Click += new System.EventHandler(this.HPDecreaseButton_Click);
+            // 
+            // HPTextBox
+            // 
+            this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
+            this.HPTextBox.Multiline = true;
+            this.HPTextBox.Name = "HPTextBox";
+            this.HPTextBox.Size = new System.Drawing.Size(121, 73);
+            this.HPTextBox.TabIndex = 0;
+            this.HPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DeathSaveGroupBox
+            // 
+            this.DeathSaveGroupBox.Controls.Add(this.DeathSaveButton);
+            this.DeathSaveGroupBox.Controls.Add(this.DeathSaveFailureContainer);
+            this.DeathSaveGroupBox.Controls.Add(this.DeathSaveSuccessContainer);
+            this.DeathSaveGroupBox.ForeColor = System.Drawing.Color.White;
+            this.DeathSaveGroupBox.Location = new System.Drawing.Point(206, 114);
+            this.DeathSaveGroupBox.Name = "DeathSaveGroupBox";
+            this.DeathSaveGroupBox.Size = new System.Drawing.Size(326, 111);
+            this.DeathSaveGroupBox.TabIndex = 116;
+            this.DeathSaveGroupBox.TabStop = false;
+            this.DeathSaveGroupBox.Tag = "DeathSaveBox";
+            this.DeathSaveGroupBox.Text = "Death Saves";
+            // 
+            // DeathSaveButton
+            // 
+            this.DeathSaveButton.BackColor = System.Drawing.Color.DimGray;
+            this.DeathSaveButton.ForeColor = System.Drawing.Color.White;
+            this.DeathSaveButton.Location = new System.Drawing.Point(230, 50);
+            this.DeathSaveButton.Name = "DeathSaveButton";
+            this.DeathSaveButton.Size = new System.Drawing.Size(90, 22);
+            this.DeathSaveButton.TabIndex = 29;
+            this.DeathSaveButton.Tag = "DeathSaveRoll";
+            this.DeathSaveButton.Text = "Death Save";
+            this.DeathSaveButton.UseVisualStyleBackColor = false;
+            this.DeathSaveButton.Click += new System.EventHandler(this.DeathSaveButton_Click);
+            // 
+            // DeathSaveFailureContainer
+            // 
+            this.DeathSaveFailureContainer.Controls.Add(this.FailureBoxThree);
+            this.DeathSaveFailureContainer.Controls.Add(this.FailureBoxTwo);
+            this.DeathSaveFailureContainer.Controls.Add(this.FailureBoxOne);
+            this.DeathSaveFailureContainer.ForeColor = System.Drawing.Color.White;
+            this.DeathSaveFailureContainer.Location = new System.Drawing.Point(7, 63);
+            this.DeathSaveFailureContainer.Name = "DeathSaveFailureContainer";
+            this.DeathSaveFailureContainer.Size = new System.Drawing.Size(217, 42);
+            this.DeathSaveFailureContainer.TabIndex = 3;
+            this.DeathSaveFailureContainer.TabStop = false;
+            this.DeathSaveFailureContainer.Text = "Failures";
+            // 
+            // FailureBoxThree
+            // 
+            this.FailureBoxThree.AutoSize = true;
+            this.FailureBoxThree.Enabled = false;
+            this.FailureBoxThree.Location = new System.Drawing.Point(145, 15);
+            this.FailureBoxThree.Name = "FailureBoxThree";
+            this.FailureBoxThree.Size = new System.Drawing.Size(15, 14);
+            this.FailureBoxThree.TabIndex = 5;
+            this.FailureBoxThree.UseVisualStyleBackColor = true;
+            // 
+            // FailureBoxTwo
+            // 
+            this.FailureBoxTwo.AutoSize = true;
+            this.FailureBoxTwo.Enabled = false;
+            this.FailureBoxTwo.Location = new System.Drawing.Point(99, 15);
+            this.FailureBoxTwo.Name = "FailureBoxTwo";
+            this.FailureBoxTwo.Size = new System.Drawing.Size(15, 14);
+            this.FailureBoxTwo.TabIndex = 4;
+            this.FailureBoxTwo.UseVisualStyleBackColor = true;
+            // 
+            // FailureBoxOne
+            // 
+            this.FailureBoxOne.AutoSize = true;
+            this.FailureBoxOne.Enabled = false;
+            this.FailureBoxOne.Location = new System.Drawing.Point(53, 15);
+            this.FailureBoxOne.Name = "FailureBoxOne";
+            this.FailureBoxOne.Size = new System.Drawing.Size(15, 14);
+            this.FailureBoxOne.TabIndex = 3;
+            this.FailureBoxOne.UseVisualStyleBackColor = true;
+            // 
+            // DeathSaveSuccessContainer
+            // 
+            this.DeathSaveSuccessContainer.Controls.Add(this.SuccessBoxThree);
+            this.DeathSaveSuccessContainer.Controls.Add(this.SuccessBoxTwo);
+            this.DeathSaveSuccessContainer.Controls.Add(this.SuccessBoxOne);
+            this.DeathSaveSuccessContainer.ForeColor = System.Drawing.Color.White;
+            this.DeathSaveSuccessContainer.Location = new System.Drawing.Point(7, 17);
+            this.DeathSaveSuccessContainer.Name = "DeathSaveSuccessContainer";
+            this.DeathSaveSuccessContainer.Size = new System.Drawing.Size(217, 42);
+            this.DeathSaveSuccessContainer.TabIndex = 0;
+            this.DeathSaveSuccessContainer.TabStop = false;
+            this.DeathSaveSuccessContainer.Text = "Successes";
+            // 
+            // SuccessBoxThree
+            // 
+            this.SuccessBoxThree.AutoSize = true;
+            this.SuccessBoxThree.Enabled = false;
+            this.SuccessBoxThree.Location = new System.Drawing.Point(145, 18);
+            this.SuccessBoxThree.Name = "SuccessBoxThree";
+            this.SuccessBoxThree.Size = new System.Drawing.Size(15, 14);
+            this.SuccessBoxThree.TabIndex = 2;
+            this.SuccessBoxThree.UseVisualStyleBackColor = true;
+            // 
+            // SuccessBoxTwo
+            // 
+            this.SuccessBoxTwo.AutoSize = true;
+            this.SuccessBoxTwo.Enabled = false;
+            this.SuccessBoxTwo.Location = new System.Drawing.Point(99, 18);
+            this.SuccessBoxTwo.Name = "SuccessBoxTwo";
+            this.SuccessBoxTwo.Size = new System.Drawing.Size(15, 14);
+            this.SuccessBoxTwo.TabIndex = 1;
+            this.SuccessBoxTwo.UseVisualStyleBackColor = true;
+            // 
+            // SuccessBoxOne
+            // 
+            this.SuccessBoxOne.AutoSize = true;
+            this.SuccessBoxOne.Enabled = false;
+            this.SuccessBoxOne.Location = new System.Drawing.Point(53, 18);
+            this.SuccessBoxOne.Name = "SuccessBoxOne";
+            this.SuccessBoxOne.Size = new System.Drawing.Size(15, 14);
+            this.SuccessBoxOne.TabIndex = 0;
+            this.SuccessBoxOne.UseVisualStyleBackColor = true;
             // 
             // PrivateRollCheckBox
             // 
@@ -2252,156 +2412,6 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.DeathSaveButton);
-            this.groupBox5.Controls.Add(this.groupBox7);
-            this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(206, 114);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(326, 111);
-            this.groupBox5.TabIndex = 116;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Death Saves";
-            // 
-            // DeathSaveButton
-            // 
-            this.DeathSaveButton.BackColor = System.Drawing.Color.DimGray;
-            this.DeathSaveButton.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveButton.Location = new System.Drawing.Point(230, 50);
-            this.DeathSaveButton.Name = "DeathSaveButton";
-            this.DeathSaveButton.Size = new System.Drawing.Size(90, 22);
-            this.DeathSaveButton.TabIndex = 29;
-            this.DeathSaveButton.Tag = "DeathSaveRoll";
-            this.DeathSaveButton.Text = "Death Save";
-            this.DeathSaveButton.UseVisualStyleBackColor = false;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.FailureBoxThree);
-            this.groupBox7.Controls.Add(this.FailureBoxTwo);
-            this.groupBox7.Controls.Add(this.FailureBoxOne);
-            this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(7, 63);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(217, 42);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Failures";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.SuccessBoxThree);
-            this.groupBox6.Controls.Add(this.SuccessBoxTwo);
-            this.groupBox6.Controls.Add(this.SuccessBoxOne);
-            this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(7, 17);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(217, 42);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Successes";
-            // 
-            // SuccessBoxThree
-            // 
-            this.SuccessBoxThree.AutoSize = true;
-            this.SuccessBoxThree.Location = new System.Drawing.Point(145, 18);
-            this.SuccessBoxThree.Name = "SuccessBoxThree";
-            this.SuccessBoxThree.Size = new System.Drawing.Size(15, 14);
-            this.SuccessBoxThree.TabIndex = 2;
-            this.SuccessBoxThree.UseVisualStyleBackColor = true;
-            // 
-            // SuccessBoxTwo
-            // 
-            this.SuccessBoxTwo.AutoSize = true;
-            this.SuccessBoxTwo.Location = new System.Drawing.Point(99, 18);
-            this.SuccessBoxTwo.Name = "SuccessBoxTwo";
-            this.SuccessBoxTwo.Size = new System.Drawing.Size(15, 14);
-            this.SuccessBoxTwo.TabIndex = 1;
-            this.SuccessBoxTwo.UseVisualStyleBackColor = true;
-            // 
-            // SuccessBoxOne
-            // 
-            this.SuccessBoxOne.AutoSize = true;
-            this.SuccessBoxOne.Location = new System.Drawing.Point(53, 18);
-            this.SuccessBoxOne.Name = "SuccessBoxOne";
-            this.SuccessBoxOne.Size = new System.Drawing.Size(15, 14);
-            this.SuccessBoxOne.TabIndex = 0;
-            this.SuccessBoxOne.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.HPIncreaseButton);
-            this.groupBox2.Controls.Add(this.HPDecreaseButton);
-            this.groupBox2.Controls.Add(this.HPTextBox);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(9, 114);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(191, 111);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "HP";
-            // 
-            // HPIncreaseButton
-            // 
-            this.HPIncreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPIncreaseButton.ForeColor = System.Drawing.Color.Black;
-            this.HPIncreaseButton.Location = new System.Drawing.Point(160, 50);
-            this.HPIncreaseButton.Name = "HPIncreaseButton";
-            this.HPIncreaseButton.Size = new System.Drawing.Size(20, 23);
-            this.HPIncreaseButton.TabIndex = 2;
-            this.HPIncreaseButton.Text = "+";
-            this.HPIncreaseButton.UseVisualStyleBackColor = true;
-            // 
-            // HPDecreaseButton
-            // 
-            this.HPDecreaseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPDecreaseButton.ForeColor = System.Drawing.Color.Black;
-            this.HPDecreaseButton.Location = new System.Drawing.Point(9, 50);
-            this.HPDecreaseButton.Name = "HPDecreaseButton";
-            this.HPDecreaseButton.Size = new System.Drawing.Size(20, 23);
-            this.HPDecreaseButton.TabIndex = 1;
-            this.HPDecreaseButton.Text = "-";
-            this.HPDecreaseButton.UseVisualStyleBackColor = true;
-            // 
-            // HPTextBox
-            // 
-            this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
-            this.HPTextBox.Multiline = true;
-            this.HPTextBox.Name = "HPTextBox";
-            this.HPTextBox.Size = new System.Drawing.Size(121, 73);
-            this.HPTextBox.TabIndex = 0;
-            this.HPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FailureBoxThree
-            // 
-            this.FailureBoxThree.AutoSize = true;
-            this.FailureBoxThree.Location = new System.Drawing.Point(145, 15);
-            this.FailureBoxThree.Name = "FailureBoxThree";
-            this.FailureBoxThree.Size = new System.Drawing.Size(15, 14);
-            this.FailureBoxThree.TabIndex = 5;
-            this.FailureBoxThree.UseVisualStyleBackColor = true;
-            // 
-            // FailureBoxTwo
-            // 
-            this.FailureBoxTwo.AutoSize = true;
-            this.FailureBoxTwo.Location = new System.Drawing.Point(99, 15);
-            this.FailureBoxTwo.Name = "FailureBoxTwo";
-            this.FailureBoxTwo.Size = new System.Drawing.Size(15, 14);
-            this.FailureBoxTwo.TabIndex = 4;
-            this.FailureBoxTwo.UseVisualStyleBackColor = true;
-            // 
-            // FailureBoxOne
-            // 
-            this.FailureBoxOne.AutoSize = true;
-            this.FailureBoxOne.Location = new System.Drawing.Point(53, 15);
-            this.FailureBoxOne.Name = "FailureBoxOne";
-            this.FailureBoxOne.Size = new System.Drawing.Size(15, 14);
-            this.FailureBoxOne.TabIndex = 3;
-            this.FailureBoxOne.UseVisualStyleBackColor = true;
-            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2422,6 +2432,13 @@
             this.AttackGroup.PerformLayout();
             this.CombatGroupBox.ResumeLayout(false);
             this.CombatGroupBox.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.DeathSaveGroupBox.ResumeLayout(false);
+            this.DeathSaveFailureContainer.ResumeLayout(false);
+            this.DeathSaveFailureContainer.PerformLayout();
+            this.DeathSaveSuccessContainer.ResumeLayout(false);
+            this.DeathSaveSuccessContainer.PerformLayout();
             this.GeneralDiceBox.ResumeLayout(false);
             this.GeneralDiceBox.PerformLayout();
             this.MainForm.ResumeLayout(false);
@@ -2437,13 +2454,6 @@
             this.SettingsTab.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2617,13 +2627,13 @@
         private System.Windows.Forms.Button HPIncreaseButton;
         private System.Windows.Forms.Button HPDecreaseButton;
         private System.Windows.Forms.TextBox HPTextBox;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox DeathSaveGroupBox;
         private System.Windows.Forms.Button DeathSaveButton;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox DeathSaveFailureContainer;
         private System.Windows.Forms.CheckBox FailureBoxThree;
         private System.Windows.Forms.CheckBox FailureBoxTwo;
         private System.Windows.Forms.CheckBox FailureBoxOne;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox DeathSaveSuccessContainer;
         private System.Windows.Forms.CheckBox SuccessBoxThree;
         private System.Windows.Forms.CheckBox SuccessBoxTwo;
         private System.Windows.Forms.CheckBox SuccessBoxOne;

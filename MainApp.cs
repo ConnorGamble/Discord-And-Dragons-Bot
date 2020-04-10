@@ -2,6 +2,7 @@ using MyDick.Discord;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MyDick
@@ -306,16 +307,6 @@ namespace MyDick
 
         #endregion
 
-        private void HPIncreaseButton_Click(object sender, EventArgs e)
-        {
-            HandleHealthChange(true);
-        }
-
-        private void HPDecreaseButton_Click(object sender, EventArgs e)
-        {
-            HandleHealthChange(false);
-        }
-
         private void PrivateRoll_CheckedChanged(object sender, EventArgs e)
         {
             if (PrivateRollCheckBox.Checked)
@@ -524,7 +515,7 @@ namespace MyDick
             }
             catch
             {
-                MessageBox.Show("No letters allowed as health. Maybe use a number like literally any other person playing this game?");
+                MessageBox.Show("No characters other than whole numbers allowed as health. Maybe use a number like literally any other person playing this game?");
                 return;
             }
 
@@ -583,11 +574,6 @@ namespace MyDick
             var skillType = SkillType.Unknown;
             var weaponTag = tags[0];
 
-            if(weaponTag == "DeathSaveRoll")
-            {
-                HandleDeathSave(button.Parent);
-            }
-
             if(isSkill)
                 skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
 
@@ -606,7 +592,9 @@ namespace MyDick
                     resultBox = GetAttackResultBox(weaponTag);
 
                 resultBox.Text = result.ToString();
-                resultBox.BackColor = ChangeResultColour(diceRoll);
+
+                if(rollType == RollType.SavingThrow || rollType == RollType.SkillCheck || rollType == RollType.Attack)
+                    resultBox.BackColor = ChangeResultColour(diceRoll);
 
                 rollInfo = new RollInformation
                 {
@@ -632,12 +620,6 @@ namespace MyDick
 
             // Handle Discord content
             SendToDiscord(rollInfo);
-        }
-
-        private void HandleDeathSave(Control parent)
-        {
-            DnD.Helpers.RollDice(DiceType.D20);
-
         }
 
         private TextBox GetAttackResultBox(string weaponTag)
@@ -992,6 +974,90 @@ namespace MyDick
         {
             Properties.Settings.Default.DMUserID = DMUserIDTextBox.Text;
 
+        }
+
+        private void HPIncreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(true);
+        }
+
+        private void HPDecreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(false);
+        }
+
+        private void DeathSaveButton_Click(object sender, EventArgs e)
+        {
+            var successBoxes = GetCheckBoxes("DeathSaveSuccessContainer");
+            var failureBoxes = GetCheckBoxes("DeathSaveFailureContainer");
+
+            var currentSuccesses = successBoxes.Where(x => x.Checked).Count();
+            var currentFailures = failureBoxes.Where(x => x.Checked).Count();
+
+            var roll = DnD.Helpers.RollDice(DiceType.D20);
+            Console.WriteLine($"------------------------------------------------- ROLL: {roll.ToString()} -------------------------------------------------------");
+
+            // uncheck all as stable
+            if (roll == 20)
+            {
+                successBoxes.ForEach(x => x.Checked = false);
+                failureBoxes.ForEach(x => x.Checked = false);
+                // Stable gang!! Tell discord! 
+                return;
+            }
+            else if (roll == 1)
+            {
+                // add two because you done fucked
+                var i = 2;
+                foreach (CheckBox box in failureBoxes)
+                {
+                    if (i == 0)
+                        break;
+
+                    if (box.Checked)
+                        continue;
+
+                    box.Checked = true;
+                    i--;
+                }
+            }
+            else if (roll > 10)
+            {
+                foreach (CheckBox box in successBoxes)
+                {
+                    if (box.Checked)
+                        continue;
+
+                    box.Checked = true;
+                    break;
+                }
+            }
+            else
+            {
+                foreach (CheckBox box in failureBoxes)
+                {
+                    if (box.Checked)
+                        continue;
+
+                    box.Checked = true;
+                    break;
+                }
+            }
+        }
+
+        private List<CheckBox> GetCheckBoxes(string containerName)
+        {
+            var successContainer = MainForm.Controls.Find("DeathSaveSuccessContainer", true).First();
+            var boxList = new List<CheckBox>();
+
+            //DeathSaveSuccessContainer
+            //DeathSaveFailureContainer
+            foreach (Control c in successContainer.Controls)
+            {
+                boxList.Add(c as CheckBox);
+            };
+
+            return boxList;
         }
     }
 }
