@@ -1094,8 +1094,8 @@ namespace MyDick
             Properties.Settings.Default.Flaws = FlawsTextBox.Text;
 
             // Health state
-            Properties.Settings.Default.DeathRollSuccesses = CurrentHealthState.CurrentSuccesses;
-            Properties.Settings.Default.DeathRollFailures = CurrentHealthState.CurrentFailures;
+            Properties.Settings.Default.DeathRollSuccesses = SuccessBoxes.Where(x => x.Checked).Count();
+            Properties.Settings.Default.DeathRollFailures = FailureBoxes.Where(x => x.Checked).Count();
             Properties.Settings.Default.HealthState = (int)CurrentHealthState.State;
             Properties.Settings.Default.HealthTransistionState = (int)CurrentHealthState.TransitionState;
 
@@ -1188,9 +1188,23 @@ namespace MyDick
 
             CurrentHealthState = new CurrentHealthState(healthState, transitionState, deathRollSuccesses, deathRollFailures);
             DetermineBecomingStableOrDying();
+            CheckDeathSaveBoxesWhereNeeded(deathRollSuccesses, deathRollFailures);
             // Update the check boxes to have the correct amount ticked
 
             HPTextBox.Text = Properties.Settings.Default.HP;
+        }
+
+        private void CheckDeathSaveBoxesWhereNeeded(int deathRollSuccesses, int deathRollFailures)
+        {
+            for (int i = deathRollSuccesses; i > 0; i--)
+            {
+                SuccessBoxes[i-1].Checked = true;
+            }
+
+            for (int i = deathRollFailures; i > 0; i--)
+            {
+                FailureBoxes[i-1].Checked = true;
+            }
         }
 
         #endregion

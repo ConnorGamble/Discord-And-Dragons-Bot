@@ -122,6 +122,7 @@
             this.HPDecreaseButton = new System.Windows.Forms.Button();
             this.HPTextBox = new System.Windows.Forms.TextBox();
             this.DeathSaveGroupBox = new System.Windows.Forms.GroupBox();
+            this.DeathSaveRollBox = new System.Windows.Forms.TextBox();
             this.DeathSaveButton = new System.Windows.Forms.Button();
             this.DeathSaveFailureContainer = new System.Windows.Forms.GroupBox();
             this.FailureBoxThree = new System.Windows.Forms.CheckBox();
@@ -206,7 +207,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.DeathSaveRollBox = new System.Windows.Forms.TextBox();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -1468,6 +1468,18 @@
             this.DeathSaveGroupBox.Tag = "DeathSaveBox";
             this.DeathSaveGroupBox.Text = "Death Saves";
             // 
+            // DeathSaveRollBox
+            // 
+            this.DeathSaveRollBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.DeathSaveRollBox.ForeColor = System.Drawing.Color.White;
+            this.DeathSaveRollBox.Location = new System.Drawing.Point(249, 74);
+            this.DeathSaveRollBox.Multiline = true;
+            this.DeathSaveRollBox.Name = "DeathSaveRollBox";
+            this.DeathSaveRollBox.Size = new System.Drawing.Size(39, 20);
+            this.DeathSaveRollBox.TabIndex = 86;
+            this.DeathSaveRollBox.Tag = "DeathSaveRollBox";
+            this.DeathSaveRollBox.Text = "0";
+            // 
             // DeathSaveButton
             // 
             this.DeathSaveButton.BackColor = System.Drawing.Color.DimGray;
@@ -1497,7 +1509,7 @@
             // FailureBoxThree
             // 
             this.FailureBoxThree.AutoSize = true;
-            this.FailureBoxThree.Location = new System.Drawing.Point(145, 15);
+            this.FailureBoxThree.Location = new System.Drawing.Point(53, 15);
             this.FailureBoxThree.Name = "FailureBoxThree";
             this.FailureBoxThree.Size = new System.Drawing.Size(15, 14);
             this.FailureBoxThree.TabIndex = 5;
@@ -1515,7 +1527,7 @@
             // FailureBoxOne
             // 
             this.FailureBoxOne.AutoSize = true;
-            this.FailureBoxOne.Location = new System.Drawing.Point(53, 15);
+            this.FailureBoxOne.Location = new System.Drawing.Point(145, 15);
             this.FailureBoxOne.Name = "FailureBoxOne";
             this.FailureBoxOne.Size = new System.Drawing.Size(15, 14);
             this.FailureBoxOne.TabIndex = 3;
@@ -1537,7 +1549,7 @@
             // SuccessBoxThree
             // 
             this.SuccessBoxThree.AutoSize = true;
-            this.SuccessBoxThree.Location = new System.Drawing.Point(145, 18);
+            this.SuccessBoxThree.Location = new System.Drawing.Point(53, 18);
             this.SuccessBoxThree.Name = "SuccessBoxThree";
             this.SuccessBoxThree.Size = new System.Drawing.Size(15, 14);
             this.SuccessBoxThree.TabIndex = 2;
@@ -1555,7 +1567,7 @@
             // SuccessBoxOne
             // 
             this.SuccessBoxOne.AutoSize = true;
-            this.SuccessBoxOne.Location = new System.Drawing.Point(53, 18);
+            this.SuccessBoxOne.Location = new System.Drawing.Point(145, 18);
             this.SuccessBoxOne.Name = "SuccessBoxOne";
             this.SuccessBoxOne.Size = new System.Drawing.Size(15, 14);
             this.SuccessBoxOne.TabIndex = 0;
@@ -2407,18 +2419,6 @@
             this.label18.Size = new System.Drawing.Size(57, 13);
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
-            // 
-            // DeathSaveRollBox
-            // 
-            this.DeathSaveRollBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.DeathSaveRollBox.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveRollBox.Location = new System.Drawing.Point(249, 74);
-            this.DeathSaveRollBox.Multiline = true;
-            this.DeathSaveRollBox.Name = "DeathSaveRollBox";
-            this.DeathSaveRollBox.Size = new System.Drawing.Size(39, 20);
-            this.DeathSaveRollBox.TabIndex = 86;
-            this.DeathSaveRollBox.Tag = "DeathSaveRollBox";
-            this.DeathSaveRollBox.Text = "0";
             // 
             // MainApp
             // 
