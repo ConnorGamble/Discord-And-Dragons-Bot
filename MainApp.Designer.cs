@@ -1475,6 +1475,7 @@
             this.DeathSaveRollBox.Location = new System.Drawing.Point(249, 74);
             this.DeathSaveRollBox.Multiline = true;
             this.DeathSaveRollBox.Name = "DeathSaveRollBox";
+            this.DeathSaveRollBox.ReadOnly = true;
             this.DeathSaveRollBox.Size = new System.Drawing.Size(39, 20);
             this.DeathSaveRollBox.TabIndex = 86;
             this.DeathSaveRollBox.Tag = "DeathSaveRollBox";

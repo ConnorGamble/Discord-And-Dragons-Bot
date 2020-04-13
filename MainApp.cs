@@ -657,30 +657,6 @@ namespace MyDick
             else
                 newHp--;
 
-            if (newHp <= 0)
-            {
-                var requestChannelIds = new ChannelIds
-                {
-                    ChannelID = Properties.Settings.Default.ChannelID,
-                    ServerID = Properties.Settings.Default.ServerID,
-                    DMUserID = Properties.Settings.Default.DMUserID
-                };
-
-                var idVerification = requestChannelIds.VerifyIds();
-
-                if (CurrentHealthState.State == State.Stable)
-                {
-                    DiscordConnection.SendToCorrectTextChat(new MessageRequest
-                    {
-                        Content = $"{CharacterNameTextBox.Text} is falling unconscious...", 
-                        IsPrivateRoll = IsPrivateRoll, 
-                        Ids = requestChannelIds
-                    });
-                }
-                CurrentHealthState.State = State.Unconscious;
-                CurrentHealthState.TransitionState = TransitionState.FallingUnconscious;
-            }
-
             HPTextBox.Text = newHp.ToString();
         }
 
