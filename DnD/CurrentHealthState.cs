@@ -7,6 +7,14 @@
         public int CurrentSuccesses { get; set; }
         public int CurrentFailures { get; set; }
 
+        public CurrentHealthState(State state, TransitionState transitionState, int successes, int failures)
+        {
+            State = state;
+            TransitionState = transitionState;
+            CurrentSuccesses = successes;
+            CurrentFailures = failures;
+        }
+
         public CurrentHealthState(int successes, int failures)
         {
             State = State.Stable;

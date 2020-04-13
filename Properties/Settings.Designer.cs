@@ -646,5 +646,53 @@ namespace MyDick.Properties {
                 this["DMUserID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DeathRollSuccesses {
+            get {
+                return ((int)(this["DeathRollSuccesses"]));
+            }
+            set {
+                this["DeathRollSuccesses"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DeathRollFailures {
+            get {
+                return ((int)(this["DeathRollFailures"]));
+            }
+            set {
+                this["DeathRollFailures"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int HealthState {
+            get {
+                return ((int)(this["HealthState"]));
+            }
+            set {
+                this["HealthState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int HealthTransistionState {
+            get {
+                return ((int)(this["HealthTransistionState"]));
+            }
+            set {
+                this["HealthTransistionState"] = value;
+            }
+        }
     }
 }

@@ -318,6 +318,128 @@ namespace MyDick
 
         #endregion
 
+        #region HP and death saves
+
+        private void HPIncreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(true);
+        }
+
+        private void HPDecreaseButton_Click(object sender, EventArgs e)
+        {
+            HandleHealthChange(false);
+        }
+
+        private void DeathSaveButton_Click(object sender, EventArgs e)
+        {
+            var roll = DnD.Helpers.RollDice(DiceType.D20);
+
+
+            var successes = SuccessBoxes.Where(x => x.Checked).Count();
+            var failures = FailureBoxes.Where(x => x.Checked).Count();
+            if (successes == 3 || failures == 3)
+                ResetDeathSavingBoxes();
+
+            GetControlWithName("DeathSaveRollBox").Text = roll.ToString();
+
+            // uncheck all as stable
+            if (roll == 20)
+            {
+                SuccessBoxes.ForEach(x => x.Checked = true);
+            }
+            else if (roll == 1)
+            {
+                // add two because you done fucked
+                var i = 2;
+                foreach (CheckBox box in FailureBoxes)
+                {
+                    if (i == 0)
+                        break;
+
+                    if (box.Checked)
+                        continue;
+
+                    box.Checked = true;
+                    i--;
+                }
+            }
+            else if (roll >= 10)
+            {
+                foreach (CheckBox box in SuccessBoxes)
+                {
+                    if (box.Checked)
+                        continue;
+
+                    box.Checked = true;
+                    break;
+                }
+            }
+            else
+            {
+                foreach (CheckBox box in FailureBoxes)
+                {
+                    if (box.Checked)
+                        continue;
+
+                    box.Checked = true;
+                    break;
+                }
+            }
+
+            var updatedSuccesses = SuccessBoxes.Where(x => x.Checked).Count();
+            var updatedFailures = FailureBoxes.Where(x => x.Checked).Count();
+
+            CurrentHealthState?.UpdateCurrentHealthState(updatedSuccesses, updatedFailures);
+
+            DiscordConnection.SendToCorrectTextChat(new MessageRequest
+            {
+                Content = Helpers.DetermineContentToSendToDiscord(new RollInformation
+                {
+                    CharacterName = CharacterNameTextBox.Text,
+                    DiceRoll = roll,
+                    RollType = RollType.DeathSave,
+                    CurrentHealthState = CurrentHealthState == null ? CurrentHealthState = new CurrentHealthState(updatedSuccesses, updatedFailures) : CurrentHealthState,
+                    DiceType = DiceType.D20
+
+                }),
+                IsPrivateRoll = IsPrivateRoll,
+                Ids = new ChannelIds
+                {
+                    ChannelID = Properties.Settings.Default.ChannelID,
+                    DMUserID = Properties.Settings.Default.DMUserID,
+                    ServerID = Properties.Settings.Default.ServerID
+                }
+            });
+
+            DetermineBecomingStableOrDying(roll == 20);
+        }
+
+        #endregion
+
+        #region Discord integration info changes
+
+        private void BotTokenTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.BotToken = BotTokenTextBox.Text;
+        }
+
+        private void ChannelIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ChannelID = ChannelDTextBox.Text;
+        }
+
+        private void ServerIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ServerID = ServerIDTextBox.Text;
+        }
+
+        private void DMUserIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DMUserID = DMUserIDTextBox.Text;
+        }
+
+        #endregion
+
         private void PrivateRoll_CheckedChanged(object sender, EventArgs e)
         {
             if (PrivateRollCheckBox.Checked)
@@ -534,6 +656,30 @@ namespace MyDick
                 newHp++;
             else
                 newHp--;
+
+            if (newHp <= 0)
+            {
+                var requestChannelIds = new ChannelIds
+                {
+                    ChannelID = Properties.Settings.Default.ChannelID,
+                    ServerID = Properties.Settings.Default.ServerID,
+                    DMUserID = Properties.Settings.Default.DMUserID
+                };
+
+                var idVerification = requestChannelIds.VerifyIds();
+
+                if (CurrentHealthState.State == State.Stable)
+                {
+                    DiscordConnection.SendToCorrectTextChat(new MessageRequest
+                    {
+                        Content = $"{CharacterNameTextBox.Text} is falling unconscious...", 
+                        IsPrivateRoll = IsPrivateRoll, 
+                        Ids = requestChannelIds
+                    });
+                }
+                CurrentHealthState.State = State.Unconscious;
+                CurrentHealthState.TransitionState = TransitionState.FallingUnconscious;
+            }
 
             HPTextBox.Text = newHp.ToString();
         }
@@ -805,6 +951,76 @@ namespace MyDick
             }
         }
 
+        private void DetermineBecomingStableOrDying(bool rolledNat20 = false)
+        {
+            var successContainer = MainForm.Controls.Find("DeathSaveSuccessContainer", true).First();
+            var failureContainer = MainForm.Controls.Find("DeathSaveFailureContainer", true).First();
+
+            if (rolledNat20)
+            {
+                successContainer.BackColor = Color.Green;
+                successContainer.ForeColor = Color.White;
+            }
+
+            switch (CurrentHealthState.State)
+            {
+                case State.Unconscious:
+                    successContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    successContainer.ForeColor = Color.White;
+                    failureContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    failureContainer.ForeColor = Color.White;
+                    break;
+                case State.Stable:
+                    successContainer.BackColor = Color.Green;
+                    successContainer.ForeColor = Color.White;
+                    failureContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    failureContainer.ForeColor = Color.White;
+                    break;
+                case State.Dead:
+                    successContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    successContainer.ForeColor = Color.White;
+                    failureContainer.BackColor = Color.Red;
+                    failureContainer.ForeColor = Color.Black;
+                    break;
+                default:
+                    break;
+            }
+
+            if (CurrentHealthState.TransitionState == TransitionState.RemainsUnconscious)
+            {
+                successContainer.BackColor = Color.FromArgb(50, 50, 50);
+                successContainer.ForeColor = Color.White;
+                failureContainer.BackColor = Color.FromArgb(50, 50, 50);
+                failureContainer.ForeColor = Color.White;
+            }
+        }
+
+        private void ResetDeathSavingBoxes()
+        {
+            SuccessBoxes.ForEach(x => x.Checked = false);
+            FailureBoxes.ForEach(x => x.Checked = false);
+        }
+
+        private Control GetControlWithName(string name)
+        {
+            return MainForm.Controls.Find(name, true).First();
+        }
+
+        private List<CheckBox> GetCheckBoxes(string containerName)
+        {
+            var successContainer = MainForm.Controls.Find(containerName, true).First();
+            var boxList = new List<CheckBox>();
+
+            //DeathSaveSuccessContainer
+            //DeathSaveFailureContainer
+            foreach (Control c in successContainer.Controls)
+            {
+                boxList.Add(c as CheckBox);
+            };
+
+            return boxList;
+        }
+
         #region Program Maintenence
 
         /// <summary>
@@ -876,6 +1092,12 @@ namespace MyDick
             Properties.Settings.Default.Ideals = IdealsTextBox.Text;
             Properties.Settings.Default.Bonds = BondsCheckBox.Text;
             Properties.Settings.Default.Flaws = FlawsTextBox.Text;
+
+            // Health state
+            Properties.Settings.Default.DeathRollSuccesses = CurrentHealthState.CurrentSuccesses;
+            Properties.Settings.Default.DeathRollFailures = CurrentHealthState.CurrentFailures;
+            Properties.Settings.Default.HealthState = (int)CurrentHealthState.State;
+            Properties.Settings.Default.HealthTransistionState = (int)CurrentHealthState.TransitionState;
 
             Properties.Settings.Default.HP = HPTextBox.Text;
 
@@ -959,196 +1181,20 @@ namespace MyDick
             ServerIDTextBox.Text = Properties.Settings.Default.ServerID;
             DMUserIDTextBox.Text = Properties.Settings.Default.DMUserID;
 
+            var healthState = (State)Properties.Settings.Default.HealthState;
+            var transitionState = (TransitionState)Properties.Settings.Default.HealthTransistionState;
+            var deathRollSuccesses = Properties.Settings.Default.DeathRollSuccesses;
+            var deathRollFailures = Properties.Settings.Default.DeathRollFailures;
+
+            CurrentHealthState = new CurrentHealthState(healthState, transitionState, deathRollSuccesses, deathRollFailures);
+            DetermineBecomingStableOrDying();
+            // Update the check boxes to have the correct amount ticked
+
             HPTextBox.Text = Properties.Settings.Default.HP;
         }
 
         #endregion
 
         #endregion
-
-        private void BotTokenTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.BotToken = BotTokenTextBox.Text;
-        }
-
-        private void ChannelIDTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.ChannelID = ChannelDTextBox.Text;
-        }
-
-        private void ServerIDTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.ServerID = ServerIDTextBox.Text;
-        }
-
-        private void DMUserIDTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.DMUserID = DMUserIDTextBox.Text;
-
-        }
-
-        private void HPIncreaseButton_Click(object sender, EventArgs e)
-        {
-            HandleHealthChange(true);
-        }
-
-        private void HPDecreaseButton_Click(object sender, EventArgs e)
-        {
-            HandleHealthChange(false);
-        }
-
-        private void DeathSaveButton_Click(object sender, EventArgs e)
-        {
-            var roll = DnD.Helpers.RollDice(DiceType.D20);
-
-
-            var successes = SuccessBoxes.Where(x => x.Checked).Count();
-            var failures = FailureBoxes.Where(x => x.Checked).Count();
-            if (successes == 3 || failures == 3)
-                ResetDeathSavingBoxes();
-
-            GetControlWithName("DeathSaveRollBox").Text = roll.ToString();
-
-            // uncheck all as stable
-            if (roll == 20)
-            {
-                SuccessBoxes.ForEach(x => x.Checked = true);
-            }
-            else if (roll == 1)
-            {
-                // add two because you done fucked
-                var i = 2;
-                foreach (CheckBox box in FailureBoxes)
-                {
-                    if (i == 0)
-                        break;
-
-                    if (box.Checked)
-                        continue;
-
-                    box.Checked = true;
-                    i--;
-                }
-            }
-            else if (roll >= 10)
-            {
-                foreach (CheckBox box in SuccessBoxes)
-                {
-                    if (box.Checked)
-                        continue;
-
-                    box.Checked = true;
-                    break;
-                }
-            }
-            else
-            {
-                foreach (CheckBox box in FailureBoxes)
-                {
-                    if (box.Checked)
-                        continue;
-
-                    box.Checked = true;
-                    break;
-                }
-            }
-
-            var updatedSuccesses = SuccessBoxes.Where(x => x.Checked).Count();
-            var updatedFailures = FailureBoxes.Where(x => x.Checked).Count();
-
-            CurrentHealthState?.UpdateCurrentHealthState(updatedSuccesses, updatedFailures);
-
-            DiscordConnection.SendToCorrectTextChat(new MessageRequest
-            {
-                Content = Helpers.DetermineContentToSendToDiscord(new RollInformation
-                {
-                    CharacterName = CharacterNameTextBox.Text,
-                    DiceRoll = roll,
-                    RollType = RollType.DeathSave,
-                    CurrentHealthState = CurrentHealthState == null ? CurrentHealthState = new CurrentHealthState(updatedSuccesses, updatedFailures) : CurrentHealthState,
-                    DiceType = DiceType.D20
-
-                }),
-                IsPrivateRoll = IsPrivateRoll,
-                Ids = new ChannelIds
-                {
-                    ChannelID = Properties.Settings.Default.ChannelID,
-                    DMUserID = Properties.Settings.Default.DMUserID,
-                    ServerID = Properties.Settings.Default.ServerID
-                }
-            });
-
-            DetermineBecomingStableOrDying(roll == 20);
-        }
-
-        private void DetermineBecomingStableOrDying(bool rolledNat20 = false)
-        {
-            var successContainer = MainForm.Controls.Find("DeathSaveSuccessContainer", true).First();
-            var failureContainer = MainForm.Controls.Find("DeathSaveFailureContainer", true).First();
-
-            if (rolledNat20)
-            {
-                successContainer.BackColor = Color.Green;
-                successContainer.ForeColor = Color.White;
-            }
-
-            switch (CurrentHealthState.State)
-            {
-                case State.Unconscious:
-                    successContainer.BackColor = Color.FromArgb(50, 50, 50);
-                    successContainer.ForeColor = Color.White;
-                    failureContainer.BackColor = Color.FromArgb(50, 50, 50);
-                    failureContainer.ForeColor = Color.White;
-                    break;
-                case State.Stable:
-                    successContainer.BackColor = Color.Green;
-                    successContainer.ForeColor = Color.White;
-                    failureContainer.BackColor = Color.FromArgb(50, 50, 50);
-                    failureContainer.ForeColor = Color.White;
-                    break;
-                case State.Dead:
-                    successContainer.BackColor = Color.FromArgb(50, 50, 50);
-                    successContainer.ForeColor = Color.White;
-                    failureContainer.BackColor = Color.Red;
-                    failureContainer.ForeColor = Color.Black;
-                    break;
-                default:
-                    break;
-            }
-
-            if(CurrentHealthState.TransitionState == TransitionState.RemainsUnconscious)
-            {
-                successContainer.BackColor = Color.FromArgb(50, 50, 50);
-                successContainer.ForeColor = Color.White;
-                failureContainer.BackColor = Color.FromArgb(50, 50, 50);
-                failureContainer.ForeColor = Color.White;
-            }
-        }
-
-        private void ResetDeathSavingBoxes()
-        {
-            SuccessBoxes.ForEach(x => x.Checked = false);
-            FailureBoxes.ForEach(x => x.Checked = false);
-        }
-
-        private Control GetControlWithName(string name)
-        {
-            return MainForm.Controls.Find(name, true).First();
-        }
-
-        private List<CheckBox> GetCheckBoxes(string containerName)
-        {
-            var successContainer = MainForm.Controls.Find(containerName, true).First();
-            var boxList = new List<CheckBox>();
-
-            //DeathSaveSuccessContainer
-            //DeathSaveFailureContainer
-            foreach (Control c in successContainer.Controls)
-            {
-                boxList.Add(c as CheckBox);
-            };
-
-            return boxList;
-        }
     }
 }
