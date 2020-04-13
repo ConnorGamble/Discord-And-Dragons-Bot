@@ -4,15 +4,44 @@ namespace MyDick
 {
     public class RollInformation
     {
+        /// <summary>
+        /// The number which was rolled on the dice
+        /// </summary>
         public int DiceRoll { get; set; }
+        /// <summary>
+        /// The modifier to be applied to the DiceRoll
+        /// </summary>
         public int Modifier { get; set; }
+        /// <summary>
+        /// The result of the roll +/- the dice roll
+        /// </summary>
         public int Result { get; set; }
+        /// <summary>
+        /// The type of roll being performed
+        /// </summary>
         public RollType RollType { get; set; }
+        /// <summary>
+        /// The type of skill being performed
+        /// </summary>
         public SkillType SkillType { get; set; }
+        /// <summary>
+        /// The type of dice being rolled (D20, D12 etc.)
+        /// </summary>
         public DiceType DiceType { get; set; }
+        /// <summary>
+        /// The name of the character performing the roll
+        /// </summary>
         public string CharacterName { get; set; }
+        /// <summary>
+        /// The name of the weapon being used if there is one
+        /// </summary>
         public string WeaponName { get; set; }
+        /// <summary>
+        /// Whether or not this roll has an error. Can only really occur when getting the modifier
+        /// </summary>
         public bool HasError { get; set; } = false;
+
+        public CurrentHealthState CurrentHealthState;
 
         public string SkillAsReadableString()
         {

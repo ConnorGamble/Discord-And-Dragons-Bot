@@ -62,11 +62,45 @@ namespace MyDick.Discord
                 case RollType.Damage:
                     content = $"{characterName} rolls for damage using their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
                     break;
+                case RollType.DeathSave:
+                    content = $"{characterName} rolled for a death saving throw! Rolled a {rollInfo.DiceRoll}({diceType}). {DetermineDeathSaveContent(rollInfo.CurrentHealthState)}";
+                    break;
                 default:
                     break;
             }
 
             return content;
+        }
+
+        private static string DetermineDeathSaveContent(CurrentHealthState currentHealthState)
+        {
+            var content = string.Empty;
+            var successStats = $"Successes: {currentHealthState.CurrentSuccesses}/3";
+            var failureStats = $"Failures: {currentHealthState.CurrentFailures}/3";
+
+            switch (currentHealthState.TransitionState)
+            {
+                case TransitionState.BecomingStable:
+                    content += $"Many fall in the face of chaos... But not this one. Not today. They have become stable.";
+                    break;
+                case TransitionState.FallingUnconscious:
+                    content += $"They are falling unconscious! Now the true test; hold fast... Or expire.";
+                    break;
+                case TransitionState.RemainsUnconscious:
+                    content += $"They are still unconscious! As life ebbs... Terrible vistas of emptiness reveal themselves...";
+                    break;
+                case TransitionState.Dying:
+                    content += $"They have perished. More dust. More ashes. More disappointment.";
+                    break;
+                case TransitionState.RevivedButUnconscious:
+                    content += $"They have been revived! However they are still unconscious...";
+                    break;
+                default:
+                    content = $"Something went wrong when determining the current health state: {currentHealthState.TransitionState}";
+                    break;
+            }
+
+            return content += $" {successStats} {failureStats}";
         }
     }
 
@@ -76,7 +110,8 @@ namespace MyDick.Discord
         SavingThrow,
         SkillCheck,
         Attack,
-        Damage
+        Damage,
+        DeathSave
     }
 
     public enum SkillType

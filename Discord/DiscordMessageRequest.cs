@@ -6,8 +6,6 @@ namespace MyDick.Discord
 {
     public class MessageRequest
     {
-        public HttpClient HttpClient { get; set; }
-        public DiscordSocketClient DiscordClient { get; set; }
         public bool IsPrivateRoll { get; set; }
         public string Content { get; set; }
         public ChannelIds Ids {get;set;}
