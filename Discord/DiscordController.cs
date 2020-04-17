@@ -7,13 +7,13 @@ using Discord.WebSocket;
 
 namespace MyDick.Discord
 {
-    public class Connection
+    public class DiscordController
     {
         public DiscordSocketClient _Client;
         public Commands Commands;
         public HttpClient httpClient;
 
-        public Connection()
+        public DiscordController()
         {
             httpClient = new HttpClient();
             MainAsync();
@@ -44,9 +44,7 @@ namespace MyDick.Discord
             _Client.Log += Client_Log;
 
             // Tell the bot to login to Discord
-            /// ########################## SHOULD NOT BE COMMITTING ME, THIS IS PERSONAL INFORMATION
-            await _Client.LoginAsync(TokenType.Bot, "ABOTTOKEN");
-            /// ########################## SHOULD NOT BE COMMITTING ME, THIS IS PERSONAL INFORMATION
+            await _Client.LoginAsync(TokenType.Bot, Properties.Settings.Default.BotToken);
 
             // Start the bot up
             await _Client.StartAsync();
@@ -132,6 +130,80 @@ namespace MyDick.Discord
                 var channels = user.GetOrCreateDMChannelAsync().Result;
                 _ = channels.SendMessageAsync(request.Content);
             });
+        }
+
+        public string DetermineContentToSendToDiscord(RollInformation rollInfo)
+        {
+            // saving throw, skill check attack, damage
+            // Name rolled for a {RollType} on {SkillType}. Rolled a roll with a modifier for a total
+            // Name rolled an attack. Rolled a roll with a modifier for a total
+            var content = $"Rolled a {rollInfo.DiceRoll} with modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+            var skill = rollInfo.SkillAsReadableString();
+            var diceType = rollInfo.DiceTypeAsReadableString();
+            var characterName = rollInfo.CharacterName;
+            var weaponName = rollInfo.WeaponName;
+
+            switch (rollInfo.RollType)
+            {
+                case RollType.Unknown:
+                    break;
+                case RollType.SavingThrow:
+                    // name attempts a strength saving throw (D20) 
+                    content = $"{characterName} attempts a {skill} saving throw ({diceType}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    break;
+                case RollType.SkillCheck:
+                    content = $"{characterName} performs a {skill} skill check ({diceType}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    break;
+                case RollType.Attack:
+                    content = $"{characterName} performs an attack with their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    break;
+                case RollType.Damage:
+                    content = $"{characterName} rolls for damage using their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
+                    break;
+                case RollType.DeathSave:
+                    content = $"{characterName} rolled for a death saving throw! Rolled a {rollInfo.DiceRoll}({diceType}). {DetermineDeathSaveContent(rollInfo.CurrentHealthState)}";
+                    break;
+                default:
+                    break;
+            }
+
+            return content;
+        }
+
+        private string DetermineDeathSaveContent(CurrentHealthState currentHealthState)
+        {
+            var content = string.Empty;
+            var successStats = $"Successes: {currentHealthState.CurrentSuccesses}/3";
+            var failureStats = $"Failures: {currentHealthState.CurrentFailures}/3";
+
+            switch (currentHealthState.TransitionState)
+            {
+                case TransitionState.BecomingStable:
+                    content += $"Many fall in the face of chaos... But not this one. Not today. They have become stable.";
+                    break;
+                case TransitionState.FallingUnconscious:
+                    content += $"They are falling unconscious! Now the true test; hold fast... Or expire.";
+                    break;
+                case TransitionState.RemainsUnconscious:
+                    content += $"They are still unconscious! As life ebbs... Terrible vistas of emptiness reveal themselves...";
+                    break;
+                case TransitionState.Dying:
+                    content += $"They have perished. More dust. More ashes. More disappointment.";
+                    break;
+                case TransitionState.RevivedButUnconscious:
+                    content += $"They have been revived! However they are still unconscious...";
+                    break;
+                default:
+                    content = $"Something went wrong when determining the current health state: {currentHealthState.TransitionState}";
+                    break;
+            }
+
+            return content += $" {successStats} {failureStats}";
+        }
+
+        public bool CanLoginWithBotToken()
+        {
+            return !Task.Run(() => _Client.LoginAsync(TokenType.Bot, Properties.Settings.Default.BotToken)).IsFaulted;
         }
 
 

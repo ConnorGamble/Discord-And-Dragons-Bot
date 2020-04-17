@@ -207,6 +207,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.BotTokenConnect = new System.Windows.Forms.Button();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -2315,6 +2316,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BotTokenConnect);
             this.groupBox3.Controls.Add(this.DMUserIDTextBox);
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.label22);
@@ -2420,6 +2422,18 @@
             this.label18.Size = new System.Drawing.Size(57, 13);
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
+            // 
+            // BotTokenConnect
+            // 
+            this.BotTokenConnect.BackColor = System.Drawing.Color.DimGray;
+            this.BotTokenConnect.ForeColor = System.Drawing.Color.White;
+            this.BotTokenConnect.Location = new System.Drawing.Point(220, 37);
+            this.BotTokenConnect.Name = "BotTokenConnect";
+            this.BotTokenConnect.Size = new System.Drawing.Size(96, 21);
+            this.BotTokenConnect.TabIndex = 35;
+            this.BotTokenConnect.Tag = "";
+            this.BotTokenConnect.Text = "Connect";
+            this.BotTokenConnect.UseVisualStyleBackColor = false;
             // 
             // MainApp
             // 
@@ -2648,6 +2662,7 @@
         private System.Windows.Forms.CheckBox SuccessBoxTwo;
         private System.Windows.Forms.CheckBox SuccessBoxOne;
         private System.Windows.Forms.TextBox DeathSaveRollBox;
+        private System.Windows.Forms.Button BotTokenConnect;
     }
 }
 

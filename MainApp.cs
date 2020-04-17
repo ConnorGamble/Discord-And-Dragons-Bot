@@ -20,7 +20,7 @@ namespace MyDick
         public string inactiveButtonName = "";
 
         // Access to the Discord bot, used to send DM's
-        public Connection DiscordConnection;
+        public DiscordController DiscordController;
 
         public bool IsPrivateRoll;
 
@@ -42,7 +42,7 @@ namespace MyDick
         {
             InitializeComponent();
             dieButtons = GetDiceButtons();
-            DiscordConnection = new Connection();
+            DiscordController = new DiscordController();
             SuccessBoxes = GetCheckBoxes("DeathSaveSuccessContainer");
             FailureBoxes = GetCheckBoxes("DeathSaveFailureContainer");
         }
@@ -391,9 +391,9 @@ namespace MyDick
 
             CurrentHealthState?.UpdateCurrentHealthState(updatedSuccesses, updatedFailures);
 
-            DiscordConnection.SendToCorrectTextChat(new MessageRequest
+            DiscordController.SendToCorrectTextChat(new MessageRequest
             {
-                Content = Helpers.DetermineContentToSendToDiscord(new RollInformation
+                Content = DiscordController.DetermineContentToSendToDiscord(new RollInformation
                 {
                     CharacterName = CharacterNameTextBox.Text,
                     DiceRoll = roll,
@@ -529,7 +529,7 @@ namespace MyDick
                 return;
             }
 
-            DiscordConnection.SendToCorrectTextChat(new MessageRequest
+            DiscordController.SendToCorrectTextChat(new MessageRequest
             {
                 Content = content,
                 IsPrivateRoll = IsPrivateRoll,
@@ -669,7 +669,7 @@ namespace MyDick
             if (newResult.HasError)
                 return;
 
-            var discordContent = Helpers.DetermineContentToSendToDiscord(newResult);
+            var discordContent = DiscordController.DetermineContentToSendToDiscord(newResult);
 
             var requestChannelIds = new ChannelIds
             {
@@ -686,7 +686,7 @@ namespace MyDick
                 return;
             }
 
-            DiscordConnection.SendToCorrectTextChat(new MessageRequest
+            DiscordController.SendToCorrectTextChat(new MessageRequest
             {
                 Content = discordContent,
                 IsPrivateRoll = IsPrivateRoll,
@@ -1079,7 +1079,7 @@ namespace MyDick
 
             Properties.Settings.Default.Save();
 
-            DiscordConnection.LogoutBot();
+            DiscordController.LogoutBot();
         }
 
         /// <summary>

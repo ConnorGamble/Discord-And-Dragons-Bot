@@ -29,7 +29,8 @@ namespace MyDick.Discord
 
         public void HandleRollingCommand(SocketCommandContext socketContext, SocketUserMessage userMessage)
         {
-            PrintMessage(socketContext, userMessage.Content);
+            // Unsure if to get rid of this at the momenet, might want to support it
+            //PrintMessage(socketContext, userMessage.Content);
             // Call off to the rolling 
         }
 

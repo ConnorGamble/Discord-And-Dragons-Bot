@@ -61,4 +61,55 @@ namespace MyDick
             return DiceType.ToString();
         }
     }
+
+    public enum RollType
+    {
+        Unknown,
+        SavingThrow,
+        SkillCheck,
+        Attack,
+        Damage,
+        DeathSave
+    }
+
+    public enum SkillType
+    {
+        Unknown,
+        Strength,
+        Dexterity,
+        Constitution,
+        Intelligence,
+        Wisdom,
+        Charisma,
+        Acrobatics,
+        AnimalHandling,
+        Arcana,
+        Athletics,
+        Deception,
+        History,
+        Insight,
+        Intimidation,
+        Investigation,
+        Medicine,
+        Nature,
+        Perception,
+        Performance,
+        Persuasion,
+        Religion,
+        SleightOfHand,
+        Stealth,
+        Survival
+    }
+
+    public enum DiceType
+    {
+        Unknown,
+        D4,
+        D6,
+        D8,
+        D10,
+        D12,
+        D20,
+        D100
+    }
 }
