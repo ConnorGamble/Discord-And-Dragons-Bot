@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
+using Discord.Net;
 using Discord.WebSocket;
 
 namespace MyDick.Discord
@@ -53,6 +54,38 @@ namespace MyDick.Discord
             await Task.Delay(-1);
         }
 
+        public async void CreateNewClient()
+        {
+            await _Client.StopAsync();
+
+            _Client = new DiscordSocketClient(new DiscordSocketConfig()
+            {
+                LogLevel = LogSeverity.Debug,
+                AlwaysDownloadUsers = true
+            });
+
+            // Attach the ready client event
+            _Client.Ready += Client_Ready;
+
+            try
+            {
+                await _Client.LoginAsync(TokenType.Bot, Properties.Settings.Default.BotToken);
+            }
+            catch(HttpException exception)
+            {
+                Forms.Helpers.CreateMessageBox("Unauthorised access to this bot. Be sure the Bot token is correct and try again.");
+                return;
+            }
+
+            // Tell the bot to login to Discord
+
+            // Start the bot up
+            await _Client.StartAsync();
+
+            // Stop bot from closing on it's own
+            await Task.Delay(-1);
+        }
+
         private async Task Client_Log(LogMessage arg)
         {
             // Logs
@@ -85,6 +118,7 @@ namespace MyDick.Discord
         {
             await _Client.LogoutAsync();
             await _Client.StopAsync();
+            _Client.Dispose();
         }
 
         public void SendToCorrectTextChat(MessageRequest request)
@@ -226,14 +260,21 @@ namespace MyDick.Discord
                     messageContent = $"Found server called: {foundServer.Name}";
                     break;
                 case TextOutputType.Channel:
-                    var server = _Client.GetGuild(Properties.Settings.Default.ServerID);
+                    if(!CanParseUlong(Properties.Settings.Default.ServerID))
+                    {
+                        messageContent = "Could not find server using given ServerID. (ID in wrong format)";
+                        break;
+                    }
+
+                    var server = _Client.GetGuild(ulong.Parse(Properties.Settings.Default.ServerID));
                     if (server == null)
                     {
                         messageContent = "Could not find server. Please ensure you can find the correct server before searching for a channel.";
                         break;
                     }
-                    server.GetTextChannel(id);
-                    messageContent = $"Found channel called: {,}";
+
+                    var textChannel = server.GetTextChannel(parsedId);
+                    messageContent = $"Found channel called: {textChannel.Name}";
                     break;
                 case TextOutputType.DMUser:
                     var foundUser = _Client.GetUser(parsedId);

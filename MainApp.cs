@@ -1201,5 +1201,10 @@ namespace MyDick
         {
             DiscordController.CanFindTextOutput(DMUserIDTextBox.Text, TextOutputType.DMUser);
         }
+
+        private void BotTokenConnect_Click(object sender, EventArgs e)
+        {
+            DiscordController.CreateNewClient();
+        }
     }
 }
