@@ -55,10 +55,5 @@ namespace MyDick.DnD
             // Return that number
             return rolled;
         }
-
-        public static void CreateMessageBox(string content)
-        {
-            MessageBox.Show(content);
-        }
     }
 }

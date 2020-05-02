@@ -1186,5 +1186,20 @@ namespace MyDick
         #endregion
 
         #endregion
+
+        private void FindServer_Click(object sender, EventArgs e)
+        {
+            DiscordController.CanFindTextOutput(ServerIDTextBox.Text, TextOutputType.Server);
+        }
+
+        private void FindChannel_Click(object sender, EventArgs e)
+        {
+            DiscordController.CanFindTextOutput(ChannelDTextBox.Text, TextOutputType.Channel);
+        }
+
+        private void FindUser_Click(object sender, EventArgs e)
+        {
+            DiscordController.CanFindTextOutput(DMUserIDTextBox.Text, TextOutputType.DMUser);
+        }
     }
 }

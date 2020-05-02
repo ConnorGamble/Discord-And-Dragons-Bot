@@ -102,14 +102,14 @@ namespace MyDick.Discord
                 var guild = _Client.GetGuild(ulong.Parse(request.Ids.ServerID));
                 if (guild == null)
                 {
-                    DnD.Helpers.CreateMessageBox($"Could not find the server with the specified ID. ({request.Ids.ServerID})");
+                    Forms.Helpers.CreateMessageBox($"Could not find the server with the specified ID. ({request.Ids.ServerID})");
                     return;
                 }
 
                 var channel = guild.GetTextChannel(ulong.Parse(request.Ids.ChannelID));
                 if (channel == null)
                 {
-                    DnD.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.ChannelID})");
+                    Forms.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.ChannelID})");
                     return;
                 }
 
@@ -124,7 +124,7 @@ namespace MyDick.Discord
                 var user = _Client.GetUser(ulong.Parse(request.Ids.DMUserID));
                 if (user == null)
                 {
-                    DnD.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.DMUserID})");
+                    Forms.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.DMUserID})");
                     return;
                 }
                 var channels = user.GetOrCreateDMChannelAsync().Result;
@@ -207,6 +207,60 @@ namespace MyDick.Discord
         }
 
 
+        public void CanFindTextOutput(string id, TextOutputType textOutputType)
+        {
+            var messageContent = $"Could not find given {textOutputType.ToString()} with id: {id}";
+
+            if (!CanParseUlong(id))
+            {
+                Forms.Helpers.CreateMessageBox($"A valid ID is needed to search for a server. \n ID: {id}");
+                return;
+            }
+
+            var parsedId = ulong.Parse(id);
+
+            switch (textOutputType)
+            {
+                case TextOutputType.Server:
+                    var foundServer = _Client.GetGuild(parsedId);
+                    messageContent = $"Found server called: {foundServer.Name}";
+                    break;
+                case TextOutputType.Channel:
+                    var server = _Client.GetGuild(Properties.Settings.Default.ServerID);
+                    if (server == null)
+                    {
+                        messageContent = "Could not find server. Please ensure you can find the correct server before searching for a channel.";
+                        break;
+                    }
+                    server.GetTextChannel(id);
+                    messageContent = $"Found channel called: {,}";
+                    break;
+                case TextOutputType.DMUser:
+                    var foundUser = _Client.GetUser(parsedId);
+                    messageContent = $"Found user called: {foundUser.Username}";
+                    break;
+            }
+
+            Forms.Helpers.CreateMessageBox(messageContent);
+
+        }
+
+        private bool CanParseUlong(string id)
+        {
+            if (ulong.TryParse(id, out _))
+                return true;
+            else
+                return false;
+        }
+
+
         // Bunch of different methods on here for "get channel, get server, get user etc and return name so that it's verifiable. Add in a message box which says found "X channel or whatever"
+    }
+
+    public enum TextOutputType
+    {
+        Server, 
+        Channel, 
+        DMUser
     }
 }

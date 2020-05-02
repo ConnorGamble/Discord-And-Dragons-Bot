@@ -198,6 +198,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SettingsTab = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BotTokenConnect = new System.Windows.Forms.Button();
             this.DMUserIDTextBox = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -207,7 +208,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.BotTokenConnect = new System.Windows.Forms.Button();
+            this.FindServer = new System.Windows.Forms.Button();
+            this.FindChannel = new System.Windows.Forms.Button();
+            this.FindUser = new System.Windows.Forms.Button();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -2316,6 +2319,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.FindUser);
+            this.groupBox3.Controls.Add(this.FindChannel);
+            this.groupBox3.Controls.Add(this.FindServer);
             this.groupBox3.Controls.Add(this.BotTokenConnect);
             this.groupBox3.Controls.Add(this.DMUserIDTextBox);
             this.groupBox3.Controls.Add(this.label23);
@@ -2333,6 +2339,18 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot settings";
+            // 
+            // BotTokenConnect
+            // 
+            this.BotTokenConnect.BackColor = System.Drawing.Color.DimGray;
+            this.BotTokenConnect.ForeColor = System.Drawing.Color.White;
+            this.BotTokenConnect.Location = new System.Drawing.Point(220, 37);
+            this.BotTokenConnect.Name = "BotTokenConnect";
+            this.BotTokenConnect.Size = new System.Drawing.Size(96, 21);
+            this.BotTokenConnect.TabIndex = 35;
+            this.BotTokenConnect.Tag = "";
+            this.BotTokenConnect.Text = "Connect";
+            this.BotTokenConnect.UseVisualStyleBackColor = false;
             // 
             // DMUserIDTextBox
             // 
@@ -2423,17 +2441,44 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
             // 
-            // BotTokenConnect
+            // FindServer
             // 
-            this.BotTokenConnect.BackColor = System.Drawing.Color.DimGray;
-            this.BotTokenConnect.ForeColor = System.Drawing.Color.White;
-            this.BotTokenConnect.Location = new System.Drawing.Point(220, 37);
-            this.BotTokenConnect.Name = "BotTokenConnect";
-            this.BotTokenConnect.Size = new System.Drawing.Size(96, 21);
-            this.BotTokenConnect.TabIndex = 35;
-            this.BotTokenConnect.Tag = "";
-            this.BotTokenConnect.Text = "Connect";
-            this.BotTokenConnect.UseVisualStyleBackColor = false;
+            this.FindServer.BackColor = System.Drawing.Color.DimGray;
+            this.FindServer.ForeColor = System.Drawing.Color.White;
+            this.FindServer.Location = new System.Drawing.Point(220, 82);
+            this.FindServer.Name = "FindServer";
+            this.FindServer.Size = new System.Drawing.Size(96, 21);
+            this.FindServer.TabIndex = 36;
+            this.FindServer.Tag = "";
+            this.FindServer.Text = "Connect";
+            this.FindServer.UseVisualStyleBackColor = false;
+            this.FindServer.Click += new System.EventHandler(this.FindServer_Click);
+            // 
+            // FindChannel
+            // 
+            this.FindChannel.BackColor = System.Drawing.Color.DimGray;
+            this.FindChannel.ForeColor = System.Drawing.Color.White;
+            this.FindChannel.Location = new System.Drawing.Point(220, 130);
+            this.FindChannel.Name = "FindChannel";
+            this.FindChannel.Size = new System.Drawing.Size(96, 21);
+            this.FindChannel.TabIndex = 37;
+            this.FindChannel.Tag = "";
+            this.FindChannel.Text = "Connect";
+            this.FindChannel.UseVisualStyleBackColor = false;
+            this.FindChannel.Click += new System.EventHandler(this.FindChannel_Click);
+            // 
+            // FindUser
+            // 
+            this.FindUser.BackColor = System.Drawing.Color.DimGray;
+            this.FindUser.ForeColor = System.Drawing.Color.White;
+            this.FindUser.Location = new System.Drawing.Point(220, 176);
+            this.FindUser.Name = "FindUser";
+            this.FindUser.Size = new System.Drawing.Size(96, 21);
+            this.FindUser.TabIndex = 38;
+            this.FindUser.Tag = "";
+            this.FindUser.Text = "Connect";
+            this.FindUser.UseVisualStyleBackColor = false;
+            this.FindUser.Click += new System.EventHandler(this.FindUser_Click);
             // 
             // MainApp
             // 
@@ -2663,6 +2708,9 @@
         private System.Windows.Forms.CheckBox SuccessBoxOne;
         private System.Windows.Forms.TextBox DeathSaveRollBox;
         private System.Windows.Forms.Button BotTokenConnect;
+        private System.Windows.Forms.Button FindUser;
+        private System.Windows.Forms.Button FindChannel;
+        private System.Windows.Forms.Button FindServer;
     }
 }
 
