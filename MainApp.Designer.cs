@@ -204,13 +204,19 @@
             this.BotTokenConnect = new System.Windows.Forms.Button();
             this.DMUserIDTextBox = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.ChannelDTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.ServerIDTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.GenericNotes = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -228,6 +234,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.LevelCounterBox)).BeginInit();
             this.SettingsTab.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollButton
@@ -1990,6 +1999,8 @@
             // CharacterSheetTab
             // 
             this.CharacterSheetTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CharacterSheetTab.Controls.Add(this.groupBox7);
+            this.CharacterSheetTab.Controls.Add(this.groupBox6);
             this.CharacterSheetTab.Controls.Add(this.groupBox4);
             this.CharacterSheetTab.Controls.Add(this.Characteristics);
             this.CharacterSheetTab.Controls.Add(this.groupBox1);
@@ -2067,7 +2078,7 @@
             this.Characteristics.ForeColor = System.Drawing.Color.White;
             this.Characteristics.Location = new System.Drawing.Point(8, 74);
             this.Characteristics.Name = "Characteristics";
-            this.Characteristics.Size = new System.Drawing.Size(835, 114);
+            this.Characteristics.Size = new System.Drawing.Size(842, 114);
             this.Characteristics.TabIndex = 1;
             this.Characteristics.TabStop = false;
             this.Characteristics.Text = "Characteristics";
@@ -2075,7 +2086,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(570, 16);
+            this.label16.Location = new System.Drawing.Point(633, 16);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(34, 13);
             this.label16.TabIndex = 29;
@@ -2084,7 +2095,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(382, 16);
+            this.label15.Location = new System.Drawing.Point(420, 16);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 13);
             this.label15.TabIndex = 28;
@@ -2093,7 +2104,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(194, 16);
+            this.label14.Location = new System.Drawing.Point(213, 16);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(35, 13);
             this.label14.TabIndex = 27;
@@ -2102,7 +2113,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 16);
+            this.label13.Location = new System.Drawing.Point(7, 16);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 13);
             this.label13.TabIndex = 23;
@@ -2112,30 +2123,30 @@
             // 
             this.FlawsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.FlawsTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.FlawsTextBox.Location = new System.Drawing.Point(573, 32);
+            this.FlawsTextBox.Location = new System.Drawing.Point(630, 32);
             this.FlawsTextBox.Multiline = true;
             this.FlawsTextBox.Name = "FlawsTextBox";
-            this.FlawsTextBox.Size = new System.Drawing.Size(182, 71);
+            this.FlawsTextBox.Size = new System.Drawing.Size(201, 71);
             this.FlawsTextBox.TabIndex = 26;
             // 
             // BondsCheckBox
             // 
             this.BondsCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BondsCheckBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.BondsCheckBox.Location = new System.Drawing.Point(385, 32);
+            this.BondsCheckBox.Location = new System.Drawing.Point(423, 32);
             this.BondsCheckBox.Multiline = true;
             this.BondsCheckBox.Name = "BondsCheckBox";
-            this.BondsCheckBox.Size = new System.Drawing.Size(182, 71);
+            this.BondsCheckBox.Size = new System.Drawing.Size(201, 71);
             this.BondsCheckBox.TabIndex = 25;
             // 
             // IdealsTextBox
             // 
             this.IdealsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.IdealsTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.IdealsTextBox.Location = new System.Drawing.Point(197, 32);
+            this.IdealsTextBox.Location = new System.Drawing.Point(216, 32);
             this.IdealsTextBox.Multiline = true;
             this.IdealsTextBox.Name = "IdealsTextBox";
-            this.IdealsTextBox.Size = new System.Drawing.Size(182, 71);
+            this.IdealsTextBox.Size = new System.Drawing.Size(201, 71);
             this.IdealsTextBox.TabIndex = 24;
             // 
             // PersonalityTraitsTextBox
@@ -2145,7 +2156,7 @@
             this.PersonalityTraitsTextBox.Location = new System.Drawing.Point(9, 32);
             this.PersonalityTraitsTextBox.Multiline = true;
             this.PersonalityTraitsTextBox.Name = "PersonalityTraitsTextBox";
-            this.PersonalityTraitsTextBox.Size = new System.Drawing.Size(182, 71);
+            this.PersonalityTraitsTextBox.Size = new System.Drawing.Size(201, 71);
             this.PersonalityTraitsTextBox.TabIndex = 23;
             // 
             // groupBox1
@@ -2167,7 +2178,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(836, 62);
+            this.groupBox1.Size = new System.Drawing.Size(843, 62);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Character";
@@ -2310,6 +2321,7 @@
             // SettingsTab
             // 
             this.SettingsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SettingsTab.Controls.Add(this.groupBox5);
             this.SettingsTab.Controls.Add(this.groupBox3);
             this.SettingsTab.Location = new System.Drawing.Point(4, 22);
             this.SettingsTab.Name = "SettingsTab";
@@ -2325,7 +2337,6 @@
             this.groupBox3.Controls.Add(this.BotTokenConnect);
             this.groupBox3.Controls.Add(this.DMUserIDTextBox);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.ChannelDTextBox);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.ServerIDTextBox);
@@ -2335,7 +2346,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(8, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(345, 208);
+            this.groupBox3.Size = new System.Drawing.Size(428, 208);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot settings";
@@ -2344,7 +2355,7 @@
             // 
             this.FindUser.BackColor = System.Drawing.Color.DimGray;
             this.FindUser.ForeColor = System.Drawing.Color.White;
-            this.FindUser.Location = new System.Drawing.Point(220, 176);
+            this.FindUser.Location = new System.Drawing.Point(319, 176);
             this.FindUser.Name = "FindUser";
             this.FindUser.Size = new System.Drawing.Size(96, 21);
             this.FindUser.TabIndex = 38;
@@ -2357,7 +2368,7 @@
             // 
             this.FindChannel.BackColor = System.Drawing.Color.DimGray;
             this.FindChannel.ForeColor = System.Drawing.Color.White;
-            this.FindChannel.Location = new System.Drawing.Point(220, 130);
+            this.FindChannel.Location = new System.Drawing.Point(319, 130);
             this.FindChannel.Name = "FindChannel";
             this.FindChannel.Size = new System.Drawing.Size(96, 21);
             this.FindChannel.TabIndex = 37;
@@ -2370,7 +2381,7 @@
             // 
             this.FindServer.BackColor = System.Drawing.Color.DimGray;
             this.FindServer.ForeColor = System.Drawing.Color.White;
-            this.FindServer.Location = new System.Drawing.Point(220, 82);
+            this.FindServer.Location = new System.Drawing.Point(319, 82);
             this.FindServer.Name = "FindServer";
             this.FindServer.Size = new System.Drawing.Size(96, 21);
             this.FindServer.TabIndex = 36;
@@ -2383,7 +2394,7 @@
             // 
             this.BotTokenConnect.BackColor = System.Drawing.Color.DimGray;
             this.BotTokenConnect.ForeColor = System.Drawing.Color.White;
-            this.BotTokenConnect.Location = new System.Drawing.Point(220, 37);
+            this.BotTokenConnect.Location = new System.Drawing.Point(319, 37);
             this.BotTokenConnect.Name = "BotTokenConnect";
             this.BotTokenConnect.Size = new System.Drawing.Size(96, 21);
             this.BotTokenConnect.TabIndex = 35;
@@ -2398,7 +2409,7 @@
             this.DMUserIDTextBox.ForeColor = System.Drawing.Color.White;
             this.DMUserIDTextBox.Location = new System.Drawing.Point(6, 177);
             this.DMUserIDTextBox.Name = "DMUserIDTextBox";
-            this.DMUserIDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.DMUserIDTextBox.Size = new System.Drawing.Size(307, 20);
             this.DMUserIDTextBox.TabIndex = 8;
             this.DMUserIDTextBox.Text = "Eg: 1234567891";
             this.DMUserIDTextBox.TextChanged += new System.EventHandler(this.DMUserIDTextBox_TextChanged);
@@ -2412,22 +2423,13 @@
             this.label23.TabIndex = 7;
             this.label23.Text = "DM User ID";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(199, 16);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(93, 13);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "What is all of this?";
-            // 
             // ChannelDTextBox
             // 
             this.ChannelDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ChannelDTextBox.ForeColor = System.Drawing.Color.White;
             this.ChannelDTextBox.Location = new System.Drawing.Point(6, 130);
             this.ChannelDTextBox.Name = "ChannelDTextBox";
-            this.ChannelDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.ChannelDTextBox.Size = new System.Drawing.Size(307, 20);
             this.ChannelDTextBox.TabIndex = 5;
             this.ChannelDTextBox.Text = "Eg: 1234567891";
             this.ChannelDTextBox.TextChanged += new System.EventHandler(this.ChannelIDTextBox_TextChanged);
@@ -2447,7 +2449,7 @@
             this.ServerIDTextBox.ForeColor = System.Drawing.Color.White;
             this.ServerIDTextBox.Location = new System.Drawing.Point(6, 82);
             this.ServerIDTextBox.Name = "ServerIDTextBox";
-            this.ServerIDTextBox.Size = new System.Drawing.Size(183, 20);
+            this.ServerIDTextBox.Size = new System.Drawing.Size(307, 20);
             this.ServerIDTextBox.TabIndex = 3;
             this.ServerIDTextBox.Text = "Eg: 1234567891";
             this.ServerIDTextBox.TextChanged += new System.EventHandler(this.ServerIDTextBox_TextChanged);
@@ -2468,7 +2470,7 @@
             this.BotTokenTextBox.ForeColor = System.Drawing.Color.White;
             this.BotTokenTextBox.Location = new System.Drawing.Point(7, 37);
             this.BotTokenTextBox.Name = "BotTokenTextBox";
-            this.BotTokenTextBox.Size = new System.Drawing.Size(183, 20);
+            this.BotTokenTextBox.Size = new System.Drawing.Size(307, 20);
             this.BotTokenTextBox.TabIndex = 1;
             this.BotTokenTextBox.TextChanged += new System.EventHandler(this.BotTokenTextBox_TextChanged);
             // 
@@ -2480,6 +2482,83 @@
             this.label18.Size = new System.Drawing.Size(57, 13);
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(11, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 21);
+            this.button1.TabIndex = 39;
+            this.button1.Tag = "";
+            this.button1.Text = "Help";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label27);
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(442, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(402, 208);
+            this.groupBox5.TabIndex = 39;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Help";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 18);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(93, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "What is all of this?";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox6.Controls.Add(this.GenericNotes);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(9, 314);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(629, 114);
+            this.groupBox6.TabIndex = 31;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Notes";
+            // 
+            // GenericNotes
+            // 
+            this.GenericNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.GenericNotes.ForeColor = System.Drawing.SystemColors.Window;
+            this.GenericNotes.Location = new System.Drawing.Point(9, 19);
+            this.GenericNotes.Multiline = true;
+            this.GenericNotes.Name = "GenericNotes";
+            this.GenericNotes.Size = new System.Drawing.Size(614, 84);
+            this.GenericNotes.TabIndex = 23;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
+            this.groupBox7.Location = new System.Drawing.Point(644, 194);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(207, 232);
+            this.groupBox7.TabIndex = 31;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Features and Traits";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.textBox3.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox3.Location = new System.Drawing.Point(9, 16);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(185, 207);
+            this.textBox3.TabIndex = 23;
             // 
             // MainApp
             // 
@@ -2524,6 +2603,12 @@
             this.SettingsTab.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2692,7 +2777,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox DMUserIDTextBox;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button HPIncreaseButton;
         private System.Windows.Forms.Button HPDecreaseButton;
@@ -2712,6 +2796,13 @@
         private System.Windows.Forms.Button FindUser;
         private System.Windows.Forms.Button FindChannel;
         private System.Windows.Forms.Button FindServer;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox GenericNotes;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 
