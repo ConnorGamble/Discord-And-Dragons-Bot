@@ -257,7 +257,14 @@ namespace MyDick.Discord
             {
                 case TextOutputType.Server:
                     var foundServer = _Client.GetGuild(parsedId);
-                    messageContent = $"Found server called: {foundServer.Name}";
+
+                    if(foundServer == null)
+                    {
+                        messageContent = "Could not find server. Please ensure you can find the correct server before searching for a channel.";
+                        break;
+                    }
+
+                    messageContent = $"Found server called: {foundServer?.Name}";
                     break;
                 case TextOutputType.Channel:
                     if(!CanParseUlong(Properties.Settings.Default.ServerID))
@@ -274,10 +281,25 @@ namespace MyDick.Discord
                     }
 
                     var textChannel = server.GetTextChannel(parsedId);
+
+                    if (textChannel == null)
+                    {
+                        messageContent = "Could not find text channel.";
+                        break;
+                    }
+
                     messageContent = $"Found channel called: {textChannel.Name}";
                     break;
                 case TextOutputType.DMUser:
+
                     var foundUser = _Client.GetUser(parsedId);
+
+                    if(foundUser == null)
+                    {
+                        messageContent = "Could not find the specified user. Please ensure the ID is correct and you have connected to the correct server.";
+                        break;
+                    }
+
                     messageContent = $"Found user called: {foundUser.Username}";
                     break;
             }
