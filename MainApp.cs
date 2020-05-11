@@ -1206,5 +1206,10 @@ namespace MyDick
         {
             DiscordController.CreateNewClient();
         }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            Forms.Helpers.OpenHelpDocumentation();
+        }
     }
 }
