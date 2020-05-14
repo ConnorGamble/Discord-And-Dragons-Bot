@@ -2029,6 +2029,7 @@
             // 
             // FeaturesAndTraitsTextBox
             // 
+            this.FeaturesAndTraitsTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.FeaturesAndTraitsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.FeaturesAndTraitsTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.FeaturesAndTraitsTextBox.Location = new System.Drawing.Point(9, 16);
@@ -2051,6 +2052,7 @@
             // 
             // NotesTextBox
             // 
+            this.NotesTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.NotesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.NotesTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.NotesTextBox.Location = new System.Drawing.Point(9, 19);
@@ -2085,6 +2087,7 @@
             // 
             // LanguagesTextBox
             // 
+            this.LanguagesTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.LanguagesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.LanguagesTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.LanguagesTextBox.Location = new System.Drawing.Point(313, 32);
@@ -2104,6 +2107,7 @@
             // 
             // ProficienciesTextBox
             // 
+            this.ProficienciesTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.ProficienciesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ProficienciesTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.ProficienciesTextBox.Location = new System.Drawing.Point(9, 32);
@@ -2169,6 +2173,7 @@
             // 
             // FlawsTextBox
             // 
+            this.FlawsTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.FlawsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.FlawsTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.FlawsTextBox.Location = new System.Drawing.Point(630, 32);
@@ -2179,6 +2184,7 @@
             // 
             // BondsCheckBox
             // 
+            this.BondsCheckBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.BondsCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BondsCheckBox.ForeColor = System.Drawing.SystemColors.Window;
             this.BondsCheckBox.Location = new System.Drawing.Point(423, 32);
@@ -2189,6 +2195,7 @@
             // 
             // IdealsTextBox
             // 
+            this.IdealsTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.IdealsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.IdealsTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.IdealsTextBox.Location = new System.Drawing.Point(216, 32);
@@ -2199,6 +2206,7 @@
             // 
             // PersonalityTraitsTextBox
             // 
+            this.PersonalityTraitsTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.PersonalityTraitsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.PersonalityTraitsTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.PersonalityTraitsTextBox.Location = new System.Drawing.Point(9, 32);
@@ -2240,6 +2248,7 @@
             // 
             // XPTextBox
             // 
+            this.XPTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.XPTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.XPTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.XPTextBox.Location = new System.Drawing.Point(636, 32);
@@ -2249,6 +2258,7 @@
             // 
             // RaceTextBox
             // 
+            this.RaceTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.RaceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.RaceTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.RaceTextBox.Location = new System.Drawing.Point(384, 31);
@@ -2258,6 +2268,7 @@
             // 
             // BackgroundTextBox
             // 
+            this.BackgroundTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.BackgroundTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BackgroundTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.BackgroundTextBox.Location = new System.Drawing.Point(259, 31);
@@ -2267,6 +2278,7 @@
             // 
             // ClassTextBox
             // 
+            this.ClassTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.ClassTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClassTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.ClassTextBox.Location = new System.Drawing.Point(134, 32);
@@ -2285,6 +2297,7 @@
             // 
             // CharacterNameTextBox
             // 
+            this.CharacterNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CharacterNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.CharacterNameTextBox.ForeColor = System.Drawing.SystemColors.Window;
             this.CharacterNameTextBox.Location = new System.Drawing.Point(9, 32);
@@ -2384,9 +2397,9 @@
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Controls.Add(this.HelpButton);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(442, 3);
+            this.groupBox5.Location = new System.Drawing.Point(566, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(402, 208);
+            this.groupBox5.Size = new System.Drawing.Size(278, 208);
             this.groupBox5.TabIndex = 39;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Help";
@@ -2430,7 +2443,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(8, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(428, 208);
+            this.groupBox3.Size = new System.Drawing.Size(552, 208);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot settings";
@@ -2439,7 +2452,7 @@
             // 
             this.FindUser.BackColor = System.Drawing.Color.DimGray;
             this.FindUser.ForeColor = System.Drawing.Color.White;
-            this.FindUser.Location = new System.Drawing.Point(319, 176);
+            this.FindUser.Location = new System.Drawing.Point(450, 176);
             this.FindUser.Name = "FindUser";
             this.FindUser.Size = new System.Drawing.Size(96, 21);
             this.FindUser.TabIndex = 38;
@@ -2452,7 +2465,7 @@
             // 
             this.FindChannel.BackColor = System.Drawing.Color.DimGray;
             this.FindChannel.ForeColor = System.Drawing.Color.White;
-            this.FindChannel.Location = new System.Drawing.Point(319, 130);
+            this.FindChannel.Location = new System.Drawing.Point(450, 129);
             this.FindChannel.Name = "FindChannel";
             this.FindChannel.Size = new System.Drawing.Size(96, 21);
             this.FindChannel.TabIndex = 37;
@@ -2465,7 +2478,7 @@
             // 
             this.FindServer.BackColor = System.Drawing.Color.DimGray;
             this.FindServer.ForeColor = System.Drawing.Color.White;
-            this.FindServer.Location = new System.Drawing.Point(319, 82);
+            this.FindServer.Location = new System.Drawing.Point(450, 81);
             this.FindServer.Name = "FindServer";
             this.FindServer.Size = new System.Drawing.Size(96, 21);
             this.FindServer.TabIndex = 36;
@@ -2478,7 +2491,7 @@
             // 
             this.BotTokenConnect.BackColor = System.Drawing.Color.DimGray;
             this.BotTokenConnect.ForeColor = System.Drawing.Color.White;
-            this.BotTokenConnect.Location = new System.Drawing.Point(319, 37);
+            this.BotTokenConnect.Location = new System.Drawing.Point(450, 37);
             this.BotTokenConnect.Name = "BotTokenConnect";
             this.BotTokenConnect.Size = new System.Drawing.Size(96, 21);
             this.BotTokenConnect.TabIndex = 35;
@@ -2493,7 +2506,7 @@
             this.DMUserIDTextBox.ForeColor = System.Drawing.Color.White;
             this.DMUserIDTextBox.Location = new System.Drawing.Point(6, 177);
             this.DMUserIDTextBox.Name = "DMUserIDTextBox";
-            this.DMUserIDTextBox.Size = new System.Drawing.Size(307, 20);
+            this.DMUserIDTextBox.Size = new System.Drawing.Size(438, 20);
             this.DMUserIDTextBox.TabIndex = 8;
             this.DMUserIDTextBox.Text = "Eg: 1234567891";
             this.DMUserIDTextBox.TextChanged += new System.EventHandler(this.DMUserIDTextBox_TextChanged);
@@ -2513,7 +2526,7 @@
             this.ChannelDTextBox.ForeColor = System.Drawing.Color.White;
             this.ChannelDTextBox.Location = new System.Drawing.Point(6, 130);
             this.ChannelDTextBox.Name = "ChannelDTextBox";
-            this.ChannelDTextBox.Size = new System.Drawing.Size(307, 20);
+            this.ChannelDTextBox.Size = new System.Drawing.Size(438, 20);
             this.ChannelDTextBox.TabIndex = 5;
             this.ChannelDTextBox.Text = "Eg: 1234567891";
             this.ChannelDTextBox.TextChanged += new System.EventHandler(this.ChannelIDTextBox_TextChanged);
@@ -2533,7 +2546,7 @@
             this.ServerIDTextBox.ForeColor = System.Drawing.Color.White;
             this.ServerIDTextBox.Location = new System.Drawing.Point(6, 82);
             this.ServerIDTextBox.Name = "ServerIDTextBox";
-            this.ServerIDTextBox.Size = new System.Drawing.Size(307, 20);
+            this.ServerIDTextBox.Size = new System.Drawing.Size(438, 20);
             this.ServerIDTextBox.TabIndex = 3;
             this.ServerIDTextBox.Text = "Eg: 1234567891";
             this.ServerIDTextBox.TextChanged += new System.EventHandler(this.ServerIDTextBox_TextChanged);
@@ -2554,7 +2567,7 @@
             this.BotTokenTextBox.ForeColor = System.Drawing.Color.White;
             this.BotTokenTextBox.Location = new System.Drawing.Point(7, 37);
             this.BotTokenTextBox.Name = "BotTokenTextBox";
-            this.BotTokenTextBox.Size = new System.Drawing.Size(307, 20);
+            this.BotTokenTextBox.Size = new System.Drawing.Size(437, 20);
             this.BotTokenTextBox.TabIndex = 1;
             this.BotTokenTextBox.TextChanged += new System.EventHandler(this.BotTokenTextBox_TextChanged);
             // 
