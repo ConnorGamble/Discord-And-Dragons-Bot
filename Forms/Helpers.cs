@@ -8,10 +8,5 @@ namespace MyDick.Forms
         {
             MessageBox.Show(content);
         }
-
-        public static void OpenHelpDocumentation()
-        {
-            System.Diagnostics.Process.Start("https://www.connorgamble.com/discord-and-dragons");
-        }
     }
 }

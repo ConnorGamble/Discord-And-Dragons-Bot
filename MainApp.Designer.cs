@@ -168,14 +168,14 @@
             this.RollingTab = new System.Windows.Forms.TabPage();
             this.CharacterSheetTab = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.FeaturesAndTraitsTextBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.GenericNotes = new System.Windows.Forms.TextBox();
+            this.NotesTextBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LanguagesTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ProficienciesTextBox = new System.Windows.Forms.TextBox();
             this.Characteristics = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -217,6 +217,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.HowToButton = new System.Windows.Forms.Button();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -1458,7 +1460,9 @@
             // 
             // HPTextBox
             // 
+            this.HPTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPTextBox.ForeColor = System.Drawing.Color.White;
             this.HPTextBox.Location = new System.Drawing.Point(33, 19);
             this.HPTextBox.Multiline = true;
             this.HPTextBox.Name = "HPTextBox";
@@ -2014,7 +2018,7 @@
             // groupBox7
             // 
             this.groupBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.Controls.Add(this.FeaturesAndTraitsTextBox);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
             this.groupBox7.Location = new System.Drawing.Point(644, 194);
             this.groupBox7.Name = "groupBox7";
@@ -2023,20 +2027,20 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Features and Traits";
             // 
-            // textBox3
+            // FeaturesAndTraitsTextBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(9, 16);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 207);
-            this.textBox3.TabIndex = 23;
+            this.FeaturesAndTraitsTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.FeaturesAndTraitsTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.FeaturesAndTraitsTextBox.Location = new System.Drawing.Point(9, 16);
+            this.FeaturesAndTraitsTextBox.Multiline = true;
+            this.FeaturesAndTraitsTextBox.Name = "FeaturesAndTraitsTextBox";
+            this.FeaturesAndTraitsTextBox.Size = new System.Drawing.Size(185, 207);
+            this.FeaturesAndTraitsTextBox.TabIndex = 23;
             // 
             // groupBox6
             // 
             this.groupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox6.Controls.Add(this.GenericNotes);
+            this.groupBox6.Controls.Add(this.NotesTextBox);
             this.groupBox6.ForeColor = System.Drawing.Color.White;
             this.groupBox6.Location = new System.Drawing.Point(9, 314);
             this.groupBox6.Name = "groupBox6";
@@ -2045,23 +2049,23 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Notes";
             // 
-            // GenericNotes
+            // NotesTextBox
             // 
-            this.GenericNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.GenericNotes.ForeColor = System.Drawing.SystemColors.Window;
-            this.GenericNotes.Location = new System.Drawing.Point(9, 19);
-            this.GenericNotes.Multiline = true;
-            this.GenericNotes.Name = "GenericNotes";
-            this.GenericNotes.Size = new System.Drawing.Size(614, 84);
-            this.GenericNotes.TabIndex = 23;
+            this.NotesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.NotesTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.NotesTextBox.Location = new System.Drawing.Point(9, 19);
+            this.NotesTextBox.Multiline = true;
+            this.NotesTextBox.Name = "NotesTextBox";
+            this.NotesTextBox.Size = new System.Drawing.Size(614, 84);
+            this.NotesTextBox.TabIndex = 23;
             // 
             // groupBox4
             // 
             this.groupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.LanguagesTextBox);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.ProficienciesTextBox);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(9, 194);
             this.groupBox4.Name = "groupBox4";
@@ -2079,15 +2083,15 @@
             this.label17.TabIndex = 24;
             this.label17.Text = "Languages";
             // 
-            // textBox1
+            // LanguagesTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(313, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 71);
-            this.textBox1.TabIndex = 25;
+            this.LanguagesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.LanguagesTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.LanguagesTextBox.Location = new System.Drawing.Point(313, 32);
+            this.LanguagesTextBox.Multiline = true;
+            this.LanguagesTextBox.Name = "LanguagesTextBox";
+            this.LanguagesTextBox.Size = new System.Drawing.Size(310, 71);
+            this.LanguagesTextBox.TabIndex = 25;
             // 
             // label20
             // 
@@ -2098,15 +2102,15 @@
             this.label20.TabIndex = 23;
             this.label20.Text = "Proficiencies";
             // 
-            // textBox4
+            // ProficienciesTextBox
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox4.Location = new System.Drawing.Point(9, 32);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(298, 71);
-            this.textBox4.TabIndex = 23;
+            this.ProficienciesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ProficienciesTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.ProficienciesTextBox.Location = new System.Drawing.Point(9, 32);
+            this.ProficienciesTextBox.Multiline = true;
+            this.ProficienciesTextBox.Name = "ProficienciesTextBox";
+            this.ProficienciesTextBox.Size = new System.Drawing.Size(298, 71);
+            this.ProficienciesTextBox.TabIndex = 23;
             // 
             // Characteristics
             // 
@@ -2375,6 +2379,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.HowToButton);
+            this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Controls.Add(this.label27);
             this.groupBox5.Controls.Add(this.HelpButton);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
@@ -2390,20 +2396,20 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(8, 18);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(93, 13);
+            this.label27.Size = new System.Drawing.Size(263, 13);
             this.label27.TabIndex = 0;
-            this.label27.Text = "What is all of this?";
+            this.label27.Text = "How do I set up my server to use this this application? ";
             // 
             // HelpButton
             // 
             this.HelpButton.BackColor = System.Drawing.Color.DimGray;
             this.HelpButton.ForeColor = System.Drawing.Color.White;
-            this.HelpButton.Location = new System.Drawing.Point(11, 43);
+            this.HelpButton.Location = new System.Drawing.Point(11, 36);
             this.HelpButton.Name = "HelpButton";
             this.HelpButton.Size = new System.Drawing.Size(96, 21);
             this.HelpButton.TabIndex = 39;
             this.HelpButton.Tag = "";
-            this.HelpButton.Text = "Help";
+            this.HelpButton.Text = "Bot Setup";
             this.HelpButton.UseVisualStyleBackColor = false;
             this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
@@ -2560,6 +2566,28 @@
             this.label18.Size = new System.Drawing.Size(57, 13);
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(8, 63);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(149, 13);
+            this.label22.TabIndex = 40;
+            this.label22.Text = "How do I use this application?";
+            // 
+            // HowToButton
+            // 
+            this.HowToButton.BackColor = System.Drawing.Color.DimGray;
+            this.HowToButton.ForeColor = System.Drawing.Color.White;
+            this.HowToButton.Location = new System.Drawing.Point(11, 81);
+            this.HowToButton.Name = "HowToButton";
+            this.HowToButton.Size = new System.Drawing.Size(96, 21);
+            this.HowToButton.TabIndex = 41;
+            this.HowToButton.Tag = "";
+            this.HowToButton.Text = "How To";
+            this.HowToButton.UseVisualStyleBackColor = false;
+            this.HowToButton.Click += new System.EventHandler(this.HowToButton_Click);
             // 
             // MainApp
             // 
@@ -2767,9 +2795,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox LanguagesTextBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ProficienciesTextBox;
         private System.Windows.Forms.TextBox ChannelDTextBox;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox ServerIDTextBox;
@@ -2798,12 +2826,14 @@
         private System.Windows.Forms.Button FindChannel;
         private System.Windows.Forms.Button FindServer;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox GenericNotes;
+        private System.Windows.Forms.TextBox NotesTextBox;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button HelpButton;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox FeaturesAndTraitsTextBox;
+        private System.Windows.Forms.Button HowToButton;
+        private System.Windows.Forms.Label label22;
     }
 }
 

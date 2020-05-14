@@ -1,4 +1,5 @@
 using MyDick.Discord;
+using MyDick.Documentation;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -438,7 +439,25 @@ namespace MyDick
             Properties.Settings.Default.DMUserID = DMUserIDTextBox.Text;
         }
 
-        #endregion
+        private void FindServer_Click(object sender, EventArgs e)
+        {
+            DiscordController.CanFindTextOutput(ServerIDTextBox.Text, TextOutputType.Server);
+        }
+
+        private void FindChannel_Click(object sender, EventArgs e)
+        {
+            DiscordController.CanFindTextOutput(ChannelDTextBox.Text, TextOutputType.Channel);
+        }
+
+        private void FindUser_Click(object sender, EventArgs e)
+        {
+            DiscordController.CanFindTextOutput(DMUserIDTextBox.Text, TextOutputType.DMUser);
+        }
+
+        private void BotTokenConnect_Click(object sender, EventArgs e)
+        {
+            DiscordController.CreateNewClient();
+        }
 
         private void PrivateRoll_CheckedChanged(object sender, EventArgs e)
         {
@@ -447,6 +466,22 @@ namespace MyDick
             else
                 IsPrivateRoll = false;
         }
+
+        #endregion
+
+        #region Documentation and Help
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            Documentation.Helpers.OpenHelpDocumentation(DocumentationType.BotSetup);
+        }
+
+        private void HowToButton_Click(object sender, EventArgs e)
+        {
+            Documentation.Helpers.OpenHelpDocumentation(DocumentationType.HowTo);
+        }
+
+        #endregion
 
         #endregion
 
@@ -648,7 +683,7 @@ namespace MyDick
             }
             catch
             {
-                MessageBox.Show("No characters other than whole numbers allowed as health. Maybe use a number like literally any other person playing this game?");
+                MessageBox.Show("No characters other than whole numbers allowed as health.");
                 return;
             }
 
@@ -1068,6 +1103,10 @@ namespace MyDick
             Properties.Settings.Default.Ideals = IdealsTextBox.Text;
             Properties.Settings.Default.Bonds = BondsCheckBox.Text;
             Properties.Settings.Default.Flaws = FlawsTextBox.Text;
+            Properties.Settings.Default.Proficiencies = ProficienciesTextBox.Text;
+            Properties.Settings.Default.Languages = LanguagesTextBox.Text;
+            Properties.Settings.Default.FeaturesAndTraits = FeaturesAndTraitsTextBox.Text;
+            Properties.Settings.Default.Notes = NotesTextBox.Text;
 
             // Health state
             Properties.Settings.Default.DeathRollSuccesses = SuccessBoxes.Where(x => x.Checked).Count();
@@ -1151,6 +1190,10 @@ namespace MyDick
             IdealsTextBox.Text = Properties.Settings.Default.Ideals;
             BondsCheckBox.Text = Properties.Settings.Default.Bonds;
             FlawsTextBox.Text = Properties.Settings.Default.Flaws;
+            ProficienciesTextBox.Text = Properties.Settings.Default.Proficiencies;
+            LanguagesTextBox.Text= Properties.Settings.Default.Languages;
+            FeaturesAndTraitsTextBox.Text = Properties.Settings.Default.FeaturesAndTraits;
+            NotesTextBox.Text = Properties.Settings.Default.Notes;
 
             BotTokenTextBox.Text = Properties.Settings.Default.BotToken;
             ChannelDTextBox.Text = Properties.Settings.Default.ChannelID;
@@ -1186,30 +1229,5 @@ namespace MyDick
         #endregion
 
         #endregion
-
-        private void FindServer_Click(object sender, EventArgs e)
-        {
-            DiscordController.CanFindTextOutput(ServerIDTextBox.Text, TextOutputType.Server);
-        }
-
-        private void FindChannel_Click(object sender, EventArgs e)
-        {
-            DiscordController.CanFindTextOutput(ChannelDTextBox.Text, TextOutputType.Channel);
-        }
-
-        private void FindUser_Click(object sender, EventArgs e)
-        {
-            DiscordController.CanFindTextOutput(DMUserIDTextBox.Text, TextOutputType.DMUser);
-        }
-
-        private void BotTokenConnect_Click(object sender, EventArgs e)
-        {
-            DiscordController.CreateNewClient();
-        }
-
-        private void HelpButton_Click(object sender, EventArgs e)
-        {
-            Forms.Helpers.OpenHelpDocumentation();
-        }
     }
 }
