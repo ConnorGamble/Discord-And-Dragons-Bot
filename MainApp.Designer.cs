@@ -1,4 +1,4 @@
-﻿namespace MyDick
+﻿namespace DiscordAndDragons
 {
     partial class MainApp
     {

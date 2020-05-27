@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyDick.Properties {
+namespace DiscordAndDragons.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

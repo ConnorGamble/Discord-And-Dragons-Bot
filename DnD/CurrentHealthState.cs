@@ -1,4 +1,4 @@
-﻿namespace MyDick
+﻿namespace DiscordAndDragons
 {
     public class CurrentHealthState
     {

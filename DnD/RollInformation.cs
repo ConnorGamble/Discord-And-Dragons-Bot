@@ -1,6 +1,6 @@
-﻿using MyDick.Discord;
+﻿using DiscordAndDragons.Discord;
 
-namespace MyDick
+namespace DiscordAndDragons
 {
     public class RollInformation
     {

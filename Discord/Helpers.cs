@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyDick.Discord
+namespace DiscordAndDragons.Discord
 {
     public static class Helpers
     {

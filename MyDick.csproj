@@ -8,7 +8,7 @@
     <ProjectGuid>{8C3B856D-E716-4BF6-9A86-CAE921A6CF02}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyDick</RootNamespace>
+    <RootNamespace>DiscordAndDragons</RootNamespace>
     <AssemblyName>Dungeons&amp;Dickheads</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

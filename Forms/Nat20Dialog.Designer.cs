@@ -1,4 +1,4 @@
-﻿namespace MyDick
+﻿namespace DiscordAndDragons
 {
     partial class Nat20Dialog
     {
@@ -68,7 +68,7 @@
             // 
             // DrinkBleachGif
             // 
-            this.DrinkBleachGif.Image = global::MyDick.Properties.Resources.ClarenceFuckYeah;
+            this.DrinkBleachGif.Image = global::DiscordAndDragons.Properties.Resources.ClarenceFuckYeah;
             this.DrinkBleachGif.Location = new System.Drawing.Point(16, 78);
             this.DrinkBleachGif.Name = "DrinkBleachGif";
             this.DrinkBleachGif.Size = new System.Drawing.Size(297, 175);

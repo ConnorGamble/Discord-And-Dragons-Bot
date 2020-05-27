@@ -2,7 +2,7 @@
 using System;
 using System.Net.Http;
 
-namespace MyDick.Discord
+namespace DiscordAndDragons.Discord
 {
     public class MessageRequest
     {

@@ -1,7 +1,7 @@
 ﻿using Discord.Commands;
 using Discord.WebSocket;
 
-namespace MyDick.Discord
+namespace DiscordAndDragons.Discord
 {
     public class Commands
     {

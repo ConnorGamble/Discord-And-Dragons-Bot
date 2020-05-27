@@ -1,4 +1,4 @@
-﻿namespace MyDick.Documentation
+﻿namespace DiscordAndDragons.Documentation
 {
     public class Helpers
     {

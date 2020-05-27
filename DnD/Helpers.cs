@@ -1,8 +1,8 @@
-﻿using MyDick.Discord;
+﻿using DiscordAndDragons.Discord;
 using System;
 using System.Windows.Forms;
 
-namespace MyDick.DnD
+namespace DiscordAndDragons.DnD
 {
     public static class Helpers
     {

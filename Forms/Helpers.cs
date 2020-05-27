@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace MyDick.Forms
+namespace DiscordAndDragons.Forms
 {
     public static class Helpers
     {

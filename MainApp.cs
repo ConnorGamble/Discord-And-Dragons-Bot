@@ -1,12 +1,12 @@
-using MyDick.Discord;
-using MyDick.Documentation;
+using DiscordAndDragons.Discord;
+using DiscordAndDragons.Documentation;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace MyDick
+namespace DiscordAndDragons
 {
     public partial class MainApp : Form
     {

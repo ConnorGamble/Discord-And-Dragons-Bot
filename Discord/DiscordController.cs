@@ -6,7 +6,7 @@ using Discord.Commands;
 using Discord.Net;
 using Discord.WebSocket;
 
-namespace MyDick.Discord
+namespace DiscordAndDragons.Discord
 {
     public class DiscordController
     {

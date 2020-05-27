@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 
-namespace MyDick
+namespace DiscordAndDragons
 {
     public partial class Nat1Dialog : Form
     {

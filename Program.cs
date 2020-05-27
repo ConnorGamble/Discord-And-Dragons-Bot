@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MyDick
+namespace DiscordAndDragons
 {
     static class Program
     {
