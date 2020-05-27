@@ -1249,6 +1249,7 @@ namespace DiscordAndDragons
         {
             ResetDeathSavingBoxes();
             ResetDeathSavingBoxColours();
+            CurrentHealthState = new CurrentHealthState(0,0);
         }
 
         private void ResetDeathSavingBoxColours()

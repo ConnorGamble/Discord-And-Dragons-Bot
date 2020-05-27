@@ -73,17 +73,25 @@ namespace DiscordAndDragons.Discord
             }
             catch(HttpException exception)
             {
-                Forms.Helpers.CreateMessageBox("Unauthorised access to this bot. Be sure the Bot token is correct and try again.");
+                Forms.Helpers.CreateMessageBox("Unauthorised access to this bot. Be sure the bot token is correct and try again.");
                 return;
             }
-
-            // Tell the bot to login to Discord
 
             // Start the bot up
             await _Client.StartAsync();
 
+            // When connected, display a text box
+            _Client.Connected += _Client_Connected;
+
+            await Task.Delay(1000);
+
             // Stop bot from closing on it's own
             await Task.Delay(-1);
+        }
+
+        private async Task _Client_Connected()
+        {
+            Forms.Helpers.CreateMessageBox($"Connected to bot called: {_Client.CurrentUser.Username}");
         }
 
         private async Task Client_Log(LogMessage arg)
