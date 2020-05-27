@@ -1225,6 +1225,10 @@ namespace MyDick
             {
                 FailureBoxes[i-1].Checked = true;
             }
+
+            DeathSaveSuccessContainer.ForeColor = Color.White;
+            DeathSaveFailureContainer.ForeColor = Color.White;
+
         }
 
         #endregion
