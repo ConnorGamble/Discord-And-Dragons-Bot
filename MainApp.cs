@@ -758,7 +758,13 @@ namespace MyDick
                 if (isSkill)
                     resultBox = GetSkillResultBox(skillType);
                 else
-                    resultBox = GetAttackResultBox(weaponTag);
+                {
+                    if (rollType == RollType.Attack)
+                        resultBox = GetAttackResultBox(weaponTag);
+                    else
+                        resultBox = GetDamageResultBox(weaponTag);
+
+                }
 
                 resultBox.Text = result.ToString();
 
@@ -794,6 +800,28 @@ namespace MyDick
         private TextBox GetAttackResultBox(string weaponTag)
         {
             var modifierTag = $"{weaponTag}AttackResultBox";
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        private TextBox GetDamageResultBox(string weaponTag)
+        {
+            var modifierTag = $"{weaponTag}DamageResultBox";
             foreach (Control c in MainForm.TabPages[0].Controls)
             {
                 if (c.HasChildren)
