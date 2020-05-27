@@ -122,6 +122,7 @@
             this.HPDecreaseButton = new System.Windows.Forms.Button();
             this.HPTextBox = new System.Windows.Forms.TextBox();
             this.DeathSaveGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResetDeathSaveButton = new System.Windows.Forms.Button();
             this.DeathSaveRollBox = new System.Windows.Forms.TextBox();
             this.DeathSaveButton = new System.Windows.Forms.Button();
             this.DeathSaveFailureContainer = new System.Windows.Forms.GroupBox();
@@ -202,6 +203,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SettingsTab = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.HowToButton = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.HelpButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -217,8 +220,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.HowToButton = new System.Windows.Forms.Button();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -1472,6 +1473,7 @@
             // 
             // DeathSaveGroupBox
             // 
+            this.DeathSaveGroupBox.Controls.Add(this.ResetDeathSaveButton);
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveRollBox);
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveButton);
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveFailureContainer);
@@ -1484,6 +1486,19 @@
             this.DeathSaveGroupBox.TabStop = false;
             this.DeathSaveGroupBox.Tag = "DeathSaveBox";
             this.DeathSaveGroupBox.Text = "Death Saves";
+            // 
+            // ResetDeathSaveButton
+            // 
+            this.ResetDeathSaveButton.BackColor = System.Drawing.Color.DimGray;
+            this.ResetDeathSaveButton.ForeColor = System.Drawing.Color.White;
+            this.ResetDeathSaveButton.Location = new System.Drawing.Point(230, 42);
+            this.ResetDeathSaveButton.Name = "ResetDeathSaveButton";
+            this.ResetDeathSaveButton.Size = new System.Drawing.Size(90, 22);
+            this.ResetDeathSaveButton.TabIndex = 87;
+            this.ResetDeathSaveButton.Tag = "DeathSaveRoll";
+            this.ResetDeathSaveButton.Text = "Reset";
+            this.ResetDeathSaveButton.UseVisualStyleBackColor = false;
+            this.ResetDeathSaveButton.Click += new System.EventHandler(this.ResetDeathSaveButton_Click);
             // 
             // DeathSaveRollBox
             // 
@@ -1502,7 +1517,7 @@
             // 
             this.DeathSaveButton.BackColor = System.Drawing.Color.DimGray;
             this.DeathSaveButton.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveButton.Location = new System.Drawing.Point(230, 30);
+            this.DeathSaveButton.Location = new System.Drawing.Point(230, 19);
             this.DeathSaveButton.Name = "DeathSaveButton";
             this.DeathSaveButton.Size = new System.Drawing.Size(90, 22);
             this.DeathSaveButton.TabIndex = 29;
@@ -1980,10 +1995,10 @@
             this.MainForm.Controls.Add(this.RollingTab);
             this.MainForm.Controls.Add(this.CharacterSheetTab);
             this.MainForm.Controls.Add(this.SettingsTab);
-            this.MainForm.Location = new System.Drawing.Point(0, -1);
+            this.MainForm.Location = new System.Drawing.Point(-5, -1);
             this.MainForm.Name = "MainForm";
             this.MainForm.SelectedIndex = 0;
-            this.MainForm.Size = new System.Drawing.Size(865, 466);
+            this.MainForm.Size = new System.Drawing.Size(870, 466);
             this.MainForm.TabIndex = 35;
             // 
             // RollingTab
@@ -1996,7 +2011,7 @@
             this.RollingTab.Location = new System.Drawing.Point(4, 22);
             this.RollingTab.Name = "RollingTab";
             this.RollingTab.Padding = new System.Windows.Forms.Padding(3);
-            this.RollingTab.Size = new System.Drawing.Size(857, 440);
+            this.RollingTab.Size = new System.Drawing.Size(862, 440);
             this.RollingTab.TabIndex = 0;
             this.RollingTab.Text = "Rolls";
             // 
@@ -2011,7 +2026,7 @@
             this.CharacterSheetTab.Location = new System.Drawing.Point(4, 22);
             this.CharacterSheetTab.Name = "CharacterSheetTab";
             this.CharacterSheetTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CharacterSheetTab.Size = new System.Drawing.Size(857, 440);
+            this.CharacterSheetTab.Size = new System.Drawing.Size(862, 440);
             this.CharacterSheetTab.TabIndex = 1;
             this.CharacterSheetTab.Text = "Character sheet";
             // 
@@ -2386,7 +2401,7 @@
             this.SettingsTab.Controls.Add(this.groupBox3);
             this.SettingsTab.Location = new System.Drawing.Point(4, 22);
             this.SettingsTab.Name = "SettingsTab";
-            this.SettingsTab.Size = new System.Drawing.Size(857, 440);
+            this.SettingsTab.Size = new System.Drawing.Size(862, 440);
             this.SettingsTab.TabIndex = 2;
             this.SettingsTab.Text = "Settings";
             // 
@@ -2403,6 +2418,28 @@
             this.groupBox5.TabIndex = 39;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Help";
+            // 
+            // HowToButton
+            // 
+            this.HowToButton.BackColor = System.Drawing.Color.DimGray;
+            this.HowToButton.ForeColor = System.Drawing.Color.White;
+            this.HowToButton.Location = new System.Drawing.Point(11, 81);
+            this.HowToButton.Name = "HowToButton";
+            this.HowToButton.Size = new System.Drawing.Size(96, 21);
+            this.HowToButton.TabIndex = 41;
+            this.HowToButton.Tag = "";
+            this.HowToButton.Text = "How To";
+            this.HowToButton.UseVisualStyleBackColor = false;
+            this.HowToButton.Click += new System.EventHandler(this.HowToButton_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(8, 63);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(149, 13);
+            this.label22.TabIndex = 40;
+            this.label22.Text = "How do I use this application?";
             // 
             // label27
             // 
@@ -2579,28 +2616,6 @@
             this.label18.Size = new System.Drawing.Size(57, 13);
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(8, 63);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(149, 13);
-            this.label22.TabIndex = 40;
-            this.label22.Text = "How do I use this application?";
-            // 
-            // HowToButton
-            // 
-            this.HowToButton.BackColor = System.Drawing.Color.DimGray;
-            this.HowToButton.ForeColor = System.Drawing.Color.White;
-            this.HowToButton.Location = new System.Drawing.Point(11, 81);
-            this.HowToButton.Name = "HowToButton";
-            this.HowToButton.Size = new System.Drawing.Size(96, 21);
-            this.HowToButton.TabIndex = 41;
-            this.HowToButton.Tag = "";
-            this.HowToButton.Text = "How To";
-            this.HowToButton.UseVisualStyleBackColor = false;
-            this.HowToButton.Click += new System.EventHandler(this.HowToButton_Click);
             // 
             // MainApp
             // 
@@ -2847,6 +2862,7 @@
         private System.Windows.Forms.TextBox FeaturesAndTraitsTextBox;
         private System.Windows.Forms.Button HowToButton;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button ResetDeathSaveButton;
     }
 }
 

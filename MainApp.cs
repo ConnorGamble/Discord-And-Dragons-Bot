@@ -33,6 +33,7 @@ namespace MyDick
         private List<CheckBox> SuccessBoxes;
         private List<CheckBox> FailureBoxes;
 
+        private Color DefaultGrey = Color.FromArgb(50, 50, 50);
 
         #endregion
 
@@ -658,7 +659,7 @@ namespace MyDick
         /// <param name="clickedButton"></param> The button which has just been clicked
         private void ChangeDieColourToGold(Button clickedButton)
         {
-            clickedButton.BackColor = System.Drawing.Color.DarkGoldenrod;
+            clickedButton.BackColor = Color.DarkGoldenrod;
         }
 
         /// <summary>
@@ -667,7 +668,7 @@ namespace MyDick
         /// <param name="activeButton"></param> The currently active button
         private void ChangeDieColourFromGold(Button activeButton)
         {
-            activeButton.BackColor = System.Drawing.Color.DimGray;
+            activeButton.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -976,19 +977,19 @@ namespace MyDick
             switch (CurrentHealthState.State)
             {
                 case State.Unconscious:
-                    successContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    successContainer.BackColor = DefaultGrey;
                     successContainer.ForeColor = Color.White;
-                    failureContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    failureContainer.BackColor = DefaultGrey;
                     failureContainer.ForeColor = Color.White;
                     break;
                 case State.Stable:
                     successContainer.BackColor = Color.Green;
                     successContainer.ForeColor = Color.White;
-                    failureContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    failureContainer.BackColor = DefaultGrey;
                     failureContainer.ForeColor = Color.White;
                     break;
                 case State.Dead:
-                    successContainer.BackColor = Color.FromArgb(50, 50, 50);
+                    successContainer.BackColor = DefaultGrey;
                     successContainer.ForeColor = Color.White;
                     failureContainer.BackColor = Color.Red;
                     failureContainer.ForeColor = Color.Black;
@@ -1229,5 +1230,20 @@ namespace MyDick
         #endregion
 
         #endregion
+
+        private void ResetDeathSaveButton_Click(object sender, EventArgs e)
+        {
+            ResetDeathSavingBoxes();
+            ResetDeathSavingBoxColours();
+        }
+
+        private void ResetDeathSavingBoxColours()
+        {
+            DeathSaveSuccessContainer.BackColor = DefaultGrey;
+            DeathSaveSuccessContainer.ForeColor = Color.White;
+
+            DeathSaveFailureContainer.BackColor = DefaultGrey;
+            DeathSaveFailureContainer.ForeColor = Color.White;
+        }
     }
 }
