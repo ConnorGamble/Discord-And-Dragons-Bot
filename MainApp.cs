@@ -603,24 +603,6 @@ namespace DiscordAndDragons
         }
 
         /// <summary>
-        /// This function looks for the active dice button used for the switch statement
-        /// </summary>
-        /// <param name="buttonList"></param> The list of buttons in their current state
-        /// <returns></returns> An integer indicating what the active dice is
-        private Button GetActiveDiceButton(List<Button> buttonList)
-        {
-            // For every button, check if it has the active colour, if it is then send this number back
-            for (int i = 0; i < buttonList.Count; i++)
-            {
-                // THIS IS RETURNING -1 AS THE COLOURS ARE ALWAYS CHANGING TO CONTROL AGAIN
-                if (i == currentActiveDieButton)
-                    return buttonList[i];
-            }
-            //Otherwise just return -1
-            return null;
-        }
-
-        /// <summary>
         /// Gets the currently active button control rather than list element. 
         /// </summary>
         /// <returns>Button</returns> The button which is currently active
