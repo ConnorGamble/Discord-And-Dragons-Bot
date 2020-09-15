@@ -9,8 +9,11 @@ namespace DiscordAndDragons.Forms
         {
             MessageBox.Show(content);
         }
+    }
 
-        public static void UpdateModifierBoxes(object sender, List<TextBox> modifiers)
+    public static class ListExtensions
+    {
+        public static void UpdateModifiers(this List<TextBox> modifiers, object sender)
         {
             var modifierBox = (TextBox)sender;
             modifiers.ForEach(x => x.Text = modifierBox.Text);

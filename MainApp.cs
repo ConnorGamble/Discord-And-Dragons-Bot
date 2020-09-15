@@ -1,5 +1,6 @@
 using DiscordAndDragons.Discord;
 using DiscordAndDragons.Documentation;
+using DiscordAndDragons.Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -1303,27 +1304,27 @@ namespace DiscordAndDragons
 
         private void StrModTextBox_TextChanged(object sender, EventArgs e)
         {
-            Forms.Helpers.UpdateModifierBoxes(sender, StrModifiers);
+            StrModifiers.UpdateModifiers(sender);
         }
 
         private void DexModTextBox_TextChanged(object sender, EventArgs e)
         {
-            Forms.Helpers.UpdateModifierBoxes(sender, DexModifiers);
+            DexModifiers.UpdateModifiers(sender);
         }
 
         private void IntModTextBox_TextChanged(object sender, EventArgs e)
         {
-            Forms.Helpers.UpdateModifierBoxes(sender, IntModifiers);
+            IntModifiers.UpdateModifiers(sender);
         }
 
         private void WisModTextBox_TextChanged(object sender, EventArgs e)
         {
-            Forms.Helpers.UpdateModifierBoxes(sender, WisModifiers);
+            WisModifiers.UpdateModifiers(sender);
         }
 
         private void CharModTextBox_TextChanged(object sender, EventArgs e)
         {
-            Forms.Helpers.UpdateModifierBoxes(sender, ChaModifiers);
+            ChaModifiers.UpdateModifiers(sender);
         }
 
         #endregion
