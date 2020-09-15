@@ -394,6 +394,7 @@
             this.StrModTextBox.TabIndex = 1;
             this.StrModTextBox.Tag = "StrengthModBox";
             this.StrModTextBox.Text = "0";
+            this.StrModTextBox.TextChanged += new System.EventHandler(this.StrModTextBox_TextChanged);
             // 
             // StrResult
             // 
@@ -440,6 +441,7 @@
             this.DexModTextBox.TabIndex = 2;
             this.DexModTextBox.Tag = "DexterityModBox";
             this.DexModTextBox.Text = "0";
+            this.DexModTextBox.TextChanged += new System.EventHandler(this.DexModTextBox_TextChanged);
             // 
             // DexSavButton
             // 
@@ -516,6 +518,7 @@
             this.IntModTextBox.TabIndex = 4;
             this.IntModTextBox.Tag = "IntelligenceModBox";
             this.IntModTextBox.Text = "0";
+            this.IntModTextBox.TextChanged += new System.EventHandler(this.IntModTextBox_TextChanged);
             // 
             // IntSavButton
             // 
@@ -554,6 +557,7 @@
             this.WisModTextBox.TabIndex = 5;
             this.WisModTextBox.Tag = "WisdomModBox";
             this.WisModTextBox.Text = "0";
+            this.WisModTextBox.TextChanged += new System.EventHandler(this.WisModTextBox_TextChanged);
             // 
             // WisSavButton
             // 
@@ -592,6 +596,7 @@
             this.CharModTextBox.TabIndex = 6;
             this.CharModTextBox.Tag = "CharismaModBox";
             this.CharModTextBox.Text = "0";
+            this.CharModTextBox.TextChanged += new System.EventHandler(this.CharModTextBox_TextChanged);
             // 
             // CharSavButton
             // 

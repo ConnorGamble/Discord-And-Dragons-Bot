@@ -33,6 +33,12 @@ namespace DiscordAndDragons
         private List<CheckBox> SuccessBoxes;
         private List<CheckBox> FailureBoxes;
 
+        private List<TextBox> StrModifiers;
+        private List<TextBox> DexModifiers;
+        private List<TextBox> IntModifiers;
+        private List<TextBox> WisModifiers;
+        private List<TextBox> ChaModifiers;
+
         private Color DefaultGrey = Color.FromArgb(50, 50, 50);
 
         #endregion
@@ -47,6 +53,7 @@ namespace DiscordAndDragons
             DiscordController = new DiscordController();
             SuccessBoxes = GetCheckBoxes("DeathSaveSuccessContainer");
             FailureBoxes = GetCheckBoxes("DeathSaveFailureContainer");
+            PopulateModifierBoxes();
         }
 
         #region Events
@@ -779,6 +786,37 @@ namespace DiscordAndDragons
             SendToDiscord(rollInfo);
         }
 
+        /// <summary>
+        /// Populate all of the modifier box lists
+        /// </summary>
+        private void PopulateModifierBoxes()
+        {
+            StrModifiers = new List<TextBox>()
+            {
+                AthleticsModTextBox
+            };
+
+            DexModifiers = new List<TextBox>()
+            {
+                AcrobaticsModTextBox, SleightOfHandModTextBox, StealthModTextBox
+            };
+
+            IntModifiers = new List<TextBox>()
+            {
+                ArcanaModTextBox, HistoryModTextBox, InvestigationModTextBox, NatureModTextBox, ReligionModTextBox
+            };
+
+            WisModifiers = new List<TextBox>()
+            {
+                AnimalHandlingModTextBox, InsightModTextBox, MedicineModTextBox, PerceptionModTextBox, SurvivalModTextBox
+            };
+
+            ChaModifiers = new List<TextBox>()
+            {
+                DeceptionModTextBox, IntimidationModTextBox, PerformanceModTextBox, PersuasionModTextBox
+            };
+        }
+
         private TextBox GetAttackResultBox(string weaponTag)
         {
             var modifierTag = $"{weaponTag}AttackResultBox";
@@ -1260,5 +1298,34 @@ namespace DiscordAndDragons
             DeathSaveFailureContainer.BackColor = DefaultGrey;
             DeathSaveFailureContainer.ForeColor = Color.White;
         }
+
+        #region Core AttrbutesChange
+
+        private void StrModTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Forms.Helpers.UpdateModifierBoxes(sender, StrModifiers);
+        }
+
+        private void DexModTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Forms.Helpers.UpdateModifierBoxes(sender, DexModifiers);
+        }
+
+        private void IntModTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Forms.Helpers.UpdateModifierBoxes(sender, IntModifiers);
+        }
+
+        private void WisModTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Forms.Helpers.UpdateModifierBoxes(sender, WisModifiers);
+        }
+
+        private void CharModTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Forms.Helpers.UpdateModifierBoxes(sender, ChaModifiers);
+        }
+
+        #endregion
     }
 }
