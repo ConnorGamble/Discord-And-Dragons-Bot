@@ -178,7 +178,6 @@ namespace DiscordAndDragons.Discord
 
         public string DetermineMultipleRollsContent(List<RollInformation> listOfRolls)
         {
-            // x rolled 3 d20's. The results were 12, 16, 18. Adding the modifiers, makes the totals 20, 20, 20.
             var character = listOfRolls.First().CharacterName;
             var diceType = listOfRolls.First().DiceTypeAsReadableString();
             var weaponName = listOfRolls.First().WeaponName;
@@ -203,7 +202,8 @@ namespace DiscordAndDragons.Discord
             }
 
             var content = 
-                $"{character} rolled {listOfRolls.Count} {diceType}'s. The rolls were {unmoddedRolls}." +
+                $"{character} rolled {listOfRolls.Count} {diceType}'s when attacking with their {weaponName}" +
+                $"\nThe rolls were {unmoddedRolls}." +
                 $"\nAdding a modifier of {modifier}, the resuls are {moddedRolls}";
 
             return content;
