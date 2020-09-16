@@ -2,9 +2,17 @@
 
 namespace DiscordAndDragons.DnD
 {
-    public static class Helpers
+    public class RollController
     {
-        public static int RollDice(DiceType diceType)
+        private Random Random;
+
+        public RollController()
+        {
+            // Make the random class
+            Random = new Random();
+        }
+
+        public int RollDice(DiceType diceType)
         {
 
             var result = 0;
@@ -43,13 +51,10 @@ namespace DiscordAndDragons.DnD
         /// <param name="minValue"></param> The minimum someone can roll 
         /// <param name="maxValue"></param> The maximum someone can roll -1
         /// <returns></returns> An int of a dice roll
-        private static int RollDice(int minValue, int maxValue)
+        private int RollDice(int minValue, int maxValue)
         {
-            // Make the random class
-            Random rnd = new Random();
-
             // Pick the number
-            int rolled = rnd.Next(minValue, maxValue);
+            int rolled = Random.Next(minValue, maxValue);
 
             // Return that number
             return rolled;

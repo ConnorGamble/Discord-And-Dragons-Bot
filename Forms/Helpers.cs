@@ -18,5 +18,13 @@ namespace DiscordAndDragons.Forms
             var modifierBox = (TextBox)sender;
             modifiers.ForEach(x => x.Text = modifierBox.Text);
         }
+
+        public static bool ContainsMultipleRolls(this List<RollInformation> modifiers)
+        {
+            if (modifiers.Count > 1)
+                return true;
+
+            return false;
+        }
     }
 }

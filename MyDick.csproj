@@ -109,7 +109,7 @@
     <Compile Include="Discord\DiscordController.cs" />
     <Compile Include="Discord\DiscordMessageRequest.cs" />
     <Compile Include="Discord\Helpers.cs" />
-    <Compile Include="DnD\Helpers.cs" />
+    <Compile Include="DnD\RollController.cs" />
     <Compile Include="Documentation\Helpers.cs" />
     <Compile Include="ErrorHandling\Result.cs" />
     <Compile Include="Forms\Helpers.cs" />

@@ -10,13 +10,12 @@
 
     public class Result
     {
-        private ResultType success;
         public bool IsSuccess => Type == ResultType.Success;
         public bool IsFailure => Type != ResultType.Success;
 
         public Result(ResultType success)
         {
-            this.success = success;
+            this.Type = success;
         }
 
         public ResultType Type { get; }

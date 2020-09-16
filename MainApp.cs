@@ -1,4 +1,5 @@
 using DiscordAndDragons.Discord;
+using DiscordAndDragons.DnD;
 using DiscordAndDragons.Documentation;
 using DiscordAndDragons.ErrorHandling;
 using DiscordAndDragons.Forms;
@@ -24,6 +25,8 @@ namespace DiscordAndDragons
 
         // Access to the Discord bot, used to send DM's
         public DiscordController DiscordController;
+
+        public RollController RollController;
 
         public bool IsPrivateRoll;
 
@@ -53,6 +56,7 @@ namespace DiscordAndDragons
             InitializeComponent();
             dieButtons = GetDiceButtons();
             DiscordController = new DiscordController();
+            RollController = new RollController();
             SuccessBoxes = GetCheckBoxes("DeathSaveSuccessContainer");
             FailureBoxes = GetCheckBoxes("DeathSaveFailureContainer");
             PopulateModifierBoxes();
@@ -343,7 +347,7 @@ namespace DiscordAndDragons
 
         private void DeathSaveButton_Click(object sender, EventArgs e)
         {
-            var roll = DnD.Helpers.RollDice(DiceType.D20);
+            var roll = RollController.RollDice(DiceType.D20);
 
 
             var successes = SuccessBoxes.Where(x => x.Checked).Count();
@@ -513,37 +517,37 @@ namespace DiscordAndDragons
             {
                 //D4
                 case 0:
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D4).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D4).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D4 and got a result of {ResultBox.Text}";
                     break;
                 //D6
                 case 1:
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D6).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D6).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D6 and got a result of {ResultBox.Text}";
                     break;
                 //D8
                 case 2:
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D8).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D8).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D8 and got a result of {ResultBox.Text}";
                     break;
                 //D10
                 case 3:
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D10).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D10).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D10 and got a result of {ResultBox.Text}";
                     break;
                 //D12
                 case 4:
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D12).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D12).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D12 and got a result of {ResultBox.Text}";
                     break;
                 case 5:
                     //D20
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D20).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D20).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D20 and got a result of {ResultBox.Text}";
                     break;
                 //D100
                 case 6:
-                    ResultBox.Text = DnD.Helpers.RollDice(DiceType.D100).ToString();
+                    ResultBox.Text = RollController.RollDice(DiceType.D100).ToString();
                     content = $"{CharacterNameTextBox.Text} rolled a D100 and got a result of {ResultBox.Text}";
                     break;
                 //No dice 
@@ -690,13 +694,17 @@ namespace DiscordAndDragons
         /// <summary>
         /// Send the given content to Discord
         /// </summary>
-        /// <param name="newResult">Information about the new roll result</param>
-        private void SendToDiscord(RollInformation newResult)
+        /// <param name="rollList">Information about the new roll result</param>
+        private void SendToDiscord(List<RollInformation> rollList)
         {
-            if (newResult.HasError)
-                return;
+            var firstRoll = rollList.First();
+            var discordContent = DiscordController.DetermineContentToSendToDiscord(firstRoll);
 
-            var discordContent = DiscordController.DetermineContentToSendToDiscord(newResult);
+            if (rollList.ContainsMultipleRolls())
+                discordContent = DiscordController.DetermineMultipleRollsContent(rollList);
+
+            if (rollList.Any(x => x.HasError))
+                return;
 
             var requestChannelIds = new ChannelIds
             {
@@ -723,70 +731,82 @@ namespace DiscordAndDragons
 
         private void RollWithModifier(object sender, bool isSkill = true, DiceType diceType = DiceType.D20)
         {
-            var rollInfo = new RollInformation();
             var button = sender as Button;
 
             var tags = button.Tag?.ToString().Split(',');
             var weaponTag = tags[0];
 
-            // var amountOfDiceResponse = GetAmountOfDice(weaponTag);
+            var amountOfDiceToRoll = 1;
+            var amountOfDiceToRollCheck = GetAmountOfDice(weaponTag);
 
-            var diceRoll = DnD.Helpers.RollDice(diceType);
+            if (amountOfDiceToRollCheck.IsSuccess)
+                amountOfDiceToRoll = amountOfDiceToRollCheck.Content;
 
-            var skillType = SkillType.Unknown;
+            var listOfRolls = new List<RollInformation>();
 
-            if (isSkill)
-                skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
-
-            var rollType = (RollType)Enum.Parse(typeof(RollType), tags[1]);
-            var modifierBox = GetModifierBoxFromRollType(skillType, rollType, tags[0]);
-
-            if (int.TryParse(modifierBox.Text, out var modifier))
+            for(int i = 1; i <= amountOfDiceToRoll; i++)
             {
-                var result = diceRoll + modifier;
+                var rollInfo = new RollInformation();
 
-                var resultBox = new TextBox();
+                var skillType = SkillType.Unknown;
 
                 if (isSkill)
-                    resultBox = GetSkillResultBox(skillType, rollType);
+                    skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
+
+                var rollType = (RollType)Enum.Parse(typeof(RollType), tags[1]);
+                var modifierBox = GetModifierBoxFromRollType(skillType, rollType, tags[0]);
+
+                if (int.TryParse(modifierBox.Text, out var modifier))
+                {
+                    var diceRoll = RollController.RollDice(diceType);
+
+                    var result = diceRoll + modifier;
+
+                    var resultBox = new TextBox();
+
+                    if (isSkill)
+                        resultBox = GetSkillResultBox(skillType, rollType);
+                    else
+                    {
+                        if (rollType == RollType.Attack)
+                            resultBox = GetAttackResultBox(weaponTag);
+                        else
+                            resultBox = GetDamageResultBox(weaponTag);
+
+                    }
+
+                    resultBox.Text = result.ToString();
+
+                    if (rollType == RollType.SavingThrow || rollType == RollType.SkillCheck || rollType == RollType.Attack)
+                        resultBox.BackColor = ChangeResultColour(diceRoll);
+
+                    rollInfo = new RollInformation
+                    {
+                        DiceRoll = diceRoll,
+                        Modifier = modifier,
+                        Result = result,
+                        SkillType = skillType,
+                        RollType = rollType,
+                        DiceType = diceType,
+                        CharacterName = CharacterNameTextBox.Text,
+                        WeaponName = GetWeaponName(weaponTag)
+                    };
+                }
                 else
                 {
-                    if (rollType == RollType.Attack)
-                        resultBox = GetAttackResultBox(weaponTag);
-                    else
-                        resultBox = GetDamageResultBox(weaponTag);
-
+                    MessageBox.Show("Cannot roll using that modifier. Please ensure this is a number.");
+                    rollInfo = new RollInformation
+                    {
+                        HasError = true
+                    };
                 }
 
-                resultBox.Text = result.ToString();
-
-                if (rollType == RollType.SavingThrow || rollType == RollType.SkillCheck || rollType == RollType.Attack)
-                    resultBox.BackColor = ChangeResultColour(diceRoll);
-
-                rollInfo = new RollInformation
-                {
-                    DiceRoll = diceRoll,
-                    Modifier = modifier,
-                    Result = result,
-                    SkillType = skillType,
-                    RollType = rollType,
-                    DiceType = diceType,
-                    CharacterName = CharacterNameTextBox.Text,
-                    WeaponName = GetWeaponName(weaponTag)
-                };
-            }
-            else
-            {
-                MessageBox.Show("Cannot roll using that modifier. Please ensure this is a number.");
-                rollInfo = new RollInformation
-                {
-                    HasError = true
-                };
+                listOfRolls.Add(rollInfo);
             }
 
 
             // Handle Discord content
-            SendToDiscord(rollInfo);
+            SendToDiscord(listOfRolls);
         }
 
         private Result<int> GetAmountOfDice(string weaponNumber)

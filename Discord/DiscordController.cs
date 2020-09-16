@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Discord;
@@ -172,6 +174,39 @@ namespace DiscordAndDragons.Discord
                 var channels = user.GetOrCreateDMChannelAsync().Result;
                 _ = channels.SendMessageAsync(request.Content);
             });
+        }
+
+        public string DetermineMultipleRollsContent(List<RollInformation> listOfRolls)
+        {
+            // x rolled 3 d20's. The results were 12, 16, 18. Adding the modifiers, makes the totals 20, 20, 20.
+            var character = listOfRolls.First().CharacterName;
+            var diceType = listOfRolls.First().DiceTypeAsReadableString();
+            var weaponName = listOfRolls.First().WeaponName;
+            var modifier = listOfRolls.First().Modifier;
+
+            var unmoddedRolls = "";
+            var moddedRolls = "";
+
+            for (int i = 0; i < listOfRolls.Count; i++)
+            {
+                RollInformation roll = listOfRolls[i];
+
+                if(i == listOfRolls.Count -1)
+                {
+                    unmoddedRolls = unmoddedRolls + $"{roll.DiceRoll}.";
+                    moddedRolls = moddedRolls + $"{roll.Result}.";
+                    continue;
+                }
+
+                unmoddedRolls = unmoddedRolls + $"{roll.DiceRoll}, ";
+                moddedRolls = moddedRolls + $"{roll.Result}, ";
+            }
+
+            var content = 
+                $"{character} rolled {listOfRolls.Count} {diceType}'s. The rolls were {unmoddedRolls}." +
+                $"\nAdding a modifier of {modifier}, the resuls are {moddedRolls}";
+
+            return content;
         }
 
         public string DetermineContentToSendToDiscord(RollInformation rollInfo)
