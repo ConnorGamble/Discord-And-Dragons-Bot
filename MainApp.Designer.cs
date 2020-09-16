@@ -266,7 +266,7 @@
             this.ResultBox.ReadOnly = true;
             this.ResultBox.Size = new System.Drawing.Size(71, 37);
             this.ResultBox.TabIndex = 3;
-            this.ResultBox.Text = "N/A";
+            this.ResultBox.Text = "0";
             this.ResultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // D4Button
