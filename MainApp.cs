@@ -1,5 +1,6 @@
 using DiscordAndDragons.Discord;
 using DiscordAndDragons.Documentation;
+using DiscordAndDragons.ErrorHandling;
 using DiscordAndDragons.Forms;
 using System;
 using System.Collections.Generic;
@@ -724,14 +725,15 @@ namespace DiscordAndDragons
         {
             var rollInfo = new RollInformation();
             var button = sender as Button;
+
             var tags = button.Tag?.ToString().Split(',');
+            var weaponTag = tags[0];
+
+            // var amountOfDiceResponse = GetAmountOfDice(weaponTag);
 
             var diceRoll = DnD.Helpers.RollDice(diceType);
 
-            var modifier = 0;
-
             var skillType = SkillType.Unknown;
-            var weaponTag = tags[0];
 
             if (isSkill)
                 skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
@@ -739,14 +741,14 @@ namespace DiscordAndDragons
             var rollType = (RollType)Enum.Parse(typeof(RollType), tags[1]);
             var modifierBox = GetModifierBoxFromRollType(skillType, rollType, tags[0]);
 
-            if (int.TryParse(modifierBox.Text, out modifier))
+            if (int.TryParse(modifierBox.Text, out var modifier))
             {
                 var result = diceRoll + modifier;
 
                 var resultBox = new TextBox();
 
                 if (isSkill)
-                    resultBox = GetSkillResultBox(skillType);
+                    resultBox = GetSkillResultBox(skillType, rollType);
                 else
                 {
                     if (rollType == RollType.Attack)
@@ -785,6 +787,38 @@ namespace DiscordAndDragons
 
             // Handle Discord content
             SendToDiscord(rollInfo);
+        }
+
+        private Result<int> GetAmountOfDice(string weaponNumber)
+        {
+            // Weapon1DamageModBox
+            var modifierTag = $"{weaponNumber}DiceAmount";
+
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                if(int.TryParse(childControl.Text, out var amountOfDice))
+                                {
+                                    return Result<int>.From(amountOfDice);
+                                }
+                                else
+                                {
+                                    return Result<int>.NotParsable($"Could not roll {childControl.Text} amount of dice. Ensure this is a number.");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return Result<int>.NotFound($"Couldn't find the amount of dice you're attempting to roll with.");
         }
 
         /// <summary>
@@ -868,7 +902,7 @@ namespace DiscordAndDragons
             {
                 case RollType.SavingThrow:
                 case RollType.SkillCheck:
-                    return GetSkillModifierBox(skillType);
+                    return GetSkillModifierBox(skillType, rollType);
                 case RollType.Damage:
                 case RollType.Attack:
                     return GetAttackModifierBox(weaponTag, rollType);
@@ -877,9 +911,13 @@ namespace DiscordAndDragons
             }
         }
 
-        private TextBox GetSkillModifierBox(SkillType skillType)
+        private TextBox GetSkillModifierBox(SkillType skillType, RollType rollType)
         {
             var modifierTag = $"{skillType.ToString()}ModBox";
+
+            if(rollType == RollType.SavingThrow)
+                modifierTag = $"{skillType.ToString()}SaveModBox";
+
             foreach (Control c in MainForm.TabPages[0].Controls)
             {
                 if (c.HasChildren)
@@ -926,8 +964,13 @@ namespace DiscordAndDragons
             return null;
         }
 
-        private TextBox GetSkillResultBox(SkillType skillType)
+        private TextBox GetSkillResultBox(SkillType skillType, RollType rollType)
         {
+            var resultSkillBox = $"{skillType.ToString()}ResultBox";
+
+            if(rollType == RollType.SavingThrow)
+                resultSkillBox = $"{skillType.ToString()}SaveResultBox";
+
             foreach (Control c in MainForm.TabPages[0].Controls)
             {
                 if (c.HasChildren)
@@ -936,7 +979,7 @@ namespace DiscordAndDragons
                     {
                         if (childControl is TextBox)
                         {
-                            if (childControl.Tag?.ToString() == $"{skillType.ToString()}ResultBox")
+                            if (childControl.Tag?.ToString() == resultSkillBox)
                             {
                                 return (TextBox)childControl;
                             }
@@ -1328,5 +1371,35 @@ namespace DiscordAndDragons
         }
 
         #endregion
+
+        private void StrengthCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void DexterityCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void ConstitutionCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void IntelligenceCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void WisdomCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void CharismaCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
     }
 }

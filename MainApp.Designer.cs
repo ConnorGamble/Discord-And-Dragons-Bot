@@ -60,6 +60,24 @@
             this.SavingThrowsGroup = new System.Windows.Forms.GroupBox();
             this.ResultSavingThrowLabel = new System.Windows.Forms.Label();
             this.AttackGroup = new System.Windows.Forms.GroupBox();
+            this.CharismaResultBox = new System.Windows.Forms.TextBox();
+            this.WisdomResultBox = new System.Windows.Forms.TextBox();
+            this.IntelligenceResultBox = new System.Windows.Forms.TextBox();
+            this.ConstitutionResultBox = new System.Windows.Forms.TextBox();
+            this.DexterityResultBox = new System.Windows.Forms.TextBox();
+            this.StrengthResultBox = new System.Windows.Forms.TextBox();
+            this.CharismaSkillModBox = new System.Windows.Forms.TextBox();
+            this.WisdomSkillModBox = new System.Windows.Forms.TextBox();
+            this.IntelligenceSkillModBox = new System.Windows.Forms.TextBox();
+            this.ConstitutionSkillModBox = new System.Windows.Forms.TextBox();
+            this.DexteritySkillModBox = new System.Windows.Forms.TextBox();
+            this.CharismaCheckButton = new System.Windows.Forms.Button();
+            this.WisdomCheckButton = new System.Windows.Forms.Button();
+            this.StrengthSkillModBox = new System.Windows.Forms.TextBox();
+            this.IntelligenceCheckButton = new System.Windows.Forms.Button();
+            this.StrengthCheckButton = new System.Windows.Forms.Button();
+            this.DexterityCheckButton = new System.Windows.Forms.Button();
+            this.ConstitutionCheckButton = new System.Windows.Forms.Button();
             this.SurvivalResultBox = new System.Windows.Forms.TextBox();
             this.StealthResultBox = new System.Windows.Forms.TextBox();
             this.SleightOfHandResultBox = new System.Windows.Forms.TextBox();
@@ -158,7 +176,6 @@
             this.WeaponTwoTextBox = new System.Windows.Forms.TextBox();
             this.Weapon2AttackResultBox = new System.Windows.Forms.TextBox();
             this.Weapon1AttackButton = new System.Windows.Forms.Button();
-            this.AttackLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Weapon1AttackModBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -220,6 +237,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.Weapon1DiceAmount = new System.Windows.Forms.TextBox();
+            this.Weapon3DiceAmount = new System.Windows.Forms.TextBox();
+            this.Weapon2DiceAmount = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -392,7 +413,7 @@
             this.StrModTextBox.Name = "StrModTextBox";
             this.StrModTextBox.Size = new System.Drawing.Size(40, 20);
             this.StrModTextBox.TabIndex = 1;
-            this.StrModTextBox.Tag = "StrengthModBox";
+            this.StrModTextBox.Tag = "StrengthSaveModBox";
             this.StrModTextBox.Text = "0";
             this.StrModTextBox.TextChanged += new System.EventHandler(this.StrModTextBox_TextChanged);
             // 
@@ -406,7 +427,7 @@
             this.StrResult.ReadOnly = true;
             this.StrResult.Size = new System.Drawing.Size(40, 21);
             this.StrResult.TabIndex = 14;
-            this.StrResult.Tag = "StrengthResultBox";
+            this.StrResult.Tag = "StrengthSaveResultBox";
             this.StrResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ModifierLabel
@@ -428,7 +449,7 @@
             this.DexResult.ReadOnly = true;
             this.DexResult.Size = new System.Drawing.Size(40, 21);
             this.DexResult.TabIndex = 18;
-            this.DexResult.Tag = "DexterityResultBox";
+            this.DexResult.Tag = "DexteritySaveResultBox";
             this.DexResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DexModTextBox
@@ -439,7 +460,7 @@
             this.DexModTextBox.Name = "DexModTextBox";
             this.DexModTextBox.Size = new System.Drawing.Size(40, 20);
             this.DexModTextBox.TabIndex = 2;
-            this.DexModTextBox.Tag = "DexterityModBox";
+            this.DexModTextBox.Tag = "DexteritySaveModBox";
             this.DexModTextBox.Text = "0";
             this.DexModTextBox.TextChanged += new System.EventHandler(this.DexModTextBox_TextChanged);
             // 
@@ -467,7 +488,7 @@
             this.ConResult.ReadOnly = true;
             this.ConResult.Size = new System.Drawing.Size(40, 21);
             this.ConResult.TabIndex = 21;
-            this.ConResult.Tag = "ConstitutionResultBox";
+            this.ConResult.Tag = "ConstitutionSaveResultBox";
             this.ConResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ConModTextBox
@@ -478,7 +499,7 @@
             this.ConModTextBox.Name = "ConModTextBox";
             this.ConModTextBox.Size = new System.Drawing.Size(40, 20);
             this.ConModTextBox.TabIndex = 3;
-            this.ConModTextBox.Tag = "ConstitutionModBox";
+            this.ConModTextBox.Tag = "ConstitutionSaveModBox";
             this.ConModTextBox.Text = "0";
             // 
             // ConSavButton
@@ -505,7 +526,7 @@
             this.IntResult.ReadOnly = true;
             this.IntResult.Size = new System.Drawing.Size(40, 21);
             this.IntResult.TabIndex = 24;
-            this.IntResult.Tag = "IntelligenceResultBox";
+            this.IntResult.Tag = "IntelligenceSaveResultBox";
             this.IntResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // IntModTextBox
@@ -516,7 +537,7 @@
             this.IntModTextBox.Name = "IntModTextBox";
             this.IntModTextBox.Size = new System.Drawing.Size(40, 20);
             this.IntModTextBox.TabIndex = 4;
-            this.IntModTextBox.Tag = "IntelligenceModBox";
+            this.IntModTextBox.Tag = "IntelligenceSaveModBox";
             this.IntModTextBox.Text = "0";
             this.IntModTextBox.TextChanged += new System.EventHandler(this.IntModTextBox_TextChanged);
             // 
@@ -544,7 +565,7 @@
             this.WisResult.ReadOnly = true;
             this.WisResult.Size = new System.Drawing.Size(40, 21);
             this.WisResult.TabIndex = 27;
-            this.WisResult.Tag = "WisdomResultBox";
+            this.WisResult.Tag = "WisdomSaveResultBox";
             this.WisResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // WisModTextBox
@@ -555,7 +576,7 @@
             this.WisModTextBox.Name = "WisModTextBox";
             this.WisModTextBox.Size = new System.Drawing.Size(40, 20);
             this.WisModTextBox.TabIndex = 5;
-            this.WisModTextBox.Tag = "WisdomModBox";
+            this.WisModTextBox.Tag = "WisdomSaveModBox";
             this.WisModTextBox.Text = "0";
             this.WisModTextBox.TextChanged += new System.EventHandler(this.WisModTextBox_TextChanged);
             // 
@@ -583,7 +604,7 @@
             this.CharResult.ReadOnly = true;
             this.CharResult.Size = new System.Drawing.Size(40, 21);
             this.CharResult.TabIndex = 30;
-            this.CharResult.Tag = "CharismaResultBox";
+            this.CharResult.Tag = "CharismaSaveResultBox";
             this.CharResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CharModTextBox
@@ -594,7 +615,7 @@
             this.CharModTextBox.Name = "CharModTextBox";
             this.CharModTextBox.Size = new System.Drawing.Size(40, 20);
             this.CharModTextBox.TabIndex = 6;
-            this.CharModTextBox.Tag = "CharismaModBox";
+            this.CharModTextBox.Tag = "CharismaSaveModBox";
             this.CharModTextBox.Text = "0";
             this.CharModTextBox.TextChanged += new System.EventHandler(this.CharModTextBox_TextChanged);
             // 
@@ -653,6 +674,24 @@
             // 
             // AttackGroup
             // 
+            this.AttackGroup.Controls.Add(this.CharismaResultBox);
+            this.AttackGroup.Controls.Add(this.WisdomResultBox);
+            this.AttackGroup.Controls.Add(this.IntelligenceResultBox);
+            this.AttackGroup.Controls.Add(this.ConstitutionResultBox);
+            this.AttackGroup.Controls.Add(this.DexterityResultBox);
+            this.AttackGroup.Controls.Add(this.StrengthResultBox);
+            this.AttackGroup.Controls.Add(this.CharismaSkillModBox);
+            this.AttackGroup.Controls.Add(this.WisdomSkillModBox);
+            this.AttackGroup.Controls.Add(this.IntelligenceSkillModBox);
+            this.AttackGroup.Controls.Add(this.ConstitutionSkillModBox);
+            this.AttackGroup.Controls.Add(this.DexteritySkillModBox);
+            this.AttackGroup.Controls.Add(this.CharismaCheckButton);
+            this.AttackGroup.Controls.Add(this.WisdomCheckButton);
+            this.AttackGroup.Controls.Add(this.StrengthSkillModBox);
+            this.AttackGroup.Controls.Add(this.IntelligenceCheckButton);
+            this.AttackGroup.Controls.Add(this.StrengthCheckButton);
+            this.AttackGroup.Controls.Add(this.DexterityCheckButton);
+            this.AttackGroup.Controls.Add(this.ConstitutionCheckButton);
             this.AttackGroup.Controls.Add(this.SurvivalResultBox);
             this.AttackGroup.Controls.Add(this.StealthResultBox);
             this.AttackGroup.Controls.Add(this.SleightOfHandResultBox);
@@ -712,16 +751,238 @@
             this.AttackGroup.ForeColor = System.Drawing.Color.White;
             this.AttackGroup.Location = new System.Drawing.Point(262, 6);
             this.AttackGroup.Name = "AttackGroup";
-            this.AttackGroup.Size = new System.Drawing.Size(592, 189);
+            this.AttackGroup.Size = new System.Drawing.Size(780, 189);
             this.AttackGroup.TabIndex = 32;
             this.AttackGroup.TabStop = false;
             this.AttackGroup.Text = "Skill Checks";
+            // 
+            // CharismaResultBox
+            // 
+            this.CharismaResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.CharismaResultBox.ForeColor = System.Drawing.Color.White;
+            this.CharismaResultBox.Location = new System.Drawing.Point(152, 158);
+            this.CharismaResultBox.Multiline = true;
+            this.CharismaResultBox.Name = "CharismaResultBox";
+            this.CharismaResultBox.ReadOnly = true;
+            this.CharismaResultBox.Size = new System.Drawing.Size(39, 20);
+            this.CharismaResultBox.TabIndex = 103;
+            this.CharismaResultBox.Tag = "CharismaResultBox";
+            // 
+            // WisdomResultBox
+            // 
+            this.WisdomResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.WisdomResultBox.ForeColor = System.Drawing.Color.White;
+            this.WisdomResultBox.Location = new System.Drawing.Point(152, 130);
+            this.WisdomResultBox.Multiline = true;
+            this.WisdomResultBox.Name = "WisdomResultBox";
+            this.WisdomResultBox.ReadOnly = true;
+            this.WisdomResultBox.Size = new System.Drawing.Size(39, 20);
+            this.WisdomResultBox.TabIndex = 102;
+            this.WisdomResultBox.Tag = "WisdomResultBox";
+            // 
+            // IntelligenceResultBox
+            // 
+            this.IntelligenceResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.IntelligenceResultBox.ForeColor = System.Drawing.Color.White;
+            this.IntelligenceResultBox.Location = new System.Drawing.Point(152, 103);
+            this.IntelligenceResultBox.Multiline = true;
+            this.IntelligenceResultBox.Name = "IntelligenceResultBox";
+            this.IntelligenceResultBox.ReadOnly = true;
+            this.IntelligenceResultBox.Size = new System.Drawing.Size(39, 20);
+            this.IntelligenceResultBox.TabIndex = 101;
+            this.IntelligenceResultBox.Tag = "IntelligenceResultBox";
+            // 
+            // ConstitutionResultBox
+            // 
+            this.ConstitutionResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.ConstitutionResultBox.ForeColor = System.Drawing.Color.White;
+            this.ConstitutionResultBox.Location = new System.Drawing.Point(152, 76);
+            this.ConstitutionResultBox.Multiline = true;
+            this.ConstitutionResultBox.Name = "ConstitutionResultBox";
+            this.ConstitutionResultBox.ReadOnly = true;
+            this.ConstitutionResultBox.Size = new System.Drawing.Size(39, 20);
+            this.ConstitutionResultBox.TabIndex = 100;
+            this.ConstitutionResultBox.Tag = "ConstitutionResultBox";
+            // 
+            // DexterityResultBox
+            // 
+            this.DexterityResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.DexterityResultBox.ForeColor = System.Drawing.Color.White;
+            this.DexterityResultBox.Location = new System.Drawing.Point(152, 48);
+            this.DexterityResultBox.Multiline = true;
+            this.DexterityResultBox.Name = "DexterityResultBox";
+            this.DexterityResultBox.ReadOnly = true;
+            this.DexterityResultBox.Size = new System.Drawing.Size(39, 20);
+            this.DexterityResultBox.TabIndex = 99;
+            this.DexterityResultBox.Tag = "DexterityResultBox";
+            // 
+            // StrengthResultBox
+            // 
+            this.StrengthResultBox.BackColor = System.Drawing.Color.DimGray;
+            this.StrengthResultBox.ForeColor = System.Drawing.Color.White;
+            this.StrengthResultBox.Location = new System.Drawing.Point(152, 21);
+            this.StrengthResultBox.Multiline = true;
+            this.StrengthResultBox.Name = "StrengthResultBox";
+            this.StrengthResultBox.ReadOnly = true;
+            this.StrengthResultBox.Size = new System.Drawing.Size(39, 20);
+            this.StrengthResultBox.TabIndex = 98;
+            this.StrengthResultBox.Tag = "StrengthResultBox";
+            // 
+            // CharismaSkillModBox
+            // 
+            this.CharismaSkillModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CharismaSkillModBox.ForeColor = System.Drawing.Color.White;
+            this.CharismaSkillModBox.Location = new System.Drawing.Point(107, 158);
+            this.CharismaSkillModBox.Name = "CharismaSkillModBox";
+            this.CharismaSkillModBox.Size = new System.Drawing.Size(39, 20);
+            this.CharismaSkillModBox.TabIndex = 91;
+            this.CharismaSkillModBox.Tag = "CharismaModBox";
+            this.CharismaSkillModBox.Text = "0";
+            // 
+            // WisdomSkillModBox
+            // 
+            this.WisdomSkillModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.WisdomSkillModBox.ForeColor = System.Drawing.Color.White;
+            this.WisdomSkillModBox.Location = new System.Drawing.Point(107, 130);
+            this.WisdomSkillModBox.Name = "WisdomSkillModBox";
+            this.WisdomSkillModBox.Size = new System.Drawing.Size(39, 20);
+            this.WisdomSkillModBox.TabIndex = 90;
+            this.WisdomSkillModBox.Tag = "WisdomModBox";
+            this.WisdomSkillModBox.Text = "0";
+            // 
+            // IntelligenceSkillModBox
+            // 
+            this.IntelligenceSkillModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.IntelligenceSkillModBox.ForeColor = System.Drawing.Color.White;
+            this.IntelligenceSkillModBox.Location = new System.Drawing.Point(107, 103);
+            this.IntelligenceSkillModBox.Name = "IntelligenceSkillModBox";
+            this.IntelligenceSkillModBox.Size = new System.Drawing.Size(39, 20);
+            this.IntelligenceSkillModBox.TabIndex = 89;
+            this.IntelligenceSkillModBox.Tag = "IntelligenceModBox";
+            this.IntelligenceSkillModBox.Text = "0";
+            // 
+            // ConstitutionSkillModBox
+            // 
+            this.ConstitutionSkillModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ConstitutionSkillModBox.ForeColor = System.Drawing.Color.White;
+            this.ConstitutionSkillModBox.Location = new System.Drawing.Point(107, 76);
+            this.ConstitutionSkillModBox.Name = "ConstitutionSkillModBox";
+            this.ConstitutionSkillModBox.Size = new System.Drawing.Size(39, 20);
+            this.ConstitutionSkillModBox.TabIndex = 88;
+            this.ConstitutionSkillModBox.Tag = "ConstitutionModBox";
+            this.ConstitutionSkillModBox.Text = "0";
+            // 
+            // DexteritySkillModBox
+            // 
+            this.DexteritySkillModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.DexteritySkillModBox.ForeColor = System.Drawing.Color.White;
+            this.DexteritySkillModBox.Location = new System.Drawing.Point(107, 48);
+            this.DexteritySkillModBox.Name = "DexteritySkillModBox";
+            this.DexteritySkillModBox.Size = new System.Drawing.Size(39, 20);
+            this.DexteritySkillModBox.TabIndex = 87;
+            this.DexteritySkillModBox.Tag = "DexterityModBox";
+            this.DexteritySkillModBox.Text = "0";
+            // 
+            // CharismaCheckButton
+            // 
+            this.CharismaCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.CharismaCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CharismaCheckButton.ForeColor = System.Drawing.Color.White;
+            this.CharismaCheckButton.Location = new System.Drawing.Point(3, 156);
+            this.CharismaCheckButton.Name = "CharismaCheckButton";
+            this.CharismaCheckButton.Size = new System.Drawing.Size(96, 24);
+            this.CharismaCheckButton.TabIndex = 97;
+            this.CharismaCheckButton.Tag = "Charisma, SkillCheck";
+            this.CharismaCheckButton.Text = "Charisma";
+            this.CharismaCheckButton.UseVisualStyleBackColor = false;
+            this.CharismaCheckButton.Click += new System.EventHandler(this.CharismaCheckButton_Click);
+            // 
+            // WisdomCheckButton
+            // 
+            this.WisdomCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.WisdomCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.WisdomCheckButton.ForeColor = System.Drawing.Color.White;
+            this.WisdomCheckButton.Location = new System.Drawing.Point(3, 129);
+            this.WisdomCheckButton.Name = "WisdomCheckButton";
+            this.WisdomCheckButton.Size = new System.Drawing.Size(96, 24);
+            this.WisdomCheckButton.TabIndex = 96;
+            this.WisdomCheckButton.Tag = "Wisdom, SkillCheck";
+            this.WisdomCheckButton.Text = "Wisdom";
+            this.WisdomCheckButton.UseVisualStyleBackColor = false;
+            this.WisdomCheckButton.Click += new System.EventHandler(this.WisdomCheckButton_Click);
+            // 
+            // StrengthSkillModBox
+            // 
+            this.StrengthSkillModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.StrengthSkillModBox.ForeColor = System.Drawing.Color.White;
+            this.StrengthSkillModBox.Location = new System.Drawing.Point(107, 21);
+            this.StrengthSkillModBox.Name = "StrengthSkillModBox";
+            this.StrengthSkillModBox.Size = new System.Drawing.Size(39, 20);
+            this.StrengthSkillModBox.TabIndex = 86;
+            this.StrengthSkillModBox.Tag = "StrengthModBox";
+            this.StrengthSkillModBox.Text = "0";
+            // 
+            // IntelligenceCheckButton
+            // 
+            this.IntelligenceCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.IntelligenceCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IntelligenceCheckButton.ForeColor = System.Drawing.Color.White;
+            this.IntelligenceCheckButton.Location = new System.Drawing.Point(3, 102);
+            this.IntelligenceCheckButton.Name = "IntelligenceCheckButton";
+            this.IntelligenceCheckButton.Size = new System.Drawing.Size(96, 23);
+            this.IntelligenceCheckButton.TabIndex = 95;
+            this.IntelligenceCheckButton.Tag = "Intelligence, SkillCheck";
+            this.IntelligenceCheckButton.Text = "Intelligence";
+            this.IntelligenceCheckButton.UseVisualStyleBackColor = false;
+            this.IntelligenceCheckButton.Click += new System.EventHandler(this.IntelligenceCheckButton_Click);
+            // 
+            // StrengthCheckButton
+            // 
+            this.StrengthCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.StrengthCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StrengthCheckButton.ForeColor = System.Drawing.Color.White;
+            this.StrengthCheckButton.Location = new System.Drawing.Point(3, 20);
+            this.StrengthCheckButton.Name = "StrengthCheckButton";
+            this.StrengthCheckButton.Size = new System.Drawing.Size(96, 22);
+            this.StrengthCheckButton.TabIndex = 92;
+            this.StrengthCheckButton.Tag = "Strength, SkillCheck";
+            this.StrengthCheckButton.Text = "Strength";
+            this.StrengthCheckButton.UseVisualStyleBackColor = false;
+            this.StrengthCheckButton.Click += new System.EventHandler(this.StrengthCheckButton_Click);
+            // 
+            // DexterityCheckButton
+            // 
+            this.DexterityCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.DexterityCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DexterityCheckButton.ForeColor = System.Drawing.Color.White;
+            this.DexterityCheckButton.Location = new System.Drawing.Point(3, 46);
+            this.DexterityCheckButton.Name = "DexterityCheckButton";
+            this.DexterityCheckButton.Size = new System.Drawing.Size(96, 23);
+            this.DexterityCheckButton.TabIndex = 93;
+            this.DexterityCheckButton.Tag = "Dexterity, SkillCheck";
+            this.DexterityCheckButton.Text = "Dexterity";
+            this.DexterityCheckButton.UseVisualStyleBackColor = false;
+            this.DexterityCheckButton.Click += new System.EventHandler(this.DexterityCheckButton_Click);
+            // 
+            // ConstitutionCheckButton
+            // 
+            this.ConstitutionCheckButton.BackColor = System.Drawing.Color.DimGray;
+            this.ConstitutionCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConstitutionCheckButton.ForeColor = System.Drawing.Color.White;
+            this.ConstitutionCheckButton.Location = new System.Drawing.Point(3, 75);
+            this.ConstitutionCheckButton.Name = "ConstitutionCheckButton";
+            this.ConstitutionCheckButton.Size = new System.Drawing.Size(96, 22);
+            this.ConstitutionCheckButton.TabIndex = 94;
+            this.ConstitutionCheckButton.Tag = "Constitution, SkillCheck";
+            this.ConstitutionCheckButton.Text = "Constitution";
+            this.ConstitutionCheckButton.UseVisualStyleBackColor = false;
+            this.ConstitutionCheckButton.Click += new System.EventHandler(this.ConstitutionCheckButton_Click);
             // 
             // SurvivalResultBox
             // 
             this.SurvivalResultBox.BackColor = System.Drawing.Color.DimGray;
             this.SurvivalResultBox.ForeColor = System.Drawing.Color.White;
-            this.SurvivalResultBox.Location = new System.Drawing.Point(539, 157);
+            this.SurvivalResultBox.Location = new System.Drawing.Point(734, 157);
             this.SurvivalResultBox.Multiline = true;
             this.SurvivalResultBox.Name = "SurvivalResultBox";
             this.SurvivalResultBox.ReadOnly = true;
@@ -733,7 +994,7 @@
             // 
             this.StealthResultBox.BackColor = System.Drawing.Color.DimGray;
             this.StealthResultBox.ForeColor = System.Drawing.Color.White;
-            this.StealthResultBox.Location = new System.Drawing.Point(539, 129);
+            this.StealthResultBox.Location = new System.Drawing.Point(734, 129);
             this.StealthResultBox.Multiline = true;
             this.StealthResultBox.Name = "StealthResultBox";
             this.StealthResultBox.ReadOnly = true;
@@ -745,7 +1006,7 @@
             // 
             this.SleightOfHandResultBox.BackColor = System.Drawing.Color.DimGray;
             this.SleightOfHandResultBox.ForeColor = System.Drawing.Color.White;
-            this.SleightOfHandResultBox.Location = new System.Drawing.Point(539, 102);
+            this.SleightOfHandResultBox.Location = new System.Drawing.Point(734, 102);
             this.SleightOfHandResultBox.Multiline = true;
             this.SleightOfHandResultBox.Name = "SleightOfHandResultBox";
             this.SleightOfHandResultBox.ReadOnly = true;
@@ -757,7 +1018,7 @@
             // 
             this.ReligionResultBox.BackColor = System.Drawing.Color.DimGray;
             this.ReligionResultBox.ForeColor = System.Drawing.Color.White;
-            this.ReligionResultBox.Location = new System.Drawing.Point(539, 75);
+            this.ReligionResultBox.Location = new System.Drawing.Point(734, 75);
             this.ReligionResultBox.Multiline = true;
             this.ReligionResultBox.Name = "ReligionResultBox";
             this.ReligionResultBox.ReadOnly = true;
@@ -769,7 +1030,7 @@
             // 
             this.PersuasionResultBox.BackColor = System.Drawing.Color.DimGray;
             this.PersuasionResultBox.ForeColor = System.Drawing.Color.White;
-            this.PersuasionResultBox.Location = new System.Drawing.Point(539, 47);
+            this.PersuasionResultBox.Location = new System.Drawing.Point(734, 47);
             this.PersuasionResultBox.Multiline = true;
             this.PersuasionResultBox.Name = "PersuasionResultBox";
             this.PersuasionResultBox.ReadOnly = true;
@@ -781,7 +1042,7 @@
             // 
             this.PerformanceResultBox.BackColor = System.Drawing.Color.DimGray;
             this.PerformanceResultBox.ForeColor = System.Drawing.Color.White;
-            this.PerformanceResultBox.Location = new System.Drawing.Point(539, 20);
+            this.PerformanceResultBox.Location = new System.Drawing.Point(734, 20);
             this.PerformanceResultBox.Multiline = true;
             this.PerformanceResultBox.Name = "PerformanceResultBox";
             this.PerformanceResultBox.ReadOnly = true;
@@ -793,7 +1054,7 @@
             // 
             this.SurvivalModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.SurvivalModTextBox.ForeColor = System.Drawing.Color.White;
-            this.SurvivalModTextBox.Location = new System.Drawing.Point(494, 157);
+            this.SurvivalModTextBox.Location = new System.Drawing.Point(689, 157);
             this.SurvivalModTextBox.Name = "SurvivalModTextBox";
             this.SurvivalModTextBox.Size = new System.Drawing.Size(39, 20);
             this.SurvivalModTextBox.TabIndex = 24;
@@ -804,7 +1065,7 @@
             // 
             this.StealthModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.StealthModTextBox.ForeColor = System.Drawing.Color.White;
-            this.StealthModTextBox.Location = new System.Drawing.Point(494, 129);
+            this.StealthModTextBox.Location = new System.Drawing.Point(689, 129);
             this.StealthModTextBox.Name = "StealthModTextBox";
             this.StealthModTextBox.Size = new System.Drawing.Size(39, 20);
             this.StealthModTextBox.TabIndex = 23;
@@ -815,7 +1076,7 @@
             // 
             this.SleightOfHandModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.SleightOfHandModTextBox.ForeColor = System.Drawing.Color.White;
-            this.SleightOfHandModTextBox.Location = new System.Drawing.Point(494, 102);
+            this.SleightOfHandModTextBox.Location = new System.Drawing.Point(689, 102);
             this.SleightOfHandModTextBox.Name = "SleightOfHandModTextBox";
             this.SleightOfHandModTextBox.Size = new System.Drawing.Size(39, 20);
             this.SleightOfHandModTextBox.TabIndex = 22;
@@ -826,7 +1087,7 @@
             // 
             this.ReligionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ReligionModTextBox.ForeColor = System.Drawing.Color.White;
-            this.ReligionModTextBox.Location = new System.Drawing.Point(494, 75);
+            this.ReligionModTextBox.Location = new System.Drawing.Point(689, 75);
             this.ReligionModTextBox.Name = "ReligionModTextBox";
             this.ReligionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.ReligionModTextBox.TabIndex = 21;
@@ -837,7 +1098,7 @@
             // 
             this.PersuasionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.PersuasionModTextBox.ForeColor = System.Drawing.Color.White;
-            this.PersuasionModTextBox.Location = new System.Drawing.Point(494, 47);
+            this.PersuasionModTextBox.Location = new System.Drawing.Point(689, 47);
             this.PersuasionModTextBox.Name = "PersuasionModTextBox";
             this.PersuasionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.PersuasionModTextBox.TabIndex = 20;
@@ -849,7 +1110,7 @@
             this.SurvivalCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.SurvivalCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SurvivalCheckButton.ForeColor = System.Drawing.Color.White;
-            this.SurvivalCheckButton.Location = new System.Drawing.Point(390, 155);
+            this.SurvivalCheckButton.Location = new System.Drawing.Point(585, 155);
             this.SurvivalCheckButton.Name = "SurvivalCheckButton";
             this.SurvivalCheckButton.Size = new System.Drawing.Size(96, 24);
             this.SurvivalCheckButton.TabIndex = 74;
@@ -863,7 +1124,7 @@
             this.StealthCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.StealthCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StealthCheckButton.ForeColor = System.Drawing.Color.White;
-            this.StealthCheckButton.Location = new System.Drawing.Point(390, 128);
+            this.StealthCheckButton.Location = new System.Drawing.Point(585, 128);
             this.StealthCheckButton.Name = "StealthCheckButton";
             this.StealthCheckButton.Size = new System.Drawing.Size(96, 24);
             this.StealthCheckButton.TabIndex = 73;
@@ -876,7 +1137,7 @@
             // 
             this.PerformanceModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.PerformanceModTextBox.ForeColor = System.Drawing.Color.White;
-            this.PerformanceModTextBox.Location = new System.Drawing.Point(494, 20);
+            this.PerformanceModTextBox.Location = new System.Drawing.Point(689, 20);
             this.PerformanceModTextBox.Name = "PerformanceModTextBox";
             this.PerformanceModTextBox.Size = new System.Drawing.Size(39, 20);
             this.PerformanceModTextBox.TabIndex = 19;
@@ -888,7 +1149,7 @@
             this.SleightOfHandCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.SleightOfHandCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SleightOfHandCheckButton.ForeColor = System.Drawing.Color.White;
-            this.SleightOfHandCheckButton.Location = new System.Drawing.Point(390, 101);
+            this.SleightOfHandCheckButton.Location = new System.Drawing.Point(585, 101);
             this.SleightOfHandCheckButton.Name = "SleightOfHandCheckButton";
             this.SleightOfHandCheckButton.Size = new System.Drawing.Size(96, 23);
             this.SleightOfHandCheckButton.TabIndex = 71;
@@ -902,7 +1163,7 @@
             this.PerformanceCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.PerformanceCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PerformanceCheckButton.ForeColor = System.Drawing.Color.White;
-            this.PerformanceCheckButton.Location = new System.Drawing.Point(390, 19);
+            this.PerformanceCheckButton.Location = new System.Drawing.Point(585, 19);
             this.PerformanceCheckButton.Name = "PerformanceCheckButton";
             this.PerformanceCheckButton.Size = new System.Drawing.Size(96, 22);
             this.PerformanceCheckButton.TabIndex = 68;
@@ -916,7 +1177,7 @@
             this.PersuasionCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.PersuasionCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PersuasionCheckButton.ForeColor = System.Drawing.Color.White;
-            this.PersuasionCheckButton.Location = new System.Drawing.Point(390, 45);
+            this.PersuasionCheckButton.Location = new System.Drawing.Point(585, 45);
             this.PersuasionCheckButton.Name = "PersuasionCheckButton";
             this.PersuasionCheckButton.Size = new System.Drawing.Size(96, 23);
             this.PersuasionCheckButton.TabIndex = 69;
@@ -930,7 +1191,7 @@
             this.ReligionCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.ReligionCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReligionCheckButton.ForeColor = System.Drawing.Color.White;
-            this.ReligionCheckButton.Location = new System.Drawing.Point(390, 74);
+            this.ReligionCheckButton.Location = new System.Drawing.Point(585, 74);
             this.ReligionCheckButton.Name = "ReligionCheckButton";
             this.ReligionCheckButton.Size = new System.Drawing.Size(96, 22);
             this.ReligionCheckButton.TabIndex = 70;
@@ -943,7 +1204,7 @@
             // 
             this.PerceptionResultBox.BackColor = System.Drawing.Color.DimGray;
             this.PerceptionResultBox.ForeColor = System.Drawing.Color.White;
-            this.PerceptionResultBox.Location = new System.Drawing.Point(345, 157);
+            this.PerceptionResultBox.Location = new System.Drawing.Point(540, 157);
             this.PerceptionResultBox.Multiline = true;
             this.PerceptionResultBox.Name = "PerceptionResultBox";
             this.PerceptionResultBox.ReadOnly = true;
@@ -955,7 +1216,7 @@
             // 
             this.NatureResultBox.BackColor = System.Drawing.Color.DimGray;
             this.NatureResultBox.ForeColor = System.Drawing.Color.White;
-            this.NatureResultBox.Location = new System.Drawing.Point(345, 129);
+            this.NatureResultBox.Location = new System.Drawing.Point(540, 129);
             this.NatureResultBox.Multiline = true;
             this.NatureResultBox.Name = "NatureResultBox";
             this.NatureResultBox.ReadOnly = true;
@@ -967,7 +1228,7 @@
             // 
             this.MedicineResultBox.BackColor = System.Drawing.Color.DimGray;
             this.MedicineResultBox.ForeColor = System.Drawing.Color.White;
-            this.MedicineResultBox.Location = new System.Drawing.Point(345, 102);
+            this.MedicineResultBox.Location = new System.Drawing.Point(540, 102);
             this.MedicineResultBox.Multiline = true;
             this.MedicineResultBox.Name = "MedicineResultBox";
             this.MedicineResultBox.ReadOnly = true;
@@ -979,7 +1240,7 @@
             // 
             this.InvestigationResultBox.BackColor = System.Drawing.Color.DimGray;
             this.InvestigationResultBox.ForeColor = System.Drawing.Color.White;
-            this.InvestigationResultBox.Location = new System.Drawing.Point(345, 75);
+            this.InvestigationResultBox.Location = new System.Drawing.Point(540, 75);
             this.InvestigationResultBox.Multiline = true;
             this.InvestigationResultBox.Name = "InvestigationResultBox";
             this.InvestigationResultBox.ReadOnly = true;
@@ -991,7 +1252,7 @@
             // 
             this.IntimidationResultBox.BackColor = System.Drawing.Color.DimGray;
             this.IntimidationResultBox.ForeColor = System.Drawing.Color.White;
-            this.IntimidationResultBox.Location = new System.Drawing.Point(345, 47);
+            this.IntimidationResultBox.Location = new System.Drawing.Point(540, 47);
             this.IntimidationResultBox.Multiline = true;
             this.IntimidationResultBox.Name = "IntimidationResultBox";
             this.IntimidationResultBox.ReadOnly = true;
@@ -1003,7 +1264,7 @@
             // 
             this.InsightResultBox.BackColor = System.Drawing.Color.DimGray;
             this.InsightResultBox.ForeColor = System.Drawing.Color.White;
-            this.InsightResultBox.Location = new System.Drawing.Point(345, 20);
+            this.InsightResultBox.Location = new System.Drawing.Point(540, 20);
             this.InsightResultBox.Multiline = true;
             this.InsightResultBox.Name = "InsightResultBox";
             this.InsightResultBox.ReadOnly = true;
@@ -1015,7 +1276,7 @@
             // 
             this.PerceptionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.PerceptionModTextBox.ForeColor = System.Drawing.Color.White;
-            this.PerceptionModTextBox.Location = new System.Drawing.Point(300, 157);
+            this.PerceptionModTextBox.Location = new System.Drawing.Point(495, 157);
             this.PerceptionModTextBox.Name = "PerceptionModTextBox";
             this.PerceptionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.PerceptionModTextBox.TabIndex = 18;
@@ -1026,7 +1287,7 @@
             // 
             this.NatureModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.NatureModTextBox.ForeColor = System.Drawing.Color.White;
-            this.NatureModTextBox.Location = new System.Drawing.Point(300, 129);
+            this.NatureModTextBox.Location = new System.Drawing.Point(495, 129);
             this.NatureModTextBox.Name = "NatureModTextBox";
             this.NatureModTextBox.Size = new System.Drawing.Size(39, 20);
             this.NatureModTextBox.TabIndex = 17;
@@ -1037,7 +1298,7 @@
             // 
             this.MedicineModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.MedicineModTextBox.ForeColor = System.Drawing.Color.White;
-            this.MedicineModTextBox.Location = new System.Drawing.Point(300, 102);
+            this.MedicineModTextBox.Location = new System.Drawing.Point(495, 102);
             this.MedicineModTextBox.Name = "MedicineModTextBox";
             this.MedicineModTextBox.Size = new System.Drawing.Size(39, 20);
             this.MedicineModTextBox.TabIndex = 16;
@@ -1048,7 +1309,7 @@
             // 
             this.InvestigationModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.InvestigationModTextBox.ForeColor = System.Drawing.Color.White;
-            this.InvestigationModTextBox.Location = new System.Drawing.Point(300, 75);
+            this.InvestigationModTextBox.Location = new System.Drawing.Point(495, 75);
             this.InvestigationModTextBox.Name = "InvestigationModTextBox";
             this.InvestigationModTextBox.Size = new System.Drawing.Size(39, 20);
             this.InvestigationModTextBox.TabIndex = 15;
@@ -1059,7 +1320,7 @@
             // 
             this.IntimidationModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.IntimidationModTextBox.ForeColor = System.Drawing.Color.White;
-            this.IntimidationModTextBox.Location = new System.Drawing.Point(300, 47);
+            this.IntimidationModTextBox.Location = new System.Drawing.Point(495, 47);
             this.IntimidationModTextBox.Name = "IntimidationModTextBox";
             this.IntimidationModTextBox.Size = new System.Drawing.Size(39, 20);
             this.IntimidationModTextBox.TabIndex = 14;
@@ -1071,7 +1332,7 @@
             this.PerceptionCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.PerceptionCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PerceptionCheckButton.ForeColor = System.Drawing.Color.White;
-            this.PerceptionCheckButton.Location = new System.Drawing.Point(196, 155);
+            this.PerceptionCheckButton.Location = new System.Drawing.Point(391, 155);
             this.PerceptionCheckButton.Name = "PerceptionCheckButton";
             this.PerceptionCheckButton.Size = new System.Drawing.Size(96, 24);
             this.PerceptionCheckButton.TabIndex = 56;
@@ -1085,7 +1346,7 @@
             this.NatureCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.NatureCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NatureCheckButton.ForeColor = System.Drawing.Color.White;
-            this.NatureCheckButton.Location = new System.Drawing.Point(196, 128);
+            this.NatureCheckButton.Location = new System.Drawing.Point(391, 128);
             this.NatureCheckButton.Name = "NatureCheckButton";
             this.NatureCheckButton.Size = new System.Drawing.Size(96, 24);
             this.NatureCheckButton.TabIndex = 55;
@@ -1098,7 +1359,7 @@
             // 
             this.InsightModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.InsightModTextBox.ForeColor = System.Drawing.Color.White;
-            this.InsightModTextBox.Location = new System.Drawing.Point(300, 20);
+            this.InsightModTextBox.Location = new System.Drawing.Point(495, 20);
             this.InsightModTextBox.Name = "InsightModTextBox";
             this.InsightModTextBox.Size = new System.Drawing.Size(39, 20);
             this.InsightModTextBox.TabIndex = 13;
@@ -1110,7 +1371,7 @@
             this.MedicineCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.MedicineCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MedicineCheckButton.ForeColor = System.Drawing.Color.White;
-            this.MedicineCheckButton.Location = new System.Drawing.Point(196, 101);
+            this.MedicineCheckButton.Location = new System.Drawing.Point(391, 101);
             this.MedicineCheckButton.Name = "MedicineCheckButton";
             this.MedicineCheckButton.Size = new System.Drawing.Size(96, 23);
             this.MedicineCheckButton.TabIndex = 53;
@@ -1124,7 +1385,7 @@
             this.InsightCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.InsightCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InsightCheckButton.ForeColor = System.Drawing.Color.White;
-            this.InsightCheckButton.Location = new System.Drawing.Point(196, 19);
+            this.InsightCheckButton.Location = new System.Drawing.Point(391, 19);
             this.InsightCheckButton.Name = "InsightCheckButton";
             this.InsightCheckButton.Size = new System.Drawing.Size(96, 22);
             this.InsightCheckButton.TabIndex = 50;
@@ -1138,7 +1399,7 @@
             this.IntimidationCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.IntimidationCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IntimidationCheckButton.ForeColor = System.Drawing.Color.White;
-            this.IntimidationCheckButton.Location = new System.Drawing.Point(196, 45);
+            this.IntimidationCheckButton.Location = new System.Drawing.Point(391, 45);
             this.IntimidationCheckButton.Name = "IntimidationCheckButton";
             this.IntimidationCheckButton.Size = new System.Drawing.Size(96, 23);
             this.IntimidationCheckButton.TabIndex = 51;
@@ -1152,7 +1413,7 @@
             this.InvestigationCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.InvestigationCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InvestigationCheckButton.ForeColor = System.Drawing.Color.White;
-            this.InvestigationCheckButton.Location = new System.Drawing.Point(196, 74);
+            this.InvestigationCheckButton.Location = new System.Drawing.Point(391, 74);
             this.InvestigationCheckButton.Name = "InvestigationCheckButton";
             this.InvestigationCheckButton.Size = new System.Drawing.Size(96, 22);
             this.InvestigationCheckButton.TabIndex = 52;
@@ -1174,7 +1435,7 @@
             // 
             this.HistoryResultBox.BackColor = System.Drawing.Color.DimGray;
             this.HistoryResultBox.ForeColor = System.Drawing.Color.White;
-            this.HistoryResultBox.Location = new System.Drawing.Point(151, 158);
+            this.HistoryResultBox.Location = new System.Drawing.Point(346, 158);
             this.HistoryResultBox.Multiline = true;
             this.HistoryResultBox.Name = "HistoryResultBox";
             this.HistoryResultBox.ReadOnly = true;
@@ -1186,7 +1447,7 @@
             // 
             this.DeceptionResultBox.BackColor = System.Drawing.Color.DimGray;
             this.DeceptionResultBox.ForeColor = System.Drawing.Color.White;
-            this.DeceptionResultBox.Location = new System.Drawing.Point(151, 130);
+            this.DeceptionResultBox.Location = new System.Drawing.Point(346, 130);
             this.DeceptionResultBox.Multiline = true;
             this.DeceptionResultBox.Name = "DeceptionResultBox";
             this.DeceptionResultBox.ReadOnly = true;
@@ -1198,7 +1459,7 @@
             // 
             this.AthleticsResultBox.BackColor = System.Drawing.Color.DimGray;
             this.AthleticsResultBox.ForeColor = System.Drawing.Color.White;
-            this.AthleticsResultBox.Location = new System.Drawing.Point(151, 103);
+            this.AthleticsResultBox.Location = new System.Drawing.Point(346, 103);
             this.AthleticsResultBox.Multiline = true;
             this.AthleticsResultBox.Name = "AthleticsResultBox";
             this.AthleticsResultBox.ReadOnly = true;
@@ -1210,7 +1471,7 @@
             // 
             this.ArcanaResultBox.BackColor = System.Drawing.Color.DimGray;
             this.ArcanaResultBox.ForeColor = System.Drawing.Color.White;
-            this.ArcanaResultBox.Location = new System.Drawing.Point(151, 76);
+            this.ArcanaResultBox.Location = new System.Drawing.Point(346, 76);
             this.ArcanaResultBox.Multiline = true;
             this.ArcanaResultBox.Name = "ArcanaResultBox";
             this.ArcanaResultBox.ReadOnly = true;
@@ -1222,7 +1483,7 @@
             // 
             this.AnimalHandlingResultBox.BackColor = System.Drawing.Color.DimGray;
             this.AnimalHandlingResultBox.ForeColor = System.Drawing.Color.White;
-            this.AnimalHandlingResultBox.Location = new System.Drawing.Point(151, 48);
+            this.AnimalHandlingResultBox.Location = new System.Drawing.Point(346, 48);
             this.AnimalHandlingResultBox.Multiline = true;
             this.AnimalHandlingResultBox.Name = "AnimalHandlingResultBox";
             this.AnimalHandlingResultBox.ReadOnly = true;
@@ -1234,7 +1495,7 @@
             // 
             this.AcrobaticsResultBox.BackColor = System.Drawing.Color.DimGray;
             this.AcrobaticsResultBox.ForeColor = System.Drawing.Color.White;
-            this.AcrobaticsResultBox.Location = new System.Drawing.Point(151, 21);
+            this.AcrobaticsResultBox.Location = new System.Drawing.Point(346, 21);
             this.AcrobaticsResultBox.Multiline = true;
             this.AcrobaticsResultBox.Name = "AcrobaticsResultBox";
             this.AcrobaticsResultBox.ReadOnly = true;
@@ -1246,7 +1507,7 @@
             // 
             this.HistoryModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.HistoryModTextBox.ForeColor = System.Drawing.Color.White;
-            this.HistoryModTextBox.Location = new System.Drawing.Point(106, 158);
+            this.HistoryModTextBox.Location = new System.Drawing.Point(301, 158);
             this.HistoryModTextBox.Name = "HistoryModTextBox";
             this.HistoryModTextBox.Size = new System.Drawing.Size(39, 20);
             this.HistoryModTextBox.TabIndex = 12;
@@ -1257,7 +1518,7 @@
             // 
             this.DeceptionModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.DeceptionModTextBox.ForeColor = System.Drawing.Color.White;
-            this.DeceptionModTextBox.Location = new System.Drawing.Point(106, 130);
+            this.DeceptionModTextBox.Location = new System.Drawing.Point(301, 130);
             this.DeceptionModTextBox.Name = "DeceptionModTextBox";
             this.DeceptionModTextBox.Size = new System.Drawing.Size(39, 20);
             this.DeceptionModTextBox.TabIndex = 11;
@@ -1268,7 +1529,7 @@
             // 
             this.AthleticsModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.AthleticsModTextBox.ForeColor = System.Drawing.Color.White;
-            this.AthleticsModTextBox.Location = new System.Drawing.Point(106, 103);
+            this.AthleticsModTextBox.Location = new System.Drawing.Point(301, 103);
             this.AthleticsModTextBox.Name = "AthleticsModTextBox";
             this.AthleticsModTextBox.Size = new System.Drawing.Size(39, 20);
             this.AthleticsModTextBox.TabIndex = 10;
@@ -1279,7 +1540,7 @@
             // 
             this.ArcanaModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ArcanaModTextBox.ForeColor = System.Drawing.Color.White;
-            this.ArcanaModTextBox.Location = new System.Drawing.Point(106, 76);
+            this.ArcanaModTextBox.Location = new System.Drawing.Point(301, 76);
             this.ArcanaModTextBox.Name = "ArcanaModTextBox";
             this.ArcanaModTextBox.Size = new System.Drawing.Size(39, 20);
             this.ArcanaModTextBox.TabIndex = 9;
@@ -1290,7 +1551,7 @@
             // 
             this.AnimalHandlingModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.AnimalHandlingModTextBox.ForeColor = System.Drawing.Color.White;
-            this.AnimalHandlingModTextBox.Location = new System.Drawing.Point(106, 48);
+            this.AnimalHandlingModTextBox.Location = new System.Drawing.Point(301, 48);
             this.AnimalHandlingModTextBox.Name = "AnimalHandlingModTextBox";
             this.AnimalHandlingModTextBox.Size = new System.Drawing.Size(39, 20);
             this.AnimalHandlingModTextBox.TabIndex = 8;
@@ -1302,7 +1563,7 @@
             this.HistoryCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.HistoryCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HistoryCheckButton.ForeColor = System.Drawing.Color.White;
-            this.HistoryCheckButton.Location = new System.Drawing.Point(2, 156);
+            this.HistoryCheckButton.Location = new System.Drawing.Point(197, 156);
             this.HistoryCheckButton.Name = "HistoryCheckButton";
             this.HistoryCheckButton.Size = new System.Drawing.Size(96, 24);
             this.HistoryCheckButton.TabIndex = 37;
@@ -1316,7 +1577,7 @@
             this.DeceptionCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.DeceptionCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeceptionCheckButton.ForeColor = System.Drawing.Color.White;
-            this.DeceptionCheckButton.Location = new System.Drawing.Point(2, 129);
+            this.DeceptionCheckButton.Location = new System.Drawing.Point(197, 129);
             this.DeceptionCheckButton.Name = "DeceptionCheckButton";
             this.DeceptionCheckButton.Size = new System.Drawing.Size(96, 24);
             this.DeceptionCheckButton.TabIndex = 36;
@@ -1329,7 +1590,7 @@
             // 
             this.AcrobaticsModTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.AcrobaticsModTextBox.ForeColor = System.Drawing.Color.White;
-            this.AcrobaticsModTextBox.Location = new System.Drawing.Point(106, 21);
+            this.AcrobaticsModTextBox.Location = new System.Drawing.Point(301, 21);
             this.AcrobaticsModTextBox.Name = "AcrobaticsModTextBox";
             this.AcrobaticsModTextBox.Size = new System.Drawing.Size(39, 20);
             this.AcrobaticsModTextBox.TabIndex = 7;
@@ -1350,7 +1611,7 @@
             this.AthleticsCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.AthleticsCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AthleticsCheckButton.ForeColor = System.Drawing.Color.White;
-            this.AthleticsCheckButton.Location = new System.Drawing.Point(2, 102);
+            this.AthleticsCheckButton.Location = new System.Drawing.Point(197, 102);
             this.AthleticsCheckButton.Name = "AthleticsCheckButton";
             this.AthleticsCheckButton.Size = new System.Drawing.Size(96, 23);
             this.AthleticsCheckButton.TabIndex = 34;
@@ -1364,7 +1625,7 @@
             this.AcrobaticCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.AcrobaticCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AcrobaticCheckButton.ForeColor = System.Drawing.Color.White;
-            this.AcrobaticCheckButton.Location = new System.Drawing.Point(2, 20);
+            this.AcrobaticCheckButton.Location = new System.Drawing.Point(197, 20);
             this.AcrobaticCheckButton.Name = "AcrobaticCheckButton";
             this.AcrobaticCheckButton.Size = new System.Drawing.Size(96, 22);
             this.AcrobaticCheckButton.TabIndex = 31;
@@ -1378,7 +1639,7 @@
             this.AnimalHandlingCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.AnimalHandlingCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AnimalHandlingCheckButton.ForeColor = System.Drawing.Color.White;
-            this.AnimalHandlingCheckButton.Location = new System.Drawing.Point(2, 46);
+            this.AnimalHandlingCheckButton.Location = new System.Drawing.Point(197, 46);
             this.AnimalHandlingCheckButton.Name = "AnimalHandlingCheckButton";
             this.AnimalHandlingCheckButton.Size = new System.Drawing.Size(96, 23);
             this.AnimalHandlingCheckButton.TabIndex = 32;
@@ -1392,7 +1653,7 @@
             this.ArcanaCheckButton.BackColor = System.Drawing.Color.DimGray;
             this.ArcanaCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ArcanaCheckButton.ForeColor = System.Drawing.Color.White;
-            this.ArcanaCheckButton.Location = new System.Drawing.Point(2, 75);
+            this.ArcanaCheckButton.Location = new System.Drawing.Point(197, 75);
             this.ArcanaCheckButton.Name = "ArcanaCheckButton";
             this.ArcanaCheckButton.Size = new System.Drawing.Size(96, 22);
             this.ArcanaCheckButton.TabIndex = 33;
@@ -1403,6 +1664,10 @@
             // 
             // CombatGroupBox
             // 
+            this.CombatGroupBox.Controls.Add(this.label24);
+            this.CombatGroupBox.Controls.Add(this.Weapon2DiceAmount);
+            this.CombatGroupBox.Controls.Add(this.Weapon3DiceAmount);
+            this.CombatGroupBox.Controls.Add(this.Weapon1DiceAmount);
             this.CombatGroupBox.Controls.Add(this.groupBox2);
             this.CombatGroupBox.Controls.Add(this.DeathSaveGroupBox);
             this.CombatGroupBox.Controls.Add(this.PrivateRollCheckBox);
@@ -1430,7 +1695,6 @@
             this.CombatGroupBox.Controls.Add(this.WeaponTwoTextBox);
             this.CombatGroupBox.Controls.Add(this.Weapon2AttackResultBox);
             this.CombatGroupBox.Controls.Add(this.Weapon1AttackButton);
-            this.CombatGroupBox.Controls.Add(this.AttackLabel);
             this.CombatGroupBox.Controls.Add(this.label2);
             this.CombatGroupBox.Controls.Add(this.Weapon1AttackModBox);
             this.CombatGroupBox.Controls.Add(this.label3);
@@ -1439,7 +1703,7 @@
             this.CombatGroupBox.ForeColor = System.Drawing.Color.White;
             this.CombatGroupBox.Location = new System.Drawing.Point(6, 202);
             this.CombatGroupBox.Name = "CombatGroupBox";
-            this.CombatGroupBox.Size = new System.Drawing.Size(640, 235);
+            this.CombatGroupBox.Size = new System.Drawing.Size(827, 235);
             this.CombatGroupBox.TabIndex = 33;
             this.CombatGroupBox.TabStop = false;
             this.CombatGroupBox.Text = "Combat";
@@ -1653,7 +1917,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(587, -1);
+            this.label5.Location = new System.Drawing.Point(639, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 113;
@@ -1662,7 +1926,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(537, -1);
+            this.label6.Location = new System.Drawing.Point(592, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 112;
@@ -1671,11 +1935,11 @@
             // Damage
             // 
             this.Damage.AutoSize = true;
-            this.Damage.Location = new System.Drawing.Point(339, 14);
+            this.Damage.Location = new System.Drawing.Point(346, -2);
             this.Damage.Name = "Damage";
-            this.Damage.Size = new System.Drawing.Size(47, 13);
+            this.Damage.Size = new System.Drawing.Size(56, 13);
             this.Damage.TabIndex = 111;
-            this.Damage.Text = "Damage";
+            this.Damage.Text = "Dice Type";
             // 
             // Weapon3AtkDieBox
             // 
@@ -1688,7 +1952,7 @@
             "D10",
             "D12",
             "D20"});
-            this.Weapon3AtkDieBox.Location = new System.Drawing.Point(342, 86);
+            this.Weapon3AtkDieBox.Location = new System.Drawing.Point(350, 75);
             this.Weapon3AtkDieBox.Name = "Weapon3AtkDieBox";
             this.Weapon3AtkDieBox.Size = new System.Drawing.Size(88, 21);
             this.Weapon3AtkDieBox.TabIndex = 110;
@@ -1704,7 +1968,7 @@
             "D10",
             "D12",
             "D20"});
-            this.Weapon2AtkDieBox.Location = new System.Drawing.Point(342, 59);
+            this.Weapon2AtkDieBox.Location = new System.Drawing.Point(350, 48);
             this.Weapon2AtkDieBox.Name = "Weapon2AtkDieBox";
             this.Weapon2AtkDieBox.Size = new System.Drawing.Size(88, 21);
             this.Weapon2AtkDieBox.TabIndex = 109;
@@ -1720,7 +1984,7 @@
             "D10",
             "D12",
             "D20"});
-            this.Weapon1AtkDieBox.Location = new System.Drawing.Point(342, 30);
+            this.Weapon1AtkDieBox.Location = new System.Drawing.Point(350, 19);
             this.Weapon1AtkDieBox.Name = "Weapon1AtkDieBox";
             this.Weapon1AtkDieBox.Size = new System.Drawing.Size(88, 21);
             this.Weapon1AtkDieBox.TabIndex = 108;
@@ -1730,7 +1994,7 @@
             this.Weapon3DamageButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3DamageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon3DamageButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DamageButton.Location = new System.Drawing.Point(436, 85);
+            this.Weapon3DamageButton.Location = new System.Drawing.Point(490, 75);
             this.Weapon3DamageButton.Name = "Weapon3DamageButton";
             this.Weapon3DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3DamageButton.TabIndex = 105;
@@ -1743,7 +2007,7 @@
             // 
             this.Weapon3DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon3DamageModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DamageModBox.Location = new System.Drawing.Point(540, 86);
+            this.Weapon3DamageModBox.Location = new System.Drawing.Point(594, 76);
             this.Weapon3DamageModBox.Name = "Weapon3DamageModBox";
             this.Weapon3DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3DamageModBox.TabIndex = 33;
@@ -1754,7 +2018,7 @@
             // 
             this.Weapon3DamageResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3DamageResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DamageResultBox.Location = new System.Drawing.Point(585, 86);
+            this.Weapon3DamageResultBox.Location = new System.Drawing.Point(639, 76);
             this.Weapon3DamageResultBox.Multiline = true;
             this.Weapon3DamageResultBox.Name = "Weapon3DamageResultBox";
             this.Weapon3DamageResultBox.ReadOnly = true;
@@ -1767,7 +2031,7 @@
             this.Weapon2DamageButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2DamageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon2DamageButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DamageButton.Location = new System.Drawing.Point(436, 58);
+            this.Weapon2DamageButton.Location = new System.Drawing.Point(490, 48);
             this.Weapon2DamageButton.Name = "Weapon2DamageButton";
             this.Weapon2DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2DamageButton.TabIndex = 102;
@@ -1780,7 +2044,7 @@
             // 
             this.Weapon2DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon2DamageModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DamageModBox.Location = new System.Drawing.Point(540, 59);
+            this.Weapon2DamageModBox.Location = new System.Drawing.Point(594, 49);
             this.Weapon2DamageModBox.Name = "Weapon2DamageModBox";
             this.Weapon2DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2DamageModBox.TabIndex = 30;
@@ -1791,7 +2055,7 @@
             // 
             this.Weapon2DamageResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2DamageResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DamageResultBox.Location = new System.Drawing.Point(585, 59);
+            this.Weapon2DamageResultBox.Location = new System.Drawing.Point(639, 49);
             this.Weapon2DamageResultBox.Multiline = true;
             this.Weapon2DamageResultBox.Name = "Weapon2DamageResultBox";
             this.Weapon2DamageResultBox.ReadOnly = true;
@@ -1804,7 +2068,7 @@
             this.Weapon1DamageButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1DamageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon1DamageButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DamageButton.Location = new System.Drawing.Point(436, 29);
+            this.Weapon1DamageButton.Location = new System.Drawing.Point(490, 19);
             this.Weapon1DamageButton.Name = "Weapon1DamageButton";
             this.Weapon1DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1DamageButton.TabIndex = 99;
@@ -1817,7 +2081,7 @@
             // 
             this.Weapon1DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon1DamageModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DamageModBox.Location = new System.Drawing.Point(540, 30);
+            this.Weapon1DamageModBox.Location = new System.Drawing.Point(594, 20);
             this.Weapon1DamageModBox.Name = "Weapon1DamageModBox";
             this.Weapon1DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1DamageModBox.TabIndex = 27;
@@ -1828,7 +2092,7 @@
             // 
             this.Weapon1DamageResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1DamageResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DamageResultBox.Location = new System.Drawing.Point(585, 30);
+            this.Weapon1DamageResultBox.Location = new System.Drawing.Point(639, 20);
             this.Weapon1DamageResultBox.Multiline = true;
             this.Weapon1DamageResultBox.Name = "Weapon1DamageResultBox";
             this.Weapon1DamageResultBox.ReadOnly = true;
@@ -1841,7 +2105,7 @@
             this.Weapon3AttackButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3AttackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon3AttackButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon3AttackButton.Location = new System.Drawing.Point(148, 86);
+            this.Weapon3AttackButton.Location = new System.Drawing.Point(148, 74);
             this.Weapon3AttackButton.Name = "Weapon3AttackButton";
             this.Weapon3AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3AttackButton.TabIndex = 95;
@@ -1854,7 +2118,7 @@
             // 
             this.Weapon3AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon3AttackModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3AttackModBox.Location = new System.Drawing.Point(252, 87);
+            this.Weapon3AttackModBox.Location = new System.Drawing.Point(252, 75);
             this.Weapon3AttackModBox.Name = "Weapon3AttackModBox";
             this.Weapon3AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3AttackModBox.TabIndex = 32;
@@ -1865,17 +2129,18 @@
             // 
             this.WeaponThreeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.WeaponThreeTextBox.ForeColor = System.Drawing.Color.White;
-            this.WeaponThreeTextBox.Location = new System.Drawing.Point(6, 88);
+            this.WeaponThreeTextBox.Location = new System.Drawing.Point(6, 76);
             this.WeaponThreeTextBox.Name = "WeaponThreeTextBox";
             this.WeaponThreeTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponThreeTextBox.TabIndex = 31;
             this.WeaponThreeTextBox.Tag = "Weapon3Name";
+            this.WeaponThreeTextBox.Text = "Weapon 3";
             // 
             // Weapon3AttackResultBox
             // 
             this.Weapon3AttackResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3AttackResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3AttackResultBox.Location = new System.Drawing.Point(297, 87);
+            this.Weapon3AttackResultBox.Location = new System.Drawing.Point(297, 75);
             this.Weapon3AttackResultBox.Multiline = true;
             this.Weapon3AttackResultBox.Name = "Weapon3AttackResultBox";
             this.Weapon3AttackResultBox.ReadOnly = true;
@@ -1888,7 +2153,7 @@
             this.Weapon2AttackButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2AttackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon2AttackButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon2AttackButton.Location = new System.Drawing.Point(148, 58);
+            this.Weapon2AttackButton.Location = new System.Drawing.Point(148, 46);
             this.Weapon2AttackButton.Name = "Weapon2AttackButton";
             this.Weapon2AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2AttackButton.TabIndex = 91;
@@ -1901,7 +2166,7 @@
             // 
             this.Weapon2AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon2AttackModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2AttackModBox.Location = new System.Drawing.Point(252, 59);
+            this.Weapon2AttackModBox.Location = new System.Drawing.Point(252, 47);
             this.Weapon2AttackModBox.Name = "Weapon2AttackModBox";
             this.Weapon2AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2AttackModBox.TabIndex = 29;
@@ -1912,17 +2177,18 @@
             // 
             this.WeaponTwoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.WeaponTwoTextBox.ForeColor = System.Drawing.Color.White;
-            this.WeaponTwoTextBox.Location = new System.Drawing.Point(6, 60);
+            this.WeaponTwoTextBox.Location = new System.Drawing.Point(6, 48);
             this.WeaponTwoTextBox.Name = "WeaponTwoTextBox";
             this.WeaponTwoTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponTwoTextBox.TabIndex = 28;
             this.WeaponTwoTextBox.Tag = "Weapon2Name";
+            this.WeaponTwoTextBox.Text = "Weapon 2 ";
             // 
             // Weapon2AttackResultBox
             // 
             this.Weapon2AttackResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2AttackResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2AttackResultBox.Location = new System.Drawing.Point(297, 59);
+            this.Weapon2AttackResultBox.Location = new System.Drawing.Point(297, 47);
             this.Weapon2AttackResultBox.Multiline = true;
             this.Weapon2AttackResultBox.Name = "Weapon2AttackResultBox";
             this.Weapon2AttackResultBox.ReadOnly = true;
@@ -1935,7 +2201,7 @@
             this.Weapon1AttackButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1AttackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon1AttackButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon1AttackButton.Location = new System.Drawing.Point(148, 30);
+            this.Weapon1AttackButton.Location = new System.Drawing.Point(148, 18);
             this.Weapon1AttackButton.Name = "Weapon1AttackButton";
             this.Weapon1AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1AttackButton.TabIndex = 86;
@@ -1943,15 +2209,6 @@
             this.Weapon1AttackButton.Text = "Roll";
             this.Weapon1AttackButton.UseVisualStyleBackColor = false;
             this.Weapon1AttackButton.Click += new System.EventHandler(this.Weapon1AttackButton_Click);
-            // 
-            // AttackLabel
-            // 
-            this.AttackLabel.AutoSize = true;
-            this.AttackLabel.Location = new System.Drawing.Point(6, 16);
-            this.AttackLabel.Name = "AttackLabel";
-            this.AttackLabel.Size = new System.Drawing.Size(38, 13);
-            this.AttackLabel.TabIndex = 90;
-            this.AttackLabel.Text = "Attack";
             // 
             // label2
             // 
@@ -1966,7 +2223,7 @@
             // 
             this.Weapon1AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon1AttackModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1AttackModBox.Location = new System.Drawing.Point(252, 31);
+            this.Weapon1AttackModBox.Location = new System.Drawing.Point(252, 19);
             this.Weapon1AttackModBox.Name = "Weapon1AttackModBox";
             this.Weapon1AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1AttackModBox.TabIndex = 26;
@@ -1986,17 +2243,18 @@
             // 
             this.WeaponOneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.WeaponOneTextBox.ForeColor = System.Drawing.Color.White;
-            this.WeaponOneTextBox.Location = new System.Drawing.Point(6, 32);
+            this.WeaponOneTextBox.Location = new System.Drawing.Point(6, 20);
             this.WeaponOneTextBox.Name = "WeaponOneTextBox";
             this.WeaponOneTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponOneTextBox.TabIndex = 25;
             this.WeaponOneTextBox.Tag = "Weapon1Name";
+            this.WeaponOneTextBox.Text = "Weapon 1";
             // 
             // Weapon1AttackResultBox
             // 
             this.Weapon1AttackResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1AttackResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1AttackResultBox.Location = new System.Drawing.Point(297, 31);
+            this.Weapon1AttackResultBox.Location = new System.Drawing.Point(297, 19);
             this.Weapon1AttackResultBox.Multiline = true;
             this.Weapon1AttackResultBox.Name = "Weapon1AttackResultBox";
             this.Weapon1AttackResultBox.ReadOnly = true;
@@ -2016,7 +2274,7 @@
             this.GeneralDiceBox.Controls.Add(this.D12Button);
             this.GeneralDiceBox.Controls.Add(this.D10Button);
             this.GeneralDiceBox.ForeColor = System.Drawing.Color.White;
-            this.GeneralDiceBox.Location = new System.Drawing.Point(651, 202);
+            this.GeneralDiceBox.Location = new System.Drawing.Point(839, 200);
             this.GeneralDiceBox.Name = "GeneralDiceBox";
             this.GeneralDiceBox.Size = new System.Drawing.Size(203, 235);
             this.GeneralDiceBox.TabIndex = 34;
@@ -2031,7 +2289,7 @@
             this.MainForm.Location = new System.Drawing.Point(-5, -1);
             this.MainForm.Name = "MainForm";
             this.MainForm.SelectedIndex = 0;
-            this.MainForm.Size = new System.Drawing.Size(870, 466);
+            this.MainForm.Size = new System.Drawing.Size(1056, 464);
             this.MainForm.TabIndex = 35;
             // 
             // RollingTab
@@ -2044,7 +2302,7 @@
             this.RollingTab.Location = new System.Drawing.Point(4, 22);
             this.RollingTab.Name = "RollingTab";
             this.RollingTab.Padding = new System.Windows.Forms.Padding(3);
-            this.RollingTab.Size = new System.Drawing.Size(862, 440);
+            this.RollingTab.Size = new System.Drawing.Size(1048, 438);
             this.RollingTab.TabIndex = 0;
             this.RollingTab.Text = "Rolls";
             // 
@@ -2059,7 +2317,7 @@
             this.CharacterSheetTab.Location = new System.Drawing.Point(4, 22);
             this.CharacterSheetTab.Name = "CharacterSheetTab";
             this.CharacterSheetTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CharacterSheetTab.Size = new System.Drawing.Size(862, 440);
+            this.CharacterSheetTab.Size = new System.Drawing.Size(1048, 438);
             this.CharacterSheetTab.TabIndex = 1;
             this.CharacterSheetTab.Text = "Character sheet";
             // 
@@ -2434,7 +2692,7 @@
             this.SettingsTab.Controls.Add(this.groupBox3);
             this.SettingsTab.Location = new System.Drawing.Point(4, 22);
             this.SettingsTab.Name = "SettingsTab";
-            this.SettingsTab.Size = new System.Drawing.Size(862, 440);
+            this.SettingsTab.Size = new System.Drawing.Size(1048, 438);
             this.SettingsTab.TabIndex = 2;
             this.SettingsTab.Text = "Settings";
             // 
@@ -2650,12 +2908,54 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
             // 
+            // Weapon1DiceAmount
+            // 
+            this.Weapon1DiceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon1DiceAmount.ForeColor = System.Drawing.Color.White;
+            this.Weapon1DiceAmount.Location = new System.Drawing.Point(445, 20);
+            this.Weapon1DiceAmount.Name = "Weapon1DiceAmount";
+            this.Weapon1DiceAmount.Size = new System.Drawing.Size(39, 20);
+            this.Weapon1DiceAmount.TabIndex = 117;
+            this.Weapon1DiceAmount.Tag = "Weapon1DiceAmount";
+            this.Weapon1DiceAmount.Text = "0";
+            // 
+            // Weapon3DiceAmount
+            // 
+            this.Weapon3DiceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon3DiceAmount.ForeColor = System.Drawing.Color.White;
+            this.Weapon3DiceAmount.Location = new System.Drawing.Point(445, 76);
+            this.Weapon3DiceAmount.Name = "Weapon3DiceAmount";
+            this.Weapon3DiceAmount.Size = new System.Drawing.Size(39, 20);
+            this.Weapon3DiceAmount.TabIndex = 118;
+            this.Weapon3DiceAmount.Tag = "Weapon3DiceAmount";
+            this.Weapon3DiceAmount.Text = "0";
+            // 
+            // Weapon2DiceAmount
+            // 
+            this.Weapon2DiceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Weapon2DiceAmount.ForeColor = System.Drawing.Color.White;
+            this.Weapon2DiceAmount.Location = new System.Drawing.Point(445, 49);
+            this.Weapon2DiceAmount.Name = "Weapon2DiceAmount";
+            this.Weapon2DiceAmount.Size = new System.Drawing.Size(39, 20);
+            this.Weapon2DiceAmount.TabIndex = 119;
+            this.Weapon2DiceAmount.Tag = "Weapon2DiceAmount";
+            this.Weapon2DiceAmount.Text = "0";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(442, -1);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(43, 13);
+            this.label24.TabIndex = 120;
+            this.label24.Text = "Amount";
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(860, 459);
+            this.ClientSize = new System.Drawing.Size(1046, 458);
             this.Controls.Add(this.MainForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2811,7 +3111,6 @@
         private System.Windows.Forms.TextBox WeaponTwoTextBox;
         private System.Windows.Forms.TextBox Weapon2AttackResultBox;
         private System.Windows.Forms.Button Weapon1AttackButton;
-        private System.Windows.Forms.Label AttackLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Weapon1AttackModBox;
         private System.Windows.Forms.Label label3;
@@ -2896,6 +3195,28 @@
         private System.Windows.Forms.Button HowToButton;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button ResetDeathSaveButton;
+        private System.Windows.Forms.TextBox CharismaResultBox;
+        private System.Windows.Forms.TextBox WisdomResultBox;
+        private System.Windows.Forms.TextBox IntelligenceResultBox;
+        private System.Windows.Forms.TextBox ConstitutionResultBox;
+        private System.Windows.Forms.TextBox DexterityResultBox;
+        private System.Windows.Forms.TextBox StrengthResultBox;
+        private System.Windows.Forms.TextBox CharismaSkillModBox;
+        private System.Windows.Forms.TextBox WisdomSkillModBox;
+        private System.Windows.Forms.TextBox IntelligenceSkillModBox;
+        private System.Windows.Forms.TextBox ConstitutionSkillModBox;
+        private System.Windows.Forms.TextBox DexteritySkillModBox;
+        private System.Windows.Forms.Button CharismaCheckButton;
+        private System.Windows.Forms.Button WisdomCheckButton;
+        private System.Windows.Forms.TextBox StrengthSkillModBox;
+        private System.Windows.Forms.Button IntelligenceCheckButton;
+        private System.Windows.Forms.Button StrengthCheckButton;
+        private System.Windows.Forms.Button DexterityCheckButton;
+        private System.Windows.Forms.Button ConstitutionCheckButton;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox Weapon2DiceAmount;
+        private System.Windows.Forms.TextBox Weapon3DiceAmount;
+        private System.Windows.Forms.TextBox Weapon1DiceAmount;
     }
 }
 

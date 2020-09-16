@@ -1,6 +1,4 @@
-﻿using DiscordAndDragons.Discord;
-using System;
-using System.Windows.Forms;
+﻿using System;
 
 namespace DiscordAndDragons.DnD
 {
@@ -8,6 +6,7 @@ namespace DiscordAndDragons.DnD
     {
         public static int RollDice(DiceType diceType)
         {
+
             var result = 0;
             switch (diceType)
             {
