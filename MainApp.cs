@@ -39,6 +39,7 @@ namespace DiscordAndDragons
         private List<CheckBox> FailureBoxes;
 
         private List<TextBox> StrModifiers;
+        private List<TextBox> ConModifier;
         private List<TextBox> DexModifiers;
         private List<TextBox> IntModifiers;
         private List<TextBox> WisModifiers;
@@ -848,27 +849,32 @@ namespace DiscordAndDragons
         {
             StrModifiers = new List<TextBox>()
             {
-                AthleticsModTextBox
+                AthleticsModTextBox, StrengthSkillModBox
+            };
+
+            ConModifier = new List<TextBox>()
+            {
+                ConstitutionSkillModBox
             };
 
             DexModifiers = new List<TextBox>()
             {
-                AcrobaticsModTextBox, SleightOfHandModTextBox, StealthModTextBox
+                AcrobaticsModTextBox, SleightOfHandModTextBox, StealthModTextBox, DexteritySkillModBox
             };
 
             IntModifiers = new List<TextBox>()
             {
-                ArcanaModTextBox, HistoryModTextBox, InvestigationModTextBox, NatureModTextBox, ReligionModTextBox
+                ArcanaModTextBox, HistoryModTextBox, InvestigationModTextBox, NatureModTextBox, ReligionModTextBox, IntelligenceSkillModBox
             };
 
             WisModifiers = new List<TextBox>()
             {
-                AnimalHandlingModTextBox, InsightModTextBox, MedicineModTextBox, PerceptionModTextBox, SurvivalModTextBox
+                AnimalHandlingModTextBox, InsightModTextBox, MedicineModTextBox, PerceptionModTextBox, SurvivalModTextBox, WisdomSkillModBox
             };
 
             ChaModifiers = new List<TextBox>()
             {
-                DeceptionModTextBox, IntimidationModTextBox, PerformanceModTextBox, PersuasionModTextBox
+                DeceptionModTextBox, IntimidationModTextBox, PerformanceModTextBox, PersuasionModTextBox, CharismaSkillModBox
             };
         }
 
@@ -1368,6 +1374,11 @@ namespace DiscordAndDragons
         private void StrModTextBox_TextChanged(object sender, EventArgs e)
         {
             StrModifiers.UpdateModifiers(sender);
+        }
+
+        private void ConModTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ConModifier.UpdateModifiers(sender);
         }
 
         private void DexModTextBox_TextChanged(object sender, EventArgs e)

@@ -501,6 +501,7 @@
             this.ConModTextBox.TabIndex = 3;
             this.ConModTextBox.Tag = "ConstitutionSaveModBox";
             this.ConModTextBox.Text = "0";
+            this.ConModTextBox.TextChanged += new System.EventHandler(this.ConModTextBox_TextChanged);
             // 
             // ConSavButton
             // 

@@ -204,7 +204,7 @@ namespace DiscordAndDragons.Discord
             var content = 
                 $"{character} rolled {listOfRolls.Count} {diceType}'s when attacking with their {weaponName}" +
                 $"\nThe rolls were {unmoddedRolls}" +
-                $"\nAdding a modifier of {modifier}, the resuls are {moddedRolls}";
+                $"\nAdding a modifier of {modifier}, the results are {moddedRolls}";
 
             return content;
         }
