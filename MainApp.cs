@@ -763,7 +763,7 @@ namespace DiscordAndDragons
 
                     var result = diceRoll + modifier;
 
-                    var resultBox = new TextBox();
+                    TextBox resultBox;
 
                     if (isSkill)
                         resultBox = GetSkillResultBox(skillType, rollType);
