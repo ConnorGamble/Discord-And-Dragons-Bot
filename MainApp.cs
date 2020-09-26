@@ -698,6 +698,12 @@ namespace DiscordAndDragons
         /// <param name="rollList">Information about the new roll result</param>
         private void SendToDiscord(List<RollInformation> rollList)
         {
+            if(rollList.IsEmpty())
+            {
+                MessageBox.Show($"You tried to roll without a dice. Try changing the amount of dice you want to roll to be at least 1");
+                return;
+            }
+
             var firstRoll = rollList.First();
             var discordContent = DiscordController.DetermineContentToSendToDiscord(firstRoll);
 
@@ -737,25 +743,18 @@ namespace DiscordAndDragons
             var tags = button.Tag?.ToString().Split(',');
             var weaponTag = tags[0];
 
-            var amountOfDiceToRoll = 1;
-            var amountOfDiceToRollCheck = GetAmountOfDice(weaponTag);
+            var rollInfo = new RollInformation(tags, diceType, isSkill);
 
-            if (amountOfDiceToRollCheck.IsSuccess)
-                amountOfDiceToRoll = amountOfDiceToRollCheck.Content;
+            var amountOfDiceToRoll = 1;
+            
+            if(rollInfo.RollType == RollType.Damage)
+                amountOfDiceToRoll = GetAmountOfDice(weaponTag).Content;
 
             var listOfRolls = new List<RollInformation>();
 
             for(int i = 1; i <= amountOfDiceToRoll; i++)
             {
-                var rollInfo = new RollInformation();
-
-                var skillType = SkillType.Unknown;
-
-                if (isSkill)
-                    skillType = (SkillType)Enum.Parse(typeof(SkillType), tags[0]);
-
-                var rollType = (RollType)Enum.Parse(typeof(RollType), tags[1]);
-                var modifierBox = GetModifierBoxFromRollType(skillType, rollType, tags[0]);
+                var modifierBox = GetModifierBoxFromRollType(rollInfo.SkillType, rollInfo.RollType, tags[0]);
 
                 if (int.TryParse(modifierBox.Text, out var modifier))
                 {
@@ -766,10 +765,10 @@ namespace DiscordAndDragons
                     TextBox resultBox;
 
                     if (isSkill)
-                        resultBox = GetSkillResultBox(skillType, rollType);
+                        resultBox = GetSkillResultBox(rollInfo.SkillType, rollInfo.RollType);
                     else
                     {
-                        if (rollType == RollType.Attack)
+                        if (rollInfo.RollType == RollType.Attack)
                             resultBox = GetAttackResultBox(weaponTag);
                         else
                             resultBox = GetDamageResultBox(weaponTag);
@@ -778,16 +777,18 @@ namespace DiscordAndDragons
 
                     resultBox.Text = result.ToString();
 
-                    if (rollType == RollType.SavingThrow || rollType == RollType.SkillCheck || rollType == RollType.Attack)
+                    if (rollInfo.RollType == RollType.SavingThrow || rollInfo.RollType == RollType.SkillCheck || rollInfo.RollType == RollType.Attack)
                         resultBox.BackColor = ChangeResultColour(diceRoll);
+
+                    rollInfo.CharacterName = CharacterNameTextBox.Text;
 
                     rollInfo = new RollInformation
                     {
                         DiceRoll = diceRoll,
                         Modifier = modifier,
                         Result = result,
-                        SkillType = skillType,
-                        RollType = rollType,
+                        SkillType = rollInfo.SkillType,
+                        RollType = rollInfo.RollType,
                         DiceType = diceType,
                         CharacterName = CharacterNameTextBox.Text,
                         WeaponName = GetWeaponName(weaponTag)

@@ -1,4 +1,4 @@
-﻿using DiscordAndDragons.Discord;
+using System.Collections.Generic;
 
 namespace DiscordAndDragons
 {
@@ -43,6 +43,58 @@ namespace DiscordAndDragons
 
         public CurrentHealthState CurrentHealthState;
 
+        private static Dictionary<string, SkillType> SkillTypeDictionary = new Dictionary<string, SkillType>
+        {
+            { SkillTypeStrings.Strength, SkillType.Strength },
+            { SkillTypeStrings.Dexterity, SkillType.Dexterity },
+            { SkillTypeStrings.Constitution, SkillType.Constitution },
+            { SkillTypeStrings.Intelligence, SkillType.Intelligence },
+            { SkillTypeStrings.Wisdom, SkillType.Wisdom },
+            { SkillTypeStrings.Charisma, SkillType.Charisma},
+            { SkillTypeStrings.Acrobatics, SkillType.Acrobatics},
+            { SkillTypeStrings.AnimalHandling, SkillType.AnimalHandling},
+            { SkillTypeStrings.Arcana, SkillType.Arcana},
+            { SkillTypeStrings.Athletics, SkillType.Athletics},
+            { SkillTypeStrings.Deception, SkillType.Deception},
+            { SkillTypeStrings.History, SkillType.History},
+            { SkillTypeStrings.Insight, SkillType.Insight},
+            { SkillTypeStrings.Intimidation, SkillType.Intimidation},
+            { SkillTypeStrings.Investigation, SkillType.Investigation},
+            { SkillTypeStrings.Medicine, SkillType.Medicine},
+            { SkillTypeStrings.Nature, SkillType.Nature},
+            { SkillTypeStrings.Perception, SkillType.Perception},
+            { SkillTypeStrings.Performance, SkillType.Performance},
+            { SkillTypeStrings.Persuasion, SkillType.Persuasion},
+            { SkillTypeStrings.Religion, SkillType.Religion},
+            { SkillTypeStrings.SleightOfHand, SkillType.SleightOfHand},
+            { SkillTypeStrings.Stealth, SkillType.Stealth},
+            { SkillTypeStrings.Survival, SkillType.Survival}
+        };
+
+        private static Dictionary<string, RollType> RollTypeDictionary = new Dictionary<string, RollType>
+        {
+            { RollTypeStrings.SavingThrow, RollType.SavingThrow },
+            { RollTypeStrings.SkillCheck, RollType.SkillCheck },
+            { RollTypeStrings.Attack, RollType.Attack },
+            { RollTypeStrings.Damage, RollType.Damage },
+            { RollTypeStrings.DeathSave, RollType.DeathSave }
+        };
+
+        public RollInformation(string[] tags, DiceType diceType, bool isSkill)
+        {
+            if (isSkill)
+                SkillType = SkillTypeDictionary[tags[0].Trim()];
+
+            RollType = RollTypeDictionary[tags[1].Trim()];
+
+            DiceType = diceType;
+        }
+
+        public RollInformation()
+        {
+
+        }
+
         public string SkillAsReadableString()
         {
             switch (SkillType)
@@ -60,45 +112,6 @@ namespace DiscordAndDragons
         {
             return DiceType.ToString();
         }
-    }
-
-    public enum RollType
-    {
-        Unknown,
-        SavingThrow,
-        SkillCheck,
-        Attack,
-        Damage,
-        DeathSave
-    }
-
-    public enum SkillType
-    {
-        Unknown,
-        Strength,
-        Dexterity,
-        Constitution,
-        Intelligence,
-        Wisdom,
-        Charisma,
-        Acrobatics,
-        AnimalHandling,
-        Arcana,
-        Athletics,
-        Deception,
-        History,
-        Insight,
-        Intimidation,
-        Investigation,
-        Medicine,
-        Nature,
-        Perception,
-        Performance,
-        Persuasion,
-        Religion,
-        SleightOfHand,
-        Stealth,
-        Survival
     }
 
     public enum DiceType

@@ -26,5 +26,13 @@ namespace DiscordAndDragons.Forms
 
             return false;
         }
+
+        public static bool IsEmpty(this List<RollInformation> modifiers)
+        {
+            if (modifiers.Count > 0)
+                return false;
+
+            return true;
+        }
     }
 }

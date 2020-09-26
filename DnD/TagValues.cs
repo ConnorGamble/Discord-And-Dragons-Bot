@@ -1,24 +1,15 @@
-﻿namespace DiscordAndDragons.DnD.TagValues
+﻿namespace DiscordAndDragons
 {
-    public struct RollType
+    public struct RollTypeStrings
     {
         public const string SavingThrow = "SavingThrow";
         public const string SkillCheck = "SkillCheck";
         public const string Attack = "Attack";
         public const string Damage = "Damage";
         public const string DeathSave = "DeathSave";
-
-        private Dictionary<string, RollType> RollTypeDictionary = new Dictionary<string, RollType>
-        { 
-            { SavingThrow, RollType.SavingThrow },
-            { SkillCheck, RollType.SkillCheck },
-            { Attack, RollType.Attack },
-            { Damage, RollType.Damage },
-            { DeathSave, RollType.DeathSave }
-        };
     }
 
-    public struct SkillType
+    public struct SkillTypeStrings
     {
         public const string Strength = "Strength";
         public const string Dexterity = "Dexterity";
@@ -45,4 +36,44 @@
         public const string Stealth = "Stealth";
         public const string Survival = "Survival";
     }
+
+    public enum RollType
+    {
+        Unknown,
+        SavingThrow,
+        SkillCheck,
+        Attack,
+        Damage,
+        DeathSave
+    }
+
+    public enum SkillType
+    {
+        Unknown,
+        Strength,
+        Dexterity,
+        Constitution,
+        Intelligence,
+        Wisdom,
+        Charisma,
+        Acrobatics,
+        AnimalHandling,
+        Arcana,
+        Athletics,
+        Deception,
+        History,
+        Insight,
+        Intimidation,
+        Investigation,
+        Medicine,
+        Nature,
+        Perception,
+        Performance,
+        Persuasion,
+        Religion,
+        SleightOfHand,
+        Stealth,
+        Survival
+    }
 }
+
