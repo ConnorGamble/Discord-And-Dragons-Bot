@@ -240,6 +240,9 @@ namespace DiscordAndDragons.Discord
                 case RollType.DeathSave:
                     content = $"{characterName} rolled for a death saving throw! Rolled a {rollInfo.DiceRoll}({diceType}). {DetermineDeathSaveContent(rollInfo.CurrentHealthState)}";
                     break;
+                case RollType.Initative:
+                    content = $"{characterName} rolls for initiative and rolled a {rollInfo.DiceRoll}({diceType}). With a modifier of {rollInfo.Modifier} results in {rollInfo.Result}";
+                    break;
                 default:
                     break;
             }

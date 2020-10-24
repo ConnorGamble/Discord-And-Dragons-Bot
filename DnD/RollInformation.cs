@@ -16,6 +16,11 @@ namespace DiscordAndDragons
         /// The result of the roll +/- the dice roll
         /// </summary>
         public int Result { get; set; }
+
+        /// <summary>
+        /// The amount of dice which are to be rolled
+        /// </summary>
+        public int NumberOfDiceToRoll { get; set; }
         /// <summary>
         /// The type of roll being performed
         /// </summary>
@@ -77,10 +82,12 @@ namespace DiscordAndDragons
             { RollTypeStrings.SkillCheck, RollType.SkillCheck },
             { RollTypeStrings.Attack, RollType.Attack },
             { RollTypeStrings.Damage, RollType.Damage },
-            { RollTypeStrings.DeathSave, RollType.DeathSave }
+            { RollTypeStrings.DeathSave, RollType.DeathSave },
+            { RollTypeStrings.Initiative, RollType.Initative }
+            // "Initiative"
         };
 
-        public RollInformation(string[] tags, DiceType diceType, bool isSkill)
+        public RollInformation(string[] tags, DiceType diceType, bool isSkill, int numberOfRolls = 1)
         {
             if (isSkill)
                 SkillType = SkillTypeDictionary[tags[0].Trim()];
@@ -88,6 +95,8 @@ namespace DiscordAndDragons
             RollType = RollTypeDictionary[tags[1].Trim()];
 
             DiceType = diceType;
+
+            NumberOfDiceToRoll = numberOfRolls;
         }
 
         public RollInformation()

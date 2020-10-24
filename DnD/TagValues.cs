@@ -7,6 +7,7 @@
         public const string Attack = "Attack";
         public const string Damage = "Damage";
         public const string DeathSave = "DeathSave";
+        public const string Initiative = "Initiative";
     }
 
     public struct SkillTypeStrings
@@ -44,7 +45,8 @@
         SkillCheck,
         Attack,
         Damage,
-        DeathSave
+        DeathSave, 
+        Initative
     }
 
     public enum SkillType

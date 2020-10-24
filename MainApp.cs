@@ -770,6 +770,8 @@ namespace DiscordAndDragons
                     {
                         if (rollInfo.RollType == RollType.Attack)
                             resultBox = GetAttackResultBox(weaponTag);
+                        else if (rollInfo.RollType == RollType.Initative)
+                            resultBox = GetInitiativeResultBox();
                         else
                             resultBox = GetDamageResultBox(weaponTag);
 
@@ -809,6 +811,28 @@ namespace DiscordAndDragons
 
             // Handle Discord content
             SendToDiscord(listOfRolls);
+        }
+
+        private TextBox GetInitiativeResultBox()
+        {
+            var modifierTag = $"InitiativeResultBox";
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         private Result<int> GetAmountOfDice(string weaponNumber)
@@ -933,9 +957,34 @@ namespace DiscordAndDragons
                 case RollType.Damage:
                 case RollType.Attack:
                     return GetAttackModifierBox(weaponTag, rollType);
+                case RollType.Initative:
+                    return GetInitiativeModifierBox();
                 default:
                     return null;
             }
+        }
+
+        private TextBox GetInitiativeModifierBox()
+        {
+            var modifierTag = $"DexteritySaveModBox";
+
+            foreach (Control c in MainForm.TabPages[0].Controls)
+            {
+                if (c.HasChildren)
+                {
+                    foreach (Control childControl in c.Controls)
+                    {
+                        if (childControl is TextBox)
+                        {
+                            if (childControl.Tag?.ToString() == modifierTag)
+                            {
+                                return (TextBox)childControl;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         private TextBox GetSkillModifierBox(SkillType skillType, RollType rollType)
@@ -1432,6 +1481,11 @@ namespace DiscordAndDragons
         private void CharismaCheckButton_Click(object sender, EventArgs e)
         {
             RollWithModifier(sender);
+        }
+
+        private void InitiativeRoll_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender, false);
         }
     }
 }
