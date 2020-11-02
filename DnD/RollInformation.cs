@@ -84,7 +84,6 @@ namespace DiscordAndDragons
             { RollTypeStrings.Damage, RollType.Damage },
             { RollTypeStrings.DeathSave, RollType.DeathSave },
             { RollTypeStrings.Initiative, RollType.Initative }
-            // "Initiative"
         };
 
         public RollInformation(string[] tags, DiceType diceType, bool isSkill, int numberOfRolls = 1)

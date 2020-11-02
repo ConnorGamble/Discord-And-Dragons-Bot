@@ -815,24 +815,7 @@ namespace DiscordAndDragons
 
         private TextBox GetInitiativeResultBox()
         {
-            var modifierTag = $"InitiativeResultBox";
-            foreach (Control c in MainForm.TabPages[0].Controls)
-            {
-                if (c.HasChildren)
-                {
-                    foreach (Control childControl in c.Controls)
-                    {
-                        if (childControl is TextBox)
-                        {
-                            if (childControl.Tag?.ToString() == modifierTag)
-                            {
-                                return (TextBox)childControl;
-                            }
-                        }
-                    }
-                }
-            }
-            return null;
+            return InitiativeResultBox;
         }
 
         private Result<int> GetAmountOfDice(string weaponNumber)

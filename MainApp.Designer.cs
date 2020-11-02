@@ -135,7 +135,7 @@
             this.AnimalHandlingCheckButton = new System.Windows.Forms.Button();
             this.ArcanaCheckButton = new System.Windows.Forms.Button();
             this.CombatGroupBox = new System.Windows.Forms.GroupBox();
-            this.InitiativeRollBox = new System.Windows.Forms.TextBox();
+            this.InitiativeResultBox = new System.Windows.Forms.TextBox();
             this.InitiativeRoll = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.Weapon2DiceAmount = new System.Windows.Forms.TextBox();
@@ -1668,7 +1668,7 @@
             // 
             // CombatGroupBox
             // 
-            this.CombatGroupBox.Controls.Add(this.InitiativeRollBox);
+            this.CombatGroupBox.Controls.Add(this.InitiativeResultBox);
             this.CombatGroupBox.Controls.Add(this.InitiativeRoll);
             this.CombatGroupBox.Controls.Add(this.label24);
             this.CombatGroupBox.Controls.Add(this.Weapon2DiceAmount);
@@ -1709,32 +1709,33 @@
             this.CombatGroupBox.ForeColor = System.Drawing.Color.White;
             this.CombatGroupBox.Location = new System.Drawing.Point(6, 202);
             this.CombatGroupBox.Name = "CombatGroupBox";
-            this.CombatGroupBox.Size = new System.Drawing.Size(827, 235);
+            this.CombatGroupBox.Size = new System.Drawing.Size(827, 233);
             this.CombatGroupBox.TabIndex = 33;
             this.CombatGroupBox.TabStop = false;
             this.CombatGroupBox.Text = "Combat";
             // 
-            // InitiativeRollBox
+            // InitiativeResultBox
             // 
-            this.InitiativeRollBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.InitiativeRollBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InitiativeRollBox.ForeColor = System.Drawing.Color.White;
-            this.InitiativeRollBox.Location = new System.Drawing.Point(6, 108);
-            this.InitiativeRollBox.Multiline = true;
-            this.InitiativeRollBox.Name = "InitiativeRollBox";
-            this.InitiativeRollBox.Size = new System.Drawing.Size(136, 79);
-            this.InitiativeRollBox.TabIndex = 3;
-            this.InitiativeRollBox.Tag = "InitiativeResultBox";
-            this.InitiativeRollBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.InitiativeResultBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.InitiativeResultBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InitiativeResultBox.ForeColor = System.Drawing.Color.White;
+            this.InitiativeResultBox.Location = new System.Drawing.Point(8, 105);
+            this.InitiativeResultBox.Multiline = true;
+            this.InitiativeResultBox.Name = "InitiativeResultBox";
+            this.InitiativeResultBox.ReadOnly = true;
+            this.InitiativeResultBox.Size = new System.Drawing.Size(139, 122);
+            this.InitiativeResultBox.TabIndex = 3;
+            this.InitiativeResultBox.Tag = "InitiativeResultBox";
+            this.InitiativeResultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InitiativeRoll
             // 
             this.InitiativeRoll.BackColor = System.Drawing.Color.DimGray;
             this.InitiativeRoll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InitiativeRoll.ForeColor = System.Drawing.Color.White;
-            this.InitiativeRoll.Location = new System.Drawing.Point(7, 59);
+            this.InitiativeRoll.Location = new System.Drawing.Point(6, 18);
             this.InitiativeRoll.Name = "InitiativeRoll";
-            this.InitiativeRoll.Size = new System.Drawing.Size(136, 43);
+            this.InitiativeRoll.Size = new System.Drawing.Size(140, 76);
             this.InitiativeRoll.TabIndex = 121;
             this.InitiativeRoll.Tag = ", Initiative";
             this.InitiativeRoll.Text = "Roll Initiative";
@@ -1789,9 +1790,9 @@
             this.groupBox2.Controls.Add(this.HPDecreaseButton);
             this.groupBox2.Controls.Add(this.HPTextBox);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(152, 113);
+            this.groupBox2.Location = new System.Drawing.Point(149, 101);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(191, 111);
+            this.groupBox2.Size = new System.Drawing.Size(191, 126);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "HP";
@@ -1842,9 +1843,9 @@
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveFailureContainer);
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveSuccessContainer);
             this.DeathSaveGroupBox.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveGroupBox.Location = new System.Drawing.Point(349, 113);
+            this.DeathSaveGroupBox.Location = new System.Drawing.Point(346, 101);
             this.DeathSaveGroupBox.Name = "DeathSaveGroupBox";
-            this.DeathSaveGroupBox.Size = new System.Drawing.Size(340, 111);
+            this.DeathSaveGroupBox.Size = new System.Drawing.Size(340, 126);
             this.DeathSaveGroupBox.TabIndex = 116;
             this.DeathSaveGroupBox.TabStop = false;
             this.DeathSaveGroupBox.Tag = "DeathSaveBox";
@@ -1855,7 +1856,7 @@
             this.ResetDeathSaveButton.BackColor = System.Drawing.Color.DimGray;
             this.ResetDeathSaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ResetDeathSaveButton.ForeColor = System.Drawing.Color.White;
-            this.ResetDeathSaveButton.Location = new System.Drawing.Point(230, 42);
+            this.ResetDeathSaveButton.Location = new System.Drawing.Point(230, 50);
             this.ResetDeathSaveButton.Name = "ResetDeathSaveButton";
             this.ResetDeathSaveButton.Size = new System.Drawing.Size(104, 22);
             this.ResetDeathSaveButton.TabIndex = 87;
@@ -1868,7 +1869,7 @@
             // 
             this.DeathSaveRollBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.DeathSaveRollBox.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveRollBox.Location = new System.Drawing.Point(249, 74);
+            this.DeathSaveRollBox.Location = new System.Drawing.Point(256, 83);
             this.DeathSaveRollBox.Multiline = true;
             this.DeathSaveRollBox.Name = "DeathSaveRollBox";
             this.DeathSaveRollBox.ReadOnly = true;
@@ -1897,7 +1898,7 @@
             this.DeathSaveFailureContainer.Controls.Add(this.FailureBoxTwo);
             this.DeathSaveFailureContainer.Controls.Add(this.FailureBoxOne);
             this.DeathSaveFailureContainer.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveFailureContainer.Location = new System.Drawing.Point(7, 63);
+            this.DeathSaveFailureContainer.Location = new System.Drawing.Point(7, 68);
             this.DeathSaveFailureContainer.Name = "DeathSaveFailureContainer";
             this.DeathSaveFailureContainer.Size = new System.Drawing.Size(217, 42);
             this.DeathSaveFailureContainer.TabIndex = 3;
@@ -1981,7 +1982,7 @@
             // 
             this.PrivateRollCheckBox.AutoSize = true;
             this.PrivateRollCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrivateRollCheckBox.Location = new System.Drawing.Point(715, 155);
+            this.PrivateRollCheckBox.Location = new System.Drawing.Point(712, 155);
             this.PrivateRollCheckBox.Name = "PrivateRollCheckBox";
             this.PrivateRollCheckBox.Size = new System.Drawing.Size(87, 17);
             this.PrivateRollCheckBox.TabIndex = 115;
@@ -3263,7 +3264,7 @@
         private System.Windows.Forms.TextBox Weapon3DiceAmount;
         private System.Windows.Forms.TextBox Weapon1DiceAmount;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox InitiativeRollBox;
+        private System.Windows.Forms.TextBox InitiativeResultBox;
         private System.Windows.Forms.Button InitiativeRoll;
     }
 }
