@@ -738,23 +738,18 @@ namespace DiscordAndDragons
 
         private void RollWithModifier(object sender, bool isSkill = true, DiceType diceType = DiceType.D20)
         {
-            var button = sender as Button;
-
-            var tags = button.Tag?.ToString().Split(',');
-            var weaponTag = tags[0];
-
-            var rollInfo = new RollInformation(tags, diceType, isSkill);
+            var rollInfo = new RollInformation(sender, diceType, isSkill);
 
             var amountOfDiceToRoll = 1;
             
             if(rollInfo.RollType == RollType.Damage)
-                amountOfDiceToRoll = GetAmountOfDice(weaponTag).Content;
+                amountOfDiceToRoll = GetAmountOfDice(rollInfo.WeaponTag).Content;
 
             var listOfRolls = new List<RollInformation>();
 
             for(int i = 1; i <= amountOfDiceToRoll; i++)
             {
-                var modifierBox = GetModifierBoxFromRollType(rollInfo.SkillType, rollInfo.RollType, tags[0]);
+                var modifierBox = GetModifierBoxFromRollType(rollInfo);
 
                 if (int.TryParse(modifierBox.Text, out var modifier))
                 {
@@ -769,11 +764,11 @@ namespace DiscordAndDragons
                     else
                     {
                         if (rollInfo.RollType == RollType.Attack)
-                            resultBox = GetAttackResultBox(weaponTag);
+                            resultBox = GetAttackResultBox(rollInfo.WeaponName);
                         else if (rollInfo.RollType == RollType.Initative)
                             resultBox = GetInitiativeResultBox();
                         else
-                            resultBox = GetDamageResultBox(weaponTag);
+                            resultBox = GetDamageResultBox(rollInfo.WeaponTag);
 
                     }
 
@@ -784,7 +779,7 @@ namespace DiscordAndDragons
 
                     rollInfo.CharacterName = CharacterNameTextBox.Text;
 
-                    rollInfo = new RollInformation
+                    listOfRolls.Add(new RollInformation
                     {
                         DiceRoll = diceRoll,
                         Modifier = modifier,
@@ -793,19 +788,17 @@ namespace DiscordAndDragons
                         RollType = rollInfo.RollType,
                         DiceType = diceType,
                         CharacterName = CharacterNameTextBox.Text,
-                        WeaponName = GetWeaponName(weaponTag)
-                    };
+                        WeaponName = GetWeaponName(rollInfo.WeaponName)
+                    });
                 }
                 else
                 {
                     MessageBox.Show("Cannot roll using that modifier. Please ensure this is a number.");
-                    rollInfo = new RollInformation
+                    listOfRolls.Add(new RollInformation
                     {
                         HasError = true
-                    };
+                    });
                 }
-
-                listOfRolls.Add(rollInfo);
             }
 
 
@@ -930,16 +923,16 @@ namespace DiscordAndDragons
             return null;
         }
 
-        private TextBox GetModifierBoxFromRollType(SkillType skillType, RollType rollType, string weaponTag)
+        private TextBox GetModifierBoxFromRollType(RollInformation rollInfo)
         {
-            switch (rollType)
+            switch (rollInfo.RollType)
             {
                 case RollType.SavingThrow:
                 case RollType.SkillCheck:
-                    return GetSkillModifierBox(skillType, rollType);
+                    return GetSkillModifierBox(rollInfo.SkillType, rollInfo.RollType);
                 case RollType.Damage:
                 case RollType.Attack:
-                    return GetAttackModifierBox(weaponTag, rollType);
+                    return GetAttackModifierBox(rollInfo.WeaponTag, rollInfo.RollType);
                 case RollType.Initative:
                     return GetInitiativeModifierBox();
                 default:

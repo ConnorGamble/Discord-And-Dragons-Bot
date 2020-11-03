@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace DiscordAndDragons
 {
@@ -41,6 +42,11 @@ namespace DiscordAndDragons
         /// The name of the weapon being used if there is one
         /// </summary>
         public string WeaponName { get; set; }
+
+        /// <summary>
+        /// The tag of the weapon being used
+        /// </summary>
+        public string WeaponTag { get; set; }
         /// <summary>
         /// Whether or not this roll has an error. Can only really occur when getting the modifier
         /// </summary>
@@ -86,8 +92,13 @@ namespace DiscordAndDragons
             { RollTypeStrings.Initiative, RollType.Initative }
         };
 
-        public RollInformation(string[] tags, DiceType diceType, bool isSkill, int numberOfRolls = 1)
+        public RollInformation(object sender, DiceType diceType, bool isSkill, int numberOfRolls = 1)
         {
+            var button = sender as Button;
+            var tags = button.Tag?.ToString().Split(',');
+
+            WeaponTag = tags[0];
+
             if (isSkill)
                 SkillType = SkillTypeDictionary[tags[0].Trim()];
 
