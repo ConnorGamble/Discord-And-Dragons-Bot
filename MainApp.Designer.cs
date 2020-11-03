@@ -1760,7 +1760,7 @@
             this.Weapon2DiceAmount.Size = new System.Drawing.Size(39, 20);
             this.Weapon2DiceAmount.TabIndex = 119;
             this.Weapon2DiceAmount.Tag = "Weapon2DiceAmount";
-            this.Weapon2DiceAmount.Text = "0";
+            this.Weapon2DiceAmount.Text = "1";
             // 
             // Weapon3DiceAmount
             // 
@@ -1771,7 +1771,7 @@
             this.Weapon3DiceAmount.Size = new System.Drawing.Size(39, 20);
             this.Weapon3DiceAmount.TabIndex = 118;
             this.Weapon3DiceAmount.Tag = "Weapon3DiceAmount";
-            this.Weapon3DiceAmount.Text = "0";
+            this.Weapon3DiceAmount.Text = "1";
             // 
             // Weapon1DiceAmount
             // 
@@ -1782,7 +1782,7 @@
             this.Weapon1DiceAmount.Size = new System.Drawing.Size(39, 20);
             this.Weapon1DiceAmount.TabIndex = 117;
             this.Weapon1DiceAmount.Tag = "Weapon1DiceAmount";
-            this.Weapon1DiceAmount.Text = "0";
+            this.Weapon1DiceAmount.Text = "1";
             // 
             // groupBox2
             // 
@@ -2011,7 +2011,7 @@
             // Damage
             // 
             this.Damage.AutoSize = true;
-            this.Damage.Location = new System.Drawing.Point(489, -3);
+            this.Damage.Location = new System.Drawing.Point(489, -2);
             this.Damage.Name = "Damage";
             this.Damage.Size = new System.Drawing.Size(56, 13);
             this.Damage.TabIndex = 111;
@@ -2289,7 +2289,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(441, -3);
+            this.label2.Location = new System.Drawing.Point(441, -2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 87;
@@ -2309,7 +2309,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, -3);
+            this.label3.Location = new System.Drawing.Point(392, -2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 86;

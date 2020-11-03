@@ -199,6 +199,41 @@ namespace DiscordAndDragons
 
         #region Skill check
 
+        private void StrengthCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void DexterityCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void ConstitutionCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void IntelligenceCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void WisdomCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void CharismaCheckButton_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender);
+        }
+
+        private void InitiativeRoll_Click(object sender, EventArgs e)
+        {
+            RollWithModifier(sender, false);
+        }
+
         private void AcrobaticCheckButton_Click(object sender, EventArgs e)
         {
             RollWithModifier(sender);
@@ -788,7 +823,7 @@ namespace DiscordAndDragons
                         RollType = rollInfo.RollType,
                         DiceType = diceType,
                         CharacterName = CharacterNameTextBox.Text,
-                        WeaponName = GetWeaponName(rollInfo.WeaponName)
+                        WeaponName = GetWeaponName(rollInfo.WeaponTag)
                     });
                 }
                 else
@@ -1234,6 +1269,11 @@ namespace DiscordAndDragons
             Properties.Settings.Default.Weapon2DamageDie = Weapon2AtkDieBox.SelectedIndex;
             Properties.Settings.Default.Weapon3DamageDie = Weapon3AtkDieBox.SelectedIndex;
 
+            // Sets the weapon attack amount of dice
+            Properties.Settings.Default.Weapon1AmountOfDice = Weapon1DiceAmount.Text;
+            Properties.Settings.Default.Weapon2AmountOfDice = Weapon2DiceAmount.Text;
+            Properties.Settings.Default.Weapon3AmountOfDice = Weapon3DiceAmount.Text;
+
             // Character information
             Properties.Settings.Default.CharacterName = CharacterNameTextBox.Text;
             Properties.Settings.Default.Class = ClassTextBox.Text;
@@ -1320,6 +1360,11 @@ namespace DiscordAndDragons
             Weapon1DamageModBox.Text = Properties.Settings.Default.Weapon1DamageMod;
             Weapon2DamageModBox.Text = Properties.Settings.Default.Weapon2DamageMod;
             Weapon3DamageModBox.Text = Properties.Settings.Default.Weapon3DamageMod;
+
+            // Sets the weapon attack amount of dice
+            Weapon1DiceAmount.Text = Properties.Settings.Default.Weapon1AmountOfDice;
+            Weapon2DiceAmount.Text = Properties.Settings.Default.Weapon2AmountOfDice;
+            Weapon3DiceAmount.Text = Properties.Settings.Default.Weapon3AmountOfDice;
 
             // Character information
             CharacterNameTextBox.Text = Properties.Settings.Default.CharacterName;
@@ -1428,40 +1473,5 @@ namespace DiscordAndDragons
         }
 
         #endregion
-
-        private void StrengthCheckButton_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender);
-        }
-
-        private void DexterityCheckButton_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender);
-        }
-
-        private void ConstitutionCheckButton_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender);
-        }
-
-        private void IntelligenceCheckButton_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender);
-        }
-
-        private void WisdomCheckButton_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender);
-        }
-
-        private void CharismaCheckButton_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender);
-        }
-
-        private void InitiativeRoll_Click(object sender, EventArgs e)
-        {
-            RollWithModifier(sender, false);
-        }
     }
 }
