@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -14,11 +13,9 @@ namespace DiscordAndDragons.Discord
     {
         public DiscordSocketClient _Client;
         public Commands Commands;
-        public HttpClient httpClient;
 
         public DiscordController()
         {
-            httpClient = new HttpClient();
             MainAsync();
         }
 
