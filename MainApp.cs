@@ -446,7 +446,7 @@ namespace DiscordAndDragons
             {
                 Content = DiscordController.DetermineContentToSendToDiscord(new RollInformation
                 {
-                    CharacterName = CharacterNameTextBox.Text,
+                    CharacterName = Properties.Settings.Default.CharacterName,
                     DiceRoll = roll,
                     RollType = RollType.DeathSave,
                     CurrentHealthState = CurrentHealthState == null ? CurrentHealthState = new CurrentHealthState(updatedSuccesses, updatedFailures) : CurrentHealthState,
@@ -517,6 +517,11 @@ namespace DiscordAndDragons
                 IsPrivateRoll = false;
         }
 
+        private void CharacterNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CharacterName = CharacterNameTextBox.Text;
+        }
+
         #endregion
 
         #region Documentation and Help
@@ -554,37 +559,37 @@ namespace DiscordAndDragons
                 //D4
                 case 0:
                     ResultBox.Text = RollController.RollDice(DiceType.D4).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D4 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName} rolled a D4 and got a result of {ResultBox.Text}";
                     break;
                 //D6
                 case 1:
                     ResultBox.Text = RollController.RollDice(DiceType.D6).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D6 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName } rolled a D6 and got a result of {ResultBox.Text}";
                     break;
                 //D8
                 case 2:
                     ResultBox.Text = RollController.RollDice(DiceType.D8).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D8 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName } rolled a D8 and got a result of {ResultBox.Text}";
                     break;
                 //D10
                 case 3:
                     ResultBox.Text = RollController.RollDice(DiceType.D10).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D10 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName } rolled a D10 and got a result of {ResultBox.Text}";
                     break;
                 //D12
                 case 4:
                     ResultBox.Text = RollController.RollDice(DiceType.D12).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D12 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName } rolled a D12 and got a result of {ResultBox.Text}";
                     break;
                 case 5:
                     //D20
                     ResultBox.Text = RollController.RollDice(DiceType.D20).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D20 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName } rolled a D20 and got a result of {ResultBox.Text}";
                     break;
                 //D100
                 case 6:
                     ResultBox.Text = RollController.RollDice(DiceType.D100).ToString();
-                    content = $"{CharacterNameTextBox.Text} rolled a D100 and got a result of {ResultBox.Text}";
+                    content = $"{Properties.Settings.Default.CharacterName} rolled a D100 and got a result of {ResultBox.Text}";
                     break;
                 //No dice 
                 case -1:
@@ -799,7 +804,7 @@ namespace DiscordAndDragons
                     else
                     {
                         if (rollInfo.RollType == RollType.Attack)
-                            resultBox = GetAttackResultBox(rollInfo.WeaponName);
+                            resultBox = GetAttackResultBox(rollInfo.WeaponTag);
                         else if (rollInfo.RollType == RollType.Initative)
                             resultBox = GetInitiativeResultBox();
                         else
@@ -812,8 +817,6 @@ namespace DiscordAndDragons
                     if (rollInfo.RollType == RollType.SavingThrow || rollInfo.RollType == RollType.SkillCheck || rollInfo.RollType == RollType.Attack)
                         resultBox.BackColor = ChangeResultColour(diceRoll);
 
-                    rollInfo.CharacterName = CharacterNameTextBox.Text;
-
                     listOfRolls.Add(new RollInformation
                     {
                         DiceRoll = diceRoll,
@@ -822,7 +825,6 @@ namespace DiscordAndDragons
                         SkillType = rollInfo.SkillType,
                         RollType = rollInfo.RollType,
                         DiceType = diceType,
-                        CharacterName = CharacterNameTextBox.Text,
                         WeaponName = GetWeaponName(rollInfo.WeaponTag)
                     });
                 }
@@ -1424,11 +1426,13 @@ namespace DiscordAndDragons
 
         #endregion
 
+        #region Death Saving
+
         private void ResetDeathSaveButton_Click(object sender, EventArgs e)
         {
             ResetDeathSavingBoxes();
             ResetDeathSavingBoxColours();
-            CurrentHealthState = new CurrentHealthState(0,0);
+            CurrentHealthState = new CurrentHealthState(0, 0);
         }
 
         private void ResetDeathSavingBoxColours()
@@ -1439,6 +1443,7 @@ namespace DiscordAndDragons
             DeathSaveFailureContainer.BackColor = DefaultGrey;
             DeathSaveFailureContainer.ForeColor = Color.White;
         }
+        #endregion
 
         #region Core AttrbutesChange
 

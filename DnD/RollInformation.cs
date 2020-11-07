@@ -111,7 +111,7 @@ namespace DiscordAndDragons
 
         public RollInformation()
         {
-
+            CharacterName = Properties.Settings.Default.CharacterName;
         }
 
         public string SkillAsReadableString()

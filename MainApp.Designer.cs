@@ -2697,6 +2697,7 @@
             this.CharacterNameTextBox.Name = "CharacterNameTextBox";
             this.CharacterNameTextBox.Size = new System.Drawing.Size(119, 20);
             this.CharacterNameTextBox.TabIndex = 13;
+            this.CharacterNameTextBox.TextChanged += new System.EventHandler(this.CharacterNameTextBox_TextChanged);
             // 
             // AlignmentDropDown
             // 

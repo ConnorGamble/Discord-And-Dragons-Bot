@@ -1,6 +1,4 @@
-﻿using Discord.WebSocket;
-using System;
-using System.Net.Http;
+﻿using System;
 
 namespace DiscordAndDragons.Discord
 {
@@ -8,7 +6,13 @@ namespace DiscordAndDragons.Discord
     {
         public bool IsPrivateRoll { get; set; }
         public string Content { get; set; }
-        public ChannelIds Ids {get;set;}
+        public ChannelIds Ids { get ; set; }
+        public string CharacterName { get; }
+
+        public MessageRequest()
+        {
+            CharacterName = Properties.Settings.Default.CharacterName;
+        }
     }
 
     public class ChannelIds
