@@ -165,7 +165,7 @@ namespace DiscordAndDragons.Discord
                 var user = _Client.GetUser(ulong.Parse(request.Ids.DMUserID));
                 if (user == null)
                 {
-                    Forms.Helpers.CreateMessageBox($"Could not find the channel with the specified ID. ({request.Ids.DMUserID})");
+                    Forms.Helpers.CreateMessageBox($"Could not find the DM user with the specified ID. ({request.Ids.DMUserID}) Ensure you have also enabled the 'Server Members Intent' on your Discord bot.");
                     return;
                 }
                 var channels = user.GetOrCreateDMChannelAsync().Result;
