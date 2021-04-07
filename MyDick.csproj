@@ -125,6 +125,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Discord\Commands.cs" />
+    <Compile Include="Discord\ContentController.cs" />
+    <Compile Include="Discord\Content\ContentController.cs" />
     <Compile Include="Discord\DiscordController.cs" />
     <Compile Include="Discord\DiscordMessageRequest.cs" />
     <Compile Include="Discord\Helpers.cs" />
@@ -207,6 +209,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Discord\Content\DiscordContent.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Icon.ico" />
     <Content Include="Resources\Icon.ico" />
     <None Include="Resources\ClarenceFuckYeah.gif">

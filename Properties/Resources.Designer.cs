@@ -71,6 +71,18 @@ namespace DiscordAndDragons.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I am random content number 1
+        ///Alas, I am random content 2
+        ///I am random content number 3
+        ///Alaaaaaaaas, I am random content 4.
+        /// </summary>
+        internal static string DiscordContent {
+            get {
+                return ResourceManager.GetString("DiscordContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dnd_banner {

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -13,10 +15,12 @@ namespace DiscordAndDragons.Discord
     {
         public DiscordSocketClient _Client;
         public Commands Commands;
+        public ContentController ContentController;
 
         public DiscordController()
         {
-            MainAsync();
+            _ = MainAsync();
+            ContentController = new ContentController();
         }
 
         private async Task MainAsync()
@@ -235,9 +239,10 @@ namespace DiscordAndDragons.Discord
                     content = $"{characterName} rolls for damage using their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
                     break;
                 case RollType.DeathSave:
-                    content = $"{characterName} rolled for a death saving throw! Rolled a {rollInfo.DiceRoll}({diceType}). {DetermineDeathSaveContent(rollInfo.CurrentHealthState)}";
+                    content = $"{characterName} rolled for a death saving throw! Rolled a {rollInfo.Result}({diceType}). {DetermineDeathSaveContent(rollInfo.CurrentHealthState)}";
                     break;
                 case RollType.Initative:
+                    //content = $"{ContentController.GetContent()} Roll: {rollInfo.DiceRoll}";
                     content = $"{characterName} rolls for initiative and rolled a {rollInfo.DiceRoll}({diceType}). With a modifier of {rollInfo.Modifier} results in {rollInfo.Result}";
                     break;
                 default:
