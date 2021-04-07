@@ -190,7 +190,6 @@
             this.GeneralDiceBox = new System.Windows.Forms.GroupBox();
             this.MainForm = new System.Windows.Forms.TabControl();
             this.RollingTab = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
             this.CharacterSheetTab = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.FeaturesAndTraitsTextBox = new System.Windows.Forms.TextBox();
@@ -244,6 +243,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BotTokenTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.SavingThrowsGroup.SuspendLayout();
             this.AttackGroup.SuspendLayout();
             this.CombatGroupBox.SuspendLayout();
@@ -264,6 +265,8 @@
             this.SettingsTab.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // RollButton
@@ -1668,15 +1671,13 @@
             // 
             // CombatGroupBox
             // 
-            this.CombatGroupBox.Controls.Add(this.InitiativeResultBox);
-            this.CombatGroupBox.Controls.Add(this.InitiativeRoll);
+            this.CombatGroupBox.Controls.Add(this.groupBox9);
             this.CombatGroupBox.Controls.Add(this.label24);
             this.CombatGroupBox.Controls.Add(this.Weapon2DiceAmount);
             this.CombatGroupBox.Controls.Add(this.Weapon3DiceAmount);
             this.CombatGroupBox.Controls.Add(this.Weapon1DiceAmount);
             this.CombatGroupBox.Controls.Add(this.groupBox2);
             this.CombatGroupBox.Controls.Add(this.DeathSaveGroupBox);
-            this.CombatGroupBox.Controls.Add(this.PrivateRollCheckBox);
             this.CombatGroupBox.Controls.Add(this.label5);
             this.CombatGroupBox.Controls.Add(this.label6);
             this.CombatGroupBox.Controls.Add(this.Damage);
@@ -1709,21 +1710,21 @@
             this.CombatGroupBox.ForeColor = System.Drawing.Color.White;
             this.CombatGroupBox.Location = new System.Drawing.Point(6, 202);
             this.CombatGroupBox.Name = "CombatGroupBox";
-            this.CombatGroupBox.Size = new System.Drawing.Size(827, 233);
+            this.CombatGroupBox.Size = new System.Drawing.Size(689, 233);
             this.CombatGroupBox.TabIndex = 33;
             this.CombatGroupBox.TabStop = false;
-            this.CombatGroupBox.Text = "Combat";
+            this.CombatGroupBox.Text = "Weapons";
             // 
             // InitiativeResultBox
             // 
             this.InitiativeResultBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.InitiativeResultBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InitiativeResultBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InitiativeResultBox.ForeColor = System.Drawing.Color.White;
-            this.InitiativeResultBox.Location = new System.Drawing.Point(8, 105);
+            this.InitiativeResultBox.Location = new System.Drawing.Point(6, 54);
             this.InitiativeResultBox.Multiline = true;
             this.InitiativeResultBox.Name = "InitiativeResultBox";
             this.InitiativeResultBox.ReadOnly = true;
-            this.InitiativeResultBox.Size = new System.Drawing.Size(139, 122);
+            this.InitiativeResultBox.Size = new System.Drawing.Size(125, 67);
             this.InitiativeResultBox.TabIndex = 3;
             this.InitiativeResultBox.Tag = "InitiativeResultBox";
             this.InitiativeResultBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1733,9 +1734,9 @@
             this.InitiativeRoll.BackColor = System.Drawing.Color.DimGray;
             this.InitiativeRoll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InitiativeRoll.ForeColor = System.Drawing.Color.White;
-            this.InitiativeRoll.Location = new System.Drawing.Point(6, 18);
+            this.InitiativeRoll.Location = new System.Drawing.Point(6, 13);
             this.InitiativeRoll.Name = "InitiativeRoll";
-            this.InitiativeRoll.Size = new System.Drawing.Size(140, 76);
+            this.InitiativeRoll.Size = new System.Drawing.Size(125, 35);
             this.InitiativeRoll.TabIndex = 121;
             this.InitiativeRoll.Tag = ", Initiative";
             this.InitiativeRoll.Text = "Roll Initiative";
@@ -1745,7 +1746,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(585, -2);
+            this.label24.Location = new System.Drawing.Point(443, -1);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(43, 13);
             this.label24.TabIndex = 120;
@@ -1755,7 +1756,7 @@
             // 
             this.Weapon2DiceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon2DiceAmount.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DiceAmount.Location = new System.Drawing.Point(588, 48);
+            this.Weapon2DiceAmount.Location = new System.Drawing.Point(446, 49);
             this.Weapon2DiceAmount.Name = "Weapon2DiceAmount";
             this.Weapon2DiceAmount.Size = new System.Drawing.Size(39, 20);
             this.Weapon2DiceAmount.TabIndex = 119;
@@ -1766,7 +1767,7 @@
             // 
             this.Weapon3DiceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon3DiceAmount.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DiceAmount.Location = new System.Drawing.Point(588, 75);
+            this.Weapon3DiceAmount.Location = new System.Drawing.Point(446, 76);
             this.Weapon3DiceAmount.Name = "Weapon3DiceAmount";
             this.Weapon3DiceAmount.Size = new System.Drawing.Size(39, 20);
             this.Weapon3DiceAmount.TabIndex = 118;
@@ -1777,7 +1778,7 @@
             // 
             this.Weapon1DiceAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon1DiceAmount.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DiceAmount.Location = new System.Drawing.Point(588, 19);
+            this.Weapon1DiceAmount.Location = new System.Drawing.Point(446, 20);
             this.Weapon1DiceAmount.Name = "Weapon1DiceAmount";
             this.Weapon1DiceAmount.Size = new System.Drawing.Size(39, 20);
             this.Weapon1DiceAmount.TabIndex = 117;
@@ -1790,7 +1791,7 @@
             this.groupBox2.Controls.Add(this.HPDecreaseButton);
             this.groupBox2.Controls.Add(this.HPTextBox);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(149, 101);
+            this.groupBox2.Location = new System.Drawing.Point(7, 102);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(191, 126);
             this.groupBox2.TabIndex = 30;
@@ -1828,7 +1829,7 @@
             this.HPTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.HPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HPTextBox.ForeColor = System.Drawing.Color.White;
-            this.HPTextBox.Location = new System.Drawing.Point(33, 19);
+            this.HPTextBox.Location = new System.Drawing.Point(35, 25);
             this.HPTextBox.Multiline = true;
             this.HPTextBox.Name = "HPTextBox";
             this.HPTextBox.Size = new System.Drawing.Size(121, 73);
@@ -1843,7 +1844,7 @@
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveFailureContainer);
             this.DeathSaveGroupBox.Controls.Add(this.DeathSaveSuccessContainer);
             this.DeathSaveGroupBox.ForeColor = System.Drawing.Color.White;
-            this.DeathSaveGroupBox.Location = new System.Drawing.Point(346, 101);
+            this.DeathSaveGroupBox.Location = new System.Drawing.Point(204, 102);
             this.DeathSaveGroupBox.Name = "DeathSaveGroupBox";
             this.DeathSaveGroupBox.Size = new System.Drawing.Size(340, 126);
             this.DeathSaveGroupBox.TabIndex = 116;
@@ -1982,7 +1983,7 @@
             // 
             this.PrivateRollCheckBox.AutoSize = true;
             this.PrivateRollCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrivateRollCheckBox.Location = new System.Drawing.Point(712, 155);
+            this.PrivateRollCheckBox.Location = new System.Drawing.Point(25, 22);
             this.PrivateRollCheckBox.Name = "PrivateRollCheckBox";
             this.PrivateRollCheckBox.Size = new System.Drawing.Size(87, 17);
             this.PrivateRollCheckBox.TabIndex = 115;
@@ -1993,7 +1994,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(782, -1);
+            this.label5.Location = new System.Drawing.Point(640, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 113;
@@ -2002,7 +2003,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(735, -1);
+            this.label6.Location = new System.Drawing.Point(593, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 112;
@@ -2011,7 +2012,7 @@
             // Damage
             // 
             this.Damage.AutoSize = true;
-            this.Damage.Location = new System.Drawing.Point(489, -2);
+            this.Damage.Location = new System.Drawing.Point(347, -1);
             this.Damage.Name = "Damage";
             this.Damage.Size = new System.Drawing.Size(56, 13);
             this.Damage.TabIndex = 111;
@@ -2028,7 +2029,7 @@
             "D10",
             "D12",
             "D20"});
-            this.Weapon3AtkDieBox.Location = new System.Drawing.Point(493, 74);
+            this.Weapon3AtkDieBox.Location = new System.Drawing.Point(351, 75);
             this.Weapon3AtkDieBox.Name = "Weapon3AtkDieBox";
             this.Weapon3AtkDieBox.Size = new System.Drawing.Size(88, 21);
             this.Weapon3AtkDieBox.TabIndex = 110;
@@ -2044,7 +2045,7 @@
             "D10",
             "D12",
             "D20"});
-            this.Weapon2AtkDieBox.Location = new System.Drawing.Point(493, 47);
+            this.Weapon2AtkDieBox.Location = new System.Drawing.Point(351, 48);
             this.Weapon2AtkDieBox.Name = "Weapon2AtkDieBox";
             this.Weapon2AtkDieBox.Size = new System.Drawing.Size(88, 21);
             this.Weapon2AtkDieBox.TabIndex = 109;
@@ -2060,7 +2061,7 @@
             "D10",
             "D12",
             "D20"});
-            this.Weapon1AtkDieBox.Location = new System.Drawing.Point(493, 18);
+            this.Weapon1AtkDieBox.Location = new System.Drawing.Point(351, 19);
             this.Weapon1AtkDieBox.Name = "Weapon1AtkDieBox";
             this.Weapon1AtkDieBox.Size = new System.Drawing.Size(88, 21);
             this.Weapon1AtkDieBox.TabIndex = 108;
@@ -2070,7 +2071,7 @@
             this.Weapon3DamageButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3DamageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon3DamageButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DamageButton.Location = new System.Drawing.Point(633, 74);
+            this.Weapon3DamageButton.Location = new System.Drawing.Point(491, 75);
             this.Weapon3DamageButton.Name = "Weapon3DamageButton";
             this.Weapon3DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3DamageButton.TabIndex = 105;
@@ -2083,7 +2084,7 @@
             // 
             this.Weapon3DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon3DamageModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DamageModBox.Location = new System.Drawing.Point(737, 75);
+            this.Weapon3DamageModBox.Location = new System.Drawing.Point(595, 76);
             this.Weapon3DamageModBox.Name = "Weapon3DamageModBox";
             this.Weapon3DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3DamageModBox.TabIndex = 33;
@@ -2094,7 +2095,7 @@
             // 
             this.Weapon3DamageResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3DamageResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3DamageResultBox.Location = new System.Drawing.Point(782, 75);
+            this.Weapon3DamageResultBox.Location = new System.Drawing.Point(640, 76);
             this.Weapon3DamageResultBox.Multiline = true;
             this.Weapon3DamageResultBox.Name = "Weapon3DamageResultBox";
             this.Weapon3DamageResultBox.ReadOnly = true;
@@ -2107,7 +2108,7 @@
             this.Weapon2DamageButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2DamageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon2DamageButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DamageButton.Location = new System.Drawing.Point(633, 47);
+            this.Weapon2DamageButton.Location = new System.Drawing.Point(491, 48);
             this.Weapon2DamageButton.Name = "Weapon2DamageButton";
             this.Weapon2DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2DamageButton.TabIndex = 102;
@@ -2120,7 +2121,7 @@
             // 
             this.Weapon2DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon2DamageModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DamageModBox.Location = new System.Drawing.Point(737, 48);
+            this.Weapon2DamageModBox.Location = new System.Drawing.Point(595, 49);
             this.Weapon2DamageModBox.Name = "Weapon2DamageModBox";
             this.Weapon2DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2DamageModBox.TabIndex = 30;
@@ -2131,7 +2132,7 @@
             // 
             this.Weapon2DamageResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2DamageResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2DamageResultBox.Location = new System.Drawing.Point(782, 48);
+            this.Weapon2DamageResultBox.Location = new System.Drawing.Point(640, 49);
             this.Weapon2DamageResultBox.Multiline = true;
             this.Weapon2DamageResultBox.Name = "Weapon2DamageResultBox";
             this.Weapon2DamageResultBox.ReadOnly = true;
@@ -2144,7 +2145,7 @@
             this.Weapon1DamageButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1DamageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon1DamageButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DamageButton.Location = new System.Drawing.Point(633, 18);
+            this.Weapon1DamageButton.Location = new System.Drawing.Point(491, 19);
             this.Weapon1DamageButton.Name = "Weapon1DamageButton";
             this.Weapon1DamageButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1DamageButton.TabIndex = 99;
@@ -2157,7 +2158,7 @@
             // 
             this.Weapon1DamageModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon1DamageModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DamageModBox.Location = new System.Drawing.Point(737, 19);
+            this.Weapon1DamageModBox.Location = new System.Drawing.Point(595, 20);
             this.Weapon1DamageModBox.Name = "Weapon1DamageModBox";
             this.Weapon1DamageModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1DamageModBox.TabIndex = 27;
@@ -2168,7 +2169,7 @@
             // 
             this.Weapon1DamageResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1DamageResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1DamageResultBox.Location = new System.Drawing.Point(782, 19);
+            this.Weapon1DamageResultBox.Location = new System.Drawing.Point(640, 20);
             this.Weapon1DamageResultBox.Multiline = true;
             this.Weapon1DamageResultBox.Name = "Weapon1DamageResultBox";
             this.Weapon1DamageResultBox.ReadOnly = true;
@@ -2181,7 +2182,7 @@
             this.Weapon3AttackButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3AttackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon3AttackButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon3AttackButton.Location = new System.Drawing.Point(291, 73);
+            this.Weapon3AttackButton.Location = new System.Drawing.Point(149, 74);
             this.Weapon3AttackButton.Name = "Weapon3AttackButton";
             this.Weapon3AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon3AttackButton.TabIndex = 95;
@@ -2194,7 +2195,7 @@
             // 
             this.Weapon3AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon3AttackModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3AttackModBox.Location = new System.Drawing.Point(395, 74);
+            this.Weapon3AttackModBox.Location = new System.Drawing.Point(253, 75);
             this.Weapon3AttackModBox.Name = "Weapon3AttackModBox";
             this.Weapon3AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon3AttackModBox.TabIndex = 32;
@@ -2205,7 +2206,7 @@
             // 
             this.WeaponThreeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.WeaponThreeTextBox.ForeColor = System.Drawing.Color.White;
-            this.WeaponThreeTextBox.Location = new System.Drawing.Point(149, 75);
+            this.WeaponThreeTextBox.Location = new System.Drawing.Point(7, 76);
             this.WeaponThreeTextBox.Name = "WeaponThreeTextBox";
             this.WeaponThreeTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponThreeTextBox.TabIndex = 31;
@@ -2216,7 +2217,7 @@
             // 
             this.Weapon3AttackResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon3AttackResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon3AttackResultBox.Location = new System.Drawing.Point(440, 74);
+            this.Weapon3AttackResultBox.Location = new System.Drawing.Point(298, 75);
             this.Weapon3AttackResultBox.Multiline = true;
             this.Weapon3AttackResultBox.Name = "Weapon3AttackResultBox";
             this.Weapon3AttackResultBox.ReadOnly = true;
@@ -2229,7 +2230,7 @@
             this.Weapon2AttackButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2AttackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon2AttackButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon2AttackButton.Location = new System.Drawing.Point(291, 45);
+            this.Weapon2AttackButton.Location = new System.Drawing.Point(149, 46);
             this.Weapon2AttackButton.Name = "Weapon2AttackButton";
             this.Weapon2AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon2AttackButton.TabIndex = 91;
@@ -2242,7 +2243,7 @@
             // 
             this.Weapon2AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon2AttackModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2AttackModBox.Location = new System.Drawing.Point(395, 46);
+            this.Weapon2AttackModBox.Location = new System.Drawing.Point(253, 47);
             this.Weapon2AttackModBox.Name = "Weapon2AttackModBox";
             this.Weapon2AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon2AttackModBox.TabIndex = 29;
@@ -2253,7 +2254,7 @@
             // 
             this.WeaponTwoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.WeaponTwoTextBox.ForeColor = System.Drawing.Color.White;
-            this.WeaponTwoTextBox.Location = new System.Drawing.Point(149, 47);
+            this.WeaponTwoTextBox.Location = new System.Drawing.Point(7, 48);
             this.WeaponTwoTextBox.Name = "WeaponTwoTextBox";
             this.WeaponTwoTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponTwoTextBox.TabIndex = 28;
@@ -2264,7 +2265,7 @@
             // 
             this.Weapon2AttackResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon2AttackResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon2AttackResultBox.Location = new System.Drawing.Point(440, 46);
+            this.Weapon2AttackResultBox.Location = new System.Drawing.Point(298, 47);
             this.Weapon2AttackResultBox.Multiline = true;
             this.Weapon2AttackResultBox.Name = "Weapon2AttackResultBox";
             this.Weapon2AttackResultBox.ReadOnly = true;
@@ -2277,7 +2278,7 @@
             this.Weapon1AttackButton.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1AttackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weapon1AttackButton.ForeColor = System.Drawing.Color.White;
-            this.Weapon1AttackButton.Location = new System.Drawing.Point(291, 17);
+            this.Weapon1AttackButton.Location = new System.Drawing.Point(149, 18);
             this.Weapon1AttackButton.Name = "Weapon1AttackButton";
             this.Weapon1AttackButton.Size = new System.Drawing.Size(96, 22);
             this.Weapon1AttackButton.TabIndex = 86;
@@ -2289,7 +2290,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(441, -2);
+            this.label2.Location = new System.Drawing.Point(299, -1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 87;
@@ -2299,7 +2300,7 @@
             // 
             this.Weapon1AttackModBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Weapon1AttackModBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1AttackModBox.Location = new System.Drawing.Point(395, 18);
+            this.Weapon1AttackModBox.Location = new System.Drawing.Point(253, 19);
             this.Weapon1AttackModBox.Name = "Weapon1AttackModBox";
             this.Weapon1AttackModBox.Size = new System.Drawing.Size(39, 20);
             this.Weapon1AttackModBox.TabIndex = 26;
@@ -2309,7 +2310,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, -2);
+            this.label3.Location = new System.Drawing.Point(250, -1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 86;
@@ -2319,7 +2320,7 @@
             // 
             this.WeaponOneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.WeaponOneTextBox.ForeColor = System.Drawing.Color.White;
-            this.WeaponOneTextBox.Location = new System.Drawing.Point(149, 19);
+            this.WeaponOneTextBox.Location = new System.Drawing.Point(7, 20);
             this.WeaponOneTextBox.Name = "WeaponOneTextBox";
             this.WeaponOneTextBox.Size = new System.Drawing.Size(135, 20);
             this.WeaponOneTextBox.TabIndex = 25;
@@ -2330,7 +2331,7 @@
             // 
             this.Weapon1AttackResultBox.BackColor = System.Drawing.Color.DimGray;
             this.Weapon1AttackResultBox.ForeColor = System.Drawing.Color.White;
-            this.Weapon1AttackResultBox.Location = new System.Drawing.Point(440, 18);
+            this.Weapon1AttackResultBox.Location = new System.Drawing.Point(298, 19);
             this.Weapon1AttackResultBox.Multiline = true;
             this.Weapon1AttackResultBox.Name = "Weapon1AttackResultBox";
             this.Weapon1AttackResultBox.ReadOnly = true;
@@ -2350,9 +2351,9 @@
             this.GeneralDiceBox.Controls.Add(this.D12Button);
             this.GeneralDiceBox.Controls.Add(this.D10Button);
             this.GeneralDiceBox.ForeColor = System.Drawing.Color.White;
-            this.GeneralDiceBox.Location = new System.Drawing.Point(839, 200);
+            this.GeneralDiceBox.Location = new System.Drawing.Point(701, 201);
             this.GeneralDiceBox.Name = "GeneralDiceBox";
-            this.GeneralDiceBox.Size = new System.Drawing.Size(203, 235);
+            this.GeneralDiceBox.Size = new System.Drawing.Size(203, 234);
             this.GeneralDiceBox.TabIndex = 34;
             this.GeneralDiceBox.TabStop = false;
             this.GeneralDiceBox.Text = "Dice";
@@ -2371,7 +2372,7 @@
             // RollingTab
             // 
             this.RollingTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.RollingTab.Controls.Add(this.label25);
+            this.RollingTab.Controls.Add(this.groupBox8);
             this.RollingTab.Controls.Add(this.SavingThrowsGroup);
             this.RollingTab.Controls.Add(this.GeneralDiceBox);
             this.RollingTab.Controls.Add(this.AttackGroup);
@@ -2382,16 +2383,6 @@
             this.RollingTab.Size = new System.Drawing.Size(1048, 438);
             this.RollingTab.TabIndex = 0;
             this.RollingTab.Text = "Rolls";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(154, 201);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(48, 13);
-            this.label25.TabIndex = 121;
-            this.label25.Text = "Weapon";
             // 
             // CharacterSheetTab
             // 
@@ -2996,6 +2987,29 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Bot Token";
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.PrivateRollCheckBox);
+            this.groupBox8.ForeColor = System.Drawing.Color.White;
+            this.groupBox8.Location = new System.Drawing.Point(910, 202);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(132, 233);
+            this.groupBox8.TabIndex = 35;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Roll preferences";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.InitiativeResultBox);
+            this.groupBox9.Controls.Add(this.InitiativeRoll);
+            this.groupBox9.ForeColor = System.Drawing.Color.White;
+            this.groupBox9.Location = new System.Drawing.Point(553, 102);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(136, 135);
+            this.groupBox9.TabIndex = 116;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Roll preferences";
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3028,7 +3042,6 @@
             this.GeneralDiceBox.PerformLayout();
             this.MainForm.ResumeLayout(false);
             this.RollingTab.ResumeLayout(false);
-            this.RollingTab.PerformLayout();
             this.CharacterSheetTab.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -3046,6 +3059,10 @@
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3264,9 +3281,10 @@
         private System.Windows.Forms.TextBox Weapon2DiceAmount;
         private System.Windows.Forms.TextBox Weapon3DiceAmount;
         private System.Windows.Forms.TextBox Weapon1DiceAmount;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox InitiativeResultBox;
         private System.Windows.Forms.Button InitiativeRoll;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
 
