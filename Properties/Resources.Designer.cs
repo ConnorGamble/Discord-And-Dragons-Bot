@@ -61,6 +61,18 @@ namespace DiscordAndDragons.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I am random content number 1
+        ///Alas, I am random content 2
+        ///I am random content number 3
+        ///Alaaaaaaaas, I am random content 4.
+        /// </summary>
+        internal static string AttackContent {
+            get {
+                return ResourceManager.GetString("AttackContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ClarenceFuckYeah {
@@ -76,9 +88,21 @@ namespace DiscordAndDragons.Properties {
         ///I am random content number 3
         ///Alaaaaaaaas, I am random content 4.
         /// </summary>
-        internal static string DiscordContent {
+        internal static string DamageContent {
             get {
-                return ResourceManager.GetString("DiscordContent", resourceCulture);
+                return ResourceManager.GetString("DamageContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am random content number 1
+        ///Alas, I am random content 2
+        ///I am random content number 3
+        ///Alaaaaaaaas, I am random content 4.
+        /// </summary>
+        internal static string DeathSaveContent {
+            get {
+                return ResourceManager.GetString("DeathSaveContent", resourceCulture);
             }
         }
         
@@ -89,6 +113,18 @@ namespace DiscordAndDragons.Properties {
             get {
                 object obj = ResourceManager.GetObject("dnd_banner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am random content number 1
+        ///Alas, I am random content 2
+        ///I am random content number 3
+        ///Alaaaaaaaas, I am random content 4.
+        /// </summary>
+        internal static string InitiativeContent {
+            get {
+                return ResourceManager.GetString("InitiativeContent", resourceCulture);
             }
         }
         
@@ -134,6 +170,30 @@ namespace DiscordAndDragons.Properties {
         internal static System.IO.UnmanagedMemoryStream OpeningAudio_Sassy {
             get {
                 return ResourceManager.GetStream("OpeningAudio_Sassy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am random content number 1
+        ///Alas, I am random content 2
+        ///I am random content number 3
+        ///Alaaaaaaaas, I am random content 4.
+        /// </summary>
+        internal static string SavingThrowContent {
+            get {
+                return ResourceManager.GetString("SavingThrowContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am random content number 1
+        ///Alas, I am random content 2
+        ///I am random content number 3
+        ///Alaaaaaaaas, I am random content 4.
+        /// </summary>
+        internal static string SkillCheckContent {
+            get {
+                return ResourceManager.GetString("SkillCheckContent", resourceCulture);
             }
         }
         
