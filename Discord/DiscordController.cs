@@ -221,66 +221,10 @@ namespace DiscordAndDragons.Discord
             var characterName = rollInfo.CharacterName;
             var weaponName = rollInfo.WeaponName;
 
-            switch (rollInfo.RollType)
-            {
-                case RollType.Unknown:
-                    break;
-                case RollType.SavingThrow:
-                    // name attempts a strength saving throw (D20) 
-                    content = $"{characterName} attempts a {skill} saving throw ({diceType}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
-                    break;
-                case RollType.SkillCheck:
-                    content = $"{characterName} performs a {skill} skill check ({diceType}): Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
-                    break;
-                case RollType.Attack:
-                    content = $"{characterName} performs an attack with their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
-                    break;
-                case RollType.Damage:
-                    content = $"{characterName} rolls for damage using their {weaponName}({diceType}) : Rolled a {rollInfo.DiceRoll} with a modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
-                    break;
-                case RollType.DeathSave:
-                    content = $"{characterName} rolled for a death saving throw! Rolled a {rollInfo.Result}({diceType}). {DetermineDeathSaveContent(rollInfo.CurrentHealthState)}";
-                    break;
-                case RollType.Initative:
-                    //content = $"{ContentController.GetContent()} Roll: {rollInfo.DiceRoll}";
-                    content = $"{characterName} rolls for initiative and rolled a {rollInfo.DiceRoll}({diceType}). With a modifier of {rollInfo.Modifier} results in {rollInfo.Result}";
-                    break;
-                default:
-                    break;
-            }
+            content = ContentController.GetContent(rollInfo.RollType);
+
 
             return content;
-        }
-
-        private string DetermineDeathSaveContent(CurrentHealthState currentHealthState)
-        {
-            var content = string.Empty;
-            var successStats = $"Successes: {currentHealthState.CurrentSuccesses}/3";
-            var failureStats = $"Failures: {currentHealthState.CurrentFailures}/3";
-
-            switch (currentHealthState.TransitionState)
-            {
-                case TransitionState.BecomingStable:
-                    content += $"Many fall in the face of chaos... But not this one. Not today. They have become stable.";
-                    break;
-                case TransitionState.FallingUnconscious:
-                    content += $"They are falling unconscious! Now the true test; hold fast... Or expire.";
-                    break;
-                case TransitionState.RemainsUnconscious:
-                    content += $"They are still unconscious! As life ebbs... Terrible vistas of emptiness reveal themselves...";
-                    break;
-                case TransitionState.Dying:
-                    content += $"They have perished. More dust. More ashes. More disappointment.";
-                    break;
-                case TransitionState.RevivedButUnconscious:
-                    content += $"They have been revived! However they are still unconscious...";
-                    break;
-                default:
-                    content = $"Something went wrong when determining the current health state: {currentHealthState.TransitionState}";
-                    break;
-            }
-
-            return content += $" {successStats} {failureStats}";
         }
 
         public bool CanLoginWithBotToken()
