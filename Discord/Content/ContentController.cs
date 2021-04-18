@@ -29,11 +29,34 @@ namespace DiscordAndDragons.Discord
         {
             List<string> contentList = DetermineContentType(rollInformation.RollType);
 
-            if(contentList.IsNullOrEmpty())
+            if (contentList.IsNullOrEmpty())
                 return DefaultContent(rollInformation);
 
             var index = Random.Next(0, contentList.Count);
-            return contentList[index];
+            return CustomiseContent(contentList[index], rollInformation);
+        }
+
+        private string CustomiseContent(string rawContent, RollInformation rollInformation)
+        {
+            var contentDictionary = new Dictionary<string, string>()
+            {
+                ["{0}"] = rollInformation.CharacterName,
+                ["{1}"] = rollInformation.SkillAsReadableString(),
+                ["{2}"] = rollInformation.DiceTypeAsReadableString(),
+                ["{3}"] = rollInformation.DiceRoll.ToString(),
+                ["{4}"] = rollInformation.Modifier.ToString(),
+                ["{5}"] = rollInformation.Result.ToString(), 
+                ["{6}"] = rollInformation.WeaponName, 
+            };
+
+            var cleansedContent = rawContent;
+
+            foreach (KeyValuePair<string, string> variable in contentDictionary)
+            {
+                cleansedContent = cleansedContent.Replace(variable.Key, variable.Value);
+            }
+
+            return cleansedContent;
         }
 
         private List<string> DetermineContentType(RollType rollType)
@@ -69,7 +92,6 @@ namespace DiscordAndDragons.Discord
             switch (rollInformation.RollType)
             {
                 case RollType.SavingThrow:
-                    // name attempts a strength saving throw (D20) 
                     return $"{rollInformation.CharacterName} attempts a {rollInformation.SkillAsReadableString()} saving throw ({rollInformation.DiceTypeAsReadableString()}): Rolled a {rollInformation.DiceRoll} with a modifier of {rollInformation.Modifier} for a total of {rollInformation.Result}";
                 case RollType.SkillCheck:
                     return $"{rollInformation.CharacterName} performs a {rollInformation.SkillAsReadableString()} skill check ({rollInformation.DiceTypeAsReadableString()}): Rolled a {rollInformation.DiceRoll} with a modifier of {rollInformation.Modifier} for a total of {rollInformation.Result}";
