@@ -1,0 +1,7 @@
+{0} - The name of the character which is rolling
+{1} - The skill which the roll is being used for. (Arcana, Religion etc.)
+{2} - The type of dice which is being rolled. (D20, D10 etc.)
+{3} - The base roll result before any modifiers have been added.
+{4} - The modifier which is to be added/subtracted from the base roll result.
+{5} - The total result of the roll. This is the base roll +/- any modifiers.
+{6} - The name of the weapon which is being used in the attack.
