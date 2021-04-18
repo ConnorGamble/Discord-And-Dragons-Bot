@@ -210,19 +210,7 @@ namespace DiscordAndDragons.Discord
 
         public string DetermineContentToSendToDiscord(RollInformation rollInfo)
         {
-            // saving throw, skill check attack, damage
-            // Name rolled for a {RollType} on {SkillType}. Rolled a roll with a modifier for a total
-            // Name rolled an attack. Rolled a roll with a modifier for a total
-            var content = $"Rolled a {rollInfo.DiceRoll} with modifier of {rollInfo.Modifier} for a total of {rollInfo.Result}";
-            var skill = rollInfo.SkillAsReadableString();
-            var diceType = rollInfo.DiceTypeAsReadableString();
-            var characterName = rollInfo.CharacterName;
-            var weaponName = rollInfo.WeaponName;
-
-            content = ContentController.GetContent(rollInfo.RollType);
-
-
-            return content;
+            return ContentController.GetContent(rollInfo);
         }
 
         public bool CanLoginWithBotToken()
