@@ -226,6 +226,7 @@
     <EmbeddedResource Include="Discord\Content\DeathSaveContent.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Documentation\ContentVariableKey.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Resources\Icon.ico" />
     <None Include="Resources\ClarenceFuckYeah.gif">
