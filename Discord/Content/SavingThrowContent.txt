@@ -1,4 +1,1 @@
-﻿I am random content number 1
-Alas, I am random content 2
-I am random content number 3
-Alaaaaaaaas, I am random content 4
+﻿{0} attempts a {0} saving throw ({2}): Rolled a {3} with a modifier of {4} for a total of {5}

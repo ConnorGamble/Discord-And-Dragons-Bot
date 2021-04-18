@@ -1,4 +1,1 @@
-﻿I am random content number 1
-Alas, I am random content 2
-I am random content number 3
-PEEEEEEEEEEEEEEEEEEEEEEEEENISSSSSSSSSSSSSSSSSSSSSSSSSSS
+﻿{0} rolls for initiative and rolled a {3}({2}). With a modifier of {4} results in {5}
