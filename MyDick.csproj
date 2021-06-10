@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Discord\Commands.cs" />
     <Compile Include="Discord\Content\ContentController.cs" />
+    <Compile Include="Discord\Content\ContentFactory.cs" />
     <Compile Include="Discord\DiscordController.cs" />
     <Compile Include="Discord\DiscordMessageRequest.cs" />
     <Compile Include="Discord\Helpers.cs" />
