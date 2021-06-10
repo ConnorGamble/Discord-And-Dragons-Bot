@@ -1,3 +1,5 @@
 ﻿Villain tab for DM's. Makes new pop ups based on that enemy stats which then DM can then use to verify rolls. - potentially out of scope
 
 Unique text based on critical success fails
+
+Need to figure out how to handle both successful and unsuccessful death save throws
